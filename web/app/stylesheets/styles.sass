@@ -1,0 +1,70 @@
+$blueprint-grid-columns: 25
+
+@import blueprint
+@import blueprint/reset
+
++blueprint-global-reset
+
+@import utils
+@import layout
+
+#root
+  width: 640px
+  height: 1000px
+  margin: 0 auto
+
+.container
+  padding: 10px
+
+.plist-title
+  margin-top: 10px
+
+#add-video
+  margin-top: 10px
+  border: 1px dotted #AAA
+  padding: 10px 10px
+  background-color: #F1F1F2
+  input
+    height: 30px
+    width: 530px
+    margin-right: 10px
+    font-size: 19px
+  .add-btn
+    padding: 5px 10px
+    +corner(4px)
+    color: white
+    background-color: #666
+    float: right
+    margin-top: 4px
+    margin-right: 10px
+#playlist
+  ul
+    float: left
+    width: 100%
+  li
+    clear: both
+    float: left
+    width: 100%
+    a
+      background-color: #F1F1F2
+      float: left
+      width: 100%
+      margin-top: 10px
+      border-top: 1px solid #AAA
+      padding-top: 5px
+    .thumb, .name
+      float: left
+    .name, .close
+      margin-top: 20px
+    .name
+      width: 450px
+    .close
+      float: right
+      margin-right: 10px
+    .thumb
+      margin-right: 10px
+      width: 120px
+      height: 90px
+      border: 1px dotted #AAA
+      img
+        border: 0

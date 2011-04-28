@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^superdealmap.com
+RewriteRule (.*) http://www.superdealmap.com/$1 [R=301,L]

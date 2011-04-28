@@ -1,0 +1,4 @@
+web/.bundle
+web/db/*.sqlite3
+web/log/*.log
+web/tmp/

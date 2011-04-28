@@ -1,0 +1,14 @@
+!!!5
+%html
+  = render "head"
+  %body
+    = yield
+  = javascript_include_tag "thirdparty/jquery-1.5.1.min"
+  = javascript_include_tag "thirdparty/ui/jquery.ui.core.min"
+  = javascript_include_tag "thirdparty/ui/jquery.ui.widget.min"
+  = javascript_include_tag "thirdparty/ui/jquery.ui.mouse.min"
+  = javascript_include_tag "thirdparty/ui/jquery.ui.sortable.min"
+  = javascript_include_tag "swfobject.js"
+  = javascript_include_tag "json.js"
+  = yield :javascripts
+  = javascript_include_tag "client"

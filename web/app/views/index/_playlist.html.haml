@@ -1,0 +1,11 @@
+%ul
+  - i=0
+  - @videos.each do |video|
+    - thumb= "http://img.youtube.com/vi/#{video.ytid}/1.jpg"
+    %li.video-item{:id=>"#{video.id}", :ytid=>"#{video.ytid}", :pos => "#{i}"}
+      %a{:href=>"#"}
+        .thumb
+          %img{:src=>"#{thumb}", :width=>120, :height=>90}
+        %p.name #{video.title}
+        %p.close X
+    - i=i+1
