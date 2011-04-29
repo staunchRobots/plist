@@ -1,6 +1,34 @@
 class PlaylistController < ActionController::Base
+  before_filter :require_user, :except => :index
+
+  # GET /playlist
+  # Only for anonymous sessions, that is, not FB connected
   def index
     playlist_videos= session[:playlist].videos
+    videos= Video.find(playlist_videos)
+    @videos= []
+
+    playlist_videos.each do |pv|
+      @videos << videos.detect {|v| pv == v._id }
+    end
+
+    respond_to do |format|
+      format.html { render :partial => "index/playlist" }
+    end
+  end
+
+  # GET /:user/playlists
+  def list
+    @playlists= User.playlists
+    respond_to do |format|
+      format.html { render :partial => "playlist/list" }
+    end
+  end
+
+  # GET /:user/:playlist
+  def show
+    playlist= 
+    playlist_videos= playlist.videos
     videos= Video.find(playlist_videos)
     @videos= []
 
@@ -29,10 +57,9 @@ class PlaylistController < ActionController::Base
       video= Video.create({:ytid => params[:v], :title=>title, :authors=>authors, :playlist_id=> 1})
       session[:playlist].videos << video._id
       session[:playlist].save
-
-      respond_to do |format|
-        format.html { render :text => "ok"}
-      end
+    end
+    respond_to do |format|
+      format.html { render :text => "ok"}
     end
   end
 

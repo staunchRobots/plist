@@ -8,21 +8,42 @@ $blueprint-grid-columns: 25
 @import utils
 @import layout
 
+body
+  overflow: hidden
+
 #root
   width: 640px
-  height: 1000px
+  // height: 1000px
   margin: 0 auto
+  overflow: hidden
 
 .container
   padding: 10px
 
 .plist-title
-  margin-top: 10px
+  float: left
+  background-color: #F1F1F2
+  padding: 10px
+  +corner(4px)
+  border-top: 1px solid #AAA
+  border-left: 1px solid #AAA
+  border-right: 1px solid #AAA
+  // margin-top: 10px
+
+.wrapper
+  position: absolute
+  top: 0
+  bottom: 0
+  //left: 310px
+  width: 80%
+  height: 100%
+  overflow: hidden
+  right: 0
 
 #add-video
   margin-top: 10px
-  border: 1px dotted #AAA
-  padding: 10px 10px
+  // border: 1px dotted #AAA
+  // padding: 10px 10px
   background-color: #F1F1F2
   input
     height: 30px
@@ -42,29 +63,67 @@ $blueprint-grid-columns: 25
     float: left
     width: 100%
   li
-    clear: both
+    // clear: both
     float: left
-    width: 100%
+    width: 320px
+    margin: 5px
     a
-      background-color: #F1F1F2
+      // background-color: #F1F1F2
+      background-color: white
       float: left
       width: 100%
-      margin-top: 10px
-      border-top: 1px solid #AAA
-      padding-top: 5px
+      // margin-top: 10px
+      border: 1px solid #AAA
+      +corner(4px)
     .thumb, .name
       float: left
     .name, .close
       margin-top: 20px
+      font-size: 12px
+    .close:hover
+      text-decoration: underline
+      color: red
     .name
-      width: 450px
+      width: 200px
+      white-space: nowrap
+      overflow: hidden
     .close
       float: right
       margin-right: 10px
     .thumb
       margin-right: 10px
-      width: 120px
-      height: 90px
+      width: 60px
+      height: 45px
       border: 1px dotted #AAA
       img
         border: 0
+.top
+  float: left
+  width: 100%
+  padding: 10px 0
+  .fb-login
+    float: right
+    
+#left
+  position: absolute
+  top: 0
+  bottom: 0
+  border: 1px solid #AAA
+  left: 0
+  width: 20%
+  height: 100%
+
+#player
+  width: 70%
+  position: absolute
+  top: 65px
+  left: 0
+  bottom: 0
+  height: 100%
+  overflow: auto
+  background-color: #F1F1F2
+  // border-top: 1px solid #AAA
+  .wrapper-player
+    padding-left: 20px
+    padding-top: 5px
+    

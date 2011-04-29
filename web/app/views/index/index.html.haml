@@ -1,10 +1,15 @@
 #root
+  .top
+    %h1.plist-title Homer's Super Playlist
+    %fb:login-button.fb-login{:autologoutlink=>"true"}
   .wrapper
     #player
-      #ytapiplayer
-        You need Flash player 8+ and JavaScript enabled to view this video.
-    %h1.plist-title Homer's Super Playlist
-    #add-video
-      %input{:type=>"text", :width=>"400", :height=>"30px"}
-      %a.add-btn{:href=>"#"} Add
-    #playlist
+      .wrapper-player
+        #ytapiplayer
+          You need Flash player 8+ and JavaScript enabled to view this video.
+        #add-video
+          %input{:type=>"text", :width=>"400", :height=>"30px"}
+          %a.add-btn{:href=>"#"} Add
+        #playlist
+#fb-root
+#left
