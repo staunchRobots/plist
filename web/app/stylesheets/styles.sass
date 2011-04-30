@@ -24,10 +24,15 @@ body
   float: left
   background-color: #F1F1F2
   padding: 10px
-  +corner(4px)
+  +corner-top(4px)
   border-top: 1px solid #AAA
   border-left: 1px solid #AAA
   border-right: 1px solid #AAA
+  text-shadow: white -2px -2px, white -2px -2px
+  position: absolute
+  top: 10px
+  z-index: -2
+  
   // margin-top: 10px
 
 .wrapper
@@ -39,6 +44,7 @@ body
   height: 100%
   overflow: hidden
   right: 0
+  z-index: -1
 
 #add-video
   margin-top: 10px
@@ -62,6 +68,7 @@ body
   ul
     float: left
     width: 100%
+    padding-bottom: 120px
   li
     // clear: both
     float: left
@@ -108,10 +115,16 @@ body
   position: absolute
   top: 0
   bottom: 0
-  border: 1px solid #AAA
   left: 0
   width: 20%
   height: 100%
+  .wrapper-left 
+    position: absolute
+    top: 65px
+    height: 100%
+    width: 100%
+    background-color: #E3D4C8
+    border-right: 1px solid #996C48
 
 #player
   width: 70%
@@ -126,4 +139,85 @@ body
   .wrapper-player
     padding-left: 20px
     padding-top: 5px
+    margin-left: white
     
+#logo h1
+  float: left
+  padding: 10px
+  border: 2px solid black
+  border-top: 0
+  +corner-bottom(6px)
+  margin-left: 20px
+
+.playlist-item
+  float: left
+  width: 100%
+  margin-bottom: 5px
+  border: 1px solid #996C48
+  padding: 2px
+  background-color: white
+  +corner(5px)
+  .title, .thumb
+    float: left
+  .title
+    margin-left: 5px
+    color: #996C48
+    font-size: 14px
+
+  a.info
+    float: left
+    width: 100%
+  &.new
+    position: relative
+    border: 2px solid #489953
+    margin-left: -1px
+    input
+      border: 1px solid #CCC
+      +corner(2px)
+      margin-left: 10px
+      width: 145px
+    .edit
+      position: absolute
+      bottom: 10px
+      right: 15px
+    .ok, .cancel
+      color: #489953
+      text-decoration: underline
+      font-size: 12px
+      float: left
+      padding: 0 5px
+
+#playlists
+  ul
+    float: left
+    padding: 10px
+  #add-playlist-btn
+    float: right
+    margin-right: 10px
+    a
+      color: white
+      background-color: #996C48
+      padding: 5px 10px
+      text-decoration: none
+      +corner(4px)
+  #add-playlist-btn.on
+    a
+      background-color: #489953
+
+#right
+  position: absolute
+  // border: 1px solid black
+  top: 65px
+  bottom: 0
+  right: 0
+  height: 100%
+  width: 30%
+  background-color: #E3D4C8
+  border-left: 1px solid #996C48
+  .wrapper-right
+    position: absolute
+    top: 0
+    bottom: 0
+    height: 100%
+    width: 100%
+    padding: 5px

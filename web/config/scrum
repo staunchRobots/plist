@@ -1,0 +1,15 @@
+Scrum
+- Implemented backend functionality for having multiple users with multiple playlists
+- New UI layout
+- FB Integration in UI
+- Bind FB session to local session
+
+Right now I'm having a very strange problem; Rails is changing the Cookie
+between requests, so it's losing track of the active session because
+sessions are Cookie-based. 
+For example, I call GET /playlist to bring a playlist, and then I call
+POST /playlist to add a video to that playlist, but when the server gets
+that request it doesn't find the current session because the Cookie changed.
+I'm deploying the changes to UI layout but all backend functionality is broken
+because of the problem above.
+I've been struggling with this problem for 3 hours now.

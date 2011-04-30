@@ -1,9 +1,16 @@
-class PlaylistController < ActionController::Base
-  before_filter :require_user, :except => :index
+class PlaylistController < ApplicationController
+  skip_before_filter :require_user
+
+  def index
+    @videos= Video.all
+    respond_to do |format|
+      format.html { render :partial => "index/playlist" }
+    end
+  end
 
   # GET /playlist
   # Only for anonymous sessions, that is, not FB connected
-  def index
+  def indexo
     playlist_videos= session[:playlist].videos
     videos= Video.find(playlist_videos)
     @videos= []
@@ -12,22 +19,15 @@ class PlaylistController < ActionController::Base
       @videos << videos.detect {|v| pv == v._id }
     end
 
+    puts "index: "+session.inspect
+
     respond_to do |format|
       format.html { render :partial => "index/playlist" }
     end
   end
 
-  # GET /:user/playlists
-  def list
-    @playlists= User.playlists
-    respond_to do |format|
-      format.html { render :partial => "playlist/list" }
-    end
-  end
-
   # GET /:user/:playlist
   def show
-    playlist= 
     playlist_videos= playlist.videos
     videos= Video.find(playlist_videos)
     @videos= []
@@ -42,6 +42,10 @@ class PlaylistController < ActionController::Base
   end
 
   def create
+  end
+
+  def add
+    puts "#create-0:"+session.inspect
     if (Video.exists?(:conditions=>{:ytid => params[:v]}))
     else
       yt_feed= RestClient.get("http://gdata.youtube.com/feeds/api/videos/#{params[:v]}?v=2&alt=json")
@@ -53,8 +57,10 @@ class PlaylistController < ActionController::Base
         author= {'name' => a["name"]["$t"], 'uri' => a["uri"]["$t"]}
         authors << author
       end
+      
+      puts "#create"+session.inspect
 
-      video= Video.create({:ytid => params[:v], :title=>title, :authors=>authors, :playlist_id=> 1})
+      video= Video.create({:ytid => params[:v], :title=>title, :authors=>authors})
       session[:playlist].videos << video._id
       session[:playlist].save
     end

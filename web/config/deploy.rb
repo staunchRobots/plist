@@ -4,7 +4,7 @@ default_run_options[:pty] = true
 set :application, "pList.tv"
 set :repository,  "git@github.com:santiago/vjcloud.git"
 set :domain, "root@173.230.129.222"
-set :deploy_to, "/srv/www/plisttv" 
+set :deploy_to, "/srv/www/plisttv-dev" 
 set :port, 22
 
 role :web, domain               # Your HTTP server, Apache/etc
@@ -13,7 +13,7 @@ role :db, domain, :primary => true # This is where Rails migrations will run
 
 # set :deploy_via, :remote_cache  # If you have public like github.com then use :remote_cache
 set :scm, 'git'
-set :branch, 'master'
+set :branch, 'dev'
 set :scm_verbose, true
 set :scm_username, "git"
 set :deploy_via, "checkout"

@@ -2,7 +2,7 @@ class FacebookSession
   include Mongoid::Document
   include Mongoid::Timestamps
   
-  field :user_id, :type => String
+  field :member_id, :type => String
   field :uid, :type=> String
   field :expires, :type=> Integer
   field :access_token, :type => String
@@ -10,15 +10,21 @@ class FacebookSession
   field :secret, :type => String
   field :sig, :type => String
 
+  belongs_to :member
+
   def self.create_session(session)
-    unless User.exists?(:conditions => {:fb_uid => session['uid']})
-      @user= User.create({:username => session['uid'], :fb_uid => session['uid']})
+    unless Member.exists?(:conditions => {:fb_uid => session['uid']})
+      puts "new"
+      @member= Member.create({:username => session['uid'], :fb_uid => session['uid']})
     else
-      @user= User.where({:fb_uid => session['uid']})
+      puts "current"
+      @member= Member.first(:conditions => {:fb_uid => session['uid']})
     end
-    unless session_exists?(session['session_key'])
-      session[:user_id]= @user._id
-      create(session)
+    # Bind FB session to local session
+    if session_exists?(session['session_key'])
+      { :fbsession => self.first(:conditions => {:session_key=>session['session_key']}), :member => @member }
+    else
+      { :fbsession => create(session), :member => @member }
     end
   end
 
@@ -27,7 +33,7 @@ class FacebookSession
   end
 
   private
-  def session_exists?(session_key)
-    Session.exists?(:conditions => {:session_key => session_key})
+  def self.session_exists?(session_key)
+    exists?(:conditions => {:session_key => session_key})
   end
 end

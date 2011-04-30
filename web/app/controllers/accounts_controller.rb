@@ -1,4 +1,6 @@
 class AccountsController < ApplicationController
+  skip_before_filter :require_user, :only => [:login]
+
   # GET /accounts
   def index
   end
@@ -7,13 +9,13 @@ class AccountsController < ApplicationController
   def login
     unless session[:fbsession]
       if params[:session]['session_key']
-        fbsession= FacebookSession.create_session(params[:session])
-        session[:fbsession]= fbsession
+        session.merge!(FacebookSession.create_session(params[:session]))
       end
     else
       unless session[:fbsession].session_key == params[:session]['session_key']
         FacebookSession.destroy_session(session[:fbsession].session_key)
-        session[:fbsession]= nil
+        # should generate new session || redirect to GET '/session'
+        session= nil
       end
     end
 
@@ -24,8 +26,9 @@ class AccountsController < ApplicationController
 
   # POST /logout
   def logout
-    puts "logged out"
-    puts params[:session].inspect
+    FacebookSession.destroy_session(session[:fbsession]['session_key'])
+    # should generate new session || redirect to GET '/session'
+    session= nil
     respond_to do |format|
       format.html { render :text => "ok" }
     end

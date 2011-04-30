@@ -2,9 +2,11 @@ class Playlist
   include Mongoid::Document
   include Mongoid::Timestamps
   
-  field :user_id, :type => String
+  field :member_id, :type => String
   field :title, :type=> String
   field :videos, :type=> Array
+
+  belongs_to :member
 
   def remove_video(id)
     video= Video.find(id)

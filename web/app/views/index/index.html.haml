@@ -11,5 +11,14 @@
           %input{:type=>"text", :width=>"400", :height=>"30px"}
           %a.add-btn{:href=>"#"} Add
         #playlist
+    #right
+      .wrapper-right
 #fb-root
 #left
+  #logo
+    %h1 pList.tv
+  .wrapper-left    
+    #playlists
+      = render "playlists/list"
+      #add-playlist-btn
+        %a{:href=>"#"} New
