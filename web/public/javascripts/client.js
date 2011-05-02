@@ -30,12 +30,12 @@ var playing_index= 0;
 
 function play_next() {
     var ytplayer = document.getElementById("player-e");
-    if(playing_index == playlist_cycle.length) playing_index=0;
-    ytplayer.loadVideoById(playlist_cycle[playing_index++]);
+    if(playing_index == playlist_cycle.length) playing_index=-1;
+    ytplayer.loadVideoById(playlist_cycle[++playing_index]);
 }
 
 function onYouTubePlayerReady(playerId) {
-    var ytplayer = document.getElementById(playerId);
+    var ytplayer = document.getElementById("player-e");
     ytplayer.addEventListener("onStateChange", "onytplayerStateChange");
 }
 
@@ -218,6 +218,7 @@ jQuery(document).ready(function($) {
 	var id= $(this).attr('ytid');
 	$("#player-e").get(0).loadVideoById(id);
 	e.preventDefault();
+	playing_index= parseInt($(this).attr("pos"));
     });
 
     $("#add-playlist-btn a").click(function(e) {
@@ -289,8 +290,8 @@ jQuery(document).ready(function($) {
       *
      */
     window.fbAsyncInit = function() {
-	// var appId= '270579051603';
-	var appId= '133998703298878';
+	var appId= '270579051603';
+	// var appId= '133998703298878';
 	FB.init({appId: appId, status: true, cookie: true, xfbml: true});
 
 	FB.getLoginStatus(function(response) {
