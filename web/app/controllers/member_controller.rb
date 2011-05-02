@@ -1,21 +1,14 @@
-class PlaylistsController < ApplicationController
+class MemberController < ApplicationController
   before_filter :valid_member?
 
-  # GET /:member/playlists
+  # GET /:member
   def index
     @playlists= @member.playlists
+    @videos= @playlists.first.list_videos
     @on= @playlists.first
 
     respond_to do |format|
-      format.html { render :partial => "playlists/list" }
-    end
-  end
-
-  def create
-    member= Member.find(session[:member])
-    member.playlists << Playlist.new({:title=>params[:playlist]['title']})
-    respond_to do |format|
-      format.html { render :text => "ok" }
+      format.html { render "index/index" }
     end
   end
 

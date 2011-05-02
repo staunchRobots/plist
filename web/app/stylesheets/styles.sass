@@ -47,21 +47,24 @@ body
   z-index: -1
 
 #add-video
-  margin-top: 10px
+  margin-top: -4px
   // border: 1px dotted #AAA
   // padding: 10px 10px
-  background-color: #F1F1F2
+  float: left
+  background-color: black
+  padding: 3px
+  +corner-bottom(4px)
   input
-    height: 30px
+    height: 16px
     width: 530px
     margin-right: 10px
-    font-size: 19px
+    font-size: 14px
+    // border: 1px solid #FFB800
   .add-btn
-    padding: 5px 10px
+    // padding: 5px 10px
     +corner(4px)
     color: white
-    background-color: #666
-    float: right
+    background-color: black
     margin-top: 4px
     margin-right: 10px
 #playlist
@@ -101,7 +104,7 @@ body
       margin-right: 10px
       width: 60px
       height: 45px
-      border: 1px dotted #AAA
+      // border: 1px dotted #AAA
       img
         border: 0
 .top
@@ -123,8 +126,8 @@ body
     top: 65px
     height: 100%
     width: 100%
-    background-color: #E3D4C8
-    border-right: 1px solid #996C48
+    background-color: #009D91
+    border-right: 1px solid #00665E
 
 #player
   width: 70%
@@ -153,7 +156,7 @@ body
   float: left
   width: 100%
   margin-bottom: 5px
-  border: 1px solid #996C48
+  border: 1px solid #00665E
   padding: 2px
   background-color: white
   +corner(5px)
@@ -161,18 +164,27 @@ body
     float: left
   .title
     margin-left: 5px
-    color: #996C48
+    color: #00665E
     font-size: 14px
 
   a.info
     float: left
     width: 100%
+  &.on, &:hover
+    background-color: #61D8A2
+    a, span
+      color: white
+  &.on
+    background-color: #FFB800
+    border-color: #FF6F00
+
   &.new
+    background-color: white
     position: relative
-    border: 2px solid #489953
+    border: 2px solid #0969A2
     margin-left: -1px
     input
-      border: 1px solid #CCC
+      border: 1px solid #0969A2
       +corner(2px)
       margin-left: 10px
       width: 145px
@@ -181,12 +193,11 @@ body
       bottom: 10px
       right: 15px
     .ok, .cancel
-      color: #489953
+      color: #0969A2
       text-decoration: underline
       font-size: 12px
       float: left
       padding: 0 5px
-
 #playlists
   ul
     float: left
@@ -196,13 +207,13 @@ body
     margin-right: 10px
     a
       color: white
-      background-color: #996C48
+      background-color: #0969A2
       padding: 5px 10px
       text-decoration: none
       +corner(4px)
   #add-playlist-btn.on
     a
-      background-color: #489953
+      background-color: #0969A2
 
 #right
   position: absolute
@@ -212,8 +223,8 @@ body
   right: 0
   height: 100%
   width: 30%
-  background-color: #E3D4C8
-  border-left: 1px solid #996C48
+  background-color: #00B060
+  border-left: 1px solid #00665E
   .wrapper-right
     position: absolute
     top: 0

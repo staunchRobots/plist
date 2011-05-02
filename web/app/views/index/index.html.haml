@@ -1,9 +1,9 @@
 #root
   .top
-    %h1.plist-title Homer's Super Playlist
+    %h1.plist-title #{@playlists.first.title}
     %fb:login-button.fb-login{:autologoutlink=>"true"}
   .wrapper
-    #player
+    #player{:playlist => "#{@playlists.first._id}"}
       .wrapper-player
         #ytapiplayer
           You need Flash player 8+ and JavaScript enabled to view this video.
@@ -11,6 +11,7 @@
           %input{:type=>"text", :width=>"400", :height=>"30px"}
           %a.add-btn{:href=>"#"} Add
         #playlist
+          = render "index/playlist"
     #right
       .wrapper-right
 #fb-root

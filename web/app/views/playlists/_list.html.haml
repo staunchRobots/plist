@@ -6,31 +6,14 @@
     .edit{:style=>"display:none;"}
       %a.ok{:href=>""} ok
       %a.cancel{:href=>""} x
-  %li.playlist-item
-    %a.info{:href=>"#"} 
-      %div.thumb{:style=>"width:60px;height:45px;background:white;border:1px dashed #AAA"}
-      %span.title Playlist 1
-    .edit{:style=>"display:none;"}
-      %a.ok{:href=>""} ok
-      %a.cancel{:href=>""} x
-  %li.playlist-item
-    %a.info{:href=>"#"} 
-      %div.thumb{:style=>"width:60px;height:45px;background:white;border:1px dashed #AAA"}
-      %span.title Playlist 2
-    .edit{:style=>"display:none;"}
-      %a.ok{:href=>""} ok
-      %a.cancel{:href=>""} x
-  %li.playlist-item
-    %a.info{:href=>"#"} 
-      %div.thumb{:style=>"width:60px;height:45px;background:white;border:1px dashed #AAA"}
-      %span.title Playlist 3
-    .edit{:style=>"display:none;"}
-      %a.ok{:href=>""} ok
-      %a.cancel{:href=>""} x
   - @playlists.each do |pl|
-    %li.playlist-item{:id=>"#{pl._id}"}
+    - class_on= @on == pl ? 'on' : nil
+    %li.playlist-item{:id=>"#{pl._id}", :class => "#{class_on}"}
       %a.info{:href=>"#"} 
-        %div.thumb{:style=>"width:60px;height:45px;background:white;border:1px dashed #AAA"}
+        - if pl.thumb
+          %img.thumb{:src=>"#{pl.thumb}", :width=>"60", :height=>"45"}
+        - else
+          %div.thumb{:style=>"width:60px;height:45px;background:white;border:1px dashed #AAA"}
         %span.title #{pl.title}
       .edit{:style=>"display:none;"}
         %a.ok{:href=>""} ok

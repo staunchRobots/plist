@@ -1,3 +1,7 @@
+var session={};
+var current_playlist=0;
+var player_el;
+
 // var websocket= new io.Socket(null, {port: 8080});
 // websocket.connect();
 
@@ -25,15 +29,13 @@ var playlist_cycle=[];
 var playing_index= 0;
 
 function play_next() {
-    ytplayer = document.getElementById("player-e");
+    var ytplayer = document.getElementById("player-e");
     if(playing_index == playlist_cycle.length) playing_index=0;
     ytplayer.loadVideoById(playlist_cycle[playing_index++]);
-    console.log(playlist_cycle);
-    console.log(playing_index);
 }
 
 function onYouTubePlayerReady(playerId) {
-    ytplayer = document.getElementById("player-e");
+    var ytplayer = document.getElementById(playerId);
     ytplayer.addEventListener("onStateChange", "onytplayerStateChange");
 }
 
@@ -50,37 +52,52 @@ function calculate_playlist_cycle() {
     });
 }
 
-/* load_playlist:
+/* load_videos:
  * 
  *
  *
  */
-function load_playlist() {
-    $("#playlist").load("/playlist", function() {
+function load_videos(playlist, callback) {
+    $("#playlist").load("/playlist/"+playlist+"/videos", function(data) {
 	$("#playlist ul").sortable({containment:'parent',
 				    update: function(e, ui) {
 					var position= (function() {
 					    var pos= parseInt($(ui.item).prev().attr('pos'));
 					    var old_pos= parseInt($(ui.item).attr('pos'));
 					    if (pos < old_pos) pos += 1;
-					    return pos;
+					    return pos||0;
 					})();
-					$.post("/playlist/sort", {video:$(ui.item).attr("id"), pos:position}, function() {
-					    load_playlist();
+					$.post("/playlist/"+current_playlist+"/sort", {video:$(ui.item).attr("id"), pos:position}, function() {
+					    if (position==0) load_playlists();
+					    load_videos(current_playlist);
 					});
 				    }
 				   });
 	$("#playlist ul").disableSelection();
 	calculate_playlist_cycle();
+	var $video= $(data).find(".video-item:first");
+	if ($video.length > 0) {
+	    var ytid= $.trim($video.attr('ytid'))
+	    if(callback) callback(ytid);
+	}
+    });
+}
+
+function load_video(ytid) {
+    player_el.cueVideoById(ytid);
+}
+
+function load_playlist(playlist) {
+    load_videos(playlist, function(video) {
+	load_video(video);
     });
 }
 
 function load_playlists() {
-    $("#playlists").load("/playlists", function() {
-	$("#playlists ul").sortable({containment:'parent',
-				    update: function(e, ui) {
-				    }
-				   });
+    var url= '/playlists';
+    if (session.uid) url= '/'+session.uid+'/playlists';
+    url += " li";
+    $("#playlists ul").load(url, function() {
     });
 }
 
@@ -96,34 +113,64 @@ function is_youtube_url(url) {
     return valid;
 }
 
+function create_playlist(playlist) {
+    var url= '/playlist';
+    if (session.uid) url= '/'+session.uid+'/playlists';
+    $.post(url, {playlist:playlist}, function(res) {
+	load_playlists();
+    });
+}
+
+function delete_video(id) {
+    $.ajax({type:'DELETE', url: '/playlist/'+current_playlist+'/videos/'+id, success: function(res) {
+	load_videos(current_playlist);
+    }});
+}
+
 jQuery(document).ready(function($) {
-    // Click Add Video Btn
-    // - it should validate url input
-    // - if valid url 
-    $("#add-video .add-btn").click(function(e) {
-	var valid_url= is_youtube_url($("#add-video input").val());
+    current_playlist= $("#player").attr('playlist');
+
+    // Make playlists sortable
+    $("#playlists ul").sortable({containment:'parent',
+				 update: function(e, ui) {
+				 }
+				});
+
+    function add_video(url) {
+	var valid_url= is_youtube_url(url);
 	if (valid_url !== null) {
-	    console.log("oe");
-	    $.post('/playlists', {v:valid_url[1]}, function(res) {
+	    var url= '/playlist/'+current_playlist+'/videos';
+	    if (session.uid) {
+		url= '/'+session.uid+'/'+current_playlist+'/videos';
+	    }
+	    $.post(url, {v:valid_url[1]}, function(res) {
 		if (res == "ok") {
-		    load_playlist();
+		    load_videos(current_playlist);
 		} else 
 		    if(res.error) {
 			alert(res.error);
 		    }
 	    });
-	    $("#add-video input").val("");
 	} else {
 	    alert("This doesn't seem to be a YouTube video");
 	}
+    }
+
+    // Click Add Video Btn
+    // - it should validate url input
+    // - context: valid url 
+    // -- it should load anonymous playlist if !session
+    // -- it should (which?) playlist if session
+    // -- it should load playlists panel (left) if session
+    $("#add-video .add-btn").click(function(e) {
+	add_video($("#add-video input").val());
+	$("#add-video input").val("");
 	e.preventDefault();
     });
 
     $("li.video-item .close").live("click", (function(e) {
 	var id= $(this).closest(".video-item").attr("id");
-	$.ajax({type:'DELETE', url: '/playlist/'+id, success: function(res) {
-	    load_playlist();
-	}});
+	delete_video(id);
 	e.preventDefault();
 	e.stopPropagation();
     }));
@@ -166,8 +213,7 @@ jQuery(document).ready(function($) {
 	    var title= $layout.find("input").val();
 	    if ($.trim(title)) {
 		var playlist= {title:title};
-		$.post("/playlists", {playlist:playlist}, function(res) {
-		});
+		create_playlist(playlist);
 	    } else {
 		alert("Enter a title for your playlist");
 	    }
@@ -178,10 +224,24 @@ jQuery(document).ready(function($) {
 
     $("#add-playlist-btn a").click();
 
+    $("#playlists li a").live("click", function(e) {
+	$(this).blur();
+	var $item= $(this).closest(".playlist-item");
+	current_playlist= $item.attr("id");
+	$("#playlists li.on").removeClass('on');
+	$item.addClass('on');
+	$(".top .plist-title").text($(this).find(".title").text());
+	load_playlist($item.attr("id"));
+	e.preventDefault();
+    });
+
     var params = { allowScriptAccess: "always" };
     var atts = { id: "player-e" };
     swfobject.embedSWF("http://www.youtube.com/e/DX1iplQQJTo?enablejsapi=1&playerapiid=ytplayer",
-                       "ytapiplayer", "640", "390", "8", null, null, params, atts);
+                       "ytapiplayer", "640", "390", "8", null, null, params, atts, function(e) {
+			   player_el= $("#player-e").get(0);
+		       });
+
     /*
       *
       * Facebook Integration
@@ -193,23 +253,30 @@ jQuery(document).ready(function($) {
 	FB.getLoginStatus(function(response) {
 	    if (response.session) {
 		// logged in and connected user, someone you know
-		console.log(response.session);
+		// console.log(response.session);
 		$.post('/login', {session:response.session}, function(data) {
-		    // load_playlists();
+		    if (data == "ok") {
+			session= response.session;
+			// load_playlists();
+		    } else {
+		    }
 		});
 	    } else {
 		// no user session available, someone you dont know
-		console.log("not logged in");
-		load_playlist();
+		// console.log("not logged in");
+		// load_playlists();
 	    }
 	});
 
 	FB.Event.subscribe('auth.login', function(response) {
 	    $.post('/login', {session:response.session}, function(data) {
+		window.location= "/"+response.session.uid;
 	    });
 	});
 	FB.Event.subscribe('auth.logout', function(response) {
 	    $.post('/logout', {session:response.session}, function(data) {
+		session= {};
+		window.location='/';
 	    });
 	});
 

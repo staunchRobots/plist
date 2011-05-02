@@ -11,3 +11,5 @@ gem "compass", ">= 0.10.6"
 
 gem 'rest-client'
 gem 'json'
+
+gem "jquery-rails"
