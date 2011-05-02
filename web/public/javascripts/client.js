@@ -264,7 +264,7 @@ jQuery(document).ready(function($) {
     $("#add-playlist-btn a").click();
 
     $("#playlists li a").live("click", function(e) {
-	if (!session.uid) {
+	/*if (!session.uid) {
 	    $(this).blur();
 	    var $item= $(this).closest(".playlist-item");
 	    current_playlist= $item.attr("id");
@@ -273,7 +273,7 @@ jQuery(document).ready(function($) {
 	    $(".top .plist-title").text($(this).find(".title").text());
 	    load_playlist($item.attr("id"));
 	    e.preventDefault();
-	}
+	}*/
     });
 
     $(".playlist-item .delete").live("click", function(e) {
@@ -292,8 +292,11 @@ jQuery(document).ready(function($) {
       *
      */
     window.fbAsyncInit = function() {
-	// var appId= '270579051603';
-	var appId= '133998703298878';
+	var appId= '270579051603';
+	if (window.location.href.match(/plist\.tv/)) {
+	    appId= '133998703298878';
+	}
+
 	FB.init({appId: appId, status: true, cookie: true, xfbml: true});
 
 	FB.getLoginStatus(function(response) {

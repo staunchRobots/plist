@@ -1,5 +1,6 @@
 class PlaylistsController < ApplicationController
-  before_filter :valid_member?
+  before_filter :valid_member?, :only => [:create]
+  skip_before_filter :require_user, :only => [:index, :show]
 
   # GET /:member/playlists
   def index
@@ -20,7 +21,15 @@ class PlaylistsController < ApplicationController
   end
 
   def show
-    @playlists= @member.playlists
+    @member= Member.find(session[:member]).first if session[:member]
+    @editable= true
+    @video_member= @member ? @member : nil
+    if !@video_member || (params[:member] != @member.fb_uid)
+      @video_member= Member.first(:conditions => {:fb_uid => params[:member]})
+      @editable= false
+    end
+
+    @playlists= @video_member.playlists
     @playlist= Playlist.find(params[:playlist])
     @on= @playlist
     @videos= @playlist.list_videos

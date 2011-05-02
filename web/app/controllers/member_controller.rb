@@ -1,9 +1,18 @@
 class MemberController < ApplicationController
-  before_filter :valid_member?
+  # before_filter :valid_member?
+  skip_before_filter :require_user, :only => [:index]
 
   # GET /:member
   def index
-    @playlists= @member.playlists
+    @member= Member.find(session[:member]) if session[:member]
+    @editable= true
+    @video_member= @member ? @member : nil
+    if !@video_member || (params[:member] != @member.fb_uid)
+      @video_member= Member.first(:conditions => {:fb_uid => params[:member]})
+      @editable= false
+    end
+
+    @playlists= @video_member.playlists
     @playlist= @playlists.first
     @videos= @playlist.list_videos
     @on= @playlists.first

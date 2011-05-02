@@ -7,5 +7,6 @@
         .thumb
           %img{:src=>"#{thumb}", :width=>60, :height=>45}
         %p.name #{video.title}
-        %p.close X
+        - if @editable
+          %p.close X
     - i=i+1

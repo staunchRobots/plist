@@ -2,7 +2,7 @@
   %li.playlist-item.layout{:style=>"display:none;"}
     %a.info{:href=>"#"} 
       %div.thumb{:style=>"width:60px;height:45px;background:white;border:1px dashed #AAA"}
-      %span.title Playlist Name
+      %span.title Playlist Name      
     .edit{:style=>"display:none;"}
       %a.ok{:href=>""} ok
       %a.cancel{:href=>""} x
@@ -10,13 +10,16 @@
     - class_on= @on == pl ? 'on' : nil
     %li.playlist-item{:id=>"#{pl._id}", :class => "#{class_on}"}
       - playlist_url= @member ? "#{@member.fb_uid}/#{pl.id}" : "#"
+      - playlist_url= "/#{@video_member.fb_uid}/#{pl.id}"
       %a.info{:href=>"#{playlist_url}"} 
         - if pl.thumb
           %img.thumb{:src=>"#{pl.thumb}", :width=>"60", :height=>"45"}
         - else
           %div.thumb{:style=>"width:60px;height:45px;background:white;border:1px dashed #AAA"}
         %span.title #{pl.title}
-        %span.delete{:href=>"#"} X
-      .edit{:style=>"display:none;"}
-        %a.ok{:href=>""} ok
-        %a.cancel{:href=>""} x
+        - if @editable
+          %span.delete{:href=>"#"} X
+      - if @editable
+        .edit{:style=>"display:none;"}
+          %a.ok{:href=>""} ok
+          %a.cancel{:href=>""} x
