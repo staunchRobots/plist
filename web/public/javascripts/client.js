@@ -267,7 +267,7 @@ jQuery(document).ready(function($) {
     $("#add-playlist-btn a").click();
 
     $("#playlists li a").live("click", function(e) {
-	if ($(this).href()=="#") {
+	if ($(this).attr("href")=="#") {
 	    $(this).blur();
 	    var $item= $(this).closest(".playlist-item");
 	    current_playlist= $item.attr("id");

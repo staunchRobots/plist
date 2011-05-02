@@ -4,6 +4,9 @@ class PlaylistsController < ApplicationController
 
   # GET /:member/playlists
   def index
+    @editable= true
+    @member= Member.find(session[:member])
+
     @playlists= @member.playlists
     @on= @playlists.first
 

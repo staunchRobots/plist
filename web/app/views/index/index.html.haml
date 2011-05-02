@@ -22,5 +22,6 @@
   .wrapper-left    
     #playlists
       = render "playlists/list"
-      #add-playlist-btn
-        %a{:href=>"#"} New
+      - if @editable
+        #add-playlist-btn
+          %a{:href=>"#"} New

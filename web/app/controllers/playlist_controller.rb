@@ -4,6 +4,7 @@ class PlaylistController < ApplicationController
   # GET /playlist
   # Only for anonymous sessions, that is, not FB connected
   def index
+    @editable= true
     @playlists= Playlist.where(:anonymous => session[:session_id])
     @on= @playlists.first
     respond_to do |format|
