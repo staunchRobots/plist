@@ -18,6 +18,7 @@ Web::Application.routes.draw do
   match "/:member" => "member#index", :via => :get
   match "/:member/playlists" => "playlists#index", :via => :get
   match "/:member/playlists" => "playlists#create", :via => :post
+  match "/:member/:playlist" => "playlists#show", :via => :get
   match "/:member/:playlist" => "playlists#update", :via => :put
   match "/:member/:playlist" => "playlists#destroy", :via => :delete
   # Video routes for members

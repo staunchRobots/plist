@@ -9,7 +9,8 @@
   - @playlists.each do |pl|
     - class_on= @on == pl ? 'on' : nil
     %li.playlist-item{:id=>"#{pl._id}", :class => "#{class_on}"}
-      %a.info{:href=>"#"} 
+      - playlist_url= @member ? "#{@member.fb_uid}/#{pl.id}" : "#"
+      %a.info{:href=>"#{playlist_url}"} 
         - if pl.thumb
           %img.thumb{:src=>"#{pl.thumb}", :width=>"60", :height=>"45"}
         - else

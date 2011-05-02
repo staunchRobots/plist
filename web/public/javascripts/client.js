@@ -30,8 +30,8 @@ var playing_index= 0;
 
 function play_next() {
     var ytplayer = document.getElementById("player-e");
-    if(playing_index == playlist_cycle.length) playing_index=-1;
     ytplayer.loadVideoById(playlist_cycle[++playing_index]);
+    if(playing_index == playlist_cycle.length) playing_index=0;
 }
 
 function onYouTubePlayerReady(playerId) {
@@ -264,14 +264,16 @@ jQuery(document).ready(function($) {
     $("#add-playlist-btn a").click();
 
     $("#playlists li a").live("click", function(e) {
-	$(this).blur();
-	var $item= $(this).closest(".playlist-item");
-	current_playlist= $item.attr("id");
-	$("#playlists li.on").removeClass('on');
-	$item.addClass('on');
-	$(".top .plist-title").text($(this).find(".title").text());
-	load_playlist($item.attr("id"));
-	e.preventDefault();
+	if (!session.uid) {
+	    $(this).blur();
+	    var $item= $(this).closest(".playlist-item");
+	    current_playlist= $item.attr("id");
+	    $("#playlists li.on").removeClass('on');
+	    $item.addClass('on');
+	    $(".top .plist-title").text($(this).find(".title").text());
+	    load_playlist($item.attr("id"));
+	    e.preventDefault();
+	}
     });
 
     $(".playlist-item .delete").live("click", function(e) {

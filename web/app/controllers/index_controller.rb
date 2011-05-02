@@ -14,7 +14,8 @@ class IndexController < ApplicationController
         session[:playlist]= true
       end
       @videos= @playlists.first.list_videos
-      @on= @playlists.first
+      @playlist= @playlists.first
+      @on= @playlist
     end
   end
 end

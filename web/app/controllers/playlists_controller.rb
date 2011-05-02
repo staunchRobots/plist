@@ -19,6 +19,16 @@ class PlaylistsController < ApplicationController
     end
   end
 
+  def show
+    @playlists= @member.playlists
+    @playlist= Playlist.find(params[:playlist])
+    @on= @playlist
+    @videos= @playlist.list_videos
+    respond_to do |format|
+      format.html { render "index/index" }
+    end
+  end
+
   private
   def valid_member?
     @member= Member.find(session[:member])

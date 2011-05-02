@@ -4,7 +4,8 @@ class MemberController < ApplicationController
   # GET /:member
   def index
     @playlists= @member.playlists
-    @videos= @playlists.first.list_videos
+    @playlist= @playlists.first
+    @videos= @playlist.list_videos
     @on= @playlists.first
 
     respond_to do |format|
