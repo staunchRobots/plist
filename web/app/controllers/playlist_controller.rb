@@ -60,8 +60,8 @@ class PlaylistController < ApplicationController
   end
 
   def destroy
-    playlist= Playlist.find(params[:playlist])
-    playlist.destroy!
+    playlist= Playlist.find(params[:id])
+    playlist.destroy
     respond_to do |format|
       format.html { render :text => "ok" }
     end

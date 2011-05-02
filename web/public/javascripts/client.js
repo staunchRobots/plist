@@ -77,19 +77,29 @@ function load_videos(playlist, callback) {
 	calculate_playlist_cycle();
 	var $video= $(data).find(".video-item:first");
 	if ($video.length > 0) {
-	    var ytid= $.trim($video.attr('ytid'))
-	    if(callback) callback(ytid);
+	    var ytid= $.trim($video.attr('ytid'));
 	}
+	if(callback) callback(ytid||null);
     });
 }
 
 function load_video(ytid) {
-    player_el.cueVideoById(ytid);
+    if (!player_el) {
+	load_player(ytid);
+    } else {
+	$(player_el).show();
+	player_el.cueVideoById(ytid);
+    }
 }
 
-function load_playlist(playlist) {
+function load_playlist(playlist, callback) {
     load_videos(playlist, function(video) {
-	load_video(video);
+	if (video) {
+	    load_video(video);
+	} else {
+	    if (player_el) $(player_el).hide();
+	}
+	if (callback) callback();
     });
 }
 
@@ -127,34 +137,62 @@ function delete_video(id) {
     }});
 }
 
-jQuery(document).ready(function($) {
-    current_playlist= $("#player").attr('playlist');
+function delete_playlist(playlist) {
+    $.ajax({type:'DELETE', url: '/playlist/'+playlist, success: function(res) {
+	load_playlists();
+    }});
+}
 
-    // Make playlists sortable
+function add_video(url) {
+    var valid_url= is_youtube_url(url);
+    if (valid_url !== null) {
+	var url= '/playlist/'+current_playlist+'/videos';
+	// if (session.uid) {
+	//     url= '/'+session.uid+'/'+current_playlist+'/videos';
+	// }
+	$.post(url, {v:valid_url[1]}, function(res) {
+	    if (res == "ok") {
+		load_playlist(current_playlist, function() {
+		    if ($(".video-item").length == 1) {
+			load_playlists();
+		    }
+		});
+	    } else {
+		if(res.error) {
+		    alert(res.error);
+		}
+	    }
+	});
+    } else {
+	alert("This doesn't seem to be a YouTube video");
+    }
+}
+
+function load_player(ytid) {
+    var params = { allowScriptAccess: "always" };
+    var atts = { id: "player-e" };
+    if (!player_el) {
+	swfobject.embedSWF("http://www.youtube.com/e/"+ytid+"?enablejsapi=1&playerapiid=ytplayer",
+			   "ytapiplayer", "640", "390", "8", null, null, params, atts, function(e) {
+			       player_el= $("#player-e").get(0);
+			   });
+    }
+}
+
+jQuery(document).ready(function($) {
+    current_playlist= $(".playlist-item.on").attr('id');
+
+    var $first_video= $("#playlist .video-item:first");
+    if ($first_video.length > 0) {
+	load_player($first_video.attr('ytid'));
+    }
+
+   // Make playlists sortable
     $("#playlists ul").sortable({containment:'parent',
 				 update: function(e, ui) {
 				 }
 				});
 
-    function add_video(url) {
-	var valid_url= is_youtube_url(url);
-	if (valid_url !== null) {
-	    var url= '/playlist/'+current_playlist+'/videos';
-	    if (session.uid) {
-		url= '/'+session.uid+'/'+current_playlist+'/videos';
-	    }
-	    $.post(url, {v:valid_url[1]}, function(res) {
-		if (res == "ok") {
-		    load_videos(current_playlist);
-		} else 
-		    if(res.error) {
-			alert(res.error);
-		    }
-	    });
-	} else {
-	    alert("This doesn't seem to be a YouTube video");
-	}
-    }
 
     // Click Add Video Btn
     // - it should validate url input
@@ -235,12 +273,15 @@ jQuery(document).ready(function($) {
 	e.preventDefault();
     });
 
-    var params = { allowScriptAccess: "always" };
-    var atts = { id: "player-e" };
-    swfobject.embedSWF("http://www.youtube.com/e/DX1iplQQJTo?enablejsapi=1&playerapiid=ytplayer",
-                       "ytapiplayer", "640", "390", "8", null, null, params, atts, function(e) {
-			   player_el= $("#player-e").get(0);
-		       });
+    $(".playlist-item .delete").live("click", function(e) {
+	e.stopPropagation();
+	e.preventDefault();
+	var $item= $(this).closest(".playlist-item");
+	var x= window.confirm("Are you sure?")
+	if (x)
+	    delete_playlist($item.attr("id"));
+    });
+
 
     /*
       *

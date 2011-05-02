@@ -607,26 +607,38 @@ body {
   width: 100%;
 }
 /* line 173, ../../../app/stylesheets/styles.sass */
+.playlist-item .delete {
+  float: right;
+  margin-top: 13px;
+  font-size: 11px;
+  margin-right: 5px;
+}
+/* line 178, ../../../app/stylesheets/styles.sass */
+.playlist-item .delete:hover {
+  color: red;
+  font-weight: 900;
+}
+/* line 181, ../../../app/stylesheets/styles.sass */
 .playlist-item.on, .playlist-item:hover {
   background-color: #61d8a2;
 }
-/* line 175, ../../../app/stylesheets/styles.sass */
+/* line 183, ../../../app/stylesheets/styles.sass */
 .playlist-item.on a, .playlist-item.on span, .playlist-item:hover a, .playlist-item:hover span {
   color: white;
 }
-/* line 177, ../../../app/stylesheets/styles.sass */
+/* line 185, ../../../app/stylesheets/styles.sass */
 .playlist-item.on {
   background-color: #ffb800;
   border-color: #ff6f00;
 }
-/* line 181, ../../../app/stylesheets/styles.sass */
+/* line 189, ../../../app/stylesheets/styles.sass */
 .playlist-item.new {
   background-color: white;
   position: relative;
   border: 2px solid #0969a2;
   margin-left: -1px;
 }
-/* line 186, ../../../app/stylesheets/styles.sass */
+/* line 194, ../../../app/stylesheets/styles.sass */
 .playlist-item.new input {
   border: 1px solid #0969a2;
   -moz-border-radius-topleft: 2px;
@@ -640,13 +652,13 @@ body {
   margin-left: 10px;
   width: 145px;
 }
-/* line 191, ../../../app/stylesheets/styles.sass */
+/* line 199, ../../../app/stylesheets/styles.sass */
 .playlist-item.new .edit {
   position: absolute;
   bottom: 10px;
   right: 15px;
 }
-/* line 195, ../../../app/stylesheets/styles.sass */
+/* line 203, ../../../app/stylesheets/styles.sass */
 .playlist-item.new .ok, .playlist-item.new .cancel {
   color: #0969a2;
   text-decoration: underline;
@@ -655,17 +667,17 @@ body {
   padding: 0 5px;
 }
 
-/* line 202, ../../../app/stylesheets/styles.sass */
+/* line 210, ../../../app/stylesheets/styles.sass */
 #playlists ul {
   float: left;
   padding: 10px;
 }
-/* line 205, ../../../app/stylesheets/styles.sass */
+/* line 213, ../../../app/stylesheets/styles.sass */
 #playlists #add-playlist-btn {
   float: right;
   margin-right: 10px;
 }
-/* line 208, ../../../app/stylesheets/styles.sass */
+/* line 216, ../../../app/stylesheets/styles.sass */
 #playlists #add-playlist-btn a {
   color: white;
   background-color: #0969a2;
@@ -680,12 +692,12 @@ body {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
 }
-/* line 215, ../../../app/stylesheets/styles.sass */
+/* line 223, ../../../app/stylesheets/styles.sass */
 #playlists #add-playlist-btn.on a {
   background-color: #0969a2;
 }
 
-/* line 218, ../../../app/stylesheets/styles.sass */
+/* line 226, ../../../app/stylesheets/styles.sass */
 #right {
   position: absolute;
   top: 65px;
@@ -696,7 +708,7 @@ body {
   background-color: #00b060;
   border-left: 1px solid #00665e;
 }
-/* line 228, ../../../app/stylesheets/styles.sass */
+/* line 236, ../../../app/stylesheets/styles.sass */
 #right .wrapper-right {
   position: absolute;
   top: 0;

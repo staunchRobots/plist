@@ -13,7 +13,7 @@ class PlaylistsController < ApplicationController
 
   def create
     member= Member.find(session[:member])
-    member.playlists << Playlist.new({:title=>params[:playlist]['title']})
+    member.playlists << Playlist.new({:title=>params[:playlist]['title'], :videos => []})
     respond_to do |format|
       format.html { render :text => "ok" }
     end
