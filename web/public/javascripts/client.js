@@ -288,7 +288,21 @@ jQuery(document).ready(function($) {
 	    delete_playlist($item.attr("id"));
     });
 
-
+    $("#playlist ul").sortable({containment:'parent',
+				update: function(e, ui) {
+				    var position= (function() {
+					var pos= parseInt($(ui.item).prev().attr('pos'));
+					var old_pos= parseInt($(ui.item).attr('pos'));
+					if (pos < old_pos) pos += 1;
+					return pos||0;
+				    })();
+				    $.post("/playlist/"+current_playlist+"/sort", {video:$(ui.item).attr("id"), pos:position}, function() {
+					if (position==0) load_playlists();
+					load_videos(current_playlist);
+				    });
+				}
+			       });
+    
     /*
       *
       * Facebook Integration
