@@ -291,7 +291,7 @@ jQuery(document).ready(function($) {
     window.fbAsyncInit = function() {
 	// var appId= '270579051603';
 	var appId= '133998703298878';
-	FB.init({appId: '270579051603', status: true, cookie: true, xfbml: true});
+	FB.init({appId: appId, status: true, cookie: true, xfbml: true});
 
 	FB.getLoginStatus(function(response) {
 	    if (response.session) {
