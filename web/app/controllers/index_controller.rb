@@ -3,6 +3,7 @@ class IndexController < ApplicationController
   skip_before_filter :require_user
 
   def index
+    @editable= true
     if session[:fbsession]
       @member= Member.find(session[:member])
       redirect_to "/#{@member.fb_uid}"

@@ -267,7 +267,7 @@ jQuery(document).ready(function($) {
     $("#add-playlist-btn a").click();
 
     $("#playlists li a").live("click", function(e) {
-	/*if (!session.uid) {
+	if ($(this).href()=="#") {
 	    $(this).blur();
 	    var $item= $(this).closest(".playlist-item");
 	    current_playlist= $item.attr("id");
@@ -276,7 +276,7 @@ jQuery(document).ready(function($) {
 	    $(".top .plist-title").text($(this).find(".title").text());
 	    load_playlist($item.attr("id"));
 	    e.preventDefault();
-	}*/
+	}
     });
 
     $(".playlist-item .delete").live("click", function(e) {
