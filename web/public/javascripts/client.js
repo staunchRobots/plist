@@ -30,6 +30,7 @@ var playing_index= 0;
 
 function play_next() {
     var ytplayer = document.getElementById("player-e");
+    console.log("next:"+playlist_cycle);
     ytplayer.loadVideoById(playlist_cycle[++playing_index]);
     if(playing_index == playlist_cycle.length) playing_index=0;
 }
@@ -186,6 +187,8 @@ jQuery(document).ready(function($) {
     if ($first_video.length > 0) {
 	load_player($first_video.attr('ytid'));
     }
+
+    calculate_playlist_cycle();
 
    // Make playlists sortable
     $("#playlists ul").sortable({containment:'parent',

@@ -21,7 +21,7 @@ class PlaylistsController < ApplicationController
   end
 
   def show
-    @member= Member.find(session[:member]).first if session[:member]
+    @member= Member.find(session[:member]) if session[:member]
     @editable= true
     @video_member= @member ? @member : nil
     if !@video_member || (params[:member] != @member.fb_uid)
