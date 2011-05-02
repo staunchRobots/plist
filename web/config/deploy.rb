@@ -4,7 +4,7 @@ default_run_options[:pty] = true
 set :application, "pList.tv"
 set :repository,  "git@github.com:santiago/vjcloud.git"
 set :domain, "root@173.230.129.222"
-set :deploy_to, "/srv/www/plisttv" 
+set :deploy_to, "/srv/www/plisttv-dev" 
 set :port, 22
 
 role :web, domain               # Your HTTP server, Apache/etc
