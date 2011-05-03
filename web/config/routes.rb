@@ -11,8 +11,11 @@ Web::Application.routes.draw do
   resources :playlist
   resources :playlists
 
+  # Accounts
   match "/login" => "accounts#login", :via => :post
   match "/logout" => "accounts#logout", :via => :post
+  match "/signup" => "accounts#post_signup", :via => :post
+  match "/accounts/username" => "accounts#username", :via => :post
 
   # Member Aliases for /playlists
   match "/:member" => "member#index", :via => :get

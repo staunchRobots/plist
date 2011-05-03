@@ -13,18 +13,14 @@ class FacebookSession
 
   def self.create_session(session)
     unless Member.exists?(:conditions => {:fb_uid => session['uid']})
-      @member= Member.create({:username => session['uid'], :fb_uid => session['uid']})
-      puts "new"
+      @member= Member.create({:fb_uid => session['uid']})
     else
       @member= Member.first(:conditions => {:fb_uid => session['uid']})
-      puts "current"
     end
     # Bind FB session to local session
     if session_exists?(session['session_key'])
-      puts "exists session"
       { :fbsession => {:session_key=>session['session_key']}, :member => @member._id }
     else
-      puts "create session"
       @member.facebook_sessions << session
       { :fbsession => {:session_key=>session['session_key']}, :member => @member._id }
     end

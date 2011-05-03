@@ -324,7 +324,6 @@ jQuery(document).ready(function($) {
 		    if (data == "ok") {
 			session= response.session;
 			// load_playlists();
-		    } else {
 		    }
 		});
 	    } else {
@@ -336,7 +335,18 @@ jQuery(document).ready(function($) {
 
 	FB.Event.subscribe('auth.login', function(response) {
 	    $.post('/login', {session:response.session}, function(data) {
-		window.location= "/"+response.session.uid;
+		if (data == 'ok') {
+		    window.location= "/";
+		} else if(data.signup) {
+		    FB.api('/me', function(response) {
+			$.post('/signup', {member:response}, function(data) {
+			    if (data == 'ok') {
+				window.location='/';
+			    }
+			});
+		    });
+		} else {
+		}
 	    });
 	});
 	FB.Event.subscribe('auth.logout', function(response) {

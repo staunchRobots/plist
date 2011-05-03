@@ -241,3 +241,46 @@ body
     width: 100%
     padding: 5px
 
+#signup
+  background: none repeat scroll 0 0 black
+  color: #CCCCCC
+  margin: 20px auto 0
+  padding: 20px 40px
+  width: 800px
+  height: 300px
+
+  h1
+    font-size: 30px
+    margin-bottom: 20px
+    text-align: center
+
+  .username
+    float: left
+    padding: 20px 0
+    .plist, .input, .sign-in-btn
+      float: left
+    .plist
+      color: white
+      font-size: 25px
+    .input
+      margin-top: -13px
+      p
+        font-size: 12px
+      input
+        height: 25px
+        font-size: 20px
+        border: 1px solid white
+        +corner(6px)
+    .sign-in-btn
+      background-color: #FFB800
+      color: white
+      text-decoration: none
+      padding: 5px 10px
+      margin-top: 2px
+      margin-left: 10px
+      +corner(4px)
+    .error p
+      color: red
+      clear: left
+      font-size: 12px
+      padding-top: 5px

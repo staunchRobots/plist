@@ -1,7 +1,7 @@
 #root
   .top
     %h1.plist-title #{@playlist.title}
-    %fb:login-button.fb-login{:autologoutlink=>"true"}
+    %fb:login-button.fb-login{:autologoutlink=>"true", :perms => "email, user_location, user_birthday"}
   .wrapper
     #player{:playlist => "#{@playlist._id}"}
       .wrapper-player

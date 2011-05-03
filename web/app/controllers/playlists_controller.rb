@@ -27,17 +27,26 @@ class PlaylistsController < ApplicationController
     @member= Member.find(session[:member]) if session[:member]
     @editable= true
     @video_member= @member ? @member : nil
-    if !@video_member || (params[:member] != @member.fb_uid)
-      @video_member= Member.first(:conditions => {:fb_uid => params[:member]})
+    if !@video_member || (params[:member] != @member.username)
+      @video_member= Member.first(:conditions => {:username => params[:member]})
       @editable= false
     end
 
-    @playlists= @video_member.playlists
-    @playlist= Playlist.find(params[:playlist])
-    @on= @playlist
-    @videos= @playlist.list_videos
-    respond_to do |format|
-      format.html { render "index/index" }
+    if @video_member
+      @playlists= @video_member.playlists
+      @playlist= Playlist.find(params[:playlist])
+      @videos= @playlist.list_videos
+      @on= @playlist
+      
+      respond_to do |format|
+        format.html { render "index/index" }
+      end
+    else
+      if @member
+        redirect_to "/#{@member.username}"
+      else
+        redirect_to "/"
+      end
     end
   end
 
