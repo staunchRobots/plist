@@ -23,11 +23,9 @@ class Member
                              :fb_email => member[:email],
                              :fb_timezone => member[:timezone]
                            })
-    puts "llega aqui como sea pues!"
   end
 
   def update_username(username)
-    puts username+"oeoeoe"
     return {:error => "Username is already taken"} if Member.exists?(:conditions => {:username => username})
     return {:error => "Username should only be 15 characters long"} if (username.size > 15)
     return {:error => "Username should only contain characters, numbers or underscore"} unless (username[/^[^_][a-zA-Z0-9_]+[^_]$/])

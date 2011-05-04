@@ -180,6 +180,12 @@ function load_player(ytid) {
     }
 }
 
+function show_profile_image(uid) {
+    var $img= $("<img/>");
+    $img.attr({width:30, height:30, src:"http://graph.facebook.com/"+uid+"/picture"});
+    $(".top .img").append($img);
+}
+
 jQuery(document).ready(function($) {
     current_playlist= $(".playlist-item.on").attr('id');
 
@@ -323,6 +329,7 @@ jQuery(document).ready(function($) {
 		$.post('/login', {session:response.session}, function(data) {
 		    if (data == "ok") {
 			session= response.session;
+			show_profile_image(session.uid);
 			// load_playlists();
 		    }
 		});

@@ -36,7 +36,6 @@ class PlaylistController < ApplicationController
 
   def get_videos
     playlist= Playlist.find(params[:playlist])
-    puts "here"
     @videos= playlist.list_videos
     respond_to do |format|
       format.html { render :partial => "index/playlist" }

@@ -1,7 +1,9 @@
 #root
   .top
     %h1.plist-title #{@playlist.title}
-    %fb:login-button.fb-login{:autologoutlink=>"true", :perms => "email, user_location, user_birthday"}
+    .account
+      %fb:login-button.fb-login{:autologoutlink=>"true", :perms => "email, user_location, user_birthday"}
+      .img{:style=>"width:30px;height:30px;background-color:white;border:1px dotted #AAA;float:right;"}
   .wrapper
     #player{:playlist => "#{@playlist._id}"}
       .wrapper-player

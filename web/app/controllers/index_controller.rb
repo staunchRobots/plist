@@ -29,7 +29,6 @@ class IndexController < ApplicationController
   def is_logged_in?
     if (session[:member])
       @member= Member.find(session[:member])
-      puts "#{@member.inspect}<-----"
       # redirect_to "/#{@member.username}"
     end
   end
