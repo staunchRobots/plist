@@ -7,14 +7,14 @@ class MemberController < ApplicationController
   def index
     @member= Member.find(session[:member]) if session[:member]
     @editable= true
-    @video_member= @member ? @member : nil
-    if !@video_member || (params[:member] != @member.username)
-      @video_member= Member.first(:conditions => {:username => params[:member]})
+    @playlist_member= @member ? @member : nil
+    if !@playlist_member || (params[:member] != @member.username)
+      @playlist_member= Member.first(:conditions => {:username => params[:member]})
       @editable= false
     end
 
-    if @video_member
-      @playlists= @video_member.playlists
+    if @playlist_member
+      @playlists= @playlist_member.playlists
       @playlist= @playlists.first
       @videos= @playlist.list_videos
       @on= @playlists.first

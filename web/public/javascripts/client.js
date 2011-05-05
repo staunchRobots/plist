@@ -182,21 +182,42 @@ function load_player(ytid) {
 
 function show_profile_image(uid) {
     var $img= $("<img/>");
-    $img.attr({width:30, height:30, src:"http://graph.facebook.com/"+uid+"/picture"});
+    $img.attr({width:20, height:20, src:"http://graph.facebook.com/"+uid+"/picture"});
     $(".top .img").append($img);
 }
 
 jQuery(document).ready(function($) {
     current_playlist= $(".playlist-item.on").attr('id');
-
+    
     var $first_video= $("#playlist .video-item:first");
     if ($first_video.length > 0) {
 	load_player($first_video.attr('ytid'));
     }
-
+    
     calculate_playlist_cycle();
+    
+    // Account box
+    $(".account").click(function(e) {
+	$(this).addClass('on');
+	$(".account .dropdown").show();
+	e.stopPropagation();
+    });
+    
+    $(".account .member").click(function(e) {
+	$(this).blur();
+	e.preventDefault();
+    });
 
-   // Make playlists sortable
+    $(".account .logout").click(function(e) {
+	FB.logout(function(response) {
+	    $.post('/logout', {session:response.session}, function(data) {
+		session= {};
+		window.location='/';
+	    });
+	});
+    });
+
+    // Make playlists sortable
     $("#playlists ul").sortable({containment:'parent',
 				 update: function(e, ui) {
 				 }

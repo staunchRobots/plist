@@ -1,29 +1,52 @@
 #root
   .top
-    %h1.plist-title #{@playlist.title}
-    .account
-      %fb:login-button.fb-login{:autologoutlink=>"true", :perms => "email, user_location, user_birthday"}
-      .img{:style=>"width:30px;height:30px;background-color:white;border:1px dotted #AAA;float:right;"}
-  .wrapper
-    #player{:playlist => "#{@playlist._id}"}
-      .wrapper-player
-        #ytapiplayer
-          %p{:style=>"display:none;"} You need Flash player 8+ and JavaScript enabled to view this video.
-        - if @editable
-          #add-video
-            %input{:type=>"text", :width=>"400", :height=>"30px"}
-            %a.add-btn{:href=>"#"} Add
-        #playlist
-          = render "index/playlist"
-    #right
-      .wrapper-right
+    .wrapper-top
+      #logo
+        %h1 pList.tv
+      .search
+        %input{:type=>"text", :value=>"Search"}
+        %a.search-btn{:href=>"#"} Go
+      .account
+        - if @member
+          %a.member{:href=>"#"} You
+          .img{:style=>"width:20px;height:20px;background-color:white;float:right;"}
+        - else
+          %fb:login-button.fb-login{:autologoutlink=>"true", :perms => "email, user_location, user_birthday"}
+        .dropdown{:style=>"display:none;"}
+          - if @member
+            %a.logout{:href=>"#"} Logout
+  #content
+    .wrapper-content
+      .main
+        .wrapper-main
+          .header
+            - if @playlist_member
+              .thumb
+                %img{:src=>"http://graph.facebook.com/#{@playlist_member.fb_uid}/picture"}
+            .info
+              %h1.plist-title #{@playlist.title}
+              - if @playlist_member
+                %p.by
+                  %span.label by
+                  %span
+                    %a{:href=>"/#{@playlist_member.username}"} #{@playlist_member.fb_name}
+                %p.created-at
+                  %span.value #{@playlist_member.created_at.to_date.to_s(:long)}
+          #player{:playlist => "#{@playlist._id}"}
+            .wrapper-player
+              #ytapiplayer
+                %p{:style=>"display:none;"} You need Flash player 8+ and JavaScript enabled to view this video.
+              - if @editable
+                #add-video
+                  %input{:type=>"text", :width=>"400", :height=>"30px"}
+                  %a.add-btn{:href=>"#"} Add
+              #playlist
+                = render "index/playlist"
+      #left
+        .wrapper-left    
+          #playlists
+            = render "playlists/list"
+            - if @editable
+              #add-playlist-btn
+                %a{:href=>"#"} New
 #fb-root
-#left
-  #logo
-    %h1 pList.tv
-  .wrapper-left    
-    #playlists
-      = render "playlists/list"
-      - if @editable
-        #add-playlist-btn
-          %a{:href=>"#"} New
