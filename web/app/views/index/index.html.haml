@@ -36,10 +36,13 @@
                     %a{:href=>"/#{@playlist_member.username}"} #{@playlist_member.fb_name}
                 %p.created-at
                   %span.value #{@playlist_member.created_at.to_date.to_s(:long)}
-            .share{:style=>"float:right;"}
-              != "<fb:like layout='button_count' colorscheme='light' show_faces='false' send=true></fb:like>"
-              %a{:href=>"http://twitter.com/share", :class=>"twitter-share-button", "data-count"=>"horizontal"} Tweet
-              %script{:type=>"text/javascript", :src=>"http://platform.twitter.com/widgets.js"}
+            - if @playlist_member
+              .share{:style=>"float:right;"}
+                .fb-like
+                  != "<fb:like layout='button_count' colorscheme='light' show_faces='false'></fb:like>"
+                .twitter
+                  %a{:href=>"http://twitter.com/share", :class=>"twitter-share-button", "data-count"=>"horizontal"} Tweet
+                  %script{:type=>"text/javascript", :src=>"http://platform.twitter.com/widgets.js"}
           #player{:playlist => "#{@playlist._id}"}
             .wrapper-player
               .ytplayer{:style=>"background-color:black;width:640px;height:390px;float:left;margin-bottom:10px;"}
@@ -63,3 +66,10 @@
   %p
     %span.loader
     %span.label Updating ...
+
+=content_for(:facebook_meta) do
+  - if @playlist_member
+    %meta{:property=>"og:title", :content=>"#{@playlist.title}"}
+    %meta{:property=>"og:type", :content=>"album"}
+    %meta{:property=>"og:image", :content=>"#{@playlist.thumb}"}
+    %meta{:property=>"og:url", :content=>"#{request.url}"}

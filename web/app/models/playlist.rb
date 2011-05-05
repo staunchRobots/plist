@@ -12,7 +12,6 @@ class Playlist
   def add_video(o)
     video= Video.first({:conditions => {:ytid => o[:ytid]}})
     unless (video)
-      puts "here?"
       yt_feed= RestClient.get("http://gdata.youtube.com/feeds/api/videos/#{o[:ytid]}?v=2&alt=json")
       yt_video= JSON.parse(yt_feed)
       title= yt_video["entry"]["title"]["$t"]

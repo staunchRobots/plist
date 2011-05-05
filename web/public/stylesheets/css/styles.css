@@ -843,3 +843,7 @@ h2 {
   margin-left: 20px;
   margin-top: 40px;
 }
+/* line 311, ../../../app/stylesheets/styles.sass */
+.share .fb-like, .share .twitter {
+  float: left;
+}
