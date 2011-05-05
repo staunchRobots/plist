@@ -201,6 +201,12 @@ jQuery(document).ready(function($) {
 	if ($(".account .dropdown").length > 0) {
 	    $(this).addClass('on');
 	    $(".account .dropdown").show();
+	} else {
+	    if ($(".account .sign-in").length > 0) {
+		FB.login(function(response) {
+		    // everything is done in event 'auth.login'
+		});
+	    }
 	}
 	e.stopPropagation();
     });
@@ -219,10 +225,8 @@ jQuery(document).ready(function($) {
 	});
     });
 
-    $(".account .sign-in").click(function(e) {
-	FB.login(function(response) {
-	    // everything is done in event 'auth.login'
-	});
+    $(window).click(function(e) {
+	console.log(e);
     });
 
     // Make playlists sortable

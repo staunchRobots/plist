@@ -35,8 +35,9 @@
                   %span.value #{@playlist_member.created_at.to_date.to_s(:long)}
           #player{:playlist => "#{@playlist._id}"}
             .wrapper-player
-              #ytapiplayer
-                %p{:style=>"display:none;"} You need Flash player 8+ and JavaScript enabled to view this video.
+              .ytplayer{:style=>"background-color:black;width:640px;height:390px;float:left;margin-bottom:10px;"}
+                #ytapiplayer
+                  %p{:style=>"display:none;"} You need Flash player 8+ and JavaScript enabled to view this video.
               - if @editable
                 #add-video
                   %input{:type=>"text", :width=>"400", :height=>"30px"}

@@ -766,8 +766,9 @@ h2 {
   width: 560px;
   margin-right: 10px;
   font-size: 14px;
+  float: left;
 }
-/* line 266, ../../../app/stylesheets/styles.sass */
+/* line 267, ../../../app/stylesheets/styles.sass */
 #add-video .add-btn {
   -moz-border-radius-topleft: 4px;
   -webkit-border-top-left-radius: 4px;
@@ -781,4 +782,9 @@ h2 {
   float: right;
   margin-top: 2px;
   margin-right: 10px;
+}
+
+/* line 273, ../../../app/stylesheets/styles.sass */
+#playlist .video-item {
+  width: 614px;
 }
