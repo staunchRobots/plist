@@ -321,7 +321,7 @@ jQuery(document).ready(function($) {
     });
 
 
-    $("#add-playlist-btn a").click();
+    // $("#add-playlist-btn a").click();
 
     $("#playlists li a").live("click", function(e) {
 	if ($(this).attr("href")=="#") {
