@@ -357,111 +357,63 @@ h2 {
   color: blue;
 }
 
-/* line 18, ../../../app/stylesheets/styles.sass */
-.top {
-  background-color: black;
-  height: 40px;
-  position: fixed;
-  width: 100%;
-  z-index: 100;
+/* line 11, ../../../app/stylesheets/styles-1.1.sass */
+body {
+  overflow: hidden;
 }
 
-/* line 25, ../../../app/stylesheets/styles.sass */
-.wrapper-top {
-  width: 998px;
+/* line 14, ../../../app/stylesheets/styles-1.1.sass */
+#root {
+  width: 640px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
-/* line 29, ../../../app/stylesheets/styles.sass */
-.search {
-  float: right;
-  margin-right: 5px;
-  margin-top: 10px;
+/* line 20, ../../../app/stylesheets/styles-1.1.sass */
+.container {
+  padding: 10px;
 }
-/* line 33, ../../../app/stylesheets/styles.sass */
-.search input {
-  border: 0;
-  height: 21px;
-  -moz-border-radius-topleft: 4px;
-  -webkit-border-top-left-radius: 4px;
-  -moz-border-radius-topright: 4px;
-  -webkit-border-top-right-radius: 4px;
-  -moz-border-radius-bottomleft: 4px;
-  -webkit-border-bottom-left-radius: 4px;
-  -moz-border-radius-bottomright: 4px;
-  -webkit-border-bottom-right-radius: 4px;
-  padding-left: 5px;
-  font-size: 13px;
-  color: #aaaaaa;
+
+/* line 23, ../../../app/stylesheets/styles-1.1.sass */
+.plist-title {
   float: left;
-}
-/* line 41, ../../../app/stylesheets/styles.sass */
-.search a {
-  color: white;
-  background-color: #aaaaaa;
-  padding: 3px 5px;
-  font-size: 13px;
-  text-decoration: none;
+  background-color: #f1f1f2;
+  padding: 10px;
   -moz-border-radius-topleft: 4px;
   -webkit-border-top-left-radius: 4px;
   -moz-border-radius-topright: 4px;
   -webkit-border-top-right-radius: 4px;
-  -moz-border-radius-bottomleft: 4px;
-  -webkit-border-bottom-left-radius: 4px;
-  -moz-border-radius-bottomright: 4px;
-  -webkit-border-bottom-right-radius: 4px;
-  float: right;
-  margin-top: 0px;
-  margin-left: 5px;
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-top: 1px solid #aaaaaa;
+  border-left: 1px solid #aaaaaa;
+  border-right: 1px solid #aaaaaa;
+  text-shadow: white -2px -2px, white -2px -2px;
+  position: absolute;
+  top: 10px;
+  z-index: -2;
 }
 
-/* line 51, ../../../app/stylesheets/styles.sass */
-.account {
-  padding: 5px;
-  float: right;
-  margin-right: 30px;
-  margin-top: 5px;
-  -moz-border-radius-topleft: 6px;
-  -webkit-border-top-left-radius: 6px;
-  -moz-border-radius-topright: 6px;
-  -webkit-border-top-right-radius: 6px;
-  -moz-border-radius-bottomleft: 6px;
-  -webkit-border-bottom-left-radius: 6px;
-  -moz-border-radius-bottomright: 6px;
-  -webkit-border-bottom-right-radius: 6px;
-  position: relative;
-}
-/* line 58, ../../../app/stylesheets/styles.sass */
-.account:hover, .account.on {
-  background-color: #666666;
-}
-/* line 60, ../../../app/stylesheets/styles.sass */
-.account .member, .account .sign-in {
-  color: #aaaaaa;
-  font-size: 13px;
-  text-decoration: none;
-  margin-top: 2px;
-}
-/* line 65, ../../../app/stylesheets/styles.sass */
-.account .member:hover, .account .sign-in:hover {
-  text-decoration: underline;
-}
-/* line 67, ../../../app/stylesheets/styles.sass */
-.account .fb-login, .account .img, .account .member {
-  float: right;
-}
-/* line 69, ../../../app/stylesheets/styles.sass */
-.account .img {
-  margin-right: 5px;
-}
-/* line 71, ../../../app/stylesheets/styles.sass */
-.account .dropdown {
-  background-color: black;
-  height: 40px;
+/* line 38, ../../../app/stylesheets/styles-1.1.sass */
+.wrapper {
   position: absolute;
-  right: -8px;
-  top: 35px;
-  width: 120px;
+  top: 0;
+  bottom: 0;
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+  right: 0;
+  z-index: -1;
+}
+
+/* line 49, ../../../app/stylesheets/styles-1.1.sass */
+#add-video {
+  margin-top: -4px;
+  float: left;
+  background-color: black;
+  padding: 3px;
   -moz-border-radius-topleft: 0;
   -webkit-border-top-left-radius: 0;
   -moz-border-radius-topright: 0;
@@ -471,108 +423,42 @@ h2 {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
 }
-/* line 79, ../../../app/stylesheets/styles.sass */
-.account .dropdown a {
-  color: #aaaaaa;
-  font-size: 13px;
-  float: left;
-  margin-left: 10px;
-  margin-top: 8px;
-  text-decoration: none;
-}
-
-/* line 86, ../../../app/stylesheets/styles.sass */
-#logo {
-  color: white;
-  float: left;
-}
-
-/* line 93, ../../../app/stylesheets/styles.sass */
-#left {
-  width: 284px;
+/* line 57, ../../../app/stylesheets/styles-1.1.sass */
+#add-video input {
+  height: 16px;
+  width: 530px;
   margin-right: 10px;
-  float: left;
+  font-size: 14px;
+}
+/* line 63, ../../../app/stylesheets/styles-1.1.sass */
+#add-video .add-btn {
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  color: white;
+  background-color: black;
+  margin-top: 4px;
+  margin-right: 10px;
 }
 
-/* line 101, ../../../app/stylesheets/styles.sass */
-#content {
-  width: 998px;
-  margin: 0 auto;
-  padding-top: 50px;
-}
-/* line 105, ../../../app/stylesheets/styles.sass */
-#content .wrapper-content {
-  float: left;
-}
-/* line 108, ../../../app/stylesheets/styles.sass */
-#content .main {
-  float: right;
-  width: 704px;
-}
-/* line 112, ../../../app/stylesheets/styles.sass */
-#content .wrapper-main {
-  padding: 0 30px;
-}
-/* line 114, ../../../app/stylesheets/styles.sass */
-#content .header {
-  float: left;
-  padding: 10px 0;
-}
-/* line 117, ../../../app/stylesheets/styles.sass */
-#content .header h1 {
-  font-family: "league-gothic-1", "league-gothic-2", sans-serif;
-  font-size: 25px;
-  font-weight: 900;
-}
-/* line 121, ../../../app/stylesheets/styles.sass */
-#content .header .thumb, #content .header .info {
-  float: left;
-}
-/* line 123, ../../../app/stylesheets/styles.sass */
-#content .header .info {
-  margin-left: 10px;
-  font-size: 13px;
-  color: #666666;
-}
-/* line 127, ../../../app/stylesheets/styles.sass */
-#content .header .by {
-  float: left;
-}
-/* line 129, ../../../app/stylesheets/styles.sass */
-#content .header .by a {
-  color: #5151e8;
-  font-weight: 900;
-  text-decoration: none;
-}
-/* line 133, ../../../app/stylesheets/styles.sass */
-#content .header .created-at {
-  float: left;
-  margin-left: 5px;
-  padding-left: 5px;
-  border-left: 1px solid #666666;
-}
-/* line 138, ../../../app/stylesheets/styles.sass */
-#content .header .thumb {
-  width: 50px;
-  height: 50px;
-  border: 1px solid #aaaaaa;
-  padding: 5px;
-  background: white;
-}
-
-/* line 145, ../../../app/stylesheets/styles.sass */
+/* line 71, ../../../app/stylesheets/styles-1.1.sass */
 #playlist ul {
   float: left;
   width: 100%;
   padding-bottom: 120px;
 }
-/* line 149, ../../../app/stylesheets/styles.sass */
+/* line 75, ../../../app/stylesheets/styles-1.1.sass */
 #playlist li {
   float: left;
   width: 320px;
   margin: 5px;
 }
-/* line 154, ../../../app/stylesheets/styles.sass */
+/* line 80, ../../../app/stylesheets/styles-1.1.sass */
 #playlist li a {
   background-color: white;
   float: left;
@@ -587,43 +473,108 @@ h2 {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
 }
-/* line 162, ../../../app/stylesheets/styles.sass */
+/* line 88, ../../../app/stylesheets/styles-1.1.sass */
 #playlist li .thumb, #playlist li .name {
   float: left;
 }
-/* line 164, ../../../app/stylesheets/styles.sass */
+/* line 90, ../../../app/stylesheets/styles-1.1.sass */
 #playlist li .name, #playlist li .close {
   margin-top: 20px;
   font-size: 12px;
 }
-/* line 167, ../../../app/stylesheets/styles.sass */
+/* line 93, ../../../app/stylesheets/styles-1.1.sass */
 #playlist li .close:hover {
   text-decoration: underline;
   color: red;
 }
-/* line 170, ../../../app/stylesheets/styles.sass */
+/* line 96, ../../../app/stylesheets/styles-1.1.sass */
 #playlist li .name {
-  width: 500px;
+  width: 200px;
   white-space: nowrap;
   overflow: hidden;
 }
-/* line 174, ../../../app/stylesheets/styles.sass */
+/* line 100, ../../../app/stylesheets/styles-1.1.sass */
 #playlist li .close {
   float: right;
   margin-right: 10px;
 }
-/* line 177, ../../../app/stylesheets/styles.sass */
+/* line 103, ../../../app/stylesheets/styles-1.1.sass */
 #playlist li .thumb {
   margin-right: 10px;
   width: 60px;
   height: 45px;
 }
-/* line 182, ../../../app/stylesheets/styles.sass */
+/* line 108, ../../../app/stylesheets/styles-1.1.sass */
 #playlist li .thumb img {
   border: 0;
 }
 
-/* line 185, ../../../app/stylesheets/styles.sass */
+/* line 110, ../../../app/stylesheets/styles-1.1.sass */
+.top {
+  float: left;
+  width: 100%;
+  padding: 10px 0;
+}
+/* line 114, ../../../app/stylesheets/styles-1.1.sass */
+.top .fb-login {
+  float: right;
+}
+
+/* line 117, ../../../app/stylesheets/styles-1.1.sass */
+#left {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+}
+/* line 124, ../../../app/stylesheets/styles-1.1.sass */
+#left .wrapper-left {
+  position: absolute;
+  top: 65px;
+  height: 100%;
+  width: 100%;
+  background-color: #009d91;
+  border-right: 1px solid #00665e;
+}
+
+/* line 132, ../../../app/stylesheets/styles-1.1.sass */
+#player {
+  width: 70%;
+  position: absolute;
+  top: 65px;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  overflow: auto;
+  background-color: #f1f1f2;
+}
+/* line 142, ../../../app/stylesheets/styles-1.1.sass */
+#player .wrapper-player {
+  padding-left: 20px;
+  padding-top: 5px;
+  margin-left: white;
+}
+
+/* line 147, ../../../app/stylesheets/styles-1.1.sass */
+#logo h1 {
+  float: left;
+  padding: 10px;
+  border: 2px solid black;
+  border-top: 0;
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 0;
+  -webkit-border-top-right-radius: 0;
+  -moz-border-radius-bottomleft: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  margin-left: 20px;
+}
+
+/* line 155, ../../../app/stylesheets/styles-1.1.sass */
 .playlist-item {
   float: left;
   width: 100%;
@@ -640,54 +591,54 @@ h2 {
   -moz-border-radius-bottomright: 5px;
   -webkit-border-bottom-right-radius: 5px;
 }
-/* line 193, ../../../app/stylesheets/styles.sass */
+/* line 163, ../../../app/stylesheets/styles-1.1.sass */
 .playlist-item .title, .playlist-item .thumb {
   float: left;
 }
-/* line 195, ../../../app/stylesheets/styles.sass */
+/* line 165, ../../../app/stylesheets/styles-1.1.sass */
 .playlist-item .title {
   margin-left: 5px;
   color: #00665e;
   font-size: 14px;
 }
-/* line 200, ../../../app/stylesheets/styles.sass */
+/* line 170, ../../../app/stylesheets/styles-1.1.sass */
 .playlist-item a.info {
   float: left;
   width: 100%;
 }
-/* line 203, ../../../app/stylesheets/styles.sass */
+/* line 173, ../../../app/stylesheets/styles-1.1.sass */
 .playlist-item .delete {
   float: right;
   margin-top: 13px;
   font-size: 11px;
   margin-right: 5px;
 }
-/* line 208, ../../../app/stylesheets/styles.sass */
+/* line 178, ../../../app/stylesheets/styles-1.1.sass */
 .playlist-item .delete:hover {
   color: red;
   font-weight: 900;
 }
-/* line 211, ../../../app/stylesheets/styles.sass */
+/* line 181, ../../../app/stylesheets/styles-1.1.sass */
 .playlist-item.on, .playlist-item:hover {
   background-color: #61d8a2;
 }
-/* line 213, ../../../app/stylesheets/styles.sass */
+/* line 183, ../../../app/stylesheets/styles-1.1.sass */
 .playlist-item.on a, .playlist-item.on span, .playlist-item:hover a, .playlist-item:hover span {
   color: white;
 }
-/* line 215, ../../../app/stylesheets/styles.sass */
+/* line 185, ../../../app/stylesheets/styles-1.1.sass */
 .playlist-item.on {
   background-color: #ffb800;
   border-color: #ff6f00;
 }
-/* line 219, ../../../app/stylesheets/styles.sass */
+/* line 189, ../../../app/stylesheets/styles-1.1.sass */
 .playlist-item.new {
   background-color: white;
   position: relative;
   border: 2px solid #0969a2;
   margin-left: -1px;
 }
-/* line 224, ../../../app/stylesheets/styles.sass */
+/* line 194, ../../../app/stylesheets/styles-1.1.sass */
 .playlist-item.new input {
   border: 1px solid #0969a2;
   -moz-border-radius-topleft: 2px;
@@ -701,13 +652,13 @@ h2 {
   margin-left: 10px;
   width: 145px;
 }
-/* line 229, ../../../app/stylesheets/styles.sass */
+/* line 199, ../../../app/stylesheets/styles-1.1.sass */
 .playlist-item.new .edit {
   position: absolute;
   bottom: 10px;
   right: 15px;
 }
-/* line 233, ../../../app/stylesheets/styles.sass */
+/* line 203, ../../../app/stylesheets/styles-1.1.sass */
 .playlist-item.new .ok, .playlist-item.new .cancel {
   color: #0969a2;
   text-decoration: underline;
@@ -716,17 +667,17 @@ h2 {
   padding: 0 5px;
 }
 
-/* line 240, ../../../app/stylesheets/styles.sass */
+/* line 210, ../../../app/stylesheets/styles-1.1.sass */
 #playlists ul {
+  float: left;
   padding: 10px;
 }
-/* line 242, ../../../app/stylesheets/styles.sass */
+/* line 213, ../../../app/stylesheets/styles-1.1.sass */
 #playlists #add-playlist-btn {
   float: right;
   margin-right: 10px;
-  margin-top: 5px;
 }
-/* line 246, ../../../app/stylesheets/styles.sass */
+/* line 216, ../../../app/stylesheets/styles-1.1.sass */
 #playlists #add-playlist-btn a {
   color: white;
   background-color: #0969a2;
@@ -741,85 +692,104 @@ h2 {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
 }
-/* line 253, ../../../app/stylesheets/styles.sass */
+/* line 223, ../../../app/stylesheets/styles-1.1.sass */
 #playlists #add-playlist-btn.on a {
   background-color: #0969a2;
 }
 
-/* line 255, ../../../app/stylesheets/styles.sass */
-#add-video {
-  background-color: black;
-  padding: 3px;
-  float: left;
-  -moz-border-radius-topleft: 4px;
-  -webkit-border-top-left-radius: 4px;
-  -moz-border-radius-topright: 4px;
-  -webkit-border-top-right-radius: 4px;
-  -moz-border-radius-bottomleft: 4px;
-  -webkit-border-bottom-left-radius: 4px;
-  -moz-border-radius-bottomright: 4px;
-  -webkit-border-bottom-right-radius: 4px;
+/* line 226, ../../../app/stylesheets/styles-1.1.sass */
+#right {
+  position: absolute;
+  top: 65px;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 30%;
+  background-color: #00b060;
+  border-left: 1px solid #00665e;
 }
-/* line 260, ../../../app/stylesheets/styles.sass */
-#add-video input {
-  height: 16px;
-  width: 560px;
-  margin-right: 10px;
-  font-size: 14px;
-  float: left;
-}
-/* line 267, ../../../app/stylesheets/styles.sass */
-#add-video .add-btn {
-  -moz-border-radius-topleft: 4px;
-  -webkit-border-top-left-radius: 4px;
-  -moz-border-radius-topright: 4px;
-  -webkit-border-top-right-radius: 4px;
-  -moz-border-radius-bottomleft: 4px;
-  -webkit-border-bottom-left-radius: 4px;
-  -moz-border-radius-bottomright: 4px;
-  -webkit-border-bottom-right-radius: 4px;
-  color: white;
-  float: right;
-  margin-top: 2px;
-  margin-right: 10px;
-}
-
-/* line 273, ../../../app/stylesheets/styles.sass */
-#playlist .video-item {
-  width: 614px;
-}
-
-/* line 276, ../../../app/stylesheets/styles.sass */
-#ajax-loader {
-  position: fixed;
-  display: none;
-  margin-left: -50px;
-  width: 120px;
-  height: 20px;
-  background-color: white;
-  padding: 3px 12px;
+/* line 236, ../../../app/stylesheets/styles-1.1.sass */
+#right .wrapper-right {
+  position: absolute;
   top: 0;
-  left: 50%;
-  z-index: 200;
-  -moz-border-radius-topleft: 0;
-  -webkit-border-top-left-radius: 0;
-  -moz-border-radius-topright: 0;
-  -webkit-border-top-right-radius: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+}
+
+/* line 244, ../../../app/stylesheets/styles-1.1.sass */
+#signup {
+  background: none repeat scroll 0 0 black;
+  color: #cccccc;
+  margin: 20px auto 0;
+  padding: 20px 40px;
+  width: 800px;
+  height: 300px;
+}
+/* line 252, ../../../app/stylesheets/styles-1.1.sass */
+#signup h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+/* line 257, ../../../app/stylesheets/styles-1.1.sass */
+#signup .username {
+  float: left;
+  padding: 20px 0;
+}
+/* line 260, ../../../app/stylesheets/styles-1.1.sass */
+#signup .username .plist, #signup .username .input, #signup .username .sign-in-btn {
+  float: left;
+}
+/* line 262, ../../../app/stylesheets/styles-1.1.sass */
+#signup .username .plist {
+  color: white;
+  font-size: 25px;
+}
+/* line 265, ../../../app/stylesheets/styles-1.1.sass */
+#signup .username .input {
+  margin-top: -13px;
+}
+/* line 267, ../../../app/stylesheets/styles-1.1.sass */
+#signup .username .input p {
+  font-size: 12px;
+}
+/* line 269, ../../../app/stylesheets/styles-1.1.sass */
+#signup .username .input input {
+  height: 25px;
+  font-size: 20px;
+  border: 1px solid white;
+  -moz-border-radius-topleft: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -moz-border-radius-topright: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+}
+/* line 274, ../../../app/stylesheets/styles-1.1.sass */
+#signup .username .sign-in-btn {
+  background-color: #ffb800;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin-top: 2px;
+  margin-left: 10px;
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
   -moz-border-radius-bottomleft: 4px;
   -webkit-border-bottom-left-radius: 4px;
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
 }
-/* line 288, ../../../app/stylesheets/styles.sass */
-#ajax-loader .label {
-  font-size: 13px;
-}
-/* line 290, ../../../app/stylesheets/styles.sass */
-#ajax-loader .loader {
-  width: 16px;
-  height: 16px;
-  margin-right: 12px;
-  margin-top: 2px;
-  float: left;
-  background: url(/images/ajax-loader.gif) no-repeat 0 0;
+/* line 282, ../../../app/stylesheets/styles-1.1.sass */
+#signup .username .error p {
+  color: red;
+  clear: left;
+  font-size: 12px;
+  padding-top: 5px;
 }

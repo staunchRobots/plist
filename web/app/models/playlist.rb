@@ -10,8 +10,9 @@ class Playlist
   belongs_to :member
 
   def add_video(o)
-    video= Video.first({:conditions => {:ytdi => o[:ytid]}})
+    video= Video.first({:conditions => {:ytid => o[:ytid]}})
     unless (video)
+      puts "here?"
       yt_feed= RestClient.get("http://gdata.youtube.com/feeds/api/videos/#{o[:ytid]}?v=2&alt=json")
       yt_video= JSON.parse(yt_feed)
       title= yt_video["entry"]["title"]["$t"]
@@ -25,8 +26,8 @@ class Playlist
       end
       video= Video.create({:ytid => o[:ytid], :title=>title, :authors=>authors})
     end
-
     self.videos << video._id
+    self.videos.uniq!
     self.save
   end
 

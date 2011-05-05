@@ -168,7 +168,7 @@ body
       text-decoration: underline
       color: red
     .name
-      width: 200px
+      width: 500px
       white-space: nowrap
       overflow: hidden
     .close
@@ -238,11 +238,11 @@ body
       padding: 0 5px
 #playlists
   ul
-    float: left
     padding: 10px
   #add-playlist-btn
     float: right
     margin-right: 10px
+    margin-top: 5px
     a
       color: white
       background-color: #0969A2
@@ -272,3 +272,25 @@ body
     margin-right: 10px
 #playlist .video-item
   width: 614px
+
+#ajax-loader
+  position: fixed
+  display: none
+  margin-left: -50px
+  width: 120px
+  height: 20px
+  background-color: white
+  padding: 3px 12px
+  top: 0
+  left: 50%
+  z-index: 200
+  +corner-bottom(4px)
+  .label
+    font-size: 13px
+  .loader
+    width: 16px
+    height: 16px
+    margin-right: 12px
+    margin-top: 2px
+    float: left
+    background: url(/images/ajax-loader.gif) no-repeat 0 0

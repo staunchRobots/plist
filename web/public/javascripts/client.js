@@ -89,7 +89,10 @@ function load_video(ytid) {
 	load_player(ytid);
     } else {
 	$(player_el).show();
-	player_el.cueVideoById(ytid);
+	try {
+	    player_el.cueVideoById(ytid);
+	} catch(e) {
+	}
     }
 }
 
@@ -186,6 +189,14 @@ function show_profile_image(uid) {
     $(".top .img").append($img);
 }
 
+function show_ajax_loader() {
+    $("#ajax-loader").show();
+}
+
+function hide_ajax_loader() {
+    $("#ajax-loader").hide();
+}
+
 jQuery(document).ready(function($) {
     current_playlist= $(".playlist-item.on").attr('id');
     
@@ -196,6 +207,13 @@ jQuery(document).ready(function($) {
     
     calculate_playlist_cycle();
     
+    $("#ajax-loader").ajaxStart(function() {
+	$(this).show();
+    });
+    $("#ajax-loader").ajaxStop(function() {
+	$(this).hide();
+    });
+
     // Account box
     $(".account").click(function(e) {
 	if ($(".account .dropdown").length > 0) {

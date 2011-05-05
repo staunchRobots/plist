@@ -18,6 +18,13 @@ class PlaylistController < ApplicationController
     videos= Video.find(playlist_videos)
     @videos= []
 
+    @member= Member.find(session[:member]) if session[:member]
+    if @member
+      if @member.fb_uid == params[:user]
+        @editable= true
+      end
+    end
+
     playlist_videos.each do |pv|
       @videos << videos.detect {|v| pv == v._id }
     end
@@ -36,6 +43,16 @@ class PlaylistController < ApplicationController
 
   def get_videos
     playlist= Playlist.find(params[:playlist])
+    @member= Member.find(session[:member]) if session[:member]
+    if @member
+      if @member == playlist.member
+        @editable= true
+      end
+    end
+    if playlist.member.nil?
+      @editable= true
+    end
+
     @videos= playlist.list_videos
     respond_to do |format|
       format.html { render :partial => "index/playlist" }
