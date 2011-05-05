@@ -198,12 +198,14 @@ jQuery(document).ready(function($) {
     
     // Account box
     $(".account").click(function(e) {
-	$(this).addClass('on');
-	$(".account .dropdown").show();
+	if ($(".account .dropdown").length > 0) {
+	    $(this).addClass('on');
+	    $(".account .dropdown").show();
+	}
 	e.stopPropagation();
     });
     
-    $(".account .member").click(function(e) {
+    $(".account .member, .account .sign-in").click(function(e) {
 	$(this).blur();
 	e.preventDefault();
     });
@@ -214,6 +216,12 @@ jQuery(document).ready(function($) {
 		session= {};
 		window.location='/';
 	    });
+	});
+    });
+
+    $(".account .sign-in").click(function(e) {
+	FB.login(function(response) {
+	    // everything is done in event 'auth.login'
 	});
     });
 
@@ -300,7 +308,7 @@ jQuery(document).ready(function($) {
 	    current_playlist= $item.attr("id");
 	    $("#playlists li.on").removeClass('on');
 	    $item.addClass('on');
-	    $(".top .plist-title").text($(this).find(".title").text());
+	    $(".header .plist-title").text($(this).find(".title").text());
 	    load_playlist($item.attr("id"));
 	    e.preventDefault();
 	}

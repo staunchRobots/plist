@@ -10,11 +10,12 @@
         - if @member
           %a.member{:href=>"#"} You
           .img{:style=>"width:20px;height:20px;background-color:white;float:right;"}
-        - else
-          %fb:login-button.fb-login{:autologoutlink=>"true", :perms => "email, user_location, user_birthday"}
-        .dropdown{:style=>"display:none;"}
-          - if @member
+          .dropdown{:style=>"display:none;"}
             %a.logout{:href=>"#"} Logout
+        - else
+          %a.sign-in{:href=>"#"} Sign In
+          //%fb:login-button.fb-login{:autologoutlink=>"true", :perms => "email, user_location, user_birthday"}
+
   #content
     .wrapper-content
       .main

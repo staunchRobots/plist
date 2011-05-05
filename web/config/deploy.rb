@@ -13,7 +13,7 @@ role :db, domain, :primary => true # This is where Rails migrations will run
 
 # set :deploy_via, :remote_cache  # If you have public like github.com then use :remote_cache
 set :scm, 'git'
-set :branch, 'master'
+set :branch, 'dev-1.2'
 set :scm_verbose, true
 set :scm_username, "git"
 set :deploy_via, "checkout"
