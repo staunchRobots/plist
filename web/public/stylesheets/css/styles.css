@@ -836,3 +836,10 @@ h2 {
   float: left;
   background: url(/images/ajax-loader.gif) no-repeat 0 0;
 }
+
+/* line 307, ../../../app/stylesheets/styles.sass */
+.share {
+  float: right;
+  margin-left: 20px;
+  margin-top: 40px;
+}
