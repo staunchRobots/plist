@@ -30,7 +30,6 @@ var playing_index= 0;
 
 function play_next() {
     var ytplayer = document.getElementById("player-e");
-    console.log("next:"+playlist_cycle);
     ytplayer.loadVideoById(playlist_cycle[++playing_index]);
     if(playing_index == playlist_cycle.length) playing_index=0;
 }
@@ -197,6 +196,11 @@ function hide_ajax_loader() {
     $("#ajax-loader").hide();
 }
 
+function hide_account_dropdown() {
+    $(".account .dropdown").hide();
+    $(".account").removeClass("on");
+}
+
 jQuery(document).ready(function($) {
     current_playlist= $(".playlist-item.on").attr('id');
     
@@ -216,6 +220,11 @@ jQuery(document).ready(function($) {
 
     // Account box
     $(".account").click(function(e) {
+	if ($(this).hasClass("on") && $(e.target).closest(".dropdown").length==0) {
+	    hide_account_dropdown();
+	    return false;
+	}
+
 	if ($(".account .dropdown").length > 0) {
 	    $(this).addClass('on');
 	    $(".account .dropdown").show();
@@ -226,7 +235,7 @@ jQuery(document).ready(function($) {
 		});
 	    }
 	}
-	e.stopPropagation();
+	// e.stopPropagation();
     });
     
     $(".account .member, .account .sign-in").click(function(e) {
@@ -244,7 +253,9 @@ jQuery(document).ready(function($) {
     });
 
     $(window).click(function(e) {
-	console.log(e);
+	if (!($(e.target).hasClass("dropdown")) && $(e.target).closest(".account").length == 0) {
+	    hide_account_dropdown();
+	}
     });
 
     // Make playlists sortable
@@ -376,7 +387,6 @@ jQuery(document).ready(function($) {
 	FB.getLoginStatus(function(response) {
 	    if (response.session) {
 		// logged in and connected user, someone you know
-		// console.log(response.session);
 		$.post('/login', {session:response.session}, function(data) {
 		    if (data == "ok") {
 			session= response.session;
@@ -386,7 +396,6 @@ jQuery(document).ready(function($) {
 		});
 	    } else {
 		// no user session available, someone you dont know
-		// console.log("not logged in");
 		// load_playlists();
 	    }
 	});
