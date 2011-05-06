@@ -258,6 +258,30 @@ jQuery(document).ready(function($) {
 	}
     });
 
+    // Add video input field
+    var default_video_input_text= "Enter a URL of a youtube video to add it to your playlist";
+    $("#add-video input")
+	.addClass("empty")
+	.val(default_video_input_text)
+	.focus(function() {$(this).val("");$(this).removeClass("empty")})
+	.bind("change blur", function() {
+	    var val= $.trim($(this).val());
+	    if (val) {
+		$(this).removeClass("empty");	
+	    } else {
+		$(this).addClass("empty");
+		$(this).val(default_video_input_text);
+	    }
+	})
+	.keyup(function(e) {
+	    if (e.keyCode == 13) {
+		$(this).blur();
+		$("#add-video .add-btn").click();
+	    }
+	});
+
+
+
     // Make playlists sortable
     $("#playlists ul").sortable({containment:'parent',
 				 update: function(e, ui) {

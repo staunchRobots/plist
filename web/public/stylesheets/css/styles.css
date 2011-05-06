@@ -782,6 +782,11 @@ h2 {
   float: left;
 }
 /* line 276, ../../../app/stylesheets/styles.sass */
+#add-video input.empty {
+  font-style: italic;
+  color: #cccccc;
+}
+/* line 279, ../../../app/stylesheets/styles.sass */
 #add-video .add-btn {
   -moz-border-radius-topleft: 4px;
   -webkit-border-top-left-radius: 4px;
@@ -797,12 +802,12 @@ h2 {
   margin-right: 10px;
 }
 
-/* line 282, ../../../app/stylesheets/styles.sass */
+/* line 285, ../../../app/stylesheets/styles.sass */
 #playlist .video-item {
   width: 614px;
 }
 
-/* line 285, ../../../app/stylesheets/styles.sass */
+/* line 288, ../../../app/stylesheets/styles.sass */
 #ajax-loader {
   position: fixed;
   display: none;
@@ -823,11 +828,11 @@ h2 {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
 }
-/* line 297, ../../../app/stylesheets/styles.sass */
+/* line 300, ../../../app/stylesheets/styles.sass */
 #ajax-loader .label {
   font-size: 13px;
 }
-/* line 299, ../../../app/stylesheets/styles.sass */
+/* line 302, ../../../app/stylesheets/styles.sass */
 #ajax-loader .loader {
   width: 16px;
   height: 16px;
@@ -837,13 +842,13 @@ h2 {
   background: url(/images/ajax-loader.gif) no-repeat 0 0;
 }
 
-/* line 307, ../../../app/stylesheets/styles.sass */
+/* line 310, ../../../app/stylesheets/styles.sass */
 .share {
   float: right;
   margin-left: 20px;
   margin-top: 40px;
 }
-/* line 311, ../../../app/stylesheets/styles.sass */
+/* line 314, ../../../app/stylesheets/styles.sass */
 .share .fb-like, .share .twitter {
   float: left;
 }
