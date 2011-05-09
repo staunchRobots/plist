@@ -25,17 +25,23 @@
         .wrapper-main
           .header
             - if @playlist_member
-              .thumb
+              .member-thumb
                 %img{:src=>"http://graph.facebook.com/#{@playlist_member.fb_uid}/picture"}
             .info
               %h1.plist-title #{@playlist.title}
               - if @playlist_member
+                .manage
+                  %a.show{:href=>"#"} show
+                  %a.edit{:href=>"#"} edit
+                  %a.add{:href=>"#"} add
                 %p.by
                   %span.label by
                   %span
                     %a{:href=>"/#{@playlist_member.username}"} #{@playlist_member.fb_name}
                 %p.created-at
                   %span.value #{@playlist_member.created_at.to_date.to_s(:long)}
+              #playlists{:style=>"display:none;"}
+                = render "playlists/list"
             - if @playlist_member
               .share{:style=>"float:right;"}
                 .fb-like
@@ -45,7 +51,7 @@
                   %script{:type=>"text/javascript", :src=>"http://platform.twitter.com/widgets.js"}
           #player{:playlist => "#{@playlist._id}"}
             .wrapper-player
-              .ytplayer{:style=>"background-color:black;width:640px;height:390px;float:left;margin-bottom:10px;"}
+              .ytplayer{:style=>"background-color:black;width:940px;height:510px;float:left;margin-bottom:10px;"}
                 #ytapiplayer
                   %p{:style=>"display:none;"} You need Flash player 8+ and JavaScript enabled to view this video.
               - if @editable
@@ -54,13 +60,6 @@
                   %a.add-btn{:href=>"#"} Add
               #playlist
                 = render "index/playlist"
-      #left
-        .wrapper-left    
-          #playlists
-            = render "playlists/list"
-            - if @editable
-              #add-playlist-btn
-                %a{:href=>"#"} New
 #fb-root
 #ajax-loader{:style=>""}
   %p

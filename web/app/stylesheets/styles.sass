@@ -12,6 +12,9 @@ body
 
 #root
 
+#player-e
+  margin-left: 40px
+
 //
 // * * * top * * *
 //
@@ -115,8 +118,8 @@ body
     float: left
     // background-color: #F1F1F2
   .main
-    float: right
-    width: 704px
+    // float: right
+    // width: 704px
     // background: #F5F5F5	
   .wrapper-main
     padding: 0 30px
@@ -127,24 +130,44 @@ body
       font-family: "league-gothic-1","league-gothic-2",sans-serif
       font-size: 25px
       font-weight: 900
-    .thumb, .info
+      float: left
+    .member-thumb, .info
       float: left
     .info
       margin-left: 10px
       font-size: 13px
       color: #666
+      position: relative
+      width: 500px
     .by
       float: left
+      clear: left
       a
         color: #5151E8
         font-weight: 900
         text-decoration: none
+    .manage
+      float: left
+      a
+        border-right: 1px solid #AAA
+        margin-left: 10px
+        padding-right: 10px
+        font-size: 12px
+        &.add
+          border: 0
+        &.show.on
+          border: 0
+          padding: 5px 10px
+          color: white
+          background: #666
+          +corner-top(4px)
+          float: left
     .created-at
       float: left
       margin-left: 5px
       padding-left: 5px
       border-left: 1px solid #666
-    .thumb
+    .member-thumb
       width: 50px
       height: 50px
       border: 1px solid #AAA
@@ -206,7 +229,7 @@ body
     color: #00665E
     font-size: 14px
 
-  a.info
+  a.pl-info
     float: left
     width: 100%
   .delete
@@ -246,8 +269,17 @@ body
       float: left
       padding: 0 5px
 #playlists
+  position: absolute
+  top: 25px
+  left: 0px
+  width: 410px
+  background-color: white
+  border: 2px solid
+  padding: 5px 5px 0 10px
+  +corner(4px)
   ul
-    padding: 10px
+    width: 400px
+    // padding: 10px
   #add-playlist-btn
     float: right
     margin-right: 10px

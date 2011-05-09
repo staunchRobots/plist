@@ -15,6 +15,12 @@ class MemberController < ApplicationController
 
     if @playlist_member
       @playlists= @playlist_member.playlists
+
+      puts @playlists.inspect
+      if @playlists.count == 0
+        @playlist_member.playlists << Playlist.create({:title=>"My First Playlist", :videos=>[]})
+      end
+
       @playlist= @playlists.first
       @videos= @playlist.list_videos
       @on= @playlists.first

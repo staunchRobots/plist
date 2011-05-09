@@ -176,7 +176,7 @@ function load_player(ytid) {
     var atts = { id: "player-e" };
     if (!player_el) {
 	swfobject.embedSWF("http://www.youtube.com/e/"+ytid+"?enablejsapi=1&playerapiid=ytplayer",
-			   "ytapiplayer", "640", "390", "8", null, null, params, atts, function(e) {
+			   "ytapiplayer", "855", "510", "8", null, null, params, atts, function(e) {
 			       player_el= $("#player-e").get(0);
 			   });
     }
@@ -200,6 +200,35 @@ function hide_account_dropdown() {
     $(".account .dropdown").hide();
     $(".account").removeClass("on");
 }
+
+$.widget("ui.playlists_manager", {
+    _init: function() {
+	var $el= this.element;
+	var self= this;
+	$el.find(".show").click(function(e) {
+	    e.stopPropagation();
+	    $(this).blur();
+	    self._show_playlists();
+	    e.preventDefault();
+	});
+
+	$(window).click(function(e) {
+	    if ($(e.target).closest("#playlists").length == 0) {
+		self._hide_playlists();
+	    }
+	});
+    },
+    _show_playlists: function() {
+	var $el= this.element;
+	$el.find('.show').addClass("on");
+	$el.find("#playlists").slideDown();
+    },
+    _hide_playlists: function() {
+	var $el= this.element;
+	$el.find("#playlists").hide();
+	$el.find(".show").removeClass("on");
+    }
+});
 
 jQuery(document).ready(function($) {
     current_playlist= $(".playlist-item.on").attr('id');
@@ -283,6 +312,7 @@ jQuery(document).ready(function($) {
 
 
     // Make playlists sortable
+    $(".info").playlists_manager();
     $("#playlists ul").sortable({containment:'parent',
 				 update: function(e, ui) {
 				 }

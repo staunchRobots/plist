@@ -10,7 +10,7 @@
     - class_on= @on == pl ? 'on' : nil
     %li.playlist-item{:id=>"#{pl._id}", :class => "#{class_on}"}
       - playlist_url= @playlist_member ? "/#{@playlist_member.username}/#{pl.id}" : "#"
-      %a.info{:href=>"#{playlist_url}"} 
+      %a.pl-info{:href=>"#{playlist_url}"} 
         - if pl.thumb
           %img.thumb{:src=>"#{pl.thumb}", :width=>"60", :height=>"45"}
         - else
