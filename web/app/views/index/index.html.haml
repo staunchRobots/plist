@@ -24,16 +24,18 @@
       .main
         .wrapper-main
           .header
-            - if @playlist_member
+            -if @playlist_member
               .member-thumb
                 %img{:src=>"http://graph.facebook.com/#{@playlist_member.fb_uid}/picture"}
             .info
               %h1.plist-title #{@playlist.title}
-              - if @playlist_member
+              -if @editable
                 .manage
-                  %a.show{:href=>"#"} show
+                  -if @playlists.count > 1
+                    %a.show{:href=>"#"} more
                   %a.edit{:href=>"#"} edit
                   %a.add{:href=>"#"} add
+              -if @playlist_member
                 %p.by
                   %span.label by
                   %span
@@ -41,8 +43,8 @@
                 %p.created-at
                   %span.value #{@playlist_member.created_at.to_date.to_s(:long)}
               #playlists{:style=>"display:none;"}
-                = render "playlists/list"
-            - if @playlist_member
+                =render "playlists/list"
+            -if @playlist_member
               .share{:style=>"float:right;"}
                 .fb-like
                   %fb:like{:layout=>'button_count', :colorscheme=>'light', :show_faces=>'false', :send=>'true'}
@@ -54,12 +56,12 @@
               .ytplayer{:style=>"background-color:black;width:940px;height:510px;float:left;margin-bottom:10px;"}
                 #ytapiplayer
                   %p{:style=>"display:none;"} You need Flash player 8+ and JavaScript enabled to view this video.
-              - if @editable
+              -if @editable
                 #add-video
                   %input{:type=>"text", :width=>"400", :height=>"30px"}
                   %a.add-btn{:href=>"#"} Add
               #playlist
-                = render "index/playlist"
+                =render "index/playlist"
 #fb-root
 #ajax-loader{:style=>""}
   %p
@@ -67,7 +69,7 @@
     %span.label Updating ...
 
 =content_for(:facebook_meta) do
-  - if @playlist_member
+  -if @playlist_member
     %meta{:property=>"og:title", :content=>"#{@playlist.title}"}
     %meta{:property=>"og:type", :content=>"album"}
     %meta{:property=>"og:image", :content=>"#{@playlist.thumb}"}
