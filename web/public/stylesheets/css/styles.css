@@ -357,12 +357,14 @@ h2 {
   color: blue;
 }
 
-/* line 15, ../../../app/stylesheets/styles.sass */
+/* line 13, ../../../app/stylesheets/styles.sass */
 #player-e {
   margin-left: 40px;
+  position: absolute;
+  z-index: 0;
 }
 
-/* line 21, ../../../app/stylesheets/styles.sass */
+/* line 20, ../../../app/stylesheets/styles.sass */
 .top {
   background-color: black;
   height: 40px;
@@ -371,19 +373,19 @@ h2 {
   z-index: 100;
 }
 
-/* line 28, ../../../app/stylesheets/styles.sass */
+/* line 27, ../../../app/stylesheets/styles.sass */
 .wrapper-top {
   width: 998px;
   margin: 0 auto;
 }
 
-/* line 32, ../../../app/stylesheets/styles.sass */
+/* line 31, ../../../app/stylesheets/styles.sass */
 .search {
   float: right;
   margin-right: 5px;
   margin-top: 10px;
 }
-/* line 36, ../../../app/stylesheets/styles.sass */
+/* line 35, ../../../app/stylesheets/styles.sass */
 .search input {
   border: 0;
   height: 21px;
@@ -400,7 +402,7 @@ h2 {
   color: #aaaaaa;
   float: left;
 }
-/* line 44, ../../../app/stylesheets/styles.sass */
+/* line 43, ../../../app/stylesheets/styles.sass */
 .search a {
   color: white;
   background-color: #aaaaaa;
@@ -420,7 +422,7 @@ h2 {
   margin-left: 5px;
 }
 
-/* line 54, ../../../app/stylesheets/styles.sass */
+/* line 53, ../../../app/stylesheets/styles.sass */
 .account {
   padding: 5px;
   float: right;
@@ -436,22 +438,22 @@ h2 {
   -webkit-border-bottom-right-radius: 6px;
   position: relative;
 }
-/* line 61, ../../../app/stylesheets/styles.sass */
+/* line 60, ../../../app/stylesheets/styles.sass */
 .account:hover, .account.on {
   background-color: #666666;
 }
-/* line 63, ../../../app/stylesheets/styles.sass */
+/* line 62, ../../../app/stylesheets/styles.sass */
 .account .member, .account .sign-in {
   color: #aaaaaa;
   font-size: 13px;
   text-decoration: none;
   margin-top: 2px;
 }
-/* line 68, ../../../app/stylesheets/styles.sass */
+/* line 67, ../../../app/stylesheets/styles.sass */
 .account .member .label, .account .sign-in .label {
   float: left;
 }
-/* line 70, ../../../app/stylesheets/styles.sass */
+/* line 69, ../../../app/stylesheets/styles.sass */
 .account .member .icon, .account .sign-in .icon {
   width: 9px;
   height: 4px;
@@ -460,19 +462,19 @@ h2 {
   margin-top: 7px;
   float: right;
 }
-/* line 77, ../../../app/stylesheets/styles.sass */
+/* line 76, ../../../app/stylesheets/styles.sass */
 .account .member:hover, .account .sign-in:hover {
   text-decoration: underline;
 }
-/* line 79, ../../../app/stylesheets/styles.sass */
+/* line 78, ../../../app/stylesheets/styles.sass */
 .account .fb-login, .account .img, .account .member {
   float: right;
 }
-/* line 81, ../../../app/stylesheets/styles.sass */
+/* line 80, ../../../app/stylesheets/styles.sass */
 .account .img {
   margin-right: 5px;
 }
-/* line 83, ../../../app/stylesheets/styles.sass */
+/* line 82, ../../../app/stylesheets/styles.sass */
 .account .dropdown {
   background-color: black;
   height: 40px;
@@ -489,7 +491,7 @@ h2 {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
 }
-/* line 91, ../../../app/stylesheets/styles.sass */
+/* line 90, ../../../app/stylesheets/styles.sass */
 .account .dropdown a {
   color: #aaaaaa;
   font-size: 13px;
@@ -499,50 +501,51 @@ h2 {
   text-decoration: none;
 }
 
-/* line 98, ../../../app/stylesheets/styles.sass */
+/* line 97, ../../../app/stylesheets/styles.sass */
 #logo {
   color: white;
   float: left;
 }
 
-/* line 105, ../../../app/stylesheets/styles.sass */
+/* line 104, ../../../app/stylesheets/styles.sass */
 #left {
   width: 284px;
   margin-right: 10px;
   float: left;
 }
 
-/* line 113, ../../../app/stylesheets/styles.sass */
+/* line 112, ../../../app/stylesheets/styles.sass */
 #content {
   width: 998px;
   margin: 0 auto;
   padding-top: 50px;
 }
-/* line 117, ../../../app/stylesheets/styles.sass */
+/* line 116, ../../../app/stylesheets/styles.sass */
 #content .wrapper-content {
   float: left;
+  margin-bottom: 50px;
 }
-/* line 124, ../../../app/stylesheets/styles.sass */
+/* line 119, ../../../app/stylesheets/styles.sass */
 #content .wrapper-main {
   padding: 0 30px;
 }
-/* line 126, ../../../app/stylesheets/styles.sass */
+/* line 121, ../../../app/stylesheets/styles.sass */
 #content .header {
   float: left;
   padding: 10px 0;
 }
-/* line 129, ../../../app/stylesheets/styles.sass */
+/* line 124, ../../../app/stylesheets/styles.sass */
 #content .header h1 {
   font-family: "league-gothic-1", "league-gothic-2", sans-serif;
   font-size: 25px;
   font-weight: 900;
   float: left;
 }
-/* line 134, ../../../app/stylesheets/styles.sass */
+/* line 129, ../../../app/stylesheets/styles.sass */
 #content .header .member-thumb, #content .header .info {
   float: left;
 }
-/* line 136, ../../../app/stylesheets/styles.sass */
+/* line 131, ../../../app/stylesheets/styles.sass */
 #content .header .info {
   margin-left: 10px;
   font-size: 13px;
@@ -550,33 +553,33 @@ h2 {
   position: relative;
   width: 500px;
 }
-/* line 142, ../../../app/stylesheets/styles.sass */
+/* line 137, ../../../app/stylesheets/styles.sass */
 #content .header .by {
   float: left;
   clear: left;
 }
-/* line 145, ../../../app/stylesheets/styles.sass */
+/* line 140, ../../../app/stylesheets/styles.sass */
 #content .header .by a {
   color: #5151e8;
   font-weight: 900;
   text-decoration: none;
 }
-/* line 149, ../../../app/stylesheets/styles.sass */
+/* line 144, ../../../app/stylesheets/styles.sass */
 #content .header .manage {
   float: left;
 }
-/* line 151, ../../../app/stylesheets/styles.sass */
+/* line 146, ../../../app/stylesheets/styles.sass */
 #content .header .manage a {
   border-right: 1px solid #aaaaaa;
   margin-left: 10px;
   padding-right: 10px;
   font-size: 12px;
 }
-/* line 156, ../../../app/stylesheets/styles.sass */
+/* line 151, ../../../app/stylesheets/styles.sass */
 #content .header .manage a.add {
   border: 0;
 }
-/* line 158, ../../../app/stylesheets/styles.sass */
+/* line 153, ../../../app/stylesheets/styles.sass */
 #content .header .manage a.show.on {
   border: 0;
   padding: 5px 10px;
@@ -592,14 +595,14 @@ h2 {
   -webkit-border-bottom-right-radius: 0;
   float: left;
 }
-/* line 165, ../../../app/stylesheets/styles.sass */
+/* line 160, ../../../app/stylesheets/styles.sass */
 #content .header .created-at {
   float: left;
   margin-left: 5px;
   padding-left: 5px;
   border-left: 1px solid #666666;
 }
-/* line 170, ../../../app/stylesheets/styles.sass */
+/* line 165, ../../../app/stylesheets/styles.sass */
 #content .header .member-thumb {
   width: 50px;
   height: 50px;
@@ -608,19 +611,39 @@ h2 {
   background: white;
 }
 
-/* line 177, ../../../app/stylesheets/styles.sass */
+/* line 172, ../../../app/stylesheets/styles.sass */
+#playlist a.more-videos {
+  padding: 5px 10px;
+  background-color: #666666;
+  color: white;
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  float: left;
+  margin-left: 450px;
+}
+/* line 179, ../../../app/stylesheets/styles.sass */
 #playlist ul {
   float: left;
   width: 100%;
-  padding-bottom: 120px;
 }
-/* line 181, ../../../app/stylesheets/styles.sass */
+/* line 183, ../../../app/stylesheets/styles.sass */
 #playlist li {
   float: left;
   width: 100%;
-  margin: 5px;
+  margin: 5px 0;
 }
-/* line 186, ../../../app/stylesheets/styles.sass */
+/* line 185, ../../../app/stylesheets/styles.sass */
+#playlist li.playing a, #playlist li.playing a:hover {
+  border-color: red;
+  background-color: #ffc7c7;
+}
+/* line 192, ../../../app/stylesheets/styles.sass */
 #playlist li a {
   background-color: white;
   float: left;
@@ -635,42 +658,46 @@ h2 {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
 }
-/* line 194, ../../../app/stylesheets/styles.sass */
+/* line 193, ../../../app/stylesheets/styles.sass */
+#playlist li a:hover {
+  background-color: #f1f2f2;
+}
+/* line 200, ../../../app/stylesheets/styles.sass */
 #playlist li .thumb, #playlist li .name {
   float: left;
 }
-/* line 196, ../../../app/stylesheets/styles.sass */
+/* line 202, ../../../app/stylesheets/styles.sass */
 #playlist li .name, #playlist li .close {
-  margin-top: 20px;
+  margin-top: 16px;
   font-size: 12px;
 }
-/* line 199, ../../../app/stylesheets/styles.sass */
+/* line 205, ../../../app/stylesheets/styles.sass */
 #playlist li .close:hover {
   text-decoration: underline;
   color: red;
 }
-/* line 202, ../../../app/stylesheets/styles.sass */
+/* line 208, ../../../app/stylesheets/styles.sass */
 #playlist li .name {
   white-space: nowrap;
   overflow: hidden;
 }
-/* line 205, ../../../app/stylesheets/styles.sass */
+/* line 211, ../../../app/stylesheets/styles.sass */
 #playlist li .close {
   float: right;
   margin-right: 10px;
 }
-/* line 208, ../../../app/stylesheets/styles.sass */
+/* line 214, ../../../app/stylesheets/styles.sass */
 #playlist li .thumb {
   margin-right: 10px;
   width: 60px;
   height: 45px;
 }
-/* line 213, ../../../app/stylesheets/styles.sass */
+/* line 219, ../../../app/stylesheets/styles.sass */
 #playlist li .thumb img {
   border: 0;
 }
 
-/* line 216, ../../../app/stylesheets/styles.sass */
+/* line 222, ../../../app/stylesheets/styles.sass */
 .playlist-item {
   float: left;
   width: 100%;
@@ -687,54 +714,54 @@ h2 {
   -moz-border-radius-bottomright: 5px;
   -webkit-border-bottom-right-radius: 5px;
 }
-/* line 224, ../../../app/stylesheets/styles.sass */
+/* line 230, ../../../app/stylesheets/styles.sass */
 .playlist-item .title, .playlist-item .thumb {
   float: left;
 }
-/* line 226, ../../../app/stylesheets/styles.sass */
+/* line 232, ../../../app/stylesheets/styles.sass */
 .playlist-item .title {
   margin-left: 5px;
   color: #00665e;
   font-size: 14px;
 }
-/* line 231, ../../../app/stylesheets/styles.sass */
+/* line 237, ../../../app/stylesheets/styles.sass */
 .playlist-item a.pl-info {
   float: left;
   width: 100%;
 }
-/* line 234, ../../../app/stylesheets/styles.sass */
+/* line 240, ../../../app/stylesheets/styles.sass */
 .playlist-item .delete {
   float: right;
   margin-top: 13px;
   font-size: 11px;
   margin-right: 5px;
 }
-/* line 239, ../../../app/stylesheets/styles.sass */
+/* line 245, ../../../app/stylesheets/styles.sass */
 .playlist-item .delete:hover {
   color: red;
   font-weight: 900;
 }
-/* line 242, ../../../app/stylesheets/styles.sass */
+/* line 248, ../../../app/stylesheets/styles.sass */
 .playlist-item.on, .playlist-item:hover {
   background-color: #61d8a2;
 }
-/* line 244, ../../../app/stylesheets/styles.sass */
+/* line 250, ../../../app/stylesheets/styles.sass */
 .playlist-item.on a, .playlist-item.on span, .playlist-item:hover a, .playlist-item:hover span {
   color: white;
 }
-/* line 246, ../../../app/stylesheets/styles.sass */
+/* line 252, ../../../app/stylesheets/styles.sass */
 .playlist-item.on {
   background-color: #ffb800;
   border-color: #ff6f00;
 }
-/* line 250, ../../../app/stylesheets/styles.sass */
+/* line 256, ../../../app/stylesheets/styles.sass */
 .playlist-item.new {
   background-color: white;
   position: relative;
   border: 2px solid #0969a2;
   margin-left: -1px;
 }
-/* line 255, ../../../app/stylesheets/styles.sass */
+/* line 261, ../../../app/stylesheets/styles.sass */
 .playlist-item.new input {
   border: 1px solid #0969a2;
   -moz-border-radius-topleft: 2px;
@@ -748,13 +775,13 @@ h2 {
   margin-left: 10px;
   width: 145px;
 }
-/* line 260, ../../../app/stylesheets/styles.sass */
+/* line 266, ../../../app/stylesheets/styles.sass */
 .playlist-item.new .edit {
   position: absolute;
   bottom: 10px;
   right: 15px;
 }
-/* line 264, ../../../app/stylesheets/styles.sass */
+/* line 270, ../../../app/stylesheets/styles.sass */
 .playlist-item.new .ok, .playlist-item.new .cancel {
   color: #0969a2;
   text-decoration: underline;
@@ -763,9 +790,10 @@ h2 {
   padding: 0 5px;
 }
 
-/* line 270, ../../../app/stylesheets/styles.sass */
+/* line 276, ../../../app/stylesheets/styles.sass */
 #playlists {
   position: absolute;
+  z-index: 1;
   top: 25px;
   left: 0px;
   width: 410px;
@@ -781,17 +809,17 @@ h2 {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
 }
-/* line 279, ../../../app/stylesheets/styles.sass */
+/* line 286, ../../../app/stylesheets/styles.sass */
 #playlists ul {
   width: 400px;
 }
-/* line 282, ../../../app/stylesheets/styles.sass */
+/* line 289, ../../../app/stylesheets/styles.sass */
 #playlists #add-playlist-btn {
   float: right;
   margin-right: 10px;
   margin-top: 5px;
 }
-/* line 286, ../../../app/stylesheets/styles.sass */
+/* line 293, ../../../app/stylesheets/styles.sass */
 #playlists #add-playlist-btn a {
   color: white;
   background-color: #0969a2;
@@ -806,12 +834,12 @@ h2 {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
 }
-/* line 293, ../../../app/stylesheets/styles.sass */
+/* line 300, ../../../app/stylesheets/styles.sass */
 #playlists #add-playlist-btn.on a {
   background-color: #0969a2;
 }
 
-/* line 295, ../../../app/stylesheets/styles.sass */
+/* line 302, ../../../app/stylesheets/styles.sass */
 #add-video {
   background-color: black;
   padding: 3px;
@@ -825,7 +853,7 @@ h2 {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
 }
-/* line 300, ../../../app/stylesheets/styles.sass */
+/* line 307, ../../../app/stylesheets/styles.sass */
 #add-video input {
   height: 16px;
   width: 560px;
@@ -833,12 +861,12 @@ h2 {
   font-size: 14px;
   float: left;
 }
-/* line 307, ../../../app/stylesheets/styles.sass */
+/* line 314, ../../../app/stylesheets/styles.sass */
 #add-video input.empty {
   font-style: italic;
   color: #cccccc;
 }
-/* line 310, ../../../app/stylesheets/styles.sass */
+/* line 317, ../../../app/stylesheets/styles.sass */
 #add-video .add-btn {
   -moz-border-radius-topleft: 4px;
   -webkit-border-top-left-radius: 4px;
@@ -854,7 +882,7 @@ h2 {
   margin-right: 10px;
 }
 
-/* line 317, ../../../app/stylesheets/styles.sass */
+/* line 324, ../../../app/stylesheets/styles.sass */
 #ajax-loader {
   position: fixed;
   display: none;
@@ -875,11 +903,11 @@ h2 {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
 }
-/* line 329, ../../../app/stylesheets/styles.sass */
+/* line 336, ../../../app/stylesheets/styles.sass */
 #ajax-loader .label {
   font-size: 13px;
 }
-/* line 331, ../../../app/stylesheets/styles.sass */
+/* line 338, ../../../app/stylesheets/styles.sass */
 #ajax-loader .loader {
   width: 16px;
   height: 16px;
@@ -889,13 +917,19 @@ h2 {
   background: url(/images/ajax-loader.gif) no-repeat 0 0;
 }
 
-/* line 339, ../../../app/stylesheets/styles.sass */
+/* line 346, ../../../app/stylesheets/styles.sass */
 .share {
   float: right;
   margin-left: 20px;
   margin-top: 40px;
 }
-/* line 343, ../../../app/stylesheets/styles.sass */
+/* line 350, ../../../app/stylesheets/styles.sass */
 .share .fb-like, .share .twitter {
   float: left;
+}
+
+/* line 353, ../../../app/stylesheets/styles.sass */
+#comments {
+  float: left;
+  margin-top: 20px;
 }

@@ -10,11 +10,10 @@ $blueprint-grid-columns: 25
 
 body
 
-#root
-
 #player-e
   margin-left: 40px
-
+  position: absolute
+  z-index: 0
 //
 // * * * top * * *
 //
@@ -116,11 +115,7 @@ body
   padding-top: 50px
   .wrapper-content
     float: left
-    // background-color: #F1F1F2
-  .main
-    // float: right
-    // width: 704px
-    // background: #F5F5F5	
+    margin-bottom: 50px
   .wrapper-main
     padding: 0 30px
   .header
@@ -174,27 +169,38 @@ body
       padding: 5px
       background: white
 #playlist
+  a.more-videos
+    padding: 5px 10px
+    background-color: #666
+    color: white
+    +corner(4px)
+    float: left
+    margin-left: 450px
   ul
     float: left
     width: 100%
-    padding-bottom: 120px
+    // padding-bottom: 120px
   li
-    // clear: both
+    &.playing
+      a, a:hover
+        border-color: red
+        background-color: #FFC7C7
+
     float: left
     width: 100%
-    margin: 5px
+    margin: 5px 0
     a
-      // background-color: #F1F1F2
+      &:hover
+        background-color: #F1F2F2
       background-color: white
       float: left
       width: 100%
-      // margin-top: 10px
       border: 1px solid #AAA
       +corner(4px)
     .thumb, .name
       float: left
     .name, .close
-      margin-top: 20px
+      margin-top: 16px
       font-size: 12px
     .close:hover
       text-decoration: underline
@@ -269,6 +275,7 @@ body
       padding: 0 5px
 #playlists
   position: absolute
+  z-index: 1
   top: 25px
   left: 0px
   width: 410px
@@ -342,3 +349,7 @@ body
   margin-top: 40px
   .fb-like, .twitter
     float: left
+
+#comments
+  float: left
+  margin-top: 20px

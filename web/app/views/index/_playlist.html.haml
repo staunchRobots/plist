@@ -1,7 +1,7 @@
 %ul
-  - i=0
-  - @videos.each do |video|
-    - thumb= "http://img.youtube.com/vi/#{video.ytid}/2.jpg"
+  -i=0
+  -@videos.each do |video|
+    -thumb= "http://img.youtube.com/vi/#{video.ytid}/2.jpg"
     %li.video-item{:id=>"#{video.id}", :ytid=>"#{video.ytid}", :pos => "#{i}"}
       %a{:href=>"#"}
         .thumb
@@ -9,4 +9,7 @@
         %p.name #{video.title}
         - if @editable
           %p.close X
-    - i=i+1
+    -i=i+1
+-if @videos.count > 3
+  %a.more-videos{:href=>"#"} More
+ 
