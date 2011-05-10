@@ -2,7 +2,8 @@
   .top
     .wrapper-top
       #logo
-        %h1 pList.tv
+        %h1
+          %a{:href=>"/"} pList.tv
       .search
         %input{:type=>"text", :value=>"Search"}
         %a.search-btn{:href=>"#"} Go
@@ -35,6 +36,10 @@
                     %a.show{:href=>"#"} more
                   %a.edit{:href=>"#"} edit
                   %a.add{:href=>"#"} add
+              -else
+                -if @playlists.count > 1
+                  .manage
+                    %a.show{:href=>"#"} more
               -if @playlist_member
                 %p.by
                   %span.label by

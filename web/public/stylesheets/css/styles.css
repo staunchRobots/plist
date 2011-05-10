@@ -617,7 +617,7 @@ h2 {
 /* line 181, ../../../app/stylesheets/styles.sass */
 #playlist li {
   float: left;
-  width: 320px;
+  width: 100%;
   margin: 5px;
 }
 /* line 186, ../../../app/stylesheets/styles.sass */
@@ -651,27 +651,26 @@ h2 {
 }
 /* line 202, ../../../app/stylesheets/styles.sass */
 #playlist li .name {
-  width: 500px;
   white-space: nowrap;
   overflow: hidden;
 }
-/* line 206, ../../../app/stylesheets/styles.sass */
+/* line 205, ../../../app/stylesheets/styles.sass */
 #playlist li .close {
   float: right;
   margin-right: 10px;
 }
-/* line 209, ../../../app/stylesheets/styles.sass */
+/* line 208, ../../../app/stylesheets/styles.sass */
 #playlist li .thumb {
   margin-right: 10px;
   width: 60px;
   height: 45px;
 }
-/* line 214, ../../../app/stylesheets/styles.sass */
+/* line 213, ../../../app/stylesheets/styles.sass */
 #playlist li .thumb img {
   border: 0;
 }
 
-/* line 217, ../../../app/stylesheets/styles.sass */
+/* line 216, ../../../app/stylesheets/styles.sass */
 .playlist-item {
   float: left;
   width: 100%;
@@ -688,54 +687,54 @@ h2 {
   -moz-border-radius-bottomright: 5px;
   -webkit-border-bottom-right-radius: 5px;
 }
-/* line 225, ../../../app/stylesheets/styles.sass */
+/* line 224, ../../../app/stylesheets/styles.sass */
 .playlist-item .title, .playlist-item .thumb {
   float: left;
 }
-/* line 227, ../../../app/stylesheets/styles.sass */
+/* line 226, ../../../app/stylesheets/styles.sass */
 .playlist-item .title {
   margin-left: 5px;
   color: #00665e;
   font-size: 14px;
 }
-/* line 232, ../../../app/stylesheets/styles.sass */
+/* line 231, ../../../app/stylesheets/styles.sass */
 .playlist-item a.pl-info {
   float: left;
   width: 100%;
 }
-/* line 235, ../../../app/stylesheets/styles.sass */
+/* line 234, ../../../app/stylesheets/styles.sass */
 .playlist-item .delete {
   float: right;
   margin-top: 13px;
   font-size: 11px;
   margin-right: 5px;
 }
-/* line 240, ../../../app/stylesheets/styles.sass */
+/* line 239, ../../../app/stylesheets/styles.sass */
 .playlist-item .delete:hover {
   color: red;
   font-weight: 900;
 }
-/* line 243, ../../../app/stylesheets/styles.sass */
+/* line 242, ../../../app/stylesheets/styles.sass */
 .playlist-item.on, .playlist-item:hover {
   background-color: #61d8a2;
 }
-/* line 245, ../../../app/stylesheets/styles.sass */
+/* line 244, ../../../app/stylesheets/styles.sass */
 .playlist-item.on a, .playlist-item.on span, .playlist-item:hover a, .playlist-item:hover span {
   color: white;
 }
-/* line 247, ../../../app/stylesheets/styles.sass */
+/* line 246, ../../../app/stylesheets/styles.sass */
 .playlist-item.on {
   background-color: #ffb800;
   border-color: #ff6f00;
 }
-/* line 251, ../../../app/stylesheets/styles.sass */
+/* line 250, ../../../app/stylesheets/styles.sass */
 .playlist-item.new {
   background-color: white;
   position: relative;
   border: 2px solid #0969a2;
   margin-left: -1px;
 }
-/* line 256, ../../../app/stylesheets/styles.sass */
+/* line 255, ../../../app/stylesheets/styles.sass */
 .playlist-item.new input {
   border: 1px solid #0969a2;
   -moz-border-radius-topleft: 2px;
@@ -749,13 +748,13 @@ h2 {
   margin-left: 10px;
   width: 145px;
 }
-/* line 261, ../../../app/stylesheets/styles.sass */
+/* line 260, ../../../app/stylesheets/styles.sass */
 .playlist-item.new .edit {
   position: absolute;
   bottom: 10px;
   right: 15px;
 }
-/* line 265, ../../../app/stylesheets/styles.sass */
+/* line 264, ../../../app/stylesheets/styles.sass */
 .playlist-item.new .ok, .playlist-item.new .cancel {
   color: #0969a2;
   text-decoration: underline;
@@ -764,7 +763,7 @@ h2 {
   padding: 0 5px;
 }
 
-/* line 271, ../../../app/stylesheets/styles.sass */
+/* line 270, ../../../app/stylesheets/styles.sass */
 #playlists {
   position: absolute;
   top: 25px;
@@ -782,17 +781,17 @@ h2 {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
 }
-/* line 280, ../../../app/stylesheets/styles.sass */
+/* line 279, ../../../app/stylesheets/styles.sass */
 #playlists ul {
   width: 400px;
 }
-/* line 283, ../../../app/stylesheets/styles.sass */
+/* line 282, ../../../app/stylesheets/styles.sass */
 #playlists #add-playlist-btn {
   float: right;
   margin-right: 10px;
   margin-top: 5px;
 }
-/* line 287, ../../../app/stylesheets/styles.sass */
+/* line 286, ../../../app/stylesheets/styles.sass */
 #playlists #add-playlist-btn a {
   color: white;
   background-color: #0969a2;
@@ -807,12 +806,12 @@ h2 {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
 }
-/* line 294, ../../../app/stylesheets/styles.sass */
+/* line 293, ../../../app/stylesheets/styles.sass */
 #playlists #add-playlist-btn.on a {
   background-color: #0969a2;
 }
 
-/* line 296, ../../../app/stylesheets/styles.sass */
+/* line 295, ../../../app/stylesheets/styles.sass */
 #add-video {
   background-color: black;
   padding: 3px;
@@ -826,7 +825,7 @@ h2 {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
 }
-/* line 301, ../../../app/stylesheets/styles.sass */
+/* line 300, ../../../app/stylesheets/styles.sass */
 #add-video input {
   height: 16px;
   width: 560px;
@@ -834,12 +833,12 @@ h2 {
   font-size: 14px;
   float: left;
 }
-/* line 308, ../../../app/stylesheets/styles.sass */
+/* line 307, ../../../app/stylesheets/styles.sass */
 #add-video input.empty {
   font-style: italic;
   color: #cccccc;
 }
-/* line 311, ../../../app/stylesheets/styles.sass */
+/* line 310, ../../../app/stylesheets/styles.sass */
 #add-video .add-btn {
   -moz-border-radius-topleft: 4px;
   -webkit-border-top-left-radius: 4px;
@@ -856,11 +855,6 @@ h2 {
 }
 
 /* line 317, ../../../app/stylesheets/styles.sass */
-#playlist .video-item {
-  width: 614px;
-}
-
-/* line 320, ../../../app/stylesheets/styles.sass */
 #ajax-loader {
   position: fixed;
   display: none;
@@ -881,11 +875,11 @@ h2 {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
 }
-/* line 332, ../../../app/stylesheets/styles.sass */
+/* line 329, ../../../app/stylesheets/styles.sass */
 #ajax-loader .label {
   font-size: 13px;
 }
-/* line 334, ../../../app/stylesheets/styles.sass */
+/* line 331, ../../../app/stylesheets/styles.sass */
 #ajax-loader .loader {
   width: 16px;
   height: 16px;
@@ -895,13 +889,13 @@ h2 {
   background: url(/images/ajax-loader.gif) no-repeat 0 0;
 }
 
-/* line 342, ../../../app/stylesheets/styles.sass */
+/* line 339, ../../../app/stylesheets/styles.sass */
 .share {
   float: right;
   margin-left: 20px;
   margin-top: 40px;
 }
-/* line 346, ../../../app/stylesheets/styles.sass */
+/* line 343, ../../../app/stylesheets/styles.sass */
 .share .fb-like, .share .twitter {
   float: left;
 }

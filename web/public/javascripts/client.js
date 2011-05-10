@@ -206,10 +206,15 @@ $.widget("ui.playlists_manager", {
 	var $el= this.element;
 	var self= this;
 	$el.find(".show").click(function(e) {
-	    e.stopPropagation();
 	    $(this).blur();
-	    self._show_playlists();
+	    e.stopPropagation();
 	    e.preventDefault();
+
+	    if ($(this).hasClass("on")) {
+		self._hide_playlists();
+	    } else {
+		self._show_playlists();
+	    }
 	});
 
 	$(window).click(function(e) {
@@ -274,10 +279,10 @@ jQuery(document).ready(function($) {
 
     $(".account .logout").click(function(e) {
 	FB.logout(function(response) {
-	    $.post('/logout', {session:response.session}, function(data) {
-		session= {};
-		window.location='/';
-	    });
+	    // $.post('/logout', {session:response.session}, function(data) {
+	    // 	session= {};
+	    // 	window.location='/';
+	    // });
 	});
     });
 
