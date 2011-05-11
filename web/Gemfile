@@ -13,3 +13,5 @@ gem 'rest-client'
 gem 'json'
 
 gem "jquery-rails"
+
+gem "facebooker"

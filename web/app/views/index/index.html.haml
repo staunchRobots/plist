@@ -67,8 +67,9 @@
                   %a.add-btn{:href=>"#"} Add
               #playlist{:style=>"display:none;"}
                 =render "index/playlist"
-          #comments
-            %fb:comments{:href=>"#{request.url}", :num_posts=>"2", :width=>"800"}
+          -if @playlist_member && @member
+            #comments
+              %fb:comments{:href=>"#{request.url}", :num_posts=>"2", :width=>"800"}
 #fb-root
 #ajax-loader{:style=>""}
   %p
