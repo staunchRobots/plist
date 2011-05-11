@@ -36,15 +36,12 @@ GEM
       haml (>= 3.0.4)
     erubis (2.6.6)
       abstract (>= 1.0.0)
-    facebooker (1.0.75)
-      json_pure (>= 1.0.0)
     haml (3.0.25)
     i18n (0.5.0)
     jquery-rails (0.2.7)
       rails (~> 3.0)
       thor (~> 0.14.4)
     json (1.5.1)
-    json_pure (1.5.1)
     mail (2.2.15)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
@@ -92,7 +89,6 @@ PLATFORMS
 DEPENDENCIES
   bson_ext (~> 1.2)
   compass (>= 0.10.6)
-  facebooker
   haml
   jquery-rails
   json

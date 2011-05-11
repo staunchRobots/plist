@@ -19,8 +19,11 @@ Web::Application.routes.draw do
 
   # Member Aliases for /playlists
   match "/:member" => "member#index", :via => :get
+
   match "/:member/playlists" => "playlists#index", :via => :get
   match "/:member/playlists" => "playlists#create", :via => :post
+
+  match "/:member/:playlist/edit" => "playlists#edit", :via => :get
   match "/:member/:playlist" => "playlists#show", :via => :get
   match "/:member/:playlist" => "playlists#update", :via => :put
   match "/:member/:playlist" => "playlists#destroy", :via => :delete

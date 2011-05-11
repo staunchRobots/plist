@@ -34,7 +34,7 @@
                 .manage
                   -if @playlists.count > 1
                     %a.show{:href=>"#"} more
-                  %a.edit{:href=>"#"} edit
+                  %a.edit{:href=>"/#{@playlist_member.username}/#{@playlist.id}/edit"} edit
                   %a.add{:href=>"#"} add
               -else
                 -if @playlists.count > 1
@@ -69,6 +69,7 @@
                 =render "index/playlist"
           -if @playlist_member
             #comments
+              %h2 Comments
               %fb:comments{:href=>"#{request.url}", :num_posts=>"2", :width=>"800"}
 #fb-root
 #ajax-loader{:style=>""}

@@ -5,7 +5,7 @@ class PlaylistsController < ApplicationController
   # GET /:member/playlists
   def index
     @editable= true
-    @member= Member.find(session[:member])
+    @member= current_member
 
     @playlists= @member.playlists
     @on= @playlists.first
@@ -16,15 +16,14 @@ class PlaylistsController < ApplicationController
   end
 
   def create
-    member= Member.find(session[:member])
-    member.playlists << Playlist.new({:title=>params[:playlist]['title'], :videos => []})
+    current_member.playlists << Playlist.new({:title=>params[:playlist]['title'], :videos => []})
     respond_to do |format|
       format.html { render :text => "ok" }
     end
   end
 
   def show
-    @member= Member.find(session[:member]) if session[:member]
+    @member= current_member if session[:member]
     @editable= true
     @playlist_member= @member ? @member : nil
     if !@playlist_member || (params[:member] != @member.username)
@@ -50,10 +49,14 @@ class PlaylistsController < ApplicationController
     end
   end
 
+  def edit
+    
+  end
+
   private
   def valid_member?
-    @member= Member.find(session[:member])
-    unless @member.fb_uid == params[:member]
+    @member= current_member
+    unless @member.username == params[:member]
       respond_to do |format|
         format.html { render :text => "i don't know who thou art!" }
       end
