@@ -14,6 +14,8 @@
             %span.icon
           .img{:style=>"width:20px;height:20px;background-color:white;float:right;"}
           .dropdown{:style=>"display:none;"}
+            %a.settings{:href=>"#"} 
+              %span.label Settings
             %a.logout{:href=>"#"} 
               %span.label Logout
         - else
@@ -34,7 +36,10 @@
                 .manage
                   -if @playlists.count > 1
                     %a.show{:href=>"#"} more
-                  %a.edit{:href=>"/#{@playlist_member.username}/#{@playlist.id}/edit"} edit
+                  -if @playlist_member
+                    %a.edit{:href=>"/#{@playlist_member.username}/#{@playlist.id}/edit"} edit
+                  -else
+                    %a.edit{:href=>"/playlist/#{@playlist.id}/edit"} edit
                   %a.add{:href=>"#"} add
               -else
                 -if @playlists.count > 1
