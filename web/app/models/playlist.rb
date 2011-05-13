@@ -23,7 +23,7 @@ class Playlist
       if !self.videos || self.videos.empty? || !self.thumb
         self.thumb= "http://img.youtube.com/vi/#{o[:ytid]}/2.jpg"
       end
-      video= Video.create({:ytid => o[:ytid], :title=>title, :authors=>authors})
+      video= Video.create({:ytid => o[:ytid], :title=>title, :author=>authors})
     end
     self.videos << video._id
     self.videos.uniq!

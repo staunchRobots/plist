@@ -1,0 +1,10 @@
+#player{:playlist => "#{@playlist._id}"}
+  .wrapper-player
+    .ytplayer{:style=>"background-color:black;width:940px;height:510px;float:left;margin-bottom:10px;"}
+      #ytapiplayer
+        %p{:style=>"display:none;"} You need Flash player 8+ and JavaScript enabled to view this video.
+    =render "index/playlist"
+-if @playlist_member
+  #comments
+    %h2 Comments
+    %fb:comments{:href=>"#{request.url}", :num_posts=>"2", :width=>"800"}

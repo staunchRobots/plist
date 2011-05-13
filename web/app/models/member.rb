@@ -3,6 +3,7 @@ class Member
   include Mongoid::Timestamps
   
   has_many :playlists
+  has_many :suggestions
   has_many :facebook_sessions
 
   field :username, :type => String

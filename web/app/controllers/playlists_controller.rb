@@ -1,5 +1,5 @@
 class PlaylistsController < ApplicationController
-  before_filter :valid_member?, :only => [:create]
+  before_filter :valid_member?, :only => [:create, :edit]
   skip_before_filter :require_user, :only => [:index, :show]
 
   # GET /:member/playlists
@@ -50,7 +50,17 @@ class PlaylistsController < ApplicationController
   end
 
   def edit
-    
+    @editing= true
+    @editable= true
+    @playlist_member= current_member
+    @suggestions= current_member.suggestions
+    @playlists= @playlist_member.playlists
+    @playlist= Playlist.find(params[:playlist])
+    @on= @playlist
+    @videos= @playlist.list_videos
+    respond_to do |format|
+      format.html { render "edit" }
+    end
   end
 
   private

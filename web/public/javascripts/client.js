@@ -1,6 +1,7 @@
 var session={};
-var current_playlist=0;
+// var current_playlist=0;
 var player_el;
+var edit= false;
 
 // var websocket= new io.Socket(null, {port: 8080});
 // websocket.connect();
@@ -104,23 +105,30 @@ function calculate_playlist_cycle() {
  *
  */
 function load_videos(playlist, callback) {
-    $("#playlist").load("/playlist/"+playlist+"/videos", function(data) {
-	$("#playlist ul").sortable({containment:'parent',
-				    update: function(e, ui) {
-					var position= (function() {
-					    var pos= parseInt($(ui.item).prev().attr('pos'));
-					    var old_pos= parseInt($(ui.item).attr('pos'));
-					    if (pos < old_pos) pos += 1;
-					    return pos||0;
-					})();
-					$.post("/playlist/"+current_playlist+"/sort", {video:$(ui.item).attr("id"), pos:position}, function() {
-					    if (position==0) load_playlists();
-					    load_videos(current_playlist);
-					});
-				    }
-				   });
+    var url= "/playlist/"+playlist+"/videos";
+    if (edit) url+="?edit=true";
+    url+= " ul,.more-videos";
+    $("#playlist").load(url, function(data) {
+	$("#playlist ul").show()
+	    .sortable({containment:'parent',
+		       update: function(e, ui) {
+			   var position= (function() {
+			       var pos= parseInt($(ui.item).prev().attr('pos'));
+			       var old_pos= parseInt($(ui.item).attr('pos'));
+			       if (pos < old_pos) pos += 1;
+			       return pos||0;
+			   })();
+			   $.post("/playlist/"+current_playlist+"/sort", {video:$(ui.item).attr("id"), pos:position}, function() {
+			       if (position==0) load_playlists();
+			       load_videos(current_playlist);
+			   });
+		       }
+		      });
 	$("#playlist ul").disableSelection();
-	calculate_playlist_cycle();
+
+	// If there exists a player, then prepare playlist for playback
+	if ($("#player").length > 0) calculate_playlist_cycle();
+
 	var $video= $(data).find(".video-item:first");
 	if ($video.length > 0) {
 	    var ytid= $.trim($video.attr('ytid'));
@@ -288,21 +296,27 @@ $.widget("ui.playlist", {
 	    var count= $el.find(".video-item:visible").length;
 	    $el.addClass("more");
 	    $el.find(".video-item").slice(count, count+5).show();
+	    if($el.find(".video-item:last").has(":visible").length == 1) {
+		$(this).hide();
+	    }
 	    e.preventDefault();
 	});
-    }
+	$("li.video-item").live("click", function(e) {
+	    var id= $(this).attr('ytid');
+	    play(id);
+	    e.preventDefault();
+	});
+    },
 });
 
 jQuery(document).ready(function($) {
-    current_playlist= $(".playlist-item.on").attr('id');
+    // current_playlist= $(".playlist-item.on").attr('id');
     
     var $first_video= $("#playlist .video-item:first");
     if ($first_video.length > 0) {
 	load_player($first_video.attr('ytid'));
     }
-    
-    calculate_playlist_cycle();
-    
+        
     $("#ajax-loader").ajaxStart(function() {
 	$(this).show();
     });
@@ -324,7 +338,7 @@ jQuery(document).ready(function($) {
 	    if ($(".account .sign-in").length > 0) {
 		FB.login(function(response) {
 		    // everything is done in event 'auth.login'
-		});
+		}, {perms:'email, user_location, user_birthday, read_stream'});
 	    }
 	}
 	// e.stopPropagation();
@@ -401,13 +415,6 @@ jQuery(document).ready(function($) {
 	e.stopPropagation();
     }));
 
-    
-    $("li.video-item").live("click", function(e) {
-	var id= $(this).attr('ytid');
-	play(id);
-	e.preventDefault();
-    });
-
     $("#add-playlist-btn a").click(function(e) {
 	$(this).blur();
 	var $layout= $(".playlist-item.layout").clone();
@@ -473,7 +480,6 @@ jQuery(document).ready(function($) {
     });
 
     // Playlist
-    $("#playlist").playlist();
     $("#playlist ul").sortable({containment:'parent',
 				update: function(e, ui) {
 				    var position= (function() {
@@ -505,9 +511,11 @@ jQuery(document).ready(function($) {
 	FB.getLoginStatus(function(response) {
 	    if (response.session) {
 		// logged in and connected user, someone you know
+		session= response.session;
+		$(document).trigger("FB_ready");
+		
 		$.post('/login', {session:response.session}, function(data) {
 		    if (data == "ok") {
-			session= response.session;
 			show_profile_image(session.uid);
 			// load_playlists();
 		    }

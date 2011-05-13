@@ -1,0 +1,18 @@
+%ul
+  %li.suggestion-item.layout{:style=>"display:none;"}
+    %a{:href=>"#"}
+      %img{:src=>"", :width=>"60", :height=>"45"}
+      %span.name Suggestion
+    %a.by{:href=>"#"} Posted by: Amigo
+  -if @suggestions.count == 0
+    %p.empty There are no suggestions to show
+  -@suggestions.each do |s|
+    %li.suggestion-item{:id => s.id, :ytid=>s.ytid}
+      %a.info{:href=>"#"}
+        %img.thumb{:src=>"#{s.thumb}", :width=>"60", :height=>"45"}
+        %span.name #{s.title}
+      .by
+        %p.label Suggested by: 
+        %img{:src=>"http://graph.facebook.com/#{s.fb_uid}/picture", :width=>"20", :height=>"20"}
+        %a{:href=>"#"} #{s.fb_name}
+      %a.add{:href=>"#"} Add to this playlist

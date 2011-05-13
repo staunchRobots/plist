@@ -942,3 +942,95 @@ h2 {
   font-weight: 900;
   margin-bottom: 10px;
 }
+
+/* line 364, ../../../app/stylesheets/styles.sass */
+#suggestions .wrapper-suggestions {
+  margin-bottom: 10px;
+  float: left;
+  width: 100%;
+}
+/* line 368, ../../../app/stylesheets/styles.sass */
+#suggestions h2 {
+  font-weight: 900;
+  float: left;
+  margin-bottom: 10px;
+}
+/* line 372, ../../../app/stylesheets/styles.sass */
+#suggestions ul {
+  float: left;
+  width: 100%;
+  border: 1px solid black;
+  -moz-border-radius-topleft: 2px;
+  -webkit-border-top-left-radius: 2px;
+  -moz-border-radius-topright: 2px;
+  -webkit-border-top-right-radius: 2px;
+  -moz-border-radius-bottomleft: 2px;
+  -webkit-border-bottom-left-radius: 2px;
+  -moz-border-radius-bottomright: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+}
+/* line 377, ../../../app/stylesheets/styles.sass */
+#suggestions li {
+  margin: 5px;
+  border: 1px solid #aaaaaa;
+  float: left;
+  width: 222px;
+  -moz-border-radius-topleft: 2px;
+  -webkit-border-top-left-radius: 2px;
+  -moz-border-radius-topright: 2px;
+  -webkit-border-top-right-radius: 2px;
+  -moz-border-radius-bottomleft: 2px;
+  -webkit-border-bottom-left-radius: 2px;
+  -moz-border-radius-bottomright: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+}
+/* line 383, ../../../app/stylesheets/styles.sass */
+#suggestions li a.info {
+  float: left;
+  padding: 5px 10px;
+  display: block;
+}
+/* line 387, ../../../app/stylesheets/styles.sass */
+#suggestions .name {
+  font-size: 12px;
+  float: left;
+  width: 130px;
+  margin-left: 10px;
+}
+/* line 392, ../../../app/stylesheets/styles.sass */
+#suggestions .thumb {
+  float: left;
+}
+/* line 394, ../../../app/stylesheets/styles.sass */
+#suggestions .by {
+  clear: left;
+  font-size: 12px;
+  float: left;
+  width: 100%;
+  padding: 5px 10px;
+}
+/* line 400, ../../../app/stylesheets/styles.sass */
+#suggestions .by .label {
+  margin-bottom: 2px;
+}
+/* line 402, ../../../app/stylesheets/styles.sass */
+#suggestions .by img, #suggestions .by a, #suggestions .by .label {
+  float: left;
+}
+/* line 404, ../../../app/stylesheets/styles.sass */
+#suggestions .by img {
+  clear: left;
+}
+/* line 406, ../../../app/stylesheets/styles.sass */
+#suggestions .by a {
+  margin-left: 5px;
+}
+/* line 408, ../../../app/stylesheets/styles.sass */
+#suggestions .add {
+  font-size: 11px;
+  clear: left;
+  float: right;
+  color: blue;
+  text-decoration: underline;
+  padding: 5px;
+}

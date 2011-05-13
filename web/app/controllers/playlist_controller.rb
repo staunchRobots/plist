@@ -52,6 +52,9 @@ class PlaylistController < ApplicationController
     if playlist.member.nil?
       @editable= true
     end
+    if params[:edit]=='true'
+      @editing= true;
+    end
 
     @videos= playlist.list_videos
     respond_to do |format|

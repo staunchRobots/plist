@@ -1,0 +1,19 @@
+#content.edit-playlist
+  .wrapper-content
+    .main
+      .wrapper-main
+        =render "index/playlist_header"
+
+        #suggestions          
+          .wrapper-suggestions
+            %h2 Suggestions
+            =render "playlists/suggestions"
+        =render "index/playlist"
+
+=content_for(:javascripts) do
+  :javascript
+    var edit= #{@editing};
+    jQuery(document).ready(function($) {
+      $("#playlist").show();
+    })
+  = javascript_include_tag "edit"

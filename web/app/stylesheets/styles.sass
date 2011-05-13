@@ -91,7 +91,7 @@ body
       color: #AAAAAA
       font-size: 13px
       //float: left
-      display: block
+      display: block	
       margin-left: 10px
       margin-top: 8px
       text-decoration: none
@@ -359,3 +359,56 @@ body
   h2
     font-weight: 900
     margin-bottom: 10px
+
+#suggestions
+  .wrapper-suggestions
+    margin-bottom: 10px
+    float: left
+    width: 100%
+  h2
+    font-weight: 900
+    float: left
+    margin-bottom: 10px
+  ul
+    float: left
+    width: 100%
+    border: 1px solid black
+    +corner(2px)
+  li
+    margin: 5px
+    border: 1px solid #AAA
+    float: left
+    width: 222px
+    +corner(2px)
+    a.info
+      float: left
+      padding: 5px 10px
+      display: block
+  .name
+    font-size: 12px
+    float: left
+    width: 130px
+    margin-left: 10px
+  .thumb
+    float: left
+  .by
+    clear: left
+    font-size: 12px
+    float: left
+    width: 100%
+    padding: 5px 10px
+    .label
+      margin-bottom: 2px
+    img, a, .label
+      float: left
+    img
+      clear: left
+    a
+      margin-left: 5px
+  .add
+    font-size: 11px
+    clear: left
+    float: right
+    color: blue
+    text-decoration: underline
+    padding: 5px

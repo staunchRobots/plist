@@ -1,15 +1,21 @@
-%ul
-  -i=0
-  -@videos.each do |video|
-    -thumb= "http://img.youtube.com/vi/#{video.ytid}/2.jpg"
-    %li.video-item{:id=>"#{video.id}", :ytid=>"#{video.ytid}", :pos => "#{i}"}
-      %a{:href=>"#"}
-        .thumb
-          %img{:src=>"#{thumb}", :width=>60, :height=>45}
-        %p.name #{video.title}
-        - if @editable
-          %p.close X
-    -i=i+1
--if @videos.count > 3
-  %a.more-videos{:href=>"#"} More
+-if @editable
+  #add-video
+    %input{:type=>"text", :width=>"400", :height=>"30px"}
+    %a.add-btn{:href=>"#"} Add
+#playlist{:style=>"display:none;"}
+  %ul
+    -i=0
+    -@videos.each do |video|
+      -thumb= "http://img.youtube.com/vi/#{video.ytid}/2.jpg"
+      %li.video-item{:id=>"#{video.id}", :ytid=>"#{video.ytid}", :pos => "#{i}"}
+        %a{:href=>"#"}
+          .thumb
+            %img{:src=>"#{thumb}", :width=>60, :height=>45}
+          %p.name #{video.title}
+          - if @editable
+            %p.close X
+      -i=i+1
+  -unless @editing
+    -if @videos.count > 3
+      %a.more-videos{:href=>"#"} More
  

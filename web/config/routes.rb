@@ -10,6 +10,7 @@ Web::Application.routes.draw do
 
   resources :playlist
   resources :playlists
+  resources :suggestions
 
   # Accounts
   match "/login" => "accounts#login", :via => :post
