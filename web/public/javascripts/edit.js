@@ -49,7 +49,6 @@ jQuery(document).ready(function() {
     $(document).bind("FB_ready", function() {
 	var query= FB.Data.query('SELECT post_id, actor_id, target_id, message FROM stream WHERE source_id in (SELECT target_id FROM connection WHERE source_id='+session.uid+') AND is_hidden = 0');
 	query.wait(function(rows) {
-	    console.log(rows);
 	    $(rows).each(function() {
 		var row= this;
 		var message= row.message;
