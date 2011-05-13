@@ -8,7 +8,7 @@ class SuggestionsController < ApplicationController
 
   def create
     params[:suggestions].each do |k,v|
-      unless Suggestion.exists?(:conditions=>v)
+      unless Suggestion.exists?(:conditions=>v.merge!({:member_id => current_member.id}))
         v[:fb_name]= params[:actors][v[:fb_uid]][:name]
         current_member.suggestions << Suggestion.new(v)
       end
