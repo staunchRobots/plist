@@ -13,15 +13,6 @@ class IndexController < ApplicationController
         redirect_to "/#{@member.fb_uid}"
       end
     else
-      session[:playlist]= false
-      @playlists= Playlist.where(:anonymous => session[:session_id])
-      if @playlists.empty?
-        @playlists= [Playlist.create!(:user_id=>1, :title=>"My First Playlist", :videos=>[], :anonymous => session[:session_id])]
-        session[:playlist]= true
-      end
-      @videos= @playlists.first.list_videos
-      @playlist= @playlists.first
-      @on= @playlist
       redirect_to "/home"
     end
   end
