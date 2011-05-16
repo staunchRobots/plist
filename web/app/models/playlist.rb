@@ -6,8 +6,11 @@ class Playlist
   field :thumb, :type=> String
   field :videos, :type=> Array
   field :anonymous, :type => String
+  field :hot, :type => Boolean
 
   belongs_to :member
+
+  after_create :make_me_hot
 
   def add_video(o)
     video= Video.first({:conditions => {:ytid => o[:ytid]}})
@@ -18,12 +21,12 @@ class Playlist
       authors= [];
       yt_video["entry"]["author"].each do |a|
         author= {'name' => a["name"]["$t"], 'uri' => a["uri"]["$t"]}
-      authors << author
-      end
-      if !self.videos || self.videos.empty? || !self.thumb
-        self.thumb= "http://img.youtube.com/vi/#{o[:ytid]}/2.jpg"
+        authors << author
       end
       video= Video.create({:ytid => o[:ytid], :title=>title, :author=>authors})
+    end
+    if !self.videos || self.videos.empty? || !self.thumb
+      self.thumb= "http://img.youtube.com/vi/#{o[:ytid]}/2.jpg"
     end
     self.videos << video._id
     self.videos.uniq!
@@ -56,5 +59,19 @@ class Playlist
       self.thumb= "http://img.youtube.com/vi/#{Video.find(self.videos.first).ytid}/2.jpg"
     end
     self.save
+  end
+
+  private
+  def make_me_hot
+    if Playlist.where({:hot=>true}).count < 20
+      self.update_attributes(:hot => true)
+    else
+      current_playlist= Playlist.find({:hot=>true, :member=> self.member })
+      if current_playlist.count == 0
+        current_playlist= Playlist.asc(:created_at).first
+      end
+      self.update_attributes(:hot => true)
+      current_playlist.update_attributes(:hot => nil)
+    end
   end
 end

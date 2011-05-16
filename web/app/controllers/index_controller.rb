@@ -22,6 +22,7 @@ class IndexController < ApplicationController
       @videos= @playlists.first.list_videos
       @playlist= @playlists.first
       @on= @playlist
+      redirect_to "/home"
     end
   end
 

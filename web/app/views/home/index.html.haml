@@ -1,0 +1,20 @@
+#content.home
+  .wrapper-content
+    .main
+      .wrapper-main
+        %h1.about Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        %a.create-playlist{:href=>"#"} Create your own playlist
+        .recent-playlists
+          %h2 Recent Playlists
+          %ul
+            - @playlists.each do |t|
+              - next if !t.member
+              %li
+                .thumb
+                  %img{:src=>"#{t.thumb}", :width=>"60", :height=>"45"}
+                %a.title{:href=>"/#{t.member.username}/#{t.id}"} #{t.title}
+                .member
+                  .member-thumb
+                    %img{:src=>"http://graph.facebook.com/#{t.member.fb_uid}/picture", :width=>"30", :height=>"30"}
+                  %a.member-name{:href=>"/#{t.member.username}"} #{t.member.fb_name}
+                    

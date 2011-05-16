@@ -12,6 +12,8 @@ Web::Application.routes.draw do
   resources :playlists
   resources :suggestions
 
+  match "/home" => "home#index", :via => :get
+
   # Accounts
   match "/login" => "accounts#login", :via => :post
   match "/logout" => "accounts#logout", :via => :post
