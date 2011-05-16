@@ -11,7 +11,8 @@
               - next if !t.member
               %li
                 .thumb
-                  %img{:src=>"#{t.thumb}", :width=>"60", :height=>"45"}
+                  %a{:href=>"/#{t.member.username}/#{t.id}"}
+                    %img{:src=>"#{t.thumb}", :width=>"60", :height=>"45"}
                 %a.title{:href=>"/#{t.member.username}/#{t.id}"} #{t.title}
                 .member
                   .member-thumb

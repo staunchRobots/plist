@@ -1137,24 +1137,28 @@ h2 {
   border: 1px solid #aaaaaa;
 }
 /* line 477, ../../../app/stylesheets/styles.sass */
+.home .recent-playlists li .thumb a {
+  border: 0;
+}
+/* line 479, ../../../app/stylesheets/styles.sass */
 .home .recent-playlists li .title {
   float: left;
   margin-left: 5px;
   text-decoration: underline;
 }
-/* line 481, ../../../app/stylesheets/styles.sass */
+/* line 483, ../../../app/stylesheets/styles.sass */
 .home .recent-playlists li .member {
   float: left;
   clear: left;
   margin-top: 5px;
 }
-/* line 485, ../../../app/stylesheets/styles.sass */
+/* line 487, ../../../app/stylesheets/styles.sass */
 .home .recent-playlists li .member .member-thumb {
   width: 30px;
   height: 30px;
   float: left;
 }
-/* line 489, ../../../app/stylesheets/styles.sass */
+/* line 491, ../../../app/stylesheets/styles.sass */
 .home .recent-playlists li .member .member-name {
   float: left;
   margin-left: 5px;
