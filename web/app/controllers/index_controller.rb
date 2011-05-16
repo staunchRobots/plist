@@ -4,17 +4,17 @@ class IndexController < ApplicationController
   skip_before_filter :require_user
 
   def index
-    @editable= true
-    if session[:fbsession]
-      @member= Member.find(session[:member])
-      if @member.username
-        redirect_to "/#{@member.username}"
-      else
-        redirect_to "/#{@member.fb_uid}"
-      end
-    else
-      redirect_to "/home"
-    end
+    # @editable= true
+    # if session[:fbsession]
+    #   @member= Member.find(session[:member])
+    #   if @member.username
+    #     redirect_to "/#{@member.username}"
+    #   else
+    #     redirect_to "/#{@member.fb_uid}"
+    #   end
+    # else
+    redirect_to "/home"
+    # end
   end
 
   private
