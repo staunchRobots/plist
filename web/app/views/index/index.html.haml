@@ -1,33 +1,9 @@
-#root
-  .top
-    .wrapper-top
-      #logo
-        %h1
-          %a{:href=>"/"} pList.tv
-      .search
-        %input{:type=>"text", :value=>"Search"}
-        %a.search-btn{:href=>"#"} Go
-      .account
-        - if @member
-          %a.member{:href=>"#"}
-            %span.label You
-            %span.icon
-          .img{:style=>"width:20px;height:20px;background-color:white;float:right;"}
-          .dropdown{:style=>"display:none;"}
-            %a.settings{:href=>"#"} 
-              %span.label Settings
-            %a.logout{:href=>"#"} 
-              %span.label Logout
-        - else
-          %a.sign-in{:href=>"#"} Sign In
-          //%fb:login-button.fb-login{:autologoutlink=>"true", :perms => "email, user_location, user_birthday"}
-
-  #content
-    .wrapper-content
-      .main
-        .wrapper-main
-          =render "index/playlist_header"
-          =render "index/player"
+#content
+  .wrapper-content
+    .main
+      .wrapper-main
+        =render "index/playlist_header"
+        =render "index/player"
 
 =content_for(:javascripts) do
   :javascript

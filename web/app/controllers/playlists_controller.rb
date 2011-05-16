@@ -15,10 +15,14 @@ class PlaylistsController < ApplicationController
     end
   end
 
+  def new
+    @end= true
+  end
+
   def create
-    current_member.playlists << Playlist.new({:title=>params[:playlist]['title'], :videos => []})
+    a= current_member.playlists << Playlist.new({:title=>params[:playlist]['title'], :videos => []})
     respond_to do |format|
-      format.html { render :text => "ok" }
+      format.json { render :json => {:id => a[0]._id } }
     end
   end
 
@@ -46,6 +50,16 @@ class PlaylistsController < ApplicationController
       else
         redirect_to "/"
       end
+    end
+  end
+
+  def update
+    @playlist= Playlist.find(params[:playlist])
+    if @playlist
+      @playlist.update_attributes(params[:data])
+    end
+    respond_to do |format|
+      format.html { render :text => "ok" }
     end
   end
 

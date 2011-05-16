@@ -33,6 +33,7 @@ class AccountsController < ApplicationController
   def login
     unless session[:fbsession]
       if params[:session]['session_key']
+        new_session= true
         fbsession= (FacebookSession.create_session(params[:session]))
         session[:fbsession]= fbsession[:fbsession]
         session[:member]= fbsession[:member]
@@ -45,11 +46,11 @@ class AccountsController < ApplicationController
         end        
       end
     else
-      @member= Member.find(session[:member])
+      @member= current_member
       unless session[:fbsession][:session_key] == params[:session]['session_key']
         FacebookSession.destroy_session(session[:fbsession][:session_key])
         # should generate new session || redirect to GET '/session'
-        session= {}
+        reset_session
       end
     end
 
@@ -57,9 +58,13 @@ class AccountsController < ApplicationController
       respond_to do |format|
         format.json { render :json => {:signup => true} }
       end
-    else
+    elsif new_session
       respond_to do |format|
         format.html { render :text => "ok" }
+      end
+    else
+      respond_to do |format|
+        format.json { render :json => { :session => {:username=>@member.username, :uid=>@member.fb_uid} } }
       end
     end
   end

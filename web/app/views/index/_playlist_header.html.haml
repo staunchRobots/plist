@@ -3,16 +3,26 @@
     .member-thumb
       %img{:src=>"http://graph.facebook.com/#{@playlist_member.fb_uid}/picture"}
   .info
-    %h1.plist-title #{@playlist.title}
+    -if @editing
+      %h1.plist-title.edit #{@playlist.title}
+    -else
+      %h1.plist-title #{@playlist.title}
     -if @editable
-      .manage
-        -if @playlists.count > 1
-          %a.show{:href=>"#"} more
-        -if @playlist_member
-          %a.edit{:href=>"/#{@playlist_member.username}/#{@playlist.id}/edit"} edit
-        -else
-          %a.edit{:href=>"/playlist/#{@playlist.id}/edit"} edit
-        %a.add{:href=>"#"} add
+      -unless @editing 
+        .manage
+          -if @playlists.count > 1
+            %a.show{:href=>"#"} more
+          -if @playlist_member
+            %a.edit{:href=>"/#{@playlist_member.username}/#{@playlist.id}/edit"} edit
+          -else
+            %a.edit{:href=>"/playlist/#{@playlist.id}/edit"} edit
+          %a.add{:href=>"#"} add
+          .add-playlist
+            %p.label Enter title for new playlist:
+            %input{:type=>"text"}/
+            %a{:href=>"#"} Ok
+      -else
+        .edit-title-notice{:style=>"display:none;"} Click to edit this playlist's title
     -else
       -if @playlists.count > 1
         .manage

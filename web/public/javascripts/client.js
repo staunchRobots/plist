@@ -1,4 +1,3 @@
-var session={};
 // var current_playlist=0;
 var player_el;
 var edit= false;
@@ -182,9 +181,9 @@ function is_youtube_url(url) {
 
 function create_playlist(playlist) {
     var url= '/playlist';
-    if (session.uid) url= '/'+session.uid+'/playlists';
-    $.post(url, {playlist:playlist}, function(res) {
-	load_playlists();
+    if (session.uid) url= '/'+session.username+'/playlists';
+    $.post(url, {playlist:playlist}, function(playlist) {
+	window.location= "/"+session.username+"/"+playlist.id+"/edit";
     });
 }
 
@@ -255,6 +254,26 @@ function hide_account_dropdown() {
     $(".account").removeClass("on");
 }
 
+function login(credentials, callback) {
+    $.post('/login', {session:credentials}, function(data) {
+	if (data == 'ok') {
+	    window.location= "/";
+ 	} else if (data.session) {
+	    session= data.session;
+	} else if(data.signup) {
+	    FB.api('/me', function(response) {
+		$.post('/signup', {member:response}, function(data) {
+		    if (data == 'ok') {
+			window.location='/';
+		    }
+		});
+	    });
+	} else {
+	}
+	callback();
+    });
+}
+
 $.widget("ui.playlists_manager", {
     _init: function() {
 	var $el= this.element;
@@ -269,6 +288,23 @@ $.widget("ui.playlists_manager", {
 	    } else {
 		self._show_playlists();
 	    }
+	});
+
+	$el.find(".add").click(function(e) {
+	    $(this).blur();
+	    e.stopPropagation();
+	    e.preventDefault();
+	    $el.find('.add').addClass("on");
+	    $el.find(".add-playlist").show();
+	});
+
+	
+	$el.find(".add-playlist a").click(function(e) {
+	    $(this).blur();
+	    e.stopPropagation();
+	    e.preventDefault();
+	    var playlist= {title:$el.find(".add-playlist input").val()};
+	    create_playlist(playlist);
 	});
 
 	$(window).click(function(e) {
@@ -306,7 +342,7 @@ $.widget("ui.playlist", {
 	    play(id);
 	    e.preventDefault();
 	});
-    },
+    }
 });
 
 jQuery(document).ready(function($) {
@@ -511,14 +547,8 @@ jQuery(document).ready(function($) {
 	FB.getLoginStatus(function(response) {
 	    if (response.session) {
 		// logged in and connected user, someone you know
-		session= response.session;
-		$(document).trigger("FB_ready");
-		
-		$.post('/login', {session:response.session}, function(data) {
-		    if (data == "ok") {
-			show_profile_image(session.uid);
-			// load_playlists();
-		    }
+		login(response.session, function() {
+		    $(document).trigger("FB_ready");
 		});
 	    } else {
 		// no user session available, someone you dont know
@@ -526,21 +556,8 @@ jQuery(document).ready(function($) {
 	    }
 	});
 
-	FB.Event.subscribe('auth.login', function(response) {
-	    $.post('/login', {session:response.session}, function(data) {
-		if (data == 'ok') {
-		    window.location= "/";
-		} else if(data.signup) {
-		    FB.api('/me', function(response) {
-			$.post('/signup', {member:response}, function(data) {
-			    if (data == 'ok') {
-				window.location='/';
-			    }
-			});
-		    });
-		} else {
-		}
-	    });
+	FB.Event.subscribe('auth.login', function(response) {	    
+	    login(response.session);
 	});
 	FB.Event.subscribe('auth.logout', function(response) {
 	    $.post('/logout', {session:response.session}, function(data) {
