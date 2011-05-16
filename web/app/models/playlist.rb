@@ -67,7 +67,7 @@ class Playlist
       self.update_attributes(:hot => true)
     else
       current_playlist= Playlist.find({:hot=>true, :member=> self.member }) if self.member
-      if current_playlist.count == 0
+      if current_playlist && current_playlist.count == 0
         current_playlist= Playlist.asc(:created_at).first
       end
       self.update_attributes(:hot => true)
