@@ -19,7 +19,7 @@
               .img{:style=>"width:20px;height:20px;background-color:white;float:right;"}
                 %img{:src=>"http://graph.facebook.com/#{@member.fb_uid}/picture", :width=>"20", :height=>"20"}
               .dropdown{:style=>"display:none;"}
-                %a.my-playlists{:href=>"/"} 
+                %a.my-playlists{:href=>"/#{@member.username}"} 
                   %span.label My Playlists
                 %a.settings{:href=>"#"} 
                   %span.label Settings
