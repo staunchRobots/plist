@@ -270,7 +270,7 @@ function login(credentials, callback) {
 	    });
 	} else {
 	}
-	callback();
+	if(callback) callback();
     });
 }
 
