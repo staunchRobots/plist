@@ -1,4 +1,6 @@
 Web::Application.routes.draw do
+  match "/me" => "index#me"
+
   # Routes for anonymous
   match "/playlist/:playlist/videos" => "playlist#get_videos", :via => :get
   match "/playlist/:playlist/videos" => "playlist#post_video", :via => :post

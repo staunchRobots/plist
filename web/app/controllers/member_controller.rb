@@ -5,7 +5,7 @@ class MemberController < ApplicationController
 
   # GET /:member
   def index
-    @member= Member.find(session[:member]) if session[:member]
+    @member= current_member if session[:member]
     @editable= true
     @playlist_member= @member ? @member : nil
     if !@playlist_member || (params[:member] != @member.username)
@@ -28,6 +28,7 @@ class MemberController < ApplicationController
         format.html { render "index/index" }
       end
     else
+      puts "here????"
       if @member
         redirect_to "/#{@member.username}"
       else

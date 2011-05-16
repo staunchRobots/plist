@@ -257,14 +257,14 @@ function hide_account_dropdown() {
 function login(credentials, callback) {
     $.post('/login', {session:credentials}, function(data) {
 	if (data == 'ok') {
-	    window.location= "/";
+	    window.location= "/me";
  	} else if (data.session) {
 	    session= data.session;
 	} else if(data.signup) {
 	    FB.api('/me', function(response) {
 		$.post('/signup', {member:response}, function(data) {
 		    if (data == 'ok') {
-			window.location='/';
+			window.location='/me';
 		    }
 		});
 	    });
