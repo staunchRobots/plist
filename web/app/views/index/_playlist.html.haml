@@ -14,7 +14,7 @@
           %p.name #{video.title}
           - if @editable
             %p.close X
-          - if @playlist_member
+          - if @member && @playlist_member
             %a.add-to-playlist{:href=>"#"} +
       -i=i+1
   -unless @editing
