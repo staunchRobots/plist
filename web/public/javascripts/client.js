@@ -1,9 +1,5 @@
-// var current_playlist=0;
 var player_el;
 var edit= false;
-
-// var websocket= new io.Socket(null, {port: 8080});
-// websocket.connect();
 
 function truncate(el, len) {
     len = len || 200;
@@ -91,7 +87,7 @@ function onytplayerStateChange(newState) {
 
 function calculate_playlist_cycle() {
     playlist_cycle=[];
-    $("li.video-item").slice(3).hide();
+    $("li.video-item").slice(8).hide();
     $("#playlist").show();
     $("li.video-item").each(function() {
 	playlist_cycle.push($(this).attr('ytid'));
@@ -180,6 +176,7 @@ function is_youtube_url(url) {
 }
 
 function create_playlist(playlist) {
+    if (!session.username) return false;
     var url= '/playlist';
     if (session.uid) url= '/'+session.username+'/playlists';
     if (playlist.title.length < 4) {
@@ -226,6 +223,33 @@ function add_video(url) {
     } else {
 	alert("This doesn't seem to be a YouTube video");
     }
+}
+
+function add_video_to_playlist(ytid, playlist, callback) {
+    var url= '/playlist/'+playlist+'/videos';
+    $.post(url, {v:ytid}, function(res) {
+	if (res == "ok") {
+	    callback(res);
+	} else {
+	    if(res.error) {
+		alert(res.error);
+	    }
+	}
+    });
+}
+
+function add_video_by_ytid(ytid, playlist) {
+    if(!playlist) playlist= current_playlist;
+    var url= '/playlist/'+playlist+'/videos';
+    $.post(url, {v:ytid}, function(res) {
+	if (res == "ok") {
+	    load_playlist(playlist);
+	} else {
+	    if(res.error) {
+		alert(res.error);
+	    }
+	}
+    });
 }
 
 function load_player(ytid) {
@@ -288,6 +312,7 @@ $.widget("ui.playlists_manager", {
 	    }
 	});
 
+	// Add Playlist prompt
 	$el.find(".add").click(function(e) {
 	    $(this).blur();
 	    e.stopPropagation();
@@ -297,6 +322,7 @@ $.widget("ui.playlists_manager", {
 	});
 
 	
+	// Ok btn on Add Playlist
 	$el.find(".add-playlist a").click(function(e) {
 	    $(this).blur();
 	    e.stopPropagation();
@@ -339,6 +365,28 @@ $.widget("ui.playlist", {
 	    var id= $(this).attr('ytid');
 	    play(id);
 	    e.preventDefault();
+	});
+	$("li.video-item")
+	    .live("mouseenter", 
+		  function(e) {
+		      $(this).find(".add-to-playlist").show();
+		  })
+	    .live("mouseleave",
+		  function(e) {
+		      $(this).find(".add-to-playlist").hide();		      
+		  });
+
+	$(".video-item .add-to-playlist").live("click", function(e) {
+	    e.preventDefault();
+	    e.stopPropagation();
+	    var $item= $(this).parent();
+	    if ($("#layouts #add-to-playlist-menu").length > 0) {
+		$layout= $("#layouts #add-to-playlist-menu");
+	    } else {
+		$layout= $el.find("#add-to-playlist-menu");
+	    }
+	    $layout.css({position: "absolute"});
+	    $item.append($layout.show());
 	});
     }
 });
@@ -488,6 +536,16 @@ jQuery(document).ready(function($) {
 	e.preventDefault();
     });
 
+    $("#add-to-playlist-menu .playlist-item").live("click", function(e) {
+	e.stopPropagation();
+	e.preventDefault();
+	var $video_item= $(this).closest(".video-item");
+	var playlist= $(this).attr("id");
+	add_video_to_playlist($video_item.attr("ytid"), playlist, function(data) {
+	    alert("Video added to playlist "+$(this).find(".title").text());
+	    $("#add-to-playlist-menu").hide();
+	});
+    });
 
     // $("#add-playlist-btn a").click();
 
@@ -529,6 +587,13 @@ jQuery(document).ready(function($) {
 				}
 			       });
     
+    // Home Page
+    $(".create-playlist").click(function(e) {
+	create_playlist({title:"Choose a title for your new playlist"});
+	e.preventDefault();
+    });
+
+
     /*
       *
       * Facebook Integration

@@ -1,16 +1,3 @@
-function add_video_by_ytid(ytid) {
-    var url= '/playlist/'+current_playlist+'/videos';
-    $.post(url, {v:ytid}, function(res) {
-	if (res == "ok") {
-	    load_playlist(current_playlist);
-	} else {
-	    if(res.error) {
-		alert(res.error);
-	    }
-	}
-    });
-}
-
 function place_suggestions(suggestions) {
     var uids= [];
     $(suggestions).each(function() {
@@ -104,12 +91,3 @@ jQuery(document).ready(function() {
 	});
     });
 });
-
-	// $(suggestions).each(function() {
-	//     var $layout= $("#suggestions li.layout").clone();
-	//     $layout.attr('ytid', this.ytid);
-	//     $layout.find("img").attr('src', "http://img.youtube.com/vi/"+this.ytid+"/2.jpg");
-	//     $layout.find(".by").text("Posted by: "+this.uid);
-	//     $layout.removeClass("layout");
-	//     $("#suggestions ul").prepend($layout.show());
-	// });

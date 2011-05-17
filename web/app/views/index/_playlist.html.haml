@@ -14,8 +14,10 @@
           %p.name #{video.title}
           - if @editable
             %p.close X
+          - if @playlist_member
+            %a.add-to-playlist{:href=>"#"} +
       -i=i+1
   -unless @editing
-    -if @videos.count > 3
+    -if @videos.count > 8
       %a.more-videos{:href=>"#"} More
  
