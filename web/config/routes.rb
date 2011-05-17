@@ -39,5 +39,5 @@ Web::Application.routes.draw do
   match "/:member/:playlist/videos" => "playlists#put_video", :via => :put
   match "/:member/:playlist/videos" => "playlists#delete_video", :via => :delete
 
-  root :to => "index#index"
+  root :to => "home#index"
 end
