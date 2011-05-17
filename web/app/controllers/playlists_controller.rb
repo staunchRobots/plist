@@ -6,6 +6,7 @@ class PlaylistsController < ApplicationController
   def index
     @editable= true
     @member= current_member
+    @playlist_member= @member
 
     @playlists= @member.playlists
     @on= @playlists.first

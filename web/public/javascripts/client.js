@@ -182,9 +182,13 @@ function is_youtube_url(url) {
 function create_playlist(playlist) {
     var url= '/playlist';
     if (session.uid) url= '/'+session.username+'/playlists';
-    $.post(url, {playlist:playlist}, function(playlist) {
-	window.location= "/"+session.username+"/"+playlist.id+"/edit";
-    });
+    if (playlist.title.length < 4) {
+	alert("Playlist title must be at least 4 characters long");
+    } else {
+	$.post(url, {playlist:playlist}, function(playlist) {
+	    window.location= "/"+session.username+"/"+playlist.id+"/edit";
+	});
+    }
 }
 
 function delete_video(id) {
@@ -233,12 +237,6 @@ function load_player(ytid) {
 			       player_el= $("#player-e").get(0);
 			   });
     }
-}
-
-function show_profile_image(uid) {
-    var $img= $("<img/>");
-    $img.attr({width:20, height:20, src:"http://graph.facebook.com/"+uid+"/picture"});
-    $(".top .img").append($img);
 }
 
 function show_ajax_loader() {
@@ -493,18 +491,18 @@ jQuery(document).ready(function($) {
 
     // $("#add-playlist-btn a").click();
 
-    $("#playlists li a").live("click", function(e) {
-	if ($(this).attr("href")=="#") {
-	    $(this).blur();
-	    var $item= $(this).closest(".playlist-item");
-	    current_playlist= $item.attr("id");
-	    $("#playlists li.on").removeClass('on');
-	    $item.addClass('on');
-	    $(".header .plist-title").text($(this).find(".title").text());
-	    load_playlist($item.attr("id"));
-	    e.preventDefault();
-	}
-    });
+    // $("#playlists li a").live("click", function(e) {
+    // 	if ($(this).attr("href")=="#") {
+    // 	    $(this).blur();
+    // 	    var $item= $(this).closest(".playlist-item");
+    // 	    current_playlist= $item.attr("id");
+    // 	    $("#playlists li.on").removeClass('on');
+    // 	    $item.addClass('on');
+    // 	    $(".header .plist-title").text($(this).find(".title").text());
+    // 	    load_playlist($item.attr("id"));
+    // 	    e.preventDefault();
+    // 	}
+    // });
 
     $(".playlist-item .delete").live("click", function(e) {
 	e.stopPropagation();
