@@ -6,12 +6,13 @@
         =render "index/player"
 
 #layouts{:style=>"display:none;"}
-  -@playlists= @member.playlists
-  -@editable= false
-  #add-to-playlist-menu
-    %p Add this video to playlist:
-    =render "playlists/list"
-  -@editable= true
+  -if @member
+    -@playlists= @member.playlists
+    -@editable= false
+    #add-to-playlist-menu
+      %p Add this video to playlist:
+      =render "playlists/list"
+    -@editable= true
 =content_for(:javascripts) do
   :javascript
     jQuery(document).ready(function($) {
