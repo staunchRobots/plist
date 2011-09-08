@@ -80,10 +80,10 @@ class PlaylistController < ApplicationController
   end
 
   def destroy
-    playlist= Playlist.find(params[:id])
-    playlist.destroy
+    playlist= Playlist.find(params[:playlist])
+    playlist.destroy if playlist
     respond_to do |format|
-      format.html { render :text => "ok" }
+      format.html { redirect_to "/" }
     end
   end
 

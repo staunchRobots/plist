@@ -23,6 +23,7 @@
             %a{:href=>"#"} Ok
           = check_box_tag('playlist_published', 'published', @playlist.published, {:id => 'playlist_published'})
           %label{:for => 'playlist_published'} Published?
+          = link_to "[X]", playlist_path(@playlist), :method => :delete, :confirm => "Are you sure?"
       -else
         .edit-title-notice{:style=>"display:none;"} Click to edit this playlist's title
     -else

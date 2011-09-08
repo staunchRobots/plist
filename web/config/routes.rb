@@ -13,6 +13,7 @@ Web::Application.routes.draw do
   match "/playlist/:playlist/videos/:id" => "playlist#put_video", :via => :put
   match "/playlist/:playlist/videos/:id" => "playlist#delete_video", :via => :delete
   match "/playlist/:playlist" => "playlist#update", :via => :post
+  match "/playlist/:playlist" => "playlist#destroy", :via => :delete
 
   match "/playlist/:playlist/sort" => "playlist#sort", :via => :post
   match "/playlists" => "playlist#index", :via => :get
