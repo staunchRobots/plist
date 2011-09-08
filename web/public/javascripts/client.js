@@ -253,7 +253,7 @@ function add_video_by_ytid(ytid, playlist) {
 }
 
 function load_player(ytid) {
-    var params = { allowScriptAccess: "always" };
+    var params = { allowScriptAccess: "always", allowFullScreen: true};
     var atts = { id: "player-e" };
     if (!player_el) {
 	swfobject.embedSWF("http://www.youtube.com/e/"+ytid+"?enablejsapi=1&playerapiid=ytplayer",
