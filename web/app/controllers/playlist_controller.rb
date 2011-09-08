@@ -99,4 +99,12 @@ class PlaylistController < ApplicationController
       format.html {render :text=>sort}
     end
   end
+
+  def update
+    playlist= Playlist.find(params[:playlist])
+    playlist.update_attribute(:published, params[:published]) if params[:published]
+    respond_to do |format|
+      format.html {render :text => 'ok'}
+    end
+  end
 end

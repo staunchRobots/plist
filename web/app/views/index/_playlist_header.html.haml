@@ -21,6 +21,8 @@
             %p.label Give your new playlist a name:
             %input{:type=>"text"}/
             %a{:href=>"#"} Ok
+          = check_box_tag('playlist_published', 'published', @playlist.published, {:id => 'playlist_published'})
+          %label{:for => 'playlist_published'} Published?
       -else
         .edit-title-notice{:style=>"display:none;"} Click to edit this playlist's title
     -else

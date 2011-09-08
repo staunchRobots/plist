@@ -7,6 +7,9 @@ class Playlist
   field :videos, :type=> Array
   field :anonymous, :type => String
   field :hot, :type => Boolean
+  field :published, :type => Boolean, :default => false
+
+  scope :published, where(:published => true)
 
   belongs_to :member
 
