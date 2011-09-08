@@ -180,11 +180,11 @@ function create_playlist(playlist) {
     var url= '/playlist';
     if (session.uid) url= '/'+session.username+'/playlists';
     if (playlist.title.length < 4) {
-	alert("Playlist title must be at least 4 characters long");
+			alert("Playlist title must be at least 4 characters long");
     } else {
-	$.post(url, {playlist:playlist}, function(playlist) {
-	    window.location= "/"+session.username+"/"+playlist.id+"/edit";
-	});
+			$.post(url, {playlist:playlist}, function(playlist) {
+		    window.location= "/"+session.username+"/"+playlist.id+"/edit";
+			});
     }
 }
 
@@ -418,9 +418,9 @@ jQuery(document).ready(function($) {
 	    $(".account .dropdown").show();
 	} else {
 	    if ($(".account .sign-in").length > 0) {
-		FB.login(function(response) {
-		    // everything is done in event 'auth.login'
-		}, {perms:'email, user_location, user_birthday, read_stream'});
+				FB.login(function(response) {
+				    // everything is done in event 'auth.login'
+				}, {perms:'email, user_location, user_birthday, read_stream'});
 	    }
 	}
 	// e.stopPropagation();
@@ -485,16 +485,16 @@ jQuery(document).ready(function($) {
     // -- it should (which?) playlist if session
     // -- it should load playlists panel (left) if session
     $("#add-video .add-btn").click(function(e) {
-	add_video($("#add-video input").val());
-	$("#add-video input").val("");
-	e.preventDefault();
+			add_video($("#add-video input").val());
+			$("#add-video input").val("");
+			e.preventDefault();
     });
 
     $("li.video-item .close").live("click", (function(e) {
-	var id= $(this).closest(".video-item").attr("id");
-	delete_video(id);
-	e.preventDefault();
-	e.stopPropagation();
+			var id= $(this).closest(".video-item").attr("id");
+			delete_video(id);
+			e.preventDefault();
+			e.stopPropagation();
     }));
 
     $("#add-playlist-btn a").click(function(e) {
@@ -589,8 +589,17 @@ jQuery(document).ready(function($) {
     
     // Home Page
     $(".create-playlist").click(function(e) {
-	create_playlist({title:"Choose a title for your new playlist"});
-	e.preventDefault();
+		  if ($(".account .sign-in").length > 0) {
+				FB.login(function(response) {
+				    // everything is done in event 'auth.login'
+				}, {perms:'email, user_location, user_birthday, read_stream'});
+				FB.Event.subscribe('auth.login', function () {
+					create_playlist({title:"Choose a title for your new playlist"});
+	      });
+	    } else {
+  			create_playlist({title:"Choose a title for your new playlist"});
+  			e.preventDefault();
+	    }
     });
 
 
@@ -620,7 +629,7 @@ jQuery(document).ready(function($) {
 	});
 
 	FB.Event.subscribe('auth.login', function(response) {	    
-	    login(response.session);
+      login(response.session);
 	});
 	FB.Event.subscribe('auth.logout', function(response) {
 	    $.post('/logout', {session:response.session}, function(data) {
