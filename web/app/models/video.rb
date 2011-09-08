@@ -11,7 +11,7 @@ class Video
 
   ## named scopes ##
   scope :featured, where(:featured => true)
-  scope :recent, lambda {|n=10| order_by("created_at DESC").limit(n) }
+  scope :recent, lambda {|n| order_by("created_at DESC").limit(n) }
 
   ## methods ##
 end
