@@ -1,4 +1,4 @@
-# -*- coding: undecided -*-
+# -*- coding: utf-8 -*-
 class IndexController < ApplicationController
   before_filter :is_logged_in?
   skip_before_filter :require_user
