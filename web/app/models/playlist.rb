@@ -40,7 +40,7 @@ class Playlist
     playlist_videos.each do |pv|
       @videos << list.detect {|v| pv == v._id }
     end
-    @videos
+    @videos.compact
   end
 
   def remove_video(id)
