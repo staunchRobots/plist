@@ -1,6 +1,12 @@
 Web::Application.routes.draw do
   match "/me" => "index#me"
 
+  namespace :admin do
+    get "featured" => "featured_videos#index"
+    post "featured" => "featured_videos#update"
+    # resources :featured, :only => [:index, :update], :controller => :featured_videos
+  end
+
   # Routes for anonymous
   match "/playlist/:playlist/videos" => "playlist#get_videos", :via => :get
   match "/playlist/:playlist/videos" => "playlist#post_video", :via => :post

@@ -18,4 +18,15 @@
                   .member-thumb
                     %img{:src=>"http://graph.facebook.com/#{t.member.fb_uid}/picture", :width=>"30", :height=>"30"}
                   %a.member-name{:href=>"/#{t.member.username}"} #{t.member.fb_name}
-                    
+        .recent-playlists
+          %h2 Specials
+          %ul
+            - @featured.each_with_index do |video, i|
+              -thumb= "http://img.youtube.com/vi/#{video.ytid}/2.jpg"
+              %li.video-item{:id=>"#{video.id}", :ytid=>"#{video.ytid}", :pos => "#{i}"}
+                %a{:href=>"#"}
+                  .thumb
+                    %img{:src=>"#{thumb}", :width=>60, :height=>45}
+                  %p.name #{video.title}
+                  - if @member && @playlist_member
+                    %a.add-to-playlist{:href=>"#"} +

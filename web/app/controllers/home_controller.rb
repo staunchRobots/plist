@@ -4,5 +4,6 @@ class HomeController < ApplicationController
   def index
     @member= current_member if session[:member]
     @playlists= Playlist.where({:hot => true}).desc(:created_at)
+    @featured = Video.featured
   end
 end

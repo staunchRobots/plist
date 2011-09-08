@@ -1,0 +1,23 @@
+#content.edit-playlist
+  .wrapper-content
+    .main
+      .wrapper-main
+        =render "index/playlist"
+- form_for :featured, :url => '/admin/featured' do |f|
+  %span= hidden_field_tag 'featured[ids][]', ''
+
+  #playlist{:style=>"width:500px;"}
+    %ul
+      -@videos.each_with_index do |video, i|
+        -thumb= "http://img.youtube.com/vi/#{video.ytid}/2.jpg"
+        %li.video-item{:id=>"#{video.id}", :ytid=>"#{video.ytid}", :pos => "#{i}"}
+          %span= check_box_tag 'featured[ids][]', video.id.to_s, @featured.include?(video)
+          %a{:href=>"#"}
+            .thumb
+              %img{:src=>"#{thumb}", :width=>60, :height=>45}
+            %p.name #{video.title}
+            - if @editable
+              %p.close X
+            - if @member && @playlist_member
+              %a.add-to-playlist{:href=>"#"} +
+  = f.submit "Update"
