@@ -10,6 +10,7 @@ class Playlist
   field :published, :type => Boolean, :default => false
 
   scope :published, where(:published => true)
+  scope :hot, where(:hot => true)
 
   belongs_to :member
 
@@ -66,7 +67,7 @@ class Playlist
 
   private
   def make_me_hot
-    if Playlist.where({:hot=>true}).count < 20
+    if Playlist.hot.count < 20
       self.update_attributes(:hot => true)
     else
       current_playlist= Playlist.find({:hot=>true, :member_id=> self.member_id }) if self.member

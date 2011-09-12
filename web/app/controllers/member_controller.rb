@@ -14,11 +14,15 @@ class MemberController < ApplicationController
     end
 
     if @playlist_member
-      @playlists= @playlist_member.playlists
-
-      if @playlists.count == 0
-        @playlist_member.playlists << Playlist.create({:title=>"My First Playlist", :videos=>[]})
+      if @playlist_member == @member
+        @playlists= @playlist_member.playlists
+        if @playlists.count == 0
+          @playlist_member.playlists << Playlist.create({:title=>"My First Playlist", :videos=>[]})
+        end
+      else
+        @playlists= @playlist_member.playlists.published
       end
+
 
       @playlist= @playlists.first
       @videos= @playlist.list_videos

@@ -37,7 +37,11 @@ class PlaylistsController < ApplicationController
     end
 
     if @playlist_member
-      @playlists= @playlist_member.playlists
+      if @playlist_member == @member
+        @playlists= @playlist_member.playlists
+      else
+        @playlists= @playlist_member.playlists.published
+      end
       @playlist= Playlist.find(params[:playlist])
       @videos= @playlist.list_videos
       @on= @playlist
