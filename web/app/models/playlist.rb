@@ -1,11 +1,11 @@
 class Playlist
   include Mongoid::Document
   include Mongoid::Timestamps
-  
+
   field :title, :type=> String
   field :thumb, :type=> String
   # field :videos, :type=> Array
-  has_many :videos
+  has_and_belongs_to_many :videos
   field :anonymous, :type => String
   field :hot, :type => Boolean
   field :published, :type => Boolean, :default => false
@@ -39,15 +39,16 @@ class Playlist
   end
 
   def list_videos
-    playlist_videos= self.videos
+    # playlist_videos= self.videos
     # list= Video.find(playlist_videos)
-    list= playlist_videos
+    # list= playlist_videos
     # @videos= []
     # playlist_videos.each do |pv|
     #   @videos << list.detect {|v| pv == v._id }
     # end
     # @videos.compact
-    @videos = list
+    # @videos = list
+    self.videos
   end
 
   def remove_video(id)

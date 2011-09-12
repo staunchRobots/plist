@@ -28,6 +28,11 @@
             - else
               %a.sign-in{:href=>"#"} Sign In
               //%fb:login-button.fb-login{:autologoutlink=>"true", :perms => "email, user_location, user_birthday"}
+      - if flash[:notice]
+        #message-loader
+          %p.message
+            %span.label= flash[:notice]
+
       = yield
     #fb-root
     #ajax-loader{:style=>""}

@@ -417,6 +417,27 @@ body
     float: left
     background: url(/images/ajax-loader.gif) no-repeat 0 0
 
+#ajax-loader
+  position: fixed
+  margin-left: -50px
+  width: 200px
+  height: 20px
+  background-color: white
+  padding: 3px 12px
+  top: 0
+  left: 50%
+  z-index: 200
+  +corner-bottom(4px)
+  .label
+    font-size: 13px
+  .loader
+    width: 16px
+    height: 16px
+    margin-right: 12px
+    margin-top: 2px
+    float: left
+    background: url(/images/ajax-loader.gif) no-repeat 0 0
+
 .share
   float: right
   margin-left: 20px

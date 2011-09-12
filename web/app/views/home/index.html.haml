@@ -10,7 +10,7 @@
             - @featured.each_with_index do |video, i|
               -thumb= "http://img.youtube.com/vi/#{video.ytid}/2.jpg"
               %li.video-item{:id=>"#{video.id}", :ytid=>"#{video.ytid}", :pos => "#{i}"}
-                %a{:href=>"/#{video.playlist.member.username}/#{video.playlist.id}?&video=#{video.id}"}
+                %a{:href=>"/#{video.playlists.first.member.username}/#{video.playlists.first.id}?&video=#{video.id}"}
                   .thumb
                     %img{:src=>"#{thumb}", :width=>60, :height=>45}
                   %p.name #{video.title}

@@ -14,6 +14,6 @@ class Video
   scope :recent, lambda {|n| order_by("created_at DESC").limit(n) }
 
   ## methods ##
-  belongs_to :playlist
+  has_and_belongs_to_many :playlists
 
 end
