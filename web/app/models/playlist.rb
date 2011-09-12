@@ -4,7 +4,8 @@ class Playlist
   
   field :title, :type=> String
   field :thumb, :type=> String
-  field :videos, :type=> Array
+  # field :videos, :type=> Array
+  has_many :videos
   field :anonymous, :type => String
   field :hot, :type => Boolean
   field :published, :type => Boolean, :default => false
@@ -32,19 +33,21 @@ class Playlist
     if !self.videos || self.videos.empty? || !self.thumb
       self.thumb= "http://img.youtube.com/vi/#{o[:ytid]}/2.jpg"
     end
-    self.videos << video._id
+    self.videos << video
     self.videos.uniq!
     self.save
   end
 
   def list_videos
     playlist_videos= self.videos
-    list= Video.find(playlist_videos)
-    @videos= []
-    playlist_videos.each do |pv|
-      @videos << list.detect {|v| pv == v._id }
-    end
-    @videos.compact
+    # list= Video.find(playlist_videos)
+    list= playlist_videos
+    # @videos= []
+    # playlist_videos.each do |pv|
+    #   @videos << list.detect {|v| pv == v._id }
+    # end
+    # @videos.compact
+    @videos = list
   end
 
   def remove_video(id)

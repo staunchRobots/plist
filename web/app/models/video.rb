@@ -4,7 +4,7 @@ class Video
 
   ## fields ##
   field :ytid, :type=> String # youtube_id(link)
-  field :playlist_id, :type=>String
+  # field :playlist_id, :type=>String
   field :title, :type=> String
   field :author, :type=>Array
   field :featured, :type => Boolean, :default => false
@@ -14,4 +14,6 @@ class Video
   scope :recent, lambda {|n| order_by("created_at DESC").limit(n) }
 
   ## methods ##
+  belongs_to :playlist
+
 end

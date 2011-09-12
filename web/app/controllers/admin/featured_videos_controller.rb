@@ -1,7 +1,7 @@
 class Admin::FeaturedVideosController < ApplicationController
   def index
     @featured = Video.featured
-    @videos = Video.recent(10)
+    @videos = Video.all
   end
   
   def update

@@ -38,13 +38,17 @@ class PlaylistsController < ApplicationController
 
     if @playlist_member
       if @playlist_member == @member
-        @playlists= @playlist_member.playlists
+        @playlists = @playlist_member.playlists
       else
-        @playlists= @playlist_member.playlists.published
+        @playlists = @playlist_member.playlists.published
+        if params[:video]
+          @playlist = Playlist.find(params[:playlist])
+          @videos = [Video.find(params[:video])] unless @playlist.published
+        end
       end
-      @playlist= Playlist.find(params[:playlist])
-      @videos= @playlist.list_videos
-      @on= @playlist
+      @playlist ||= Playlist.find(params[:playlist])
+      @videos ||= @playlist.list_videos
+      @on = @playlist
       
       respond_to do |format|
         format.html { render "index/index" }
