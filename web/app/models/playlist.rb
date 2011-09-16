@@ -4,7 +4,7 @@ class Playlist
 
   field :title, :type=> String
   field :thumb, :type=> String
-  # field :videos, :type=> Array
+  field :old_videos, :type=> Array
   has_and_belongs_to_many :videos
   field :anonymous, :type => String
   field :hot, :type => Boolean
