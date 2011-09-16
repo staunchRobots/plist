@@ -7,15 +7,12 @@
         .recent-playlists
           %h2 Specials
           %ul
-            - @featured.each_with_index do |video, i|
-              -thumb= "http://img.youtube.com/vi/#{video.ytid}/2.jpg"
-              %li.video-item{:id=>"#{video.id}", :ytid=>"#{video.ytid}", :pos => "#{i}"}
-                %a{:href=>"/#{video.playlists.first.member.username}/#{video.playlists.first.id}?&video=#{video.id}"}
+            - @featured.each_with_index do |pl, i|
+              %li.video-item{:id=>"#{pl.id}", :pos => "#{i}"}
+                %a{:href=>"/#{pl.member.username}/#{pl.id}"}
                   .thumb
-                    %img{:src=>"#{thumb}", :width=>60, :height=>45}
-                  %p.name #{video.title}
-                  - if @member && @playlist_member
-                    %a.add-to-playlist{:href=>"#"} +
+                    %img{:src=>"#{pl.thumb}", :width=>60, :height=>45}
+                  %p.name #{pl.title}
         .recent-playlists
           %h2 Recent Playlists
           %ul

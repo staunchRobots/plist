@@ -2,22 +2,18 @@
   .wrapper-content
     .main
       .wrapper-main
-        =render "index/playlist"
 - form_for :featured, :url => '/admin/featured' do |f|
   %span= hidden_field_tag 'featured[ids][]', ''
-
   #playlist{:style=>"width:500px;"}
     %ul
-      -@videos.each_with_index do |video, i|
-        -thumb= "http://img.youtube.com/vi/#{video.ytid}/2.jpg"
-        %li.video-item{:id=>"#{video.id}", :ytid=>"#{video.ytid}", :pos => "#{i}"}
-          %span= check_box_tag 'featured[ids][]', video.id.to_s, @featured.include?(video)
+      - @playlists.each_with_index do |pl, i|
+        %li.pl-item{:id=>"#{pl.id}", :pos => "#{i}"}
+          %span.left= check_box_tag 'featured[ids][]', pl.id.to_s, @featured.include?(pl)
           %a{:href=>"#"}
             .thumb
-              %img{:src=>"#{thumb}", :width=>60, :height=>45}
-            %p.name #{video.title}
-            - if @editable
-              %p.close X
-            - if @member && @playlist_member
-              %a.add-to-playlist{:href=>"#"} +
+              %img{:src=>"#{pl.thumb}", :width=>60, :height=>45}
+            %p.name 
+              = pl.title
+              = surround '(', ')' do
+                = pl.published ? "published" : 'not published'
   = f.submit "Update"

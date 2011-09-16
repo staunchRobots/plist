@@ -41,13 +41,19 @@ class PlaylistsController < ApplicationController
         @playlists = @playlist_member.playlists
       else
         @playlists = @playlist_member.playlists.published
+        @videos = []
         if params[:video]
           @playlist = Playlist.find(params[:playlist])
-          @videos = [Video.find(params[:video])] unless @playlist.published
-          flash[:notice] = "This is a private playlist"
+          unless @playlist.published
+            @videos = [Video.find(params[:video])]
+            flash[:notice] = "This is a private playlist"
+          end
         end
       end
       @playlist ||= Playlist.find(params[:playlist])
+      if  !@playlist.published && @playlist_member != @member
+        flash[:notice] = "This is a private playlist"
+      end
       @videos ||= @playlist.list_videos
       @on = @playlist
       

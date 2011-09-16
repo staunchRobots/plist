@@ -9,9 +9,12 @@ class Playlist
   field :anonymous, :type => String
   field :hot, :type => Boolean
   field :published, :type => Boolean, :default => false
+  field :featured, :type => Boolean, :default => false
 
+  scope :featured, where(:featured => true)
   scope :published, where(:published => true)
   scope :hot, where(:hot => true)
+  scope :recent, lambda {|n| order_by("created_at DESC").limit(n) }
 
   belongs_to :member
 

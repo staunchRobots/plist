@@ -1,7 +1,7 @@
 class Admin::FeaturedVideosController < ApplicationController
   def index
-    @featured = Video.featured
-    @videos = Video.all
+    @featured = Playlist.featured
+    @playlists = Playlist.all
   end
   
   def update
@@ -9,13 +9,13 @@ class Admin::FeaturedVideosController < ApplicationController
       params[:featured][:ids].compact!
       params[:featured][:ids].reject!(&:blank?)
       
-      @featured = Video.featured
-      @featured.each{|video|
-        video.update_attribute(:featured, false) unless params[:featured][:ids].include? video._id.to_s
+      @featured = Playlist.featured
+      @featured.each{|pl|
+        pl.update_attribute(:featured, false) unless params[:featured][:ids].include? pl._id.to_s
       }
     
-      Video.find(params[:featured][:ids]).each{|video|
-        video.update_attribute(:featured, true)
+      Playlist.find(params[:featured][:ids]).each{|pl|
+        pl.update_attribute(:featured, true)
       }
     end
     redirect_to admin_featured_path

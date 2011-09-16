@@ -4,6 +4,6 @@ class HomeController < ApplicationController
   def index
     @member= current_member if session[:member]
     @playlists= Playlist.published.hot.desc(:created_at)
-    @featured = Video.featured
+    @featured = Playlist.featured
   end
 end
