@@ -7,8 +7,11 @@ Web::Application.routes.draw do
     get :next, :on => :member
     get :prev, :on => :member
     post :switch, :on => :member
+    # get :check_out, :on => :member
+  end
+  
+  resources :remote_playlist do 
     get :check_out, :on => :member
-    
   end
   
   namespace :admin do

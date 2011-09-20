@@ -25,7 +25,7 @@
       jQuery(document).ready(function($) {
         
         setInterval(function() {      
-          $.get('/remote/#{@play.id}/check_out', {
+          $.get('/remote_playlist/#{@play.id}/check_out', {
           },
           function(res) {
             if (res == "ok") {

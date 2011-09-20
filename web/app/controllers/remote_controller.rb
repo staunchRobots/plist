@@ -55,27 +55,4 @@ class RemoteController < ApplicationController
       redirect_to :index
     end
   end
-  
-  
-  def check_out
-    play = PlaySession.find(params[:id])
-    if play.inquire_pin
-      play.inquire_pin = false
-      play.save
-      
-      render :update do |page|
-        page.alert "PIN is:" + play.pin.to_s
-      end
-    elsif play.updated
-      play.updated = false
-      play.save                        
-      render :update do |page|      
-        page << "$('#player-e').get(0).loadVideoById('#{play.current_video.ytid}');"
-      end
-    else
-      render :nothing => true
-    end
-  end
-  
-  
 end
