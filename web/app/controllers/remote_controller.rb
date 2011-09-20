@@ -1,4 +1,6 @@
 class RemoteController < ApplicationController
+  skip_before_filter :require_user
+  
   def index
     @plays = PlaySession.all
   end       
