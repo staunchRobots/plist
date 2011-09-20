@@ -12,9 +12,6 @@
             %input{:type=>"text", :value=>"Search"}
             %a.search-btn{:href=>"#"} Go
           .account                   
-            - if @play
-              current session:
-              = @play.try(:id) 
             - if @member
               %a.member{:href=>"#"}
                 %span.label You
