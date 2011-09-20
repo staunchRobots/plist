@@ -6,8 +6,9 @@
         %ul
           - @plays.each do |play|
             %li
-              = play.playlist.title
-              = surround '(', ')' do
-                by
-                = play.member
-              = link_to 'Connect', connect_remote_path(play.id)
+              - if play.playlist
+                = play.playlist.title
+                = surround '(', ')' do
+                  by
+                  = play.member
+                = link_to 'Connect', connect_remote_path(play.id)
