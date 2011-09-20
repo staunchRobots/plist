@@ -33,17 +33,15 @@ class ApplicationController < ActionController::Base
   
   def fetch_play_session    
     if session[:member]
+      @play = PlaySession.find_or_create_by(:member => current_member.username)
       if params[:playlist]
-        @play = PlaySession.find_or_create_by(:member => current_member.username)
         @play.playlist =  params[:playlist]
         @play.save
-      else
-        @play = PlaySession.first(:conditions => {:member => current_member.username})
-      end                 
+      end
       @play.current_video = if params[:video] 
           params[:video]
         else
-          if @play && @play.playlist
+          if @play.playlist
             @play.playlist.videos.try(:first).try(:id)
           else
             nil
