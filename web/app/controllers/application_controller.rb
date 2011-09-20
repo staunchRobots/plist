@@ -43,7 +43,7 @@ class ApplicationController < ActionController::Base
       @play.current_video = if params[:video] 
           params[:video]
         else
-          if @play.playlist
+          if @play && @play.playlist
             @play.playlist.videos.try(:first).try(:id)
           else
             nil
