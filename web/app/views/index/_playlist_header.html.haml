@@ -3,10 +3,20 @@
     .member-thumb
       %img{:src=>"http://graph.facebook.com/#{@playlist_member.fb_uid}/picture"}
   .info
-    -if @editing
-      %h1.plist-title.edit #{@playlist.title}
-    -else
-      %h1.plist-title #{@playlist.title}
+    %div 
+      %span 
+        %a{:href=>"/#{@playlist_member.username}"} #{@playlist_member.fb_name}
+        %a{:href => "#", :id => 'change-member-button'}
+          = image_tag '1downarrow.jpg', :height => '20', :width => '20'
+      &nbsp; 
+      &raquo;
+      &nbsp; 
+      -if @editing
+        %span.plist-title.edit #{@playlist.title}
+      -else
+        %span.plist-title #{@playlist.title}
+      %a{:href => "#", :id => 'change-playlist-button'}
+        = image_tag '1downarrow.jpg', :height => '20', :width => '20'
     -if @editable
       -unless @editing 
         .manage
@@ -31,10 +41,6 @@
         .manage
           %a.show{:href=>"#"} more
     -if @playlist_member
-      %p.by
-        %span.label by
-        %span
-          %a{:href=>"/#{@playlist_member.username}"} #{@playlist_member.fb_name}
       %p.created-at
         %span.value #{@playlist_member.created_at.to_date.to_s(:long)}
     #playlists{:style=>"display:none;"}
@@ -46,3 +52,8 @@
       .twitter
         %a{:href=>"http://twitter.com/share", :class=>"twitter-share-button", "data-count"=>"horizontal"} Tweet
         %script{:type=>"text/javascript", :src=>"http://platform.twitter.com/widgets.js"}
+        
+#change-members-list
+  %ul#members-list
+    = render :partial => 'playlists/members-list'
+#change-playlists-list

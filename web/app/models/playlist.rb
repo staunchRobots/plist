@@ -12,6 +12,7 @@ class Playlist
   field :featured, :type => Boolean, :default => false
 
   scope :featured, where(:featured => true)
+  scope :common, where(:featured => false)
   scope :published, where(:published => true)
   scope :hot, where(:hot => true)
   scope :recent, lambda {|n| order_by("created_at DESC").limit(n) }
@@ -41,7 +42,7 @@ class Playlist
     self.save
   end
 
-  def list_videos
+  def list_videos(first_id = nil)
     # playlist_videos= self.videos
     # list= Video.find(playlist_videos)
     # list= playlist_videos
@@ -50,8 +51,13 @@ class Playlist
     #   @videos << list.detect {|v| pv == v._id }
     # end
     # @videos.compact
-    # @videos = list
-    self.videos
+    # @videos = list      
+    @videos = self.videos
+    if first_id
+      @videos.sort_by{|v| v.id.to_s == first_id ? 0 : 1 }
+    else
+      @videos
+    end
   end
 
   def remove_video(id)
@@ -77,12 +83,12 @@ class Playlist
     if Playlist.hot.count < 20
       self.update_attributes(:hot => true)
     else
-      current_playlist= Playlist.find({:hot=>true, :member_id=> self.member_id }) if self.member
-      if current_playlist && current_playlist.count == 0
+      current_playlist = Playlist.first(:conditions => {:hot=>true, :member_id=> self.member_id }) if self.member
+      if current_playlist
         current_playlist= Playlist.asc(:created_at).first
       end
       self.update_attributes(:hot => true)
-      current_playlist.update_attributes(:hot => nil)
+      current_playlist.update_attributes(:hot => nil) if current_playlist
     end
   end
 end

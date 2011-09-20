@@ -1269,3 +1269,27 @@ h2 {
 .left {
   float: left;
 }
+
+/* line 565, ../../../app/stylesheets/styles.sass */
+#change-members-list {
+  position: absolute;
+  display: none;
+  width: 300px;
+  border: 1px solid black;
+  overflow: hidden;
+}
+/* line 571, ../../../app/stylesheets/styles.sass */
+#change-members-list .li {
+  border-bottom: 1px solid black;
+}
+
+/* line 573, ../../../app/stylesheets/styles.sass */
+#change-playlists-list {
+  display: none;
+  width: 300px;
+  border: 1px solid black;
+}
+/* line 577, ../../../app/stylesheets/styles.sass */
+#change-playlists-list .li {
+  border-bottom: 1px solid black;
+}

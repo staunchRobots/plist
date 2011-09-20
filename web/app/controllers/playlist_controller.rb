@@ -106,5 +106,6 @@ class PlaylistController < ApplicationController
     respond_to do |format|
       format.html {render :text => 'ok'}
     end
-  end
+  end      
+
 end

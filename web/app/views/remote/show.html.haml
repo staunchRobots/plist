@@ -1,0 +1,28 @@
+#content
+  .wrapper-content
+    .main
+      .wrapper-main
+        current session id:
+        = @play.id
+        %br
+        - if @play.playlist
+          current playlist:                  
+          = @play.playlist.title
+          %br
+        - if @play.current_video
+          current video:                  
+          = @play.current_video.try(:title)
+          %br
+        %br
+        - if @play.playlist
+          Switch to video:
+          = form_for :video, :url => switch_remote_path(@play) do |f|
+            Choose video:
+            = hidden_field_tag 'video[playlist_id]', @play.playlist.id
+            %select(name="video[video_id]")
+              - @play.playlist.videos.each do |video|
+                %option{:value => video.id}
+                  = video.title
+                
+            = submit_tag "Switch"
+        

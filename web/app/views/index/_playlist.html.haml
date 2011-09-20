@@ -2,7 +2,7 @@
   #add-video
     %input{:type=>"text", :width=>"400", :height=>"30px"}
     %a.add-btn{:href=>"#"} Add
-#playlist{:style=>"display:none;"}
+#playlist{:style=>""}
   %ul
     -@videos.each_with_index do |video, i|
       -thumb= "http://img.youtube.com/vi/#{video.ytid}/2.jpg"

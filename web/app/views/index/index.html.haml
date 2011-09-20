@@ -18,7 +18,27 @@
     jQuery(document).ready(function($) {
       $("#playlist").playlist();
       calculate_playlist_cycle();
-    })
+
+- if @play
+  =content_for(:javascripts) do
+    :javascript
+      jQuery(document).ready(function($) {
+        
+        setInterval(function() {      
+          $.get('/remote/#{@play.id}/check_out', {
+          },
+          function(res) {
+            if (res == "ok") {
+           
+            } else {
+              if (res.error) {
+                alert(res.error);
+              }
+            }
+          });
+        }, 2000);        
+      
+      })
 
 =content_for(:facebook_meta) do
   -if @playlist_member
@@ -27,3 +47,4 @@
     %meta{:property=>"og:image", :content=>"#{@playlist.thumb}"}
     %meta{:property=>"og:url", :content=>"#{request.url}"}
     %meta{:property=>"fb:app_id", :content=>"133998703298878"}
+    

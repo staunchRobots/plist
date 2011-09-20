@@ -1,7 +1,7 @@
 class PlaylistsController < ApplicationController
   before_filter :valid_member?, :only => [:create, :edit]
   skip_before_filter :require_user, :only => [:index, :show]
-
+  
   # GET /:member/playlists
   def index
     @editable= true
@@ -27,7 +27,7 @@ class PlaylistsController < ApplicationController
     end
   end
 
-  def show
+  def show          
     @member= current_member if session[:member]
     @editable= true
     @playlist_member= @member ? @member : nil
@@ -41,21 +41,14 @@ class PlaylistsController < ApplicationController
         @playlists = @playlist_member.playlists
       else
         @playlists = @playlist_member.playlists.published
-        @videos = []
-        if params[:video]
-          @playlist = Playlist.find(params[:playlist])
-          unless @playlist.published
-            @videos = [Video.find(params[:video])]
-            flash[:notice] = "This is a private playlist"
-          end
-        end
       end
       @playlist ||= Playlist.find(params[:playlist])
       if  !@playlist.published && @playlist_member != @member
         flash[:notice] = "This is a private playlist"
       end
-      @videos ||= @playlist.list_videos
-      @on = @playlist
+      
+      @videos = @playlist.list_videos(params[:video])
+      @on = @playlist  
       
       respond_to do |format|
         format.html { render "index/index" }
@@ -91,8 +84,8 @@ class PlaylistsController < ApplicationController
     respond_to do |format|
       format.html { render "edit" }
     end
-  end
-
+  end      
+  
   private
   def valid_member?
     @member= current_member
@@ -102,4 +95,6 @@ class PlaylistsController < ApplicationController
       end
     end
   end
+  
+  
 end

@@ -1,6 +1,16 @@
 Web::Application.routes.draw do
   match "/me" => "index#me"
-
+                            
+  resources :remote do 
+    get :connect, :on => :member
+    post :connect_now, :on => :member
+    get :next, :on => :member
+    get :prev, :on => :member
+    post :switch, :on => :member
+    get :check_out, :on => :member
+    
+  end
+  
   namespace :admin do
     get "featured" => "featured_videos#index"
     post "featured" => "featured_videos#update"
@@ -14,6 +24,7 @@ Web::Application.routes.draw do
   match "/playlist/:playlist/videos/:id" => "playlist#delete_video", :via => :delete
   match "/playlist/:playlist" => "playlist#update", :via => :post
   match "/playlist/:playlist" => "playlist#destroy", :via => :delete
+
 
   match "/playlist/:playlist/sort" => "playlist#sort", :via => :post
   match "/playlists" => "playlist#index", :via => :get

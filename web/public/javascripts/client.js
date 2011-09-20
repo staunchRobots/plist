@@ -461,19 +461,28 @@ $.widget("ui.playlist", {
 	}
 });
 
-jQuery(document).ready(function($) {
+jQuery(document).ready(function($) {     
+  
+  $("#change-member-button").live('click', function() {
+    $("#change-members-list").toggle()
+  })
+  $("#change-playlists-button").live('click', function() {
+    $("#change-playlists-list").toggle()
+  })
+  
+  
 	// current_playlist= $(".playlist-item.on").attr('id');
 	var $first_video = $("#playlist .video-item:first");
 	if ($first_video.length > 0) {
 		load_player($first_video.attr('ytid'));
 	}
 
-	$("#ajax-loader").ajaxStart(function() {
-		$(this).show();
-	});
-	$("#ajax-loader").ajaxStop(function() {
-		$(this).hide();
-	});
+  // $("#ajax-loader").ajaxStart(function() {
+  //  $(this).show();
+  // });
+  // $("#ajax-loader").ajaxStop(function() {
+  //  $(this).hide();
+  // });
 
 	// Account box
 	$(".account").click(function(e) {
