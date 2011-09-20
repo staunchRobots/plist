@@ -35,7 +35,10 @@ class ApplicationController < ActionController::Base
     if session[:member]
       @play = PlaySession.find_or_create_by(:member => current_member.username)
       if params[:playlist]
-        @play.playlist =  params[:playlist]
+        begin
+          @play.playlist =  Playlist.find(params[:playlist])
+        rescue Exception => e
+        end
         @play.save
       end
       @play.current_video = if params[:video] 

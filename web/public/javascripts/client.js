@@ -660,24 +660,9 @@ jQuery(document).ready(function($) {
 
 	// Home Page
 	$(".create-playlist").click(function(e) {
-		if ($(".account .sign-in").length > 0) {
-			FB.login(function(response) {
-				// everything is done in event 'auth.login'
-			},
-			{
-				perms: 'email, user_location, user_birthday, read_stream'
-			});
-			FB.Event.subscribe('auth.login', function() {
-				create_playlist({
-					title: "Choose a title for your new playlist"
-				});
-			});
-		} else {
 			create_playlist({
 				title: "Choose a title for your new playlist"
 			});
-			e.preventDefault();
-		}
 	});
 
 	$("#playlist_published").live('change', function() {
