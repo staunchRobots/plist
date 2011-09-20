@@ -70,8 +70,7 @@ class RemoteController < ApplicationController
       play.updated = false
       play.save                        
       render :update do |page|      
-        path = "/#{play.playlist.member.username}/#{play.playlist.id}?video=#{play.current_video.id}"
-        page << "window.location = '#{path}'"
+        page << "$('#player-e').get(0).loadVideoById('#{play.current_video.ytid}');"
       end
     else
       render :nothing => true
