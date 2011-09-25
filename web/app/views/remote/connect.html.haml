@@ -1,9 +1,0 @@
-#content
-  .wrapper-content
-    .main
-      .wrapper-main
-        = form_for :play_session, :url => connect_now_remote_path(@play) do |f|
-          Enter PIN number:
-          = text_field_tag :pin
-          = submit_tag "Enter"
-  

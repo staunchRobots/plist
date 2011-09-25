@@ -1,9 +1,0 @@
-%li
-  \--- Special club ---
-- @special_members.each do |m|
-  %li= link_to m.username, "/#{m.username}"
-
-%li
-  \--- Regulars ---
-  - @common_members.each do |m|
-    %li= link_to  m.username, "/#{m.username}"
