@@ -1,7 +1,23 @@
 development:
   encoding: utf8
   adapter: mysql2
-  database: plist
+  database: plist-dev
   host: localhost
   user: root
   password:
+
+staging:
+  encoding: utf8
+  adapter: mysql2
+  database: plist-stage
+  host: localhost
+  user: root
+  password: blancaj5
+
+production:
+  encoding: utf8
+  adapter: mysql2
+  database: plist
+  host: localhost
+  user: root
+  password: blancaj5
