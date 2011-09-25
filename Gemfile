@@ -5,6 +5,7 @@ gem 'haml'
 gem 'devise', '1.4.5'
 gem 'inherited_resources'
 gem 'rest-client'
+gem 'json'
 
 gem 'mysql2', '< 0.3'
 gem "jquery-rails"
