@@ -1,0 +1,8 @@
+.sign-up-form
+  = form_tag registration_path('user') do
+    = text_field_tag 'user[email]', nil, :placeholder => "email"
+    = text_field_tag 'user[name]', nil, :placeholder => "full name"
+    = text_field_tag 'user[username]', nil, :placeholder => "username"
+    = password_field_tag 'user[password]', nil, :placeholder => "password"
+    = password_field_tag 'user[password_confirmation]', nil, :placeholder => "confirm password"
+    = link_to "Sign up", '#', :id => 'sign-up-link'

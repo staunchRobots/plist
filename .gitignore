@@ -1,5 +1,4 @@
-web/.bundle
-web/db/*.sqlite3
-web/log/*.log
-web/tmp/
-web/public/stylesheets/css
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/

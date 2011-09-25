@@ -1,0 +1,797 @@
+/* line 4, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* line 6, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+html {
+  font-size: 100.01%;
+}
+
+/* line 16, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+pre, a, abbr, acronym, address, code, del, dfn, em, img,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* line 18, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+blockquote, q {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  quotes: "" "";
+}
+/* line 45, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+}
+
+/* line 20, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+th, td, caption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 22, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+table {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+
+/* line 24, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 4, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* line 6, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+html {
+  font-size: 100.01%;
+}
+
+/* line 16, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+pre, a, abbr, acronym, address, code, del, dfn, em, img,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* line 18, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+blockquote, q {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  quotes: "" "";
+}
+/* line 45, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+}
+
+/* line 20, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+th, td, caption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 22, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+table {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+
+/* line 24, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 7, ../../../app/stylesheets/layout.sass */
+body {
+  margin-top: 0;
+  font-family: "Lucida Grande", Arial, Helvetica, Verdana, sans-serif;
+}
+
+/* line 11, ../../../app/stylesheets/layout.sass */
+li {
+  display: block;
+}
+/* line 13, ../../../app/stylesheets/layout.sass */
+li a {
+  text-decoration: none;
+}
+
+/* line 16, ../../../app/stylesheets/layout.sass */
+a {
+  color: black;
+}
+
+/* line 19, ../../../app/stylesheets/layout.sass */
+h1 {
+  font-size: 30px;
+}
+
+/* line 21, ../../../app/stylesheets/layout.sass */
+h2 {
+  font-size: 20px;
+}
+
+/* line 24, ../../../app/stylesheets/layout.sass */
+.container {
+  width: 990px;
+  margin: 0 auto;
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* line 27, ../../../app/stylesheets/layout.sass */
+.top-container {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 990px;
+}
+/* line 138, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .top-container {
+  overflow-x: hidden;
+}
+/* line 29, ../../../app/stylesheets/layout.sass */
+.top-container #header {
+  height: 80px;
+  border: 1px dashed #aaaaaa;
+  margin-bottom: 20px;
+}
+/* line 33, ../../../app/stylesheets/layout.sass */
+.top-container .logo {
+  float: left;
+}
+/* line 35, ../../../app/stylesheets/layout.sass */
+.top-container .logo a {
+  color: black;
+  font-size: 30px;
+  padding: 20px;
+}
+/* line 39, ../../../app/stylesheets/layout.sass */
+.top-container .account {
+  float: right;
+  padding: 20px;
+}
+/* line 42, ../../../app/stylesheets/layout.sass */
+.top-container .account a {
+  float: left;
+  margin-left: 10px;
+}
+
+/* line 46, ../../../app/stylesheets/layout.sass */
+.main-container {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 750px;
+}
+/* line 138, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .main-container {
+  overflow-x: hidden;
+}
+
+/* line 48, ../../../app/stylesheets/layout.sass */
+.right-container {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 230px;
+}
+/* line 138, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .right-container {
+  overflow-x: hidden;
+}
+
+/* line 51, ../../../app/stylesheets/layout.sass */
+#main, #right {
+  min-height: 800px;
+}
+
+/* line 56, ../../../app/stylesheets/layout.sass */
+#main .main-content {
+  padding: 10px;
+}
+
+/* line 59, ../../../app/stylesheets/layout.sass */
+#coupons-counter {
+  -moz-border-radius-topleft: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -moz-border-radius-topright: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  border: 1px solid #aaaaaa;
+  padding: 15px 0;
+  margin-bottom: 10px;
+}
+/* line 61, ../../../app/stylesheets/layout.sass */
+#coupons-counter .count {
+  font-size: 30px;
+}
+/* line 63, ../../../app/stylesheets/layout.sass */
+#coupons-counter p {
+  text-align: center;
+}
+
+/* line 66, ../../../app/stylesheets/layout.sass */
+#email-updates {
+  -moz-border-radius-topleft: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -moz-border-radius-topright: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  border: 1px solid #aaaaaa;
+  padding: 15px 0;
+  margin-bottom: 10px;
+}
+/* line 68, ../../../app/stylesheets/layout.sass */
+#email-updates a, #email-updates p {
+  display: block;
+  text-align: center;
+}
+
+/* line 72, ../../../app/stylesheets/layout.sass */
+#new_mail_update {
+  border: 1px solid #aaaaaa;
+  background-color: #eeeeee;
+}
+
+/* line 76, ../../../app/stylesheets/layout.sass */
+#overall-trending {
+  -moz-border-radius-topleft: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -moz-border-radius-topright: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  border: 1px solid #aaaaaa;
+  padding: 15px 0;
+  margin-bottom: 10px;
+}
+/* line 78, ../../../app/stylesheets/layout.sass */
+#overall-trending .label {
+  text-align: center;
+}
+/* line 80, ../../../app/stylesheets/layout.sass */
+#overall-trending li a {
+  display: block;
+  font-size: 13px;
+  padding: 10px;
+  text-decoration: underline;
+}
+/* line 85, ../../../app/stylesheets/layout.sass */
+#overall-trending .see-chart-btn {
+  float: right;
+  margin-top: -10px;
+  margin-right: 10px;
+  font-size: 13px;
+  color: blue;
+}
+
+/* line 11, ../../../app/stylesheets/styles-1.1.sass */
+body {
+  overflow: hidden;
+}
+
+/* line 14, ../../../app/stylesheets/styles-1.1.sass */
+#root {
+  width: 640px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* line 20, ../../../app/stylesheets/styles-1.1.sass */
+.container {
+  padding: 10px;
+}
+
+/* line 23, ../../../app/stylesheets/styles-1.1.sass */
+.plist-title {
+  float: left;
+  background-color: #f1f1f2;
+  padding: 10px;
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-top: 1px solid #aaaaaa;
+  border-left: 1px solid #aaaaaa;
+  border-right: 1px solid #aaaaaa;
+  text-shadow: white -2px -2px, white -2px -2px;
+  position: absolute;
+  top: 10px;
+  z-index: -2;
+}
+
+/* line 38, ../../../app/stylesheets/styles-1.1.sass */
+.wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+  right: 0;
+  z-index: -1;
+}
+
+/* line 49, ../../../app/stylesheets/styles-1.1.sass */
+#add-video {
+  margin-top: -4px;
+  float: left;
+  background-color: black;
+  padding: 3px;
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 0;
+  -webkit-border-top-right-radius: 0;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+}
+/* line 57, ../../../app/stylesheets/styles-1.1.sass */
+#add-video input {
+  height: 16px;
+  width: 530px;
+  margin-right: 10px;
+  font-size: 14px;
+}
+/* line 63, ../../../app/stylesheets/styles-1.1.sass */
+#add-video .add-btn {
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  color: white;
+  background-color: black;
+  margin-top: 4px;
+  margin-right: 10px;
+}
+
+/* line 71, ../../../app/stylesheets/styles-1.1.sass */
+#playlist ul {
+  float: left;
+  width: 100%;
+  padding-bottom: 120px;
+}
+/* line 75, ../../../app/stylesheets/styles-1.1.sass */
+#playlist li {
+  float: left;
+  width: 320px;
+  margin: 5px;
+}
+/* line 80, ../../../app/stylesheets/styles-1.1.sass */
+#playlist li a {
+  background-color: white;
+  float: left;
+  width: 100%;
+  border: 1px solid #aaaaaa;
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+}
+/* line 88, ../../../app/stylesheets/styles-1.1.sass */
+#playlist li .thumb, #playlist li .name {
+  float: left;
+}
+/* line 90, ../../../app/stylesheets/styles-1.1.sass */
+#playlist li .name, #playlist li .close {
+  margin-top: 20px;
+  font-size: 12px;
+}
+/* line 93, ../../../app/stylesheets/styles-1.1.sass */
+#playlist li .close:hover {
+  text-decoration: underline;
+  color: red;
+}
+/* line 96, ../../../app/stylesheets/styles-1.1.sass */
+#playlist li .name {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/* line 100, ../../../app/stylesheets/styles-1.1.sass */
+#playlist li .close {
+  float: right;
+  margin-right: 10px;
+}
+/* line 103, ../../../app/stylesheets/styles-1.1.sass */
+#playlist li .thumb {
+  margin-right: 10px;
+  width: 60px;
+  height: 45px;
+}
+/* line 108, ../../../app/stylesheets/styles-1.1.sass */
+#playlist li .thumb img {
+  border: 0;
+}
+
+/* line 110, ../../../app/stylesheets/styles-1.1.sass */
+.top {
+  float: left;
+  width: 100%;
+  padding: 10px 0;
+}
+/* line 114, ../../../app/stylesheets/styles-1.1.sass */
+.top .fb-login {
+  float: right;
+}
+
+/* line 117, ../../../app/stylesheets/styles-1.1.sass */
+#left {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+}
+/* line 124, ../../../app/stylesheets/styles-1.1.sass */
+#left .wrapper-left {
+  position: absolute;
+  top: 65px;
+  height: 100%;
+  width: 100%;
+  background-color: #009d91;
+  border-right: 1px solid #00665e;
+}
+
+/* line 132, ../../../app/stylesheets/styles-1.1.sass */
+#player {
+  width: 70%;
+  position: absolute;
+  top: 65px;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  overflow: auto;
+  background-color: #f1f1f2;
+}
+/* line 142, ../../../app/stylesheets/styles-1.1.sass */
+#player .wrapper-player {
+  padding-left: 20px;
+  padding-top: 5px;
+  margin-left: white;
+}
+
+/* line 147, ../../../app/stylesheets/styles-1.1.sass */
+#logo h1 {
+  float: left;
+  padding: 10px;
+  border: 2px solid black;
+  border-top: 0;
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 0;
+  -webkit-border-top-right-radius: 0;
+  -moz-border-radius-bottomleft: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  margin-left: 20px;
+}
+
+/* line 155, ../../../app/stylesheets/styles-1.1.sass */
+.playlist-item {
+  float: left;
+  width: 100%;
+  margin-bottom: 5px;
+  border: 1px solid #00665e;
+  padding: 2px;
+  background-color: white;
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+}
+/* line 163, ../../../app/stylesheets/styles-1.1.sass */
+.playlist-item .title, .playlist-item .thumb {
+  float: left;
+}
+/* line 165, ../../../app/stylesheets/styles-1.1.sass */
+.playlist-item .title {
+  margin-left: 5px;
+  color: #00665e;
+  font-size: 14px;
+}
+/* line 170, ../../../app/stylesheets/styles-1.1.sass */
+.playlist-item a.info {
+  float: left;
+  width: 100%;
+}
+/* line 173, ../../../app/stylesheets/styles-1.1.sass */
+.playlist-item .delete {
+  float: right;
+  margin-top: 13px;
+  font-size: 11px;
+  margin-right: 5px;
+}
+/* line 178, ../../../app/stylesheets/styles-1.1.sass */
+.playlist-item .delete:hover {
+  color: red;
+  font-weight: 900;
+}
+/* line 181, ../../../app/stylesheets/styles-1.1.sass */
+.playlist-item.on, .playlist-item:hover {
+  background-color: #61d8a2;
+}
+/* line 183, ../../../app/stylesheets/styles-1.1.sass */
+.playlist-item.on a, .playlist-item.on span, .playlist-item:hover a, .playlist-item:hover span {
+  color: white;
+}
+/* line 185, ../../../app/stylesheets/styles-1.1.sass */
+.playlist-item.on {
+  background-color: #ffb800;
+  border-color: #ff6f00;
+}
+/* line 189, ../../../app/stylesheets/styles-1.1.sass */
+.playlist-item.new {
+  background-color: white;
+  position: relative;
+  border: 2px solid #0969a2;
+  margin-left: -1px;
+}
+/* line 194, ../../../app/stylesheets/styles-1.1.sass */
+.playlist-item.new input {
+  border: 1px solid #0969a2;
+  -moz-border-radius-topleft: 2px;
+  -webkit-border-top-left-radius: 2px;
+  -moz-border-radius-topright: 2px;
+  -webkit-border-top-right-radius: 2px;
+  -moz-border-radius-bottomleft: 2px;
+  -webkit-border-bottom-left-radius: 2px;
+  -moz-border-radius-bottomright: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  margin-left: 10px;
+  width: 145px;
+}
+/* line 199, ../../../app/stylesheets/styles-1.1.sass */
+.playlist-item.new .edit {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+}
+/* line 203, ../../../app/stylesheets/styles-1.1.sass */
+.playlist-item.new .ok, .playlist-item.new .cancel {
+  color: #0969a2;
+  text-decoration: underline;
+  font-size: 12px;
+  float: left;
+  padding: 0 5px;
+}
+
+/* line 210, ../../../app/stylesheets/styles-1.1.sass */
+#playlists ul {
+  float: left;
+  padding: 10px;
+}
+/* line 213, ../../../app/stylesheets/styles-1.1.sass */
+#playlists #add-playlist-btn {
+  float: right;
+  margin-right: 10px;
+}
+/* line 216, ../../../app/stylesheets/styles-1.1.sass */
+#playlists #add-playlist-btn a {
+  color: white;
+  background-color: #0969a2;
+  padding: 5px 10px;
+  text-decoration: none;
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+}
+/* line 223, ../../../app/stylesheets/styles-1.1.sass */
+#playlists #add-playlist-btn.on a {
+  background-color: #0969a2;
+}
+
+/* line 226, ../../../app/stylesheets/styles-1.1.sass */
+#right {
+  position: absolute;
+  top: 65px;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 30%;
+  background-color: #00b060;
+  border-left: 1px solid #00665e;
+}
+/* line 236, ../../../app/stylesheets/styles-1.1.sass */
+#right .wrapper-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+}
+
+/* line 244, ../../../app/stylesheets/styles-1.1.sass */
+#signup {
+  background: none repeat scroll 0 0 black;
+  color: #cccccc;
+  margin: 20px auto 0;
+  padding: 20px 40px;
+  width: 800px;
+  height: 300px;
+}
+/* line 252, ../../../app/stylesheets/styles-1.1.sass */
+#signup h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+/* line 257, ../../../app/stylesheets/styles-1.1.sass */
+#signup .username {
+  float: left;
+  padding: 20px 0;
+}
+/* line 260, ../../../app/stylesheets/styles-1.1.sass */
+#signup .username .plist, #signup .username .input, #signup .username .sign-in-btn {
+  float: left;
+}
+/* line 262, ../../../app/stylesheets/styles-1.1.sass */
+#signup .username .plist {
+  color: white;
+  font-size: 25px;
+}
+/* line 265, ../../../app/stylesheets/styles-1.1.sass */
+#signup .username .input {
+  margin-top: -13px;
+}
+/* line 267, ../../../app/stylesheets/styles-1.1.sass */
+#signup .username .input p {
+  font-size: 12px;
+}
+/* line 269, ../../../app/stylesheets/styles-1.1.sass */
+#signup .username .input input {
+  height: 25px;
+  font-size: 20px;
+  border: 1px solid white;
+  -moz-border-radius-topleft: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -moz-border-radius-topright: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+}
+/* line 274, ../../../app/stylesheets/styles-1.1.sass */
+#signup .username .sign-in-btn {
+  background-color: #ffb800;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin-top: 2px;
+  margin-left: 10px;
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+}
+/* line 282, ../../../app/stylesheets/styles-1.1.sass */
+#signup .username .error p {
+  color: red;
+  clear: left;
+  font-size: 12px;
+  padding-top: 5px;
+}
+
+

@@ -1,0 +1,14 @@
+%h2
+  Playlists:
+  = @user.playlists.count
+%hr
+- @user.playlists.published.each do |playlist|
+  = playlist.title
+  = link_to "Show", [@user,playlist]
+  %br
+
+%br
+%br
+
+- if current_user == @user
+  = link_to 'Create new Playlist', new_user_playlist_path(@user)

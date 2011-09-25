@@ -1,0 +1,12 @@
+.header
+  .info
+    %div 
+      %span              
+        = link_to @playlist.title, user_playlist_path(@playlist.user, @playlist.id), :class => 'playlist-title'
+        &raquo;
+        = link_to @playlist.user.name, @playlist.user
+
+- if myown_playlist
+  .right
+    = check_box_tag('playlist_published', 'published', @playlist.published, {:id => 'playlist_published'})
+    %label{:for => 'playlist_published'} Published?        

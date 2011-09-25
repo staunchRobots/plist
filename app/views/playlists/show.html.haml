@@ -1,0 +1,20 @@
+- include_javascript 'functions', 'playlist', 'player'
+= render 'playlists/header'
+#player{:playlist => "#{@playlist.id}"}
+  .wrapper-player
+    .ytplayer{:style=>"background-color:black;width:940px;height:510px;float:left;margin-bottom:10px;"}
+      #ytapiplayer
+        %p{:style=>"display:none;"} You need Flash player 8+ and JavaScript enabled to view this video.
+    = render 'playlists/add_video_form'
+
+    #playlist{:style=>""}
+      %ul#videos-list
+        = render :partial => 'videos/video', :collection => @playlist.videos
+      -if @playlist.videos.count > 8
+        %a.more-videos{:href=>"#"} More
+  #comments
+    %h2 Comments
+    %fb:comments{:href=>"#{request.url}", :num_posts=>"2", :width=>"800"}
+    
+:javascript
+  current_playlist = '#{@playlist.id}';

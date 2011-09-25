@@ -1,0 +1,11 @@
+User:
+= @user.email
+
+%br
+%h2 Playlists:
+- @playlists.each do |playlist|
+  = playlist.title
+  = link_to "Show", [@user,playlist]
+  %br                                                
+  
+= link_to 'Create new Playlist', new_user_playlist_path(@user)

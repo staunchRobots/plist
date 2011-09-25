@@ -1,0 +1,7 @@
+development:
+  encoding: utf8
+  adapter: mysql2
+  database: plist
+  host: localhost
+  user: root
+  password:

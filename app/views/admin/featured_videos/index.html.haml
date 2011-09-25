@@ -1,0 +1,27 @@
+#content.edit-playlist
+  .wrapper-content
+    .main
+      .wrapper-main
+- form_for :featured, :url => '/admin/featured' do |f|
+  %span= hidden_field_tag 'featured[ids][]', ''
+  #playlist{:style=>"width:500px;"}
+    %table(cellpadding="10" width="600")
+      - @playlists.each_with_index do |pl, i|
+        %tr.pl-item{:id=>"#{pl.id}", :pos => "#{i}"}
+          %td
+            %span.left= check_box_tag 'featured[ids][]', pl.id.to_s, @featured.include?(pl)
+          %td
+            %a{:href=>"#"}
+              .thumb
+                %img{:src=>"#{pl.thumb || '/images/video-placeholder.jpg'}", :width=>60, :height=>45}
+          %td(width="50%")
+            %p.name 
+              = pl.title
+          %td(width="40%")
+            %p.name 
+              = pl.user.name 
+              - surround '(', ')' do
+                =pl.user.username
+          %td
+            = pl.published ? "published" : 'not published'
+  = f.submit "Update"

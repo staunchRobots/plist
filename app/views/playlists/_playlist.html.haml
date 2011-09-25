@@ -1,0 +1,9 @@
+%li
+  .thumb          
+    = link_to user_playlist_path(playlist.user.username, playlist) do
+      %img{:src=>"#{playlist.thumb || '/images/video-placeholder.jpg'}", :width=>"60", :height=>"45"}
+  = link_to playlist.title, user_playlist_path(playlist.user.username, playlist), :class => 'title'
+  .member
+    .member-thumb
+      %img{:src=>"#{avatar_url(playlist.user)}", :width=>"30", :height=>"30"}
+    = link_to playlist.user.name, playlist.user, :class => 'member-name'

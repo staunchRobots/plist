@@ -1,0 +1,10 @@
+- if flash[:notice]
+  :javascript
+    $(function() {
+      $.ctNotify('#{flash[:notice]}', 'message');
+    })
+- if flash[:error] || flash[:alert]
+  :javascript
+    $(function() {
+      $.ctNotify('#{flash[:error] || flash[:alert]}', 'error');
+    })

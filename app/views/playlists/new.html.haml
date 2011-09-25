@@ -1,0 +1,8 @@
+%h2 Create a new playlist
+- form_for [@user, @playlist] do |f|
+  %p
+    = f.label :title
+    = f.text_field :title
+
+
+  = f.submit "Create"

@@ -1,0 +1,2 @@
+module JukeboxesHelper
+end

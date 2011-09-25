@@ -1,0 +1,8 @@
+%p#notice= notice                                 
+
+%h1
+  = @jukebox.title
+
+= link_to 'Edit', edit_user_jukebox_path(current_user, @jukebox)
+|
+= link_to 'Back', user_jukeboxes_path(current_user)

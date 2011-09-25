@@ -1,0 +1,17 @@
+%h1 Listing jukeboxes
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+- @jukeboxes.each do |jukebox|
+  %tr
+    %td= link_to 'Show', [current_user, jukebox]
+    %td= link_to 'Edit', edit_user_jukebox_path(current_user, jukebox)
+    %td= link_to 'Destroy', [current_user, jukebox], :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Jukebox', new_user_jukebox_path(current_user) 
