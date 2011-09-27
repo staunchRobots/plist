@@ -3,10 +3,10 @@ module PlaylistHelper
     @playlist && current_user && @playlist.user == current_user
   end
 
-  def copy_playlists_list(ytid)
+  def copy_playlists_list(ytid, is_dynamic_video = false)
     pls = current_user.playlists.includes(:videos)
     pls.reject!{|x| x.videos.any?{|v| v.ytid == ytid}}
-    pls.reject!{|x| x.id == @playlist.id} if myown_playlist
+    pls.reject!{|x| x.id == @playlist.id} if myown_playlist && !is_dynamic_video
     content_tag :ul do
       pls.collect{|p|
         c = content_tag :li do
@@ -17,10 +17,10 @@ module PlaylistHelper
     end
   end
 
-  def move_playlists_list(video_id, ytid)
+  def move_playlists_list(video_id, ytid, is_dynamic_video = false)
     pls = current_user.playlists.includes(:videos)
     pls.reject!{|x| x.videos.any?{|v| v.ytid == ytid}}
-    pls.reject!{|x| x.id == @playlist.id} if myown_playlist
+    pls.reject!{|x| x.id == @playlist.id} if myown_playlist && !is_dynamic_video
     content_tag :ul do
       pls.collect{|p|
         c = content_tag :li do

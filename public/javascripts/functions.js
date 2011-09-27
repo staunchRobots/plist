@@ -63,15 +63,15 @@ function rearrange_playlist() {
 $.widget("ui.playlist", {
   _init: function() {
     var $el = this.element;
-    $el.find(".more-videos").live("click", function(e) {
-      var count = $el.find(".video-item:visible").length;
-      $el.addClass("more");
-      $el.find(".video-item").slice(count, count + 5).show();
-      if ($el.find(".video-item:last").has(":visible").length == 1) {
-        $(this).hide();
-      }
-      e.preventDefault();
-    });
+    // $el.find(".more-videos").live("click", function(e) {
+    //   var count = $el.find(".video-item:visible").length;
+    //   $el.addClass("more");
+    //   $el.find(".video-item").slice(count, count + 5).show();
+    //   if ($el.find(".video-item:last").has(":visible").length == 1) {
+    //     $(this).hide();
+    //   }
+    //   e.preventDefault();
+    // });
     $("li.video-item a.play-item").live("click", function(e) {
       var id = $(this).attr('ytid');
       play(id);
