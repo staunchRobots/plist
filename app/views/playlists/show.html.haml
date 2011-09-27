@@ -10,8 +10,8 @@
     #playlist{:style=>""}
       %ul#videos-list
         = render :partial => 'videos/video', :collection => @playlist.videos
-      -if @playlist.videos.count > 8
-        %a.more-videos{:href=>"#"} More
+      / -if @playlist.videos.count > 8
+      /   %a.more-videos{:href=>"#"} More
   #comments
     %h2 Comments
     %fb:comments{:href=>"#{request.url}", :num_posts=>"2", :width=>"800"}
