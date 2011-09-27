@@ -3,8 +3,8 @@
   new_video.hide()
   $("#playlist #videos-list").append(new_video)
   new_video.show('fast')
+  $("#playlist #videos-list > li:last .actions_menu").clickMenu();
 <% end %>
 
 $("#add-video input[type='text']").attr('value', '').blur()
 $.ctNotify("Video has been added to '<%= @playlist.title %>' playlist")
-$(".actions_menu").clickMenu();
