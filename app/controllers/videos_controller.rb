@@ -3,6 +3,7 @@ class VideosController < InheritedResources::Base
 
   def create
     @playlist = Playlist.find(params[:playlist_id])
+    @at_current_url = params[:current_playlist].to_i == @playlist.id
     @is_url = params[:video][:is_ytid] ? false : true
     @video = @playlist.add_video(params[:video][:yt_url], @is_ytid)
     respond_to do |format|
@@ -50,6 +51,7 @@ class VideosController < InheritedResources::Base
   end
 
   def ytsearch
+    @playlist = Playlist.find(params[:current_playlist])
     @is_pagination_search = params[:video][:page].nil?
     @videos = Video.ytsearch(params[:video][:search], {'start-index' => (params[:video][:page].to_i * 10)+1})
     respond_to do |format|

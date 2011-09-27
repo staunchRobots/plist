@@ -2,9 +2,9 @@
   %li
     +
     %ul
-      %li                                                                                                      
+      %li
         Copy to
-        = copy_playlists_list(video.ytid)
+        = copy_playlists_list(video.ytid, video.new_record?)
       - if myown_playlist && !video.new_record?
         %li
           = link_to 'Move to playlist', '#'

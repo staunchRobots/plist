@@ -1,4 +1,4 @@
-<% if @is_url %>
+<% if @is_url || @at_current_url %>
   var new_video = $("<%= escape_javascript(render(:partial => 'videos/video', :object => @video)) %>")
   new_video.hide()
   $("#playlist #videos-list").append(new_video)
