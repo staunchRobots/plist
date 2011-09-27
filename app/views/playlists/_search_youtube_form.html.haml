@@ -1,0 +1,8 @@
+#search-yt-video
+  = form_for :video, :url => ytsearch_playlist_videos_path(@playlist.id, :format => :js), :remote => true do |f|
+    %input{:name=>'video[search]', :type=>"text", :width=>"400", :height=>"30px", :onblur => "if (this.value==''){this.value='Search Youtube for videos'}", :onfocus => "if (this.value=='Search Youtube for videos'){this.value=''}", :value => "Search Youtube for videos"}
+    %input(name='video[page]' type='hidden' value='0' id="yt-videos-page")
+    %a.add-btn{:href=>"#"} Search
+    .clear
+    %a#yt-prev-search.browse.left &nbsp;
+    %a#yt-next-search.browse.right &nbsp;

@@ -1,0 +1,11 @@
+$("#playlist #ytvideos-list").html('')
+<% @videos.each do |video| %>
+  var new_video = $("<%= escape_javascript(render(:partial => 'videos/video', :object => video)) %>")
+  $("#playlist #ytvideos-list").append(new_video)
+  new_video.show('fast')
+<% end %>
+                               
+<% if @is_pagination %>
+  $("#search-yt-video input[type='text']").attr('value', '').blur()
+<% end %>
+$(".actions_menu").clickMenu();

@@ -24,4 +24,6 @@ $(function() {
 
   $(".actions_menu").clickMenu();
 
+  $("#video-list-tabs").tabs();
+
 })

@@ -10,6 +10,7 @@ Plist::Application.routes.draw do
     post :published, :on => :member
     resources :videos do
       post :reorder, :on => :collection
+      post :ytsearch, :on => :collection
       post :move, :on => :member
     end
     # post :add_video, :on => :member

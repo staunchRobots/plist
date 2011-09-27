@@ -49,5 +49,13 @@ class VideosController < InheritedResources::Base
 
   end
 
+  def ytsearch
+    @is_pagination_search = params[:video][:page].nil?
+    @videos = Video.ytsearch(params[:video][:search], {'start-index' => (params[:video][:page].to_i * 10)+1})
+    respond_to do |format|
+      format.js
+    end
+  end
+
 
 end

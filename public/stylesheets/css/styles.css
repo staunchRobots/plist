@@ -966,7 +966,7 @@ h2 {
 }
 
 /* line 376, ../../../app/stylesheets/styles.sass */
-#add-video {
+#add-video, #search-yt-video {
   background-color: black;
   padding: 3px;
   float: left;
@@ -981,7 +981,7 @@ h2 {
   -webkit-border-bottom-right-radius: 4px;
 }
 /* line 381, ../../../app/stylesheets/styles.sass */
-#add-video input {
+#add-video input, #search-yt-video input {
   height: 16px;
   width: 560px;
   margin-right: 10px;
@@ -989,12 +989,12 @@ h2 {
   float: left;
 }
 /* line 388, ../../../app/stylesheets/styles.sass */
-#add-video input.empty {
+#add-video input.empty, #search-yt-video input.empty {
   font-style: italic;
   color: #cccccc;
 }
 /* line 391, ../../../app/stylesheets/styles.sass */
-#add-video .add-btn {
+#add-video .add-btn, #search-yt-video .add-btn {
   -moz-border-radius-topleft: 4px;
   -webkit-border-top-left-radius: 4px;
   -moz-border-radius-topright: 4px;
@@ -1004,7 +1004,7 @@ h2 {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
   color: white;
-  float: right;
+  float: left;
   margin-top: 2px;
   margin-right: 10px;
 }
@@ -1318,3 +1318,49 @@ h2 {
 .login-form, .sign-up-form {
   display:none;
 }
+
+#video-list-tabs ul.tab-header li {
+  float: left;
+  margin: 2px 5px;
+  font-size: 18px;
+}
+
+/*
+.ui-tabs { position: relative; padding: .2em; zoom: 1; }
+.ui-tabs .ui-tabs-nav { margin: 0; padding: .2em .2em 0; }
+.ui-tabs .ui-tabs-nav li { list-style: none; float: left; position: relative; top: 0; margin: 1px .2em 0 0; border-bottom: 0 !important; padding: 0; white-space: nowrap; }
+.ui-tabs .ui-tabs-nav li a { float: left; padding: .5em 1em; text-decoration: none; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-active { margin-bottom: -1px; padding-bottom: 1px; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-tabs-loading a { cursor: text; }
+.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active a { cursor: pointer; }
+.ui-tabs .ui-tabs-panel { display: block; border-width: 0; padding: 1em 1.4em; background: none; }
+*/
+
+#video-list-tabs div {
+  float: left;
+}
+
+
+
+a.browse {
+	background:url(/images//hori_large.png) no-repeat;
+  display:inline;
+  width:15px;
+  height:15px;       
+  float: left;
+  
+	cursor:pointer;
+  font-size:1px;
+  position: relative;
+}
+
+/* right */
+a.right 				{ background-position: 0 -15px; clear:right; margin-right: 0px;}
+a.right:hover 		{ background-position:-15px -15px; }
+a.right:active 	{ background-position:-30px -15px; } 
+
+
+/* left */
+a.left				{ margin-left: 0px; } 
+a.left:hover  		{ background-position:-15px 0; }
+a.left:active  	{ background-position:-30px 0; }
