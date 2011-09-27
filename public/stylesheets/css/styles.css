@@ -714,7 +714,7 @@ h2 {
 #playlist li.video-item a {
   background-color: white;
   float: left;
-/*  width: 100%;*/
+  width: 95%;
 }
 
 #playlist li.video-item .cmDiv a {

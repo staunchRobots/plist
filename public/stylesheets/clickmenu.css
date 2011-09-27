@@ -2,6 +2,7 @@ div.cmDiv
 {
 	border: 1px solid black;
 	background-color: #eee;
+	float: right;
 }
 .clickMenu
 {
