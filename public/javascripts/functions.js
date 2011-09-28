@@ -27,7 +27,7 @@ function load_player(ytid) {
     id: "player-e"
   };
   if (!player_el) {
-    swfobject.embedSWF("http://www.youtube.com/e/" + ytid + "?enablejsapi=1&playerapiid=ytplayer", "ytapiplayer", "855", "510", "8", null, null, params, atts, function(e) {
+    swfobject.embedSWF("http://www.youtube.com/e/" + ytid + "?enablejsapi=1&playerapiid=ytplayer", "ytapiplayer", "960", "510", "8", null, null, params, atts, function(e) {
       player_el = $("#player-e").get(0);
     });
   }

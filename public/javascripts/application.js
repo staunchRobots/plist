@@ -16,14 +16,11 @@ $(function() {
   });
 
   $.ctNotifyOption({
-    // anchors:{top: '40px'} // under the header
-    position: "absolute",
+    sticky: false,
+    position: "fixed",
     width: '400px',
     anchors:{bottom: 0, right: 0}
   });
 
   $(".actions_menu").clickMenu();
-
-  $("#video-list-tabs").tabs();
-
 })

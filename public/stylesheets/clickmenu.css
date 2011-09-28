@@ -3,6 +3,8 @@ div.cmDiv
 	border: 1px solid black;
 	background-color: #eee;
 	float: right;
+	width: 20px;
+	padding: 0px 13px 0px 0px
 }
 .clickMenu
 {
