@@ -15,11 +15,12 @@ class PlaylistsController < InheritedResources::Base
   end
 
   def published
-    playlist= Playlist.find(params[:id])
-    pub = params[:published] ? true : false
-    playlist.update_attribute(:published, pub)
+    @playlist = Playlist.find(params[:id])
+    pub = params[:playlist_published] ? true : false
+    @playlist.update_attribute(:published, pub)
     respond_to do |format|
       format.html {render :text => 'ok'}
+      format.js
     end
   end
 end

@@ -1318,7 +1318,7 @@ h2 {
 }
 
 .playlist-title {
-  font-size: 26px;
+  font-size: 24px;
 }
 
 .right {
@@ -1383,3 +1383,13 @@ a.right:active 	{ background-position:-30px -15px; }
 a.left				{ margin-left: 0px; } 
 a.left:hover  		{ background-position:-15px 0; }
 a.left:active  	{ background-position:-30px 0; }
+
+
+.options-button {
+  margin: 0px 0px 0px 10px;
+  height: 26px;
+}             
+
+.options-form { 
+  display: none;
+}

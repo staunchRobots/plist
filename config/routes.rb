@@ -8,6 +8,7 @@ Plist::Application.routes.draw do
 
   resources :playlists do
     post :published, :on => :member
+    post :options, :on => :member
     resources :videos do
       post :reorder, :on => :collection
       post :ytsearch, :on => :collection

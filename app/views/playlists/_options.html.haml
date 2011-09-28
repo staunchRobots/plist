@@ -1,0 +1,12 @@
+.options-form
+  %h2 Playlist Options
+  = form_tag published_playlist_path(@playlist.id, :format => :js), :remote => true do
+    %div 
+      Avatar mock
+      = label_tag 'user[lala]', 'Avatar'
+      = file_field_tag 'user[lala]'
+    %div
+      Check this to make your plist available for everyone
+      %br
+      = check_box_tag 'playlist_published', 'published', @playlist.published
+      = label_tag 'playlist_published', 'Published'

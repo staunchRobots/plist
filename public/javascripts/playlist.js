@@ -64,15 +64,15 @@ $(function() {
 
 
 
-  $("#playlist_published").live('change', function() {
-    $.post("/playlists/" + current_playlist + '/published', {
-      published: $("#playlist_published").attr("checked")
-    },
-    function() {
-      // hello
-    });
-
-  })
+  // $("#playlist_published").live('change', function() {
+  //   $.post("/playlists/" + current_playlist + '/published', {
+  //     published: $("#playlist_published").attr("checked")
+  //   },
+  //   function() {
+  //     // hello
+  //   });
+  // 
+  // })
 
 
 })
