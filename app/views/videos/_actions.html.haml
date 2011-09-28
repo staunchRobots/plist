@@ -12,6 +12,6 @@
         %li
           = link_to 'Remove', playlist_video_path(@playlist, video.id), :method => :delete, :remote => true
       %li
-        = link_to 'Like', '#', :onclick => '$.ctNotify("Liked")'
+        = link_to 'Like', '#', :onclick => '$.ctNotify("Liked"); return false;'
       %li
-        = link_to 'Hate', '#', :onclick => '$.ctNotify("Hated", "error")'
+        = link_to 'Hate', '#', :onclick => '$.ctNotify("Hated", "error"); return false;'
