@@ -45,7 +45,7 @@ class VideosController < InheritedResources::Base
     @playlist.update_videos_sort_order(params[:order])
 
     respond_to do |format|
-      format.json { render :json => "success" }
+      format.js
     end
 
   end

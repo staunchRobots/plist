@@ -1,11 +1,11 @@
-User:
-= @user.email
+= link_to "Create new Plist", new_user_playlist_path(@user), :class => 'create-playlist'
 
-%br
-%h2 Playlists:
-- @playlists.each do |playlist|
-  = playlist.title
-  = link_to "Show", [@user,playlist]
-  %br                                                
-  
-= link_to 'Create new Playlist', new_user_playlist_path(@user)
+.recent-playlists
+  %h2 
+    Your playlists
+    = @user.playlists.count
+  - if @user.playlists.size > 0
+    %ul
+      = render :partial => 'playlists/playlist', :collection => @user.playlists
+  - else
+    No playlists found

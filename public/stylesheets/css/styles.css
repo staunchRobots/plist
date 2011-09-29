@@ -688,7 +688,7 @@ h2 {
 
 #playlist ul .actions_menu {
   float: none;
-}            
+}
 
 /* line 214, ../../../app/stylesheets/styles.sass */
 #playlist li.video-item {
@@ -989,14 +989,14 @@ h2 {
   margin-right: 10px;
   font-size: 14px;
   float: left;
-}              
+}
 
 #search-yt-video input {
   height: 16px;
   width: 346px;
   margin-right: 10px;
   font-size: 14px;
-  float: left;  
+  float: left;
 }
 /* line 388, ../../../app/stylesheets/styles.sass */
 #add-video input.empty, #search-yt-video input.empty {
@@ -1345,16 +1345,16 @@ h2 {
 .ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active a { cursor: pointer; }
 .ui-tabs .ui-tabs-panel { display: block; border-width: 0; padding: 1em 1.4em; background: none; }
 */
-                
+
 #video-list-tabs {
   width: 960px;
-} 
+}
 
 #video-list-tabs .video-list-column {
   float: left;
   width: 460px;
-}             
-                
+}
+
 #video-list-tabs  .video-list-column:nth-child(2) {
   margin: 0px 0px 0px 20px;
 }
@@ -1365,9 +1365,9 @@ a.browse {
 	background:url(/images//hori_large.png) no-repeat;
   display:inline;
   width:15px;
-  height:15px;       
+  height:15px;
   float: left;
-  
+
 	cursor:pointer;
   font-size:1px;
   position: relative;
@@ -1376,11 +1376,11 @@ a.browse {
 /* right */
 a.right 				{ background-position: 0 -15px; clear:right; margin-right: 0px;}
 a.right:hover 		{ background-position:-15px -15px; }
-a.right:active 	{ background-position:-30px -15px; } 
+a.right:active 	{ background-position:-30px -15px; }
 
 
 /* left */
-a.left				{ margin-left: 0px; } 
+a.left				{ margin-left: 0px; }
 a.left:hover  		{ background-position:-15px 0; }
 a.left:active  	{ background-position:-30px 0; }
 
@@ -1388,8 +1388,38 @@ a.left:active  	{ background-position:-30px 0; }
 .options-button {
   margin: 0px 0px 0px 10px;
   height: 26px;
-}             
+}
 
-.options-form { 
+.options-form {
   display: none;
+}
+
+#login-user-playlists {
+  margin-left: 100px;
+  background-color: black;
+  padding: 0 0 5px;
+  position: absolute;
+  right: -120px;
+  top: 0px;
+  width: 120px;
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 0;
+  -webkit-border-top-right-radius: 0;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+
+}
+
+#login-user-playlists li {
+  border-bottom: 1px solid #333;
+}
+
+.my-playlists #login-user-playlists {
+  display: none;
+}
+.my-playlists:hover #login-user-playlists {
+  display: block;
 }

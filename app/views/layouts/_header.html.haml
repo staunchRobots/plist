@@ -6,7 +6,7 @@
     .search
       %input{:type=>"text", :value=>"Search"}
       %a.search-btn{:href=>"#"} Go
-    .account                   
+    .account
       - if user_signed_in?
         %a.member{:href=>"#"}
           %span.label You
@@ -14,7 +14,13 @@
         .img{:style=>"width:20px;height:20px;background-color:white;float:right;"}
           %img{:src=>"#{avatar_url(current_user)}", :width=>"20", :height=>"20"}
         .dropdown{:style=>"display:none;"}
-          = link_to 'My Playlists', user_playlists_path(current_user), :class => 'my-playlists'
+          .my-playlists
+            = link_to user_playlists_path(current_user), :class => '' do
+              My Playlists
+            .ul#login-user-playlists
+              - current_user.playlists.each do |pls|
+                %li= link_to pls.title, user_playlist_path(current_user, pls.id)
+
           = link_to 'My Jukeboxes', user_jukeboxes_path(current_user)
           = link_to 'Settings', edit_user_path(current_user), :class => 'settings'
           - if current_user.is_admin
