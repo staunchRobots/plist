@@ -1,5 +1,6 @@
 class PlaylistsController < InheritedResources::Base
   nested_belongs_to :user, :finder => :find_by_username
+  respond_to :js, :html
 
   def show
     show! do |format|
@@ -21,6 +22,14 @@ class PlaylistsController < InheritedResources::Base
     respond_to do |format|
       format.html {render :text => 'ok'}
       format.js
+    end
+  end
+
+  def destroy
+    super do |format|
+     flash[:notice] = "Playlist deleted"
+     format.html { redirect_to root_url }
+     format.js
     end
   end
 end

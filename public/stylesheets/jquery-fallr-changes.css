@@ -1,0 +1,15 @@
+#fallr form #playlist_title {
+  width: 222px;
+  margin-left: 6px;
+}
+
+#fallr form .playlist_published_radio {
+  margin-left: 39px;
+}                
+
+#fallr form .fallr-red {
+  background-image: none;
+  background-color: #c00;
+  text-shadow: none;
+  color: white;
+}
