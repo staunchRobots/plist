@@ -1417,7 +1417,7 @@ a.left:active  	{ background-position:-30px 0; }
   padding: 0 0 5px;
   position: absolute;
   right: -120px;
-  top: 0px;
+  top: 30px;
   width: 120px;
   -moz-border-radius-topleft: 0;
   -webkit-border-top-left-radius: 0;
@@ -1439,4 +1439,8 @@ a.left:active  	{ background-position:-30px 0; }
 }
 .my-playlists:hover #login-user-playlists {
   display: block;
+}
+
+.add-playlist-form {
+  display: none;
 }

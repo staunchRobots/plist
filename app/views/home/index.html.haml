@@ -1,6 +1,6 @@
 %h1 Watch, create and share video playlists with your friends!                                         
 - if user_signed_in?
-  = link_to "Create your own playlist", new_user_playlist_path(current_user), :class => 'create-playlist'
+  = link_to "Create your own playlist", '#', :class => 'create-playlist'
 - else
   = link_to "Create your own playlist", new_user_session_path, :class => 'create-playlist'
   

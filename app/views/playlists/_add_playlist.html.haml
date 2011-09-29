@@ -1,0 +1,12 @@
+.add-playlist-form
+  = form_for Playlist.new, :url => user_playlists_path(current_user, :format => :js), :remote => true do |f|
+    %div
+      %span Title of playlist
+      = f.text_field :title
+    %div
+      %span Visibility
+      %span.playlist_published_radio
+        = f.radio_button :published, false
+        = f.label :published_no, "Unpublished"
+        = f.radio_button :published, true
+        = f.label :published_yes, "Published"

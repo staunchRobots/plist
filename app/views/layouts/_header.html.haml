@@ -9,11 +9,12 @@
     .account
       - if user_signed_in?
         %a.member{:href=>"#"}
-          %span.label You
+          %span.label= current_user.username
           %span.icon
         .img{:style=>"width:20px;height:20px;background-color:white;float:right;"}
           %img{:src=>"#{avatar_url(current_user)}", :width=>"20", :height=>"20"}
         .dropdown{:style=>"display:none;"}
+          = link_to 'Create Playlist', '#', :class => 'create-playlist'
           .my-playlists
             = link_to user_playlists_path(current_user), :class => '' do
               My Playlists
@@ -21,11 +22,12 @@
               - current_user.playlists.each do |pls|
                 %li= link_to pls.title, user_playlist_path(current_user, pls.id)
 
-          = link_to 'My Jukeboxes', user_jukeboxes_path(current_user)
+          / = link_to 'My Jukeboxes', user_jukeboxes_path(current_user)
           = link_to 'Settings', edit_user_path(current_user), :class => 'settings'
           - if current_user.is_admin
             = link_to 'Admin', admin_featured_path
           = link_to 'Sign out', logout_path, :class => 'logout'
+        = render 'playlists/add_playlist'
       - else
         = link_to "Sign In", '#', :class => 'sign-in'
         = render 'layouts/login'

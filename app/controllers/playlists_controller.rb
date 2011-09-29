@@ -32,4 +32,14 @@ class PlaylistsController < InheritedResources::Base
      format.js
     end
   end
+
+  def create
+    super do |format|
+     flash[:notice] = "Playlist created"
+     format.html { redirect_to [current_user,@playlist] }
+     format.js
+    end
+
+  end
+
 end
