@@ -1444,3 +1444,7 @@ a.left:active  	{ background-position:-30px 0; }
 .add-playlist-form {
   display: none;
 }
+
+.user-settings-form {
+  display: none;
+}

@@ -1,0 +1,14 @@
+.user-settings-form
+  = form_for current_user, :url => user_path(current_user, :format => :js), :remote => true do |f|
+    %div
+      %span Email
+      = f.text_field :email
+    %div
+      %span Full name
+      = f.text_field :name
+    %div
+      %span Username
+      = f.text_field :username
+    %div
+      %span Is admin?
+      = f.check_box :is_admin

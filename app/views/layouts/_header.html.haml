@@ -23,11 +23,12 @@
                 %li= link_to pls.title, user_playlist_path(current_user, pls.id)
 
           / = link_to 'My Jukeboxes', user_jukeboxes_path(current_user)
-          = link_to 'Settings', edit_user_path(current_user), :class => 'settings'
+          = link_to 'Settings', '#', :class => 'settings-link'
           - if current_user.is_admin
             = link_to 'Admin', admin_featured_path
           = link_to 'Sign out', logout_path, :class => 'logout'
         = render 'playlists/add_playlist'
+        = render 'users/settings'
       - else
         = link_to "Sign In", '#', :class => 'sign-in'
         = render 'layouts/login'
