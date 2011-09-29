@@ -683,8 +683,23 @@ h2 {
 #playlist ul {
 /*  float: left;*/
 /*  width: 100%;*/
+  margin-top: 35px;
   width: 460px;
 }
+
+#playlist ul .cmDiv ul {
+  margin: 0px;
+  width: 150px;
+}
+
+#playlist .cmDiv ul li a {
+  background-color: transparent;
+}
+
+#playlist .cmDiv ul li a:hover {
+  background-color: #aaa;
+}
+
 
 #playlist ul .actions_menu {
   float: none;
@@ -693,7 +708,8 @@ h2 {
 /* line 214, ../../../app/stylesheets/styles.sass */
 #playlist li.video-item {
   position: relative;
-  float: left;
+/*  float: left;*/
+  overflow:visible;
   width: 459px;
   margin: 3px 0;
   height: 57px;
@@ -743,7 +759,8 @@ h2 {
 }
 /* line 240, ../../../app/stylesheets/styles.sass */
 #playlist li.video-item .name {
-  white-space: nowrap;
+  white-space: pre-wrap;
+  width: 320px;
   overflow: hidden;
 }
 /* line 243, ../../../app/stylesheets/styles.sass */

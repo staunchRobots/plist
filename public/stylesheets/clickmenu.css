@@ -55,6 +55,7 @@ div.cmDiv
 	float: left;
 	padding: 0 10px;
 	background-color: #eee;
+	width: 13px;
 	//height: 20px; /* for ie */
 }
 .clickMenu li.main li
