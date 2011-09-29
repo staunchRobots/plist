@@ -1,0 +1,27 @@
+#ytvideos-list .clickMenu div.inner
+{
+  //top: 20px; /* for ie */
+  left: -121px;
+  margin: 0;
+}                                               
+
+#videos-list .clickMenu div.inner div.outerbox {
+  margin: 0px;
+  left: 152px;
+  //left: 90px; /* for ie */
+  top: -3px;
+}
+
+#ytvideos-list .clickMenu div.inner div.outerbox
+{
+  margin: 0px;
+  left: -158px;
+  //left: 90px; /* for ie */
+  top: -3px;
+}
+
+#ytvideos-list html>body .innerbox
+{
+  margin: 0;
+  display: inherit;
+}

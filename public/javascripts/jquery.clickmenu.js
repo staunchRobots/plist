@@ -99,7 +99,7 @@
           //positioning
           if ( !checkClass(div.parentNode, 'main') )
           {
-            $(div).css('left', div.parentNode.offsetWidth - liOffset);
+            // $(div).css('left', div.parentNode.offsetWidth - liOffset);
           }
           //show it
           div.isVisible = true; //we use this over :visible to speed up traversing
