@@ -1455,3 +1455,7 @@ a.left:active  	{ background-position:-30px 0; }
 .user-settings-form {
   display: none;
 }
+
+.slogan {
+  text-align: center;
+}
