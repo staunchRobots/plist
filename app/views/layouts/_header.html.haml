@@ -30,6 +30,8 @@
         = render 'playlists/add_playlist'
         = render 'users/settings'
       - else
+        = link_to "Create Account", '#', :class => 'sign-up-link'
         = link_to "Sign In", '#', :class => 'sign-in'
+
         = render 'layouts/login'
         = render 'layouts/signup_form'

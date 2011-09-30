@@ -438,17 +438,24 @@ h2 {
   -webkit-border-bottom-right-radius: 6px;
   position: relative;
 }
+
 /* line 60, ../../../app/stylesheets/styles.sass */
 .account:hover, .account.on {
   background-color: #666666;
 }
 /* line 62, ../../../app/stylesheets/styles.sass */
-.account .member, .account .sign-in {
+.account .member, .account .sign-in, .account .sign-up-link {
   color: #aaaaaa;
   font-size: 13px;
   text-decoration: none;
   margin-top: 2px;
 }
+
+.account .sign-in {
+  margin-left: 10px;
+}
+
+
 /* line 67, ../../../app/stylesheets/styles.sass */
 .account .member .label, .account .sign-in .label {
   float: left;
@@ -463,7 +470,7 @@ h2 {
   float: right;
 }
 /* line 76, ../../../app/stylesheets/styles.sass */
-.account .member:hover, .account .sign-in:hover {
+.account .member:hover, .account .sign-in:hover, .account .sign-up-link:hover {
   text-decoration: underline;
 }
 /* line 78, ../../../app/stylesheets/styles.sass */
@@ -475,7 +482,7 @@ h2 {
   margin-right: 5px;
 }
 /* line 82, ../../../app/stylesheets/styles.sass */
-.account .dropdown {
+.account .dropdown{
   background-color: black;
 /*  height: 80px;*/
   padding: 0px 0px 5px 0px;

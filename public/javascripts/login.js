@@ -39,17 +39,17 @@ $(function() {
   })
 
   $(".sign-up-link").live('click', function(e) {
-    $.fallr('hide', function() {
+    // $.fallr('hide', function() {
       $.fallr('show', {
           icon        : 'secure',
           width       : '320px',
           content     : $(".sign-up-form").html(),
           buttons : {
-              button1 : {text: 'Sign up', onclick: login},
+              button1 : {text: 'Sign up', onclick: sign_up},
               button4 : {text: 'Cancel'}
           },
       });
-    })
+    // })
     e.stopPropagation();
   })
 
