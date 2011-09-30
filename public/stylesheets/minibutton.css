@@ -56,7 +56,7 @@ button.minibutton::-moz-focus-inner {
     display: block;
     height: 21px;
     line-height: 21px;
-    padding: 0 9px 0 7px;
+    padding: 1px 9px 0 6px;
 }
 .minibutton:hover {
     background: -moz-linear-gradient(center top , #599BDC, #3072B3) repeat scroll 0 0 transparent;
@@ -176,4 +176,11 @@ button.minibutton::-moz-focus-inner {
 }
 .minibutton.switcher:hover > span, .minibutton.switcher.selected > span, .context-menu-container.active .minibutton.switcher > span {
     background-position: 100% -30px;
+}
+
+
+
+
+.options-button {
+  top: -4px;
 }
