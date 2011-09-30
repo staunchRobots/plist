@@ -4,6 +4,7 @@
       %span.playlist-title
         = link_to @playlist.user.username, @playlist.user
         &raquo;
+      %span.playlist-title#playlist-title
         = link_to @playlist.title, user_playlist_path(@playlist.user, @playlist.id)
       - if user_signed_in? && myown_playlist
         %a.options-button.minibutton

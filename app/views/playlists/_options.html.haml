@@ -2,7 +2,7 @@
   = form_for @playlist, :url => playlist_path(@playlist.id, :format => :js), :remote => true do |f|
     %div
       %span Title of playlist
-      = f.text_field :title
+      = f.text_field :title, :class => 'playlist_title'
     %div
       %span Visibility
       %span.playlist_published_radio

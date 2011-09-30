@@ -1,2 +1,4 @@
+$('#playlist-title').html('<%= link_to(@playlist.title, user_playlist_path(@playlist.user, @playlist.id)) %>')
+$('.playlist_title').attr('value', '<%= @playlist.title %>')
 $.ctNotify("Playlist <%= @playlist.title %> is <%= @playlist.published? ? 'published' : 'not published'%> now", "message")
 $.fallr('hide');
