@@ -3,9 +3,9 @@
     #logo
       %h1
         %a{:href=>"/"} pList.tv
-    .search
-      %input{:type=>"text", :value=>"Search"}
-      %a.search-btn{:href=>"#"} Go
+    / .search
+    /   %input{:type=>"text", :value=>"Search"}
+    /   %a.search-btn{:href=>"#"} Go
     .account
       - if user_signed_in?
         %a.member{:href=>"#"}
