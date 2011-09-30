@@ -11,7 +11,7 @@ $(function() {
     }
   }
 
-  $(".create-playlist").live('click', function(e) {
+  $(".create-playlist-btn").live('click', function(e) {
     $.fallr('show', {
         icon        : 'news',
         width       : '420px',

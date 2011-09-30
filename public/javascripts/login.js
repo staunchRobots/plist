@@ -25,7 +25,7 @@ $(function() {
       }
   }
 
-  $(".sign-in").live('click', function(e) {
+  function showFLogin() {
     $.fallr('show', {
         icon        : 'secure',
         width       : '320px',
@@ -35,22 +35,61 @@ $(function() {
             button4 : {text: 'Cancel'}
         },
     });
+  }
+
+  function showLogin() {
+     if ($('#fallr-wrapper').length > 0) {
+       $.fallr('hide', function() {
+         showFLogin()
+       })
+     } else {
+       showFLogin()
+     }
+   }
+
+  function showFSignUp() {
+    $.fallr('show', {
+        icon        : 'secure',
+        width       : '320px',
+        content     : $(".sign-up-form").html(),
+        buttons : {
+            button1 : {text: 'Sign up', onclick: sign_up},
+            button4 : {text: 'Cancel'}
+        },
+    });
+  }
+  function showSignUp() {
+    if ($('#fallr-wrapper').length > 0) {
+      $.fallr('hide', function() {
+        showFSignUp()
+      })
+    } else {
+      showFSignUp()
+    }
+  }
+
+  $(".sign-in").live('click', function(e) {
+    showLogin()
     e.stopPropagation();
   })
 
   $(".sign-up-link").live('click', function(e) {
-    // $.fallr('hide', function() {
-      $.fallr('show', {
-          icon        : 'secure',
-          width       : '320px',
-          content     : $(".sign-up-form").html(),
-          buttons : {
-              button1 : {text: 'Sign up', onclick: sign_up},
-              button4 : {text: 'Cancel'}
-          },
-      });
-    // })
+    showSignUp()
     e.stopPropagation();
+  })
+
+  $("#login-to-create").live('click', function(e) {
+    $.fallr('show', {
+        icon        : 'secure',
+        width       : '370px',
+        content     : 'In order to create a pList you first need to sign in  or create a new account',
+        buttons : {
+            button1 : {text: 'New user ', onclick: showSignUp},
+            button2 : {text: 'Already A user', onclick: showLogin},
+            button4 : {text: 'Cancel'}
+        },
+    });
+    return false
   })
 
 })
