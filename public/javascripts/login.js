@@ -84,8 +84,8 @@ $(function() {
         width       : '370px',
         content     : 'In order to create a pList you first need to sign in  or create a new account',
         buttons : {
-            button1 : {text: 'New user ', onclick: showSignUp},
-            button2 : {text: 'Already A user', onclick: showLogin},
+            button1 : {text: 'Create Account ', onclick: showSignUp},
+            button2 : {text: 'Sign in', onclick: showLogin},
             button4 : {text: 'Cancel'}
         },
     });

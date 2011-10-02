@@ -2,7 +2,7 @@
 
 .recent-playlists
   %h2 
-    Your pLists
+    #{@user.username} pLists
   - if @user.playlists.size > 0
     %ul
       = render :partial => 'playlists/playlist', :collection => @user.playlists

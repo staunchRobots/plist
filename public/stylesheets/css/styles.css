@@ -437,11 +437,12 @@ h2 {
   -moz-border-radius-bottomright: 6px;
   -webkit-border-bottom-right-radius: 6px;
   position: relative;
+  color: #aaaaaa;
 }
 
 /* line 60, ../../../app/stylesheets/styles.sass */
 .account:hover, .account.on {
-  background-color: #666666;
+/*  background-color: #666666;*/
 }
 /* line 62, ../../../app/stylesheets/styles.sass */
 .account .member, .account .sign-in, .account .sign-up-link {
