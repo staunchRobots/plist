@@ -16,7 +16,7 @@ function is_youtube_url(url) {
 // Player
 var player_el;
 var playlist_cycle = [];
-var playing_index = -1;
+var playing_index = 0;
 
 function load_player(ytid) {
   var params = {
@@ -40,25 +40,54 @@ function onYouTubePlayerReady(playerId) {
   ytplayer.addEventListener("onStateChange", "onytplayerStateChange");
 }
 
-function onytplayerStateChange(newState) {
-  if (newState == 0) {
-    play_next();
+function setCurrentPlayingIndex(el) {
+  if (el.parent().attr('id') == 'videos-list') {
+    playing_index = el.parent().find("> li").index(el)
+  } else {
+    playing_index = -1
   }
 }
 
-function play(ytid) {
-  $("#playlist .video-item").removeClass("playing");
-  $("#playlist .video-item[ytid=" + ytid + "]").addClass("playing");
+function play(el) {
+  setCurrentPlayingIndex($(el))
+
+  $("#playlist .video-item.playing").removeClass("playing");
+  var current = $(el).addClass("playing");
+  var ytid = $(el).attr('ytid')
+
   try {
     $("#player-e").get(0).loadVideoById(ytid);
   } catch(e) {}
 }
 
-function rearrange_playlist() {
-  var count = $("#playlist .video-item:visible").length;
-  $("#playlist .video-item").hide();
-  $("#playlist .video-item").slice(0, count).show();
+function onytplayerStateChange(newState) {
+  if (newState == 0) {
+    if (playing_index != -1) {
+      play_next();
+    }
+  }
 }
+
+function getCurrentPlaying() {
+  if (playing_index != -1) {
+    return $("#playlist #videos-list > li").get(playing_index)
+  }
+}
+
+function play_next() {
+  var ytplayer = document.getElementById("player-e");
+
+  var curr = getCurrentPlaying()
+  if (curr.nextElementSibling != undefined) {
+    playing_index += 1
+  } else {
+    playing_index = 0
+  }
+
+  var next_item = getCurrentPlaying()
+  play(next_item)
+}
+
 
 $.widget("ui.playlist", {
   _init: function() {
@@ -73,8 +102,7 @@ $.widget("ui.playlist", {
     //   e.preventDefault();
     // });
     $("li.video-item a.play-item").live("click", function(e) {
-      var id = $(this).attr('ytid');
-      play(id);
+      play($(this).parent());
       e.preventDefault();
     });
     $("li.video-item").live("mouseenter", function(e) {

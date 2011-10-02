@@ -731,7 +731,7 @@ h2 {
   -webkit-border-bottom-right-radius: 4px;
 }
 /* line 217, ../../../app/stylesheets/styles.sass */
-#playlist li.video-item.playing a, #playlist li.video-item.playing a:hover {
+#playlist li.video-item.playing, #playlist li.video-item.playing:hover {
   border-color: red;
   background-color: #ffc7c7;
 }
