@@ -1419,6 +1419,10 @@ a.left:active  	{ background-position:-30px 0; }
   display: none;
 }
 
+.forgot-password-form {
+  display: none;
+}
+
 #login-user-playlists {
   margin-left: 100px;
   background-color: black;
