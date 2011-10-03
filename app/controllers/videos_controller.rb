@@ -53,7 +53,10 @@ class VideosController < InheritedResources::Base
   def ytsearch
     @playlist = Playlist.find(params[:current_playlist])
     @is_pagination_search = params[:video][:page].nil?
-    @videos = Video.ytsearch(params[:video][:search], {'start-index' => (params[:video][:page].to_i * 10)+1})
+    @videos = Video.ytsearch(params[:video][:search], {
+      'start-index' => (params[:video][:page].to_i * 10)+1,
+      :restriction  => request.remote_ip
+      })
     respond_to do |format|
       format.js
     end

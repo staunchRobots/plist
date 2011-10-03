@@ -24,7 +24,7 @@ class Video < ActiveRecord::Base
       opts["max-results"] = 10
       req_url = "http://gdata.youtube.com/feeds/api/videos?q=#{phrase}"
       req_url += '&' + opts.collect{|k,v| "#{k}=#{v}"}.join('&')
-
+      Rails.logger.info "Youtube request: #{req_url}"
       yt_feed= RestClient.get(req_url)
       yt_video= JSON.parse(yt_feed)
       yt_video["feed"]["entry"].collect {|entry|
