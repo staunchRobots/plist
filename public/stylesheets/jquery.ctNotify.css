@@ -41,6 +41,10 @@
   background-image: url('/images/ctnotify/warning.png');
 }
 
+.ctNotify li.loading{
+  background-image: url('/images/ajax-loader2.gif');
+
+}
 .ctNotify li.error{
   background-image: url('/images/ctnotify/error.png');
   

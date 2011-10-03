@@ -9,9 +9,9 @@
         %li
           = link_to 'Move to playlist', '#'
           = move_playlists_list(video.id, video.ytid)
-        %li
+        %li.menu_action
           = link_to 'Remove', playlist_video_path(@playlist, video.id), :method => :delete, :remote => true
       / %li
       /   = link_to 'Like', '#', :onclick => '$.ctNotify("Liked"); return false;'
-      %li
+      %li.menu_action
         = link_to 'Hate', videos_hate_user_path(current_user.id, :ytid => video.ytid), {:remote => true, :confirm => 'Are you sure you hate this? If you hate it you will never be shown this video again.', :method => 'POST'}

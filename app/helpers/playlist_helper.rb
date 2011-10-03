@@ -9,7 +9,7 @@ module PlaylistHelper
     pls.reject!{|x| x.id == @playlist.id} if !is_dynamic_video
     content_tag :ul do
       pls.collect{|p|
-        c = content_tag :li do
+        c = content_tag :li, :class => 'menu_action' do
           link_to p.title, playlist_videos_path(p.id, :video => {:yt_url => ytid, :is_ytid => '1'}, :current_playlist => @playlist.id), :remote => true, :method => :post
         end
         concat c
@@ -23,7 +23,7 @@ module PlaylistHelper
     pls.reject!{|x| x.id == @playlist.id} if myown_playlist && !is_dynamic_video
     content_tag :ul do
       pls.collect{|p|
-        c = content_tag :li do
+        c = content_tag :li, :class => 'menu_action' do
           link_to p.title, move_playlist_video_path(@playlist.id, video_id, {:to_playlist => p.id, :current_playlist => @playlist.id}), :remote => true, :method => :post
         end
         concat c
