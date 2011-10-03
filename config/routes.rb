@@ -4,6 +4,8 @@ Plist::Application.routes.draw do
   resources :users do
     resources :playlists
     resources :jukeboxes
+    post '/videos/love' => 'videos#love', :on => :member
+    post '/videos/hate' => 'videos#hate', :on => :member
   end
 
   resources :playlists do

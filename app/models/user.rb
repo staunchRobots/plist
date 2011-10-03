@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :playlists
   has_many :jukeboxes
   has_many :videos, :through => :playlists
+  has_many :user_hates
 
   validates_presence_of :username, :name
   validates_uniqueness_of :username
@@ -19,6 +20,10 @@ class User < ActiveRecord::Base
 
   def to_param
     username
+  end
+
+  def hate_ytids
+    user_hates.collect(&:ytid)
   end
 
   private

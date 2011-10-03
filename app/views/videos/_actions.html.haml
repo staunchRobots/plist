@@ -14,4 +14,4 @@
       / %li
       /   = link_to 'Like', '#', :onclick => '$.ctNotify("Liked"); return false;'
       %li
-        = link_to 'Hate', '#', :onclick => '$.ctNotify("Hated", "error"); return false;'
+        = link_to 'Hate', videos_hate_user_path(current_user.id, :ytid => video.ytid), {:remote => true, :confirm => 'Are you sure you hate this? If you hate it you will never be shown this video again.', :method => 'POST'}

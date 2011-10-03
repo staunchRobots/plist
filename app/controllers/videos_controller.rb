@@ -1,5 +1,6 @@
 class VideosController < InheritedResources::Base
   nested_belongs_to :playlist
+  respond_to :js, :html
 
   def create
     @playlist = Playlist.find(params[:playlist_id])
@@ -53,10 +54,28 @@ class VideosController < InheritedResources::Base
   def ytsearch
     @playlist = Playlist.find(params[:current_playlist])
     @is_pagination_search = params[:video][:page].nil?
-    @videos = Video.ytsearch(params[:video][:search], {
+    @videos = Video.ytsearch(params[:video][:search], current_user, {
       'start-index' => (params[:video][:page].to_i * 10)+1,
       :restriction  => request.remote_ip
       })
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def love
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def hate
+    unless UserHate.exists?(:user_id => current_user.id, :ytid => params[:ytid])
+      @uh = UserHate.find_or_create_by_user_id_and_ytid(current_user.id, params[:ytid])
+    else
+      @uh = false
+    end
+    
     respond_to do |format|
       format.js
     end
