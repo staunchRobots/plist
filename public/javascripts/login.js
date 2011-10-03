@@ -21,7 +21,7 @@ $(function() {
           alert('Invalid!\nPlease fill all required forms');
       } else {
           $(this).children('form').submit()
-          $.fallr('hide');
+          // $.fallr('hide');
       }
   }
 

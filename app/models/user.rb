@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :videos, :through => :playlists
 
   validates_presence_of :username, :name
+  validates_uniqueness_of :username
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :username, :is_admin
