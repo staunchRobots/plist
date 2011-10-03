@@ -34,7 +34,7 @@ class Video < ActiveRecord::Base
       filter_hated_videos(videos, user)
     end
 
-    def query_youtube_videos(phrase = '', opts)
+    def query_youtube_videos(phrase, opts)
       phrase.gsub!(' ', '+')
       opts[:alt] = 'json'
       opts["max-results"] = 10
