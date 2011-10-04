@@ -53,11 +53,10 @@ namespace :deploy do
     task t, :roles => :app do ; end
   end
 
-  def assets_symlink
+  task :assets_symlink, :roles => :app do
     shared_dir = File.join(shared_path, 'assets')
     release_dir = File.join(current_release, 'public', 'assets')
     run("mkdir -p #{shared_dir} && ln -s #{shared_dir} #{release_dir}")
-
   end
 end
 
