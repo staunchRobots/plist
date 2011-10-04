@@ -1,0 +1,221 @@
+.minibutton
+  font-size: 11px
+  font-weight: bold
+  height: 21px
+  padding: 0 0 0 3px
+  background: #ECECEC
+  /* for non-css3 browsers
+  background: -webkit-gradient(linear, center top, center bottom, from(#f4f4f4), to(#ececec))
+  background: -moz-linear-gradient(center top, #f4f4f4, #ececec) repeat scroll 0 0 transparent
+  border: 1px solid #D4D4D4
+  border-radius: 3px 3px 3px 3px
+  color: #333333
+  cursor: pointer
+  display: inline-block
+  font-family: helvetica,arial,freesans,clean,sans-serif
+  overflow: visible
+  position: relative
+  text-shadow: 1px 1px 0 #FFFFFF
+  white-space: nowrap
+  &.disabled:hover
+    background: #ECECEC
+    /* for non-css3 browsers
+    background: -webkit-gradient(linear, center top, center bottom, from(#f4f4f4), to(#ececec))
+    background: -moz-linear-gradient(center top, #f4f4f4, #ececec) repeat scroll 0 0 transparent
+    border: 1px solid #D4D4D4
+    border-radius: 3px 3px 3px 3px
+    color: #333333
+    cursor: pointer
+    display: inline-block
+    font-family: helvetica,arial,freesans,clean,sans-serif
+    overflow: visible
+    position: relative
+    text-shadow: 1px 1px 0 #FFFFFF
+    white-space: nowrap
+
+button.minibutton
+  height: 23px
+
+.minibutton
+  &.lighter, &.disabled.lighter:hover
+    background: #ECECEC
+    background: -webkit-gradient(linear, center top, left bottom, from(#fafafa), to(#ececec))
+    background: -moz-linear-gradient(center top, #fafafa, #dddddd) repeat scroll 0 0 transparent
+    border: medium none
+    color: #333333
+    text-shadow: 1px 1px 0 #FFFFFF
+  &.green, &.disabled.green:hover
+    background: #ECECEC
+    background: -webkit-gradient(linear, center top, left bottom, from(#36b825), to(#28881b))
+    background: -moz-linear-gradient(center top, #36b825, #28881b) repeat scroll 0 0 transparent
+    border-color: #4A993E
+    color: #FFFFFF
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3)
+  &.blue, &.disabled.blue:hover
+    background: #32687B
+    background: -webkit-gradient(linear, center top, left bottom, from(#448da6), to(#32687b))
+    background: -moz-linear-gradient(center top, #448da6, #32687b) repeat scroll 0 0 transparent
+    border-color: #275666
+    color: #FFFFFF
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3)
+
+input[type="text"] + .minibutton
+  margin-left: 5px
+
+button.minibutton::-moz-focus-inner
+  margin: -1px -3px
+
+.minibutton
+  &.danger
+    color: #990000
+  &.disabled.danger:hover
+    background: -webkit-gradient(linear, center top, center bottom, from(#f4f4f4), to(#ececec))
+    background: -moz-linear-gradient(center top, #f4f4f4, #ececec) repeat scroll 0 0 transparent
+    border-color: #D4D4D4
+    color: #990000
+  > span
+    display: block
+    height: 21px
+    line-height: 21px
+    padding: 1px 9px 0 6px
+  &:hover
+    background: -webkit-gradient(linear, center top, center bottom, from(#599bdc), to(#3072b3))
+    background: -moz-linear-gradient(center top, #599bdc, #3072b3) repeat scroll 0 0 transparent
+    border-color: #518CC6 #518CC6 #2A65A0
+    color: #FFFFFF
+    text-decoration: none
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3)
+  &.mousedown
+    background: -webkit-gradient(linear, center top, center bottom, from(#3072b3), to(#599bdc))
+    background: -moz-linear-gradient(center top, #3072b3, #599bdc) repeat scroll 0 0 transparent
+    border-color: #2A65A0 #2A65A0 #518CC6
+  &.danger
+    &:hover
+      background: -webkit-gradient(linear, center top, center bottom, from(#dc5f59), to(#b33630))
+      background: -moz-linear-gradient(center top, #dc5f59, #b33630) repeat scroll 0 0 transparent
+      border-color: #C65651 #C65651 #A0302A
+    &.mousedown
+      background: -webkit-gradient(linear, center top, center bottom, from(#b33630), to(#dc5f59))
+      background: -moz-linear-gradient(center top, #b33630, #dc5f59) repeat scroll 0 0 transparent
+      border-color: #A0302A #A0302A #C65651
+  &.disabled
+    cursor: default
+    opacity: 0.5
+    &:hover
+      cursor: default
+      opacity: 0.5
+  &.selected
+    background: -webkit-gradient(linear, center top, center bottom, from(#767676), to(#9e9e9e))
+    background: -moz-linear-gradient(center top, #767676, #9e9e9e) repeat scroll 0 0 transparent
+    border-color: #686868
+    color: #FFFFFF
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5)
+
+.context-menu-container.active .context-menu-button
+  background: -webkit-gradient(linear, center top, center bottom, from(#767676), to(#9e9e9e))
+  background: -moz-linear-gradient(center top, #767676, #9e9e9e) repeat scroll 0 0 transparent
+  border-color: #686868
+  color: #FFFFFF
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5)
+
+.btn-admin .icon, .btn-watch .icon, .btn-download .icon, .btn-pull-request .icon, .btn-fork .icon, .btn-leave .icon, .btn-compare .icon, .btn-reply .icon, .btn-back .icon
+  background: url("../images/modules/buttons/minibutton_icons.png") no-repeat scroll 0 0 transparent
+  float: left
+  height: 22px
+  margin-left: -4px
+  position: relative
+  top: -1px
+  width: 18px
+
+.btn-forward .icon
+  background: url("../images/modules/buttons/minibutton_icons.png") no-repeat scroll 0 0 transparent
+  float: left
+  height: 22px
+  margin-left: -4px
+  position: relative
+  top: -1px
+  width: 18px
+  float: right
+  margin-left: 0
+  margin-right: -4px
+
+.btn-admin
+  .icon
+    background-position: 0 0
+    width: 16px
+  &:hover .icon
+    background-position: 0 -25px
+
+.btn-watch
+  .icon
+    background-position: -20px 0
+  &:hover .icon
+    background-position: -20px -25px
+
+.btn-download
+  .icon
+    background-position: -40px 0
+  &:hover .icon
+    background-position: -40px -25px
+
+.btn-pull-request
+  .icon
+    background-position: -60px 0
+    width: 17px
+  &:hover .icon
+    background-position: -60px -25px
+
+.btn-fork
+  .icon
+    background-position: -80px 0
+    width: 17px
+  &:hover .icon
+    background-position: -80px -25px
+
+.btn-leave
+  .icon
+    background-position: -120px 0
+    width: 15px
+  &:hover .icon
+    background-position: -120px -25px
+
+.btn-compare
+  .icon
+    background-position: -100px 0
+    width: 17px
+  &:hover .icon
+    background-position: -100px -25px
+
+.btn-reply
+  .icon
+    background-position: -140px 0
+    width: 16px
+  &:hover .icon
+    background-position: -140px -25px
+
+.btn-back
+  .icon
+    background-position: -160px 0
+    width: 16px
+  &:hover .icon
+    background-position: -160px -25px
+
+.btn-forward
+  .icon
+    background-position: -180px 0
+    width: 16px
+  &:hover .icon
+    background-position: -180px -25px
+
+.minibutton.switcher
+  > span
+    background: url("../images/modules/buttons/switcher.png") no-repeat scroll 100% 0 transparent
+    padding-right: 26px
+  &:hover > span, &.selected > span
+    background-position: 100% -30px
+
+.context-menu-container.active .minibutton.switcher > span
+  background-position: 100% -30px
+
+.options-button
+  top: -4px

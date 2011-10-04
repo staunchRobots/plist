@@ -1,0 +1,102 @@
+/*
+Syntax error: Undefined mixin 'container'.
+        on line 25 of app/stylesheets/layout.sass, in `container'
+        from line 25 of app/stylesheets/layout.sass
+
+20:   font-size: 30px
+21: h2
+22:   font-size: 20px
+23:  
+24: .container
+25:   +container
+26: 
+27: .top-container
+28:   #header
+29:     height: 80px
+30:     border: 1px dashed #aaaaaa
+
+Backtrace:
+app/stylesheets/layout.sass:25:in `container'
+app/stylesheets/layout.sass:25
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/visitors/perform.rb:170:in `visit_mixin'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/visitors/perform.rb:18:in `visit'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/visitors/base.rb:53:in `map'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/visitors/perform.rb:27:in `block in visit_children'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/visitors/perform.rb:39:in `with_environment'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/visitors/perform.rb:26:in `visit_children'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/visitors/perform.rb:236:in `visit_rule'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/visitors/perform.rb:18:in `visit'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/visitors/base.rb:53:in `map'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/visitors/perform.rb:27:in `block in visit_children'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/visitors/perform.rb:39:in `with_environment'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/visitors/perform.rb:26:in `visit_children'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/visitors/perform.rb:47:in `visit_root'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/visitors/perform.rb:18:in `visit'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/visitors/perform.rb:7:in `visit'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/tree/root_node.rb:20:in `render'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/engine.rb:293:in `_render'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/engine.rb:241:in `block in render'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/util.rb:297:in `silence_sass_warnings'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/engine.rb:241:in `render'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/plugin/compiler.rb:319:in `update_stylesheet'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/plugin/compiler.rb:181:in `block (2 levels) in update_stylesheets'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/plugin/compiler.rb:175:in `each'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/plugin/compiler.rb:175:in `block in update_stylesheets'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/plugin/compiler.rb:173:in `each'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/plugin/compiler.rb:173:in `update_stylesheets'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/plugin.rb:81:in `update_stylesheets'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/plugin.rb:54:in `check_for_updates'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/sass-3.1.8/lib/sass/plugin/rack.rb:51:in `call'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/warden-1.0.5/lib/warden/manager.rb:35:in `block in call'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/warden-1.0.5/lib/warden/manager.rb:34:in `catch'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/warden-1.0.5/lib/warden/manager.rb:34:in `call'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/rack-1.2.4/lib/rack/methodoverride.rb:24:in `call'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/rack-1.2.4/lib/rack/sendfile.rb:106:in `call'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/rack-1.2.4/lib/rack/runtime.rb:17:in `call'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/rack-1.2.4/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/rack-1.2.4/lib/rack/lock.rb:11:in `call'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/Users/vladimirpenkin/.rvm/gems/ruby-1.9.2-p290@plist/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/Users/vladimirpenkin/Library/Application Support/Pow/Versions/0.2.2/node_modules/nack/lib/nack/server.rb:146:in `handle'
+/Users/vladimirpenkin/Library/Application Support/Pow/Versions/0.2.2/node_modules/nack/lib/nack/server.rb:99:in `rescue in block (2 levels) in start'
+/Users/vladimirpenkin/Library/Application Support/Pow/Versions/0.2.2/node_modules/nack/lib/nack/server.rb:96:in `block (2 levels) in start'
+/Users/vladimirpenkin/Library/Application Support/Pow/Versions/0.2.2/node_modules/nack/lib/nack/server.rb:86:in `each'
+/Users/vladimirpenkin/Library/Application Support/Pow/Versions/0.2.2/node_modules/nack/lib/nack/server.rb:86:in `block in start'
+/Users/vladimirpenkin/Library/Application Support/Pow/Versions/0.2.2/node_modules/nack/lib/nack/server.rb:66:in `loop'
+/Users/vladimirpenkin/Library/Application Support/Pow/Versions/0.2.2/node_modules/nack/lib/nack/server.rb:66:in `start'
+/Users/vladimirpenkin/Library/Application Support/Pow/Versions/0.2.2/node_modules/nack/lib/nack/server.rb:13:in `run'
+/Users/vladimirpenkin/Library/Application Support/Pow/Versions/0.2.2/node_modules/nack/bin/nack_worker:4:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Undefined mixin 'container'.\A         on line 25 of app/stylesheets/layout.sass, in `container'\A         from line 25 of app/stylesheets/layout.sass\A \A 20:   font-size: 30px\A 21: h2\A 22:   font-size: 20px\A 23:  \A 24: .container\A 25:   +container\A 26: \A 27: .top-container\A 28:   #header\A 29:     height: 80px\A 30:     border: 1px dashed #aaaaaa"; }

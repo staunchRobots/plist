@@ -1,27 +1,24 @@
-#ytvideos-list .clickMenu div.inner
-{
-  //top: 20px; /* for ie */
+/* line 1, ../../app/stylesheets/clickmenu-changes.sass */
+#ytvideos-list .clickMenu div.inner {
   left: -121px;
   margin: 0;
-}                                               
+}
 
+/* line 6, ../../app/stylesheets/clickmenu-changes.sass */
 #videos-list .clickMenu div.inner div.outerbox {
   margin: 0px;
   left: 152px;
-  //left: 90px; /* for ie */
   top: -3px;
 }
 
-#ytvideos-list .clickMenu div.inner div.outerbox
-{
+/* line 13, ../../app/stylesheets/clickmenu-changes.sass */
+#ytvideos-list .clickMenu div.inner div.outerbox {
   margin: 0px;
   left: -158px;
-  //left: 90px; /* for ie */
   top: -3px;
 }
-
-#ytvideos-list html>body .innerbox
-{
+/* line 18, ../../app/stylesheets/clickmenu-changes.sass */
+#ytvideos-list html > body .innerbox {
   margin: 0;
   display: inherit;
 }

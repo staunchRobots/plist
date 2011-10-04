@@ -1,0 +1,117 @@
+/* line 1, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/clickmenu.sass */
+div.cmDiv {
+  border: 1px solid black;
+  background-color: #eeeeee;
+  float: right;
+  width: 20px;
+  padding: 0px 13px 0px 0px;
+}
+
+/* line 8, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/clickmenu.sass */
+.clickMenu {
+  margin: 0;
+  padding: 0;
+  cursor: default;
+  list-style: none;
+}
+/* line 13, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/clickmenu.sass */
+.clickMenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 2px;
+  border: 1px solid black;
+  background-color: #eeeeee;
+  min-width: 150px;
+  /* ie doesnt know this :/ */
+}
+/* line 24, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/clickmenu.sass */
+.clickMenu div.outerbox {
+  display: none;
+  min-width: 106px;
+  /* firefox produces animation-flickering when the box is bigger than this :/ */
+}
+/* line 28, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/clickmenu.sass */
+.clickMenu div.inner {
+  left: 0;
+  margin: 0;
+}
+/* line 32, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/clickmenu.sass */
+.clickMenu div.inner div.outerbox {
+  margin: 0;
+  left: 98px;
+  top: -3px;
+}
+/* line 37, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/clickmenu.sass */
+.clickMenu li {
+  position: relative;
+  padding: 0 20px 0 2px;
+  /*white-space: nowrap; does not really work in ie */
+}
+/* line 41, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/clickmenu.sass */
+.clickMenu li.main {
+  float: left;
+  padding: 0 10px;
+  background-color: #eeeeee;
+  width: 13px;
+}
+/* line 47, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/clickmenu.sass */
+.clickMenu li.main li {
+  z-index: 2;
+  min-width: 78px;
+}
+/* line 50, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/clickmenu.sass */
+.clickMenu li.hover {
+  z-index: 1 !important;
+  /* the hover z-index has to be below the normal one the hovering items may be drawn over a submenu */
+  background-color: #aaaaaa;
+}
+/* line 54, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/clickmenu.sass */
+.clickMenu img.liArrow {
+  position: absolute;
+  right: 5px;
+  top: 0.41em;
+}
+/* line 58, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/clickmenu.sass */
+.clickMenu a {
+  text-decoration: none;
+  color: black;
+  cursor: default;
+}
+
+/* thats for the shadowbox */
+/* line 67, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/clickmenu.sass */
+html > body div.outerbox {
+  padding: 0 5px 5px 0;
+}
+/* line 69, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/clickmenu.sass */
+html > body div.shadowbox1 {
+  position: absolute;
+  right: 0;
+  bottom: 5px;
+  width: 5px;
+  height: 100%;
+  background: url(myshadow.png) no-repeat right top;
+}
+/* line 76, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/clickmenu.sass */
+html > body div.shadowbox2 {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  height: 5px;
+  width: 100%;
+  background: url(myshadow.png) left bottom;
+}
+/* line 83, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/clickmenu.sass */
+html > body div.shadowbox3 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 5px;
+  width: 5px;
+  background: url(myshadow.png) no-repeat right bottom;
+}
+/* line 90, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/clickmenu.sass */
+html > body .innerbox {
+  margin: 0;
+  display: inherit;
+}

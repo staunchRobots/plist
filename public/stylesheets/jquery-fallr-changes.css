@@ -1,15 +1,16 @@
+/* line 2, ../../app/stylesheets/jquery-fallr-changes.sass */
 #fallr form #playlist_title {
   width: 222px;
   margin-left: 6px;
 }
-
+/* line 5, ../../app/stylesheets/jquery-fallr-changes.sass */
 #fallr form .playlist_published_radio {
   margin-left: 39px;
-}                
-
+}
+/* line 7, ../../app/stylesheets/jquery-fallr-changes.sass */
 #fallr form .fallr-red {
   background-image: none;
-  background-color: #c00;
+  background-color: #cc0000;
   text-shadow: none;
   color: white;
 }

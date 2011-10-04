@@ -1,0 +1,838 @@
+#player-e
+  /*  margin-left: 40px;
+  position: absolute
+  z-index: 0
+
+.top
+  background-color: black
+  height: 40px
+  position: fixed
+  width: 100%
+  z-index: 100
+
+.wrapper-top
+  width: 998px
+  margin: 0 auto
+
+.search
+  float: right
+  margin-right: 5px
+  margin-top: 10px
+  input
+    border: 0
+    height: 21px
+    -moz-border-radius-topleft: 4px
+    -webkit-border-top-left-radius: 4px
+    -moz-border-radius-topright: 4px
+    -webkit-border-top-right-radius: 4px
+    -moz-border-radius-bottomleft: 4px
+    -webkit-border-bottom-left-radius: 4px
+    -moz-border-radius-bottomright: 4px
+    -webkit-border-bottom-right-radius: 4px
+    padding-left: 5px
+    font-size: 13px
+    color: #aaaaaa
+    float: left
+  a
+    color: white
+    background-color: #aaaaaa
+    padding: 3px 5px
+    font-size: 13px
+    text-decoration: none
+    -moz-border-radius-topleft: 4px
+    -webkit-border-top-left-radius: 4px
+    -moz-border-radius-topright: 4px
+    -webkit-border-top-right-radius: 4px
+    -moz-border-radius-bottomleft: 4px
+    -webkit-border-bottom-left-radius: 4px
+    -moz-border-radius-bottomright: 4px
+    -webkit-border-bottom-right-radius: 4px
+    float: right
+    margin-top: 0px
+    margin-left: 5px
+
+.account
+  padding: 5px
+  float: right
+  margin-right: 76px
+  margin-top: 5px
+  -moz-border-radius-topleft: 6px
+  -webkit-border-top-left-radius: 6px
+  -moz-border-radius-topright: 6px
+  -webkit-border-top-right-radius: 6px
+  -moz-border-radius-bottomleft: 6px
+  -webkit-border-bottom-left-radius: 6px
+  -moz-border-radius-bottomright: 6px
+  -webkit-border-bottom-right-radius: 6px
+  position: relative
+  color: #aaaaaa
+  &:hover, &.on
+    /*  background-color: #666666;
+  .member, .sign-in, .sign-up-link
+    color: #aaaaaa
+    font-size: 13px
+    text-decoration: none
+    margin-top: 2px
+  .sign-in
+    margin-left: 10px
+  .member .label, .sign-in .label
+    float: left
+  .member .icon, .sign-in .icon
+    width: 9px
+    height: 4px
+    background: url(/images/drop.png) no-repeat -15px -14px
+    margin-left: 4px
+    margin-top: 7px
+    float: right
+  .member:hover, .sign-in:hover, .sign-up-link:hover
+    text-decoration: underline
+  .fb-login, .img, .member
+    float: right
+  .img
+    margin-right: 5px
+  .dropdown
+    background-color: black
+    /*  height: 80px;
+    padding: 0px 0px 5px 0px
+    position: absolute
+    right: -8px
+    top: 35px
+    width: 120px
+    -moz-border-radius-topleft: 0
+    -webkit-border-top-left-radius: 0
+    -moz-border-radius-topright: 0
+    -webkit-border-top-right-radius: 0
+    -moz-border-radius-bottomleft: 4px
+    -webkit-border-bottom-left-radius: 4px
+    -moz-border-radius-bottomright: 4px
+    -webkit-border-bottom-right-radius: 4px
+    a
+      color: #aaaaaa
+      font-size: 13px
+      display: block
+      margin-left: 10px
+      margin-top: 8px
+      text-decoration: none
+
+#logo
+  float: left
+  a
+    color: white
+    text-decoration: none
+
+#left
+  width: 284px
+  margin-right: 10px
+  float: left
+
+#content
+  width: 998px
+  margin: 0 auto
+  padding-top: 50px
+  .wrapper-content
+    float: left
+    margin-bottom: 50px
+  .wrapper-main
+    padding: 0 30px
+  .header
+    float: none
+    padding: 0px 0px 5px 0px
+    h1
+      font-family: "league-gothic-1", "league-gothic-2", sans-serif
+      font-size: 25px
+      font-weight: 900
+      float: left
+      &.edit
+        border: 1px solid #aaaaaa
+        padding: 5px 10px
+    .member-thumb
+      /*  float: left;
+    .info
+      /*  float: left;
+      /*  margin-left: 10px;
+      font-size: 13px
+      color: #666666
+      position: relative
+      /*  width: 940px;
+      /*  height: 5px;
+    .edit-title-notice
+      font-size: 11px
+      position: absolute
+      right: -105px
+      top: 10px
+    input.title-edit
+      font-size: 25px
+      float: left
+    .by
+      float: left
+      clear: left
+      a
+        color: #5151e8
+        font-weight: 900
+        text-decoration: none
+    .manage
+      float: left
+      position: relative
+      a
+        border-right: 1px solid #aaaaaa
+        margin-left: 10px
+        padding-right: 10px
+        font-size: 12px
+        &.add
+          border: 0
+        &.show.on
+          border: 0
+          padding: 5px 10px
+          color: white
+          background: #666666
+          -moz-border-radius-topleft: 4px
+          -webkit-border-top-left-radius: 4px
+          -moz-border-radius-topright: 4px
+          -webkit-border-top-right-radius: 4px
+          -moz-border-radius-bottomleft: 0
+          -webkit-border-bottom-left-radius: 0
+          -moz-border-radius-bottomright: 0
+          -webkit-border-bottom-right-radius: 0
+          float: left
+    .add-playlist
+      display: none
+      position: absolute
+      top: 20px
+      left: 100px
+      width: 200px
+      z-index: 2000
+      border: 2px solid black
+      background-color: white
+      padding: 10px 15px
+      -moz-border-radius-topleft: 4px
+      -webkit-border-top-left-radius: 4px
+      -moz-border-radius-topright: 4px
+      -webkit-border-top-right-radius: 4px
+      -moz-border-radius-bottomleft: 4px
+      -webkit-border-bottom-left-radius: 4px
+      -moz-border-radius-bottomright: 4px
+      -webkit-border-bottom-right-radius: 4px
+      .label
+        float: left
+        margin-bottom: 2px
+      a
+        border: 0
+    .created-at
+      float: left
+      margin-left: 5px
+      padding-left: 5px
+      border-left: 1px solid #666666
+    .member-thumb
+      width: 50px
+      height: 50px
+      border: 1px solid #aaaaaa
+      padding: 5px
+      background: white
+
+
+
+
+
+
+#playlist
+  a.more-videos
+    padding: 5px 10px
+    background-color: #666666
+    color: white
+    -moz-border-radius-topleft: 4px
+    -webkit-border-top-left-radius: 4px
+    -moz-border-radius-topright: 4px
+    -webkit-border-top-right-radius: 4px
+    -moz-border-radius-bottomleft: 4px
+    -webkit-border-bottom-left-radius: 4px
+    -moz-border-radius-bottomright: 4px
+    -webkit-border-bottom-right-radius: 4px
+    float: left
+    margin-left: 450px
+  ul
+    &#ytvideos-list
+      /*  float: left;
+      /*  width: 100%;
+      margin-top: 38px
+      width: 460px
+    .cmDiv ul
+      margin: 0px
+      width: 150px
+  .cmDiv ul li a
+    background-color: transparent
+    &:hover
+      background-color: #aaa
+  ul .actions_menu
+    float: none
+  li.video-item
+    position: relative
+    /*  float: left;
+    overflow: visible
+    width: 459px
+    margin: 5px 0
+    height: 57px
+    border: 1px solid #aaaaaa
+    -moz-border-radius-topleft: 4px
+    -webkit-border-top-left-radius: 4px
+    -moz-border-radius-topright: 4px
+    -webkit-border-top-right-radius: 4px
+    -moz-border-radius-bottomleft: 4px
+    -webkit-border-bottom-left-radius: 4px
+    -moz-border-radius-bottomright: 4px
+    -webkit-border-bottom-right-radius: 4px
+    &.playing
+      border-color: red
+      background-color: #ffc7c7
+      &:hover
+        border-color: red
+        background-color: #ffc7c7
+    a
+      background-color: white
+      /*  float: left;
+      width: 95%
+      height: 57px
+    .cmDiv a
+      float: none
+    a:hover
+      background-color: #f1f2f2
+    .thumb
+      float: left
+    .name
+      float: left
+      margin-top: 16px
+      font-size: 12px
+    .close
+      margin-top: 16px
+      font-size: 12px
+      &:hover
+        text-decoration: underline
+        color: red
+    .name
+      white-space: pre-wrap
+      width: 320px
+      overflow: hidden
+    .close
+      float: right
+      margin-right: 10px
+    .thumb
+      margin-right: 40px
+      width: 60px
+      height: 45px
+      img
+        border: 0
+    a.add-to-playlist
+      display: none
+      padding: 0px 2px
+      -moz-border-radius-topleft: 20px
+      -webkit-border-top-left-radius: 20px
+      -moz-border-radius-topright: 20px
+      -webkit-border-top-right-radius: 20px
+      -moz-border-radius-bottomleft: 20px
+      -webkit-border-bottom-left-radius: 20px
+      -moz-border-radius-bottomright: 20px
+      -webkit-border-bottom-right-radius: 20px
+      border: 1px solid black
+      font-size: 14px
+      background-color: white
+      position: absolute
+      right: 25px
+      top: 15px
+      width: auto
+
+.playlist-item
+  float: left
+  width: 100%
+  margin-bottom: 5px
+  border: 1px solid #00665e
+  padding: 2px
+  background-color: white
+  -moz-border-radius-topleft: 5px
+  -webkit-border-top-left-radius: 5px
+  -moz-border-radius-topright: 5px
+  -webkit-border-top-right-radius: 5px
+  -moz-border-radius-bottomleft: 5px
+  -webkit-border-bottom-left-radius: 5px
+  -moz-border-radius-bottomright: 5px
+  -webkit-border-bottom-right-radius: 5px
+  .title, .thumb
+    float: left
+  .title
+    margin-left: 5px
+    color: #00665e
+    font-size: 14px
+  a.pl-info
+    float: left
+    width: 100%
+  .delete
+    float: right
+    margin-top: 13px
+    font-size: 11px
+    margin-right: 5px
+    &:hover
+      color: red
+      font-weight: 900
+  &.on, &:hover
+    background-color: #61d8a2
+  &.on
+    a, span
+      color: white
+  &:hover
+    a, span
+      color: white
+  &.on
+    background-color: #ffb800
+    border-color: #ff6f00
+  &.new
+    background-color: white
+    position: relative
+    border: 2px solid #0969a2
+    margin-left: -1px
+    input
+      border: 1px solid #0969a2
+      -moz-border-radius-topleft: 2px
+      -webkit-border-top-left-radius: 2px
+      -moz-border-radius-topright: 2px
+      -webkit-border-top-right-radius: 2px
+      -moz-border-radius-bottomleft: 2px
+      -webkit-border-bottom-left-radius: 2px
+      -moz-border-radius-bottomright: 2px
+      -webkit-border-bottom-right-radius: 2px
+      margin-left: 10px
+      width: 145px
+    .edit
+      position: absolute
+      bottom: 10px
+      right: 15px
+    .ok, .cancel
+      color: #0969a2
+      text-decoration: underline
+      font-size: 12px
+      float: left
+      padding: 0 5px
+
+#playlists
+  position: absolute
+  z-index: 1
+  top: 25px
+  left: 0px
+  width: 410px
+  background-color: white
+  border: 2px solid
+  padding: 5px 5px 0 10px
+  -moz-border-radius-topleft: 4px
+  -webkit-border-top-left-radius: 4px
+  -moz-border-radius-topright: 4px
+  -webkit-border-top-right-radius: 4px
+  -moz-border-radius-bottomleft: 4px
+  -webkit-border-bottom-left-radius: 4px
+  -moz-border-radius-bottomright: 4px
+  -webkit-border-bottom-right-radius: 4px
+  ul
+    width: 400px
+  #add-playlist-btn
+    float: right
+    margin-right: 10px
+    margin-top: 5px
+    a
+      color: white
+      background-color: #0969a2
+      padding: 5px 10px
+      text-decoration: none
+      -moz-border-radius-topleft: 4px
+      -webkit-border-top-left-radius: 4px
+      -moz-border-radius-topright: 4px
+      -webkit-border-top-right-radius: 4px
+      -moz-border-radius-bottomleft: 4px
+      -webkit-border-bottom-left-radius: 4px
+      -moz-border-radius-bottomright: 4px
+      -webkit-border-bottom-right-radius: 4px
+    &.on a
+      background-color: #0969a2
+
+
+#add-to-playlist-menu
+  z-index: 1000
+  width: 350px
+  padding: 5px
+  padding-right: 15px
+  background-color: white
+  border: 1px solid #aaaaaa
+  right: 45px
+  .playlists li.playlist-item
+    border: 0
+    border-bottom: 1px solid #aaaaaa
+    &.on
+      background-color: white
+    &:hover
+      border: 0
+      border-bottom: 1px solid #aaaaaa
+      background-color: #f1f2f2
+    a
+      border: none
+      background: none
+      .title
+        font-size: 12px
+        color: black
+        margin-top: 15px
+    .thumb
+      width: 45px
+      height: 34px
+
+
+#add-video, #search-yt-video
+  background-color: black
+  padding: 3px
+  float: left
+  margin: 0 0 2px
+  width: 454px
+  -moz-border-radius-topleft: 4px
+  -webkit-border-top-left-radius: 4px
+  -moz-border-radius-topright: 4px
+  -webkit-border-top-right-radius: 4px
+  -moz-border-radius-bottomleft: 4px
+  -webkit-border-bottom-left-radius: 4px
+  -moz-border-radius-bottomright: 4px
+  -webkit-border-bottom-right-radius: 4px
+
+#add-video input
+  height: 16px
+  width: 380px
+  margin-right: 10px
+  font-size: 14px
+  float: left
+
+#search-yt-video input
+  height: 16px
+  width: 346px
+  margin-right: 10px
+  font-size: 14px
+  float: left
+
+#add-video input.empty, #search-yt-video input.empty
+  font-style: italic
+  color: #cccccc
+
+#add-video .add-btn, #search-yt-video .add-btn
+  -moz-border-radius-topleft: 4px
+  -webkit-border-top-left-radius: 4px
+  -moz-border-radius-topright: 4px
+  -webkit-border-top-right-radius: 4px
+  -moz-border-radius-bottomleft: 4px
+  -webkit-border-bottom-left-radius: 4px
+  -moz-border-radius-bottomright: 4px
+  -webkit-border-bottom-right-radius: 4px
+  color: white
+  float: left
+  margin-top: 2px
+  margin-right: 10px
+
+#ajax-loader
+  position: fixed
+  display: none
+  margin-left: -50px
+  width: 120px
+  height: 20px
+  background-color: white
+  padding: 3px 12px
+  top: 0
+  left: 50%
+  z-index: 200
+  -moz-border-radius-topleft: 0
+  -webkit-border-top-left-radius: 0
+  -moz-border-radius-topright: 0
+  -webkit-border-top-right-radius: 0
+  -moz-border-radius-bottomleft: 4px
+  -webkit-border-bottom-left-radius: 4px
+  -moz-border-radius-bottomright: 4px
+  -webkit-border-bottom-right-radius: 4px
+  .label
+    font-size: 13px
+  .loader
+    width: 16px
+    height: 16px
+    margin-right: 12px
+    margin-top: 2px
+    float: left
+    background: url(/images/ajax-loader.gif) no-repeat 0 0
+
+#message-loader
+  position: fixed
+  margin-left: -50px
+  width: 200px
+  height: 20px
+  background-color: white
+  padding: 3px 12px
+  top: 0
+  left: 50%
+  z-index: 200
+  -moz-border-radius-topleft: 0
+  -webkit-border-top-left-radius: 0
+  -moz-border-radius-topright: 0
+  -webkit-border-top-right-radius: 0
+  -moz-border-radius-bottomleft: 4px
+  -webkit-border-bottom-left-radius: 4px
+  -moz-border-radius-bottomright: 4px
+  -webkit-border-bottom-right-radius: 4px
+  .label
+    font-size: 13px
+  .loader
+    width: 16px
+    height: 16px
+    margin-right: 12px
+    margin-top: 2px
+    float: left
+    background: url(/images/ajax-loader.gif) no-repeat 0 0
+
+.share
+  float: right
+  margin-left: 20px
+  margin-top: 40px
+  .fb-like, .twitter
+    float: left
+
+#comments
+  float: left
+  margin-top: 20px
+  h2
+    font-weight: 900
+    margin-bottom: 10px
+
+#suggestions
+  .wrapper-suggestions
+    margin-bottom: 10px
+    float: left
+    width: 100%
+  h2
+    font-weight: 900
+    float: left
+    margin-bottom: 10px
+  ul
+    float: left
+    width: 100%
+    border: 1px solid black
+    -moz-border-radius-topleft: 2px
+    -webkit-border-top-left-radius: 2px
+    -moz-border-radius-topright: 2px
+    -webkit-border-top-right-radius: 2px
+    -moz-border-radius-bottomleft: 2px
+    -webkit-border-bottom-left-radius: 2px
+    -moz-border-radius-bottomright: 2px
+    -webkit-border-bottom-right-radius: 2px
+  li
+    margin: 5px
+    border: 1px solid #aaaaaa
+    float: left
+    width: 222px
+    -moz-border-radius-topleft: 2px
+    -webkit-border-top-left-radius: 2px
+    -moz-border-radius-topright: 2px
+    -webkit-border-top-right-radius: 2px
+    -moz-border-radius-bottomleft: 2px
+    -webkit-border-bottom-left-radius: 2px
+    -moz-border-radius-bottomright: 2px
+    -webkit-border-bottom-right-radius: 2px
+    a.info
+      float: left
+      padding: 5px 10px
+      display: block
+  .name
+    font-size: 12px
+    float: left
+    width: 130px
+    margin-left: 10px
+  .thumb
+    float: left
+  .by
+    clear: left
+    font-size: 12px
+    float: left
+    width: 100%
+    padding: 5px 10px
+    .label
+      margin-bottom: 2px
+    img, a, .label
+      float: left
+    img
+      clear: left
+    a
+      margin-left: 5px
+  .add
+    font-size: 11px
+    clear: left
+    float: right
+    color: blue
+    text-decoration: underline
+    padding: 5px
+
+.home
+  .create-playlist
+    font-size: 20px
+    color: white
+    background-color: #666666
+    -moz-border-radius-topleft: 6px
+    -webkit-border-top-left-radius: 6px
+    -moz-border-radius-topright: 6px
+    -webkit-border-top-right-radius: 6px
+    -moz-border-radius-bottomleft: 6px
+    -webkit-border-bottom-left-radius: 6px
+    -moz-border-radius-bottomright: 6px
+    -webkit-border-bottom-right-radius: 6px
+    text-align: center
+    padding: 10px 30px
+    display: block
+    float: left
+    margin-left: 310px
+    margin-top: 20px
+  .recent-playlists
+    clear: left
+    float: left
+    width: 100%
+    margin-top: 20px
+    h2
+      font-weight: 900
+      margin-bottom: 10px
+    li
+      float: left
+      padding: 5px 10px
+      border: 1px solid #aaaaaa
+      -moz-border-radius-topleft: 4px
+      -webkit-border-top-left-radius: 4px
+      -moz-border-radius-topright: 4px
+      -webkit-border-top-right-radius: 4px
+      -moz-border-radius-bottomleft: 4px
+      -webkit-border-bottom-left-radius: 4px
+      -moz-border-radius-bottomright: 4px
+      -webkit-border-bottom-right-radius: 4px
+      margin-right: 10px
+      margin-bottom: 10px
+      width: 420px
+      .thumb
+        width: 60px
+        height: 45px
+        float: left
+        border: 1px solid #aaaaaa
+        a
+          border: 0
+      .title
+        float: left
+        margin-left: 5px
+        text-decoration: underline
+      .member
+        float: left
+        clear: left
+        margin-top: 5px
+        .member-thumb
+          width: 30px
+          height: 30px
+          float: left
+        .member-name
+          float: left
+          margin-left: 5px
+          font-size: 12px
+          color: blue
+
+.left
+  float: left
+
+#change-members-list
+  position: absolute
+  display: none
+  width: 300px
+  border: 1px solid black
+  overflow: hidden
+  .li
+    border-bottom: 1px solid black
+
+#change-playlists-list
+  display: none
+  width: 300px
+  border: 1px solid black
+  .li
+    border-bottom: 1px solid black
+
+.playlist-title
+  font-size: 20px
+
+.user-title
+  font-size: 16px
+
+.right
+  float: right
+
+.login-form, .sign-up-form
+  display: none
+
+#video-list-tabs
+  ul.tab-header li
+    float: left
+    margin: 2px 5px
+    font-size: 18px
+  width: 960px
+  .video-list-column
+    float: left
+    width: 460px
+    &:nth-child(2)
+      margin: 0px 0px 0px 20px
+
+a
+  &.browse
+    background: url(/images//hori_large.png) no-repeat
+    display: inline
+    width: 15px
+    height: 15px
+    float: left
+    cursor: pointer
+    font-size: 1px
+    position: relative
+  &.right
+    background-position: 0 -15px
+    clear: right
+    margin-right: 0px
+    &:hover
+      background-position: -15px -15px
+    &:active
+      background-position: -30px -15px
+  &.left
+    margin-left: 0px
+    &:hover
+      background-position: -15px 0
+    &:active
+      background-position: -30px 0
+
+.options-button
+  margin: 0px 0px 0px 10px
+  height: 26px
+
+.options-form, .forgot-password-form
+  display: none
+
+#login-user-playlists
+  margin-left: 100px
+  background-color: black
+  padding: 0 0 5px
+  position: absolute
+  right: -120px
+  top: 30px
+  width: 120px
+  -moz-border-radius-topleft: 0
+  -webkit-border-top-left-radius: 0
+  -moz-border-radius-topright: 0
+  -webkit-border-top-right-radius: 0
+  -moz-border-radius-bottomleft: 4px
+  -webkit-border-bottom-left-radius: 4px
+  -moz-border-radius-bottomright: 4px
+  -webkit-border-bottom-right-radius: 4px
+  li
+    border-bottom: 1px solid #333
+
+.my-playlists
+  #login-user-playlists
+    display: none
+  &:hover #login-user-playlists
+    display: block
+
+.add-playlist-form, .user-settings-form
+  display: none
+
+.slogan
+  text-align: center

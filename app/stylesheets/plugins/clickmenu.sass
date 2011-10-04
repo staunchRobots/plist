@@ -1,0 +1,92 @@
+div.cmDiv
+  border: 1px solid black
+  background-color: #eee
+  float: right
+  width: 20px
+  padding: 0px 13px 0px 0px
+
+.clickMenu
+  margin: 0
+  padding: 0
+  cursor: default
+  list-style: none
+  ul
+    list-style: none
+    margin: 0
+    padding: 2px
+    border: 1px solid black
+    background-color: #eee
+    min-width: 150px
+    /* ie doesnt know this :/
+    //float: left;/*ie again
+    //width: 100%;/*and again*/
+  div
+    &.outerbox
+      display: none
+      min-width: 106px
+      /* firefox produces animation-flickering when the box is bigger than this :/
+    &.inner
+      //top: 20px; /* for ie */
+      left: 0
+      margin: 0
+      div.outerbox
+        margin: 0
+        left: 98px
+        //left: 90px; /* for ie */
+        top: -3px
+  li
+    position: relative
+    padding: 0 20px 0 2px
+    /*white-space: nowrap; does not really work in ie
+    &.main
+      float: left
+      padding: 0 10px
+      background-color: #eee
+      width: 13px
+      //height: 20px; /* for ie */
+      li
+        z-index: 2
+        min-width: 78px
+    &.hover
+      z-index: 1 !important
+      /* the hover z-index has to be below the normal one the hovering items may be drawn over a submenu
+      background-color: #aaa
+  img.liArrow
+    position: absolute
+    right: 5px
+    top: 0.41em
+  a
+    text-decoration: none
+    color: black
+    cursor: default
+
+/* thats for the shadowbox
+
+html>body
+  div
+    &.outerbox
+      padding: 0 5px 5px 0
+    &.shadowbox1
+      position: absolute
+      right: 0
+      bottom: 5px
+      width: 5px
+      height: 100%
+      background: url(myshadow.png) no-repeat right top
+    &.shadowbox2
+      position: absolute
+      bottom: 0
+      right: 5px
+      height: 5px
+      width: 100%
+      background: url(myshadow.png) left bottom
+    &.shadowbox3
+      position: absolute
+      bottom: 0
+      right: 0
+      height: 5px
+      width: 5px
+      background: url(myshadow.png) no-repeat right bottom
+  .innerbox
+    margin: 0
+    display: inherit

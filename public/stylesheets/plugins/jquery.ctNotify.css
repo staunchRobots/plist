@@ -1,0 +1,58 @@
+/* line 1, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/jquery.ctNotify.sass */
+.ctNotify {
+  background-color: black;
+  color: white;
+  padding: 0.5em;
+  margin: 0;
+  font-size: 12px;
+  cursor: pointer;
+  z-index: 1000;
+}
+/* line 9, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/jquery.ctNotify.sass */
+.ctNotify ul {
+  margin: 0;
+  padding: 0;
+}
+/* line 12, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/jquery.ctNotify.sass */
+.ctNotify li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  color: white;
+  padding: 10px 10px 10px 55px;
+  font-size: 15px;
+  border: 0;
+  background: no-repeat 15px 5px;
+}
+/* line 22, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/jquery.ctNotify.sass */
+.ctNotify .ctNotify_handle {
+  text-align: left;
+  font-size: 11px;
+  margin: 5px 0 0 0;
+}
+/* line 27, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/jquery.ctNotify.sass */
+.ctNotify li.message {
+  background-image: url("/images/ctnotify/ok.png");
+}
+/* line 29, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/jquery.ctNotify.sass */
+.ctNotify li.warning {
+  background-image: url("/images/ctnotify/warning.png");
+}
+/* line 31, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/jquery.ctNotify.sass */
+.ctNotify li.loading {
+  background-image: url("/images/ajax-loader2.gif");
+}
+/* line 33, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/jquery.ctNotify.sass */
+.ctNotify li.error {
+  background-image: url("/images/ctnotify/error.png");
+  color: red;
+}
+/* line 36, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/jquery.ctNotify.sass */
+.ctNotify li.error .sticky {
+  color: red;
+}
+/* line 38, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/jquery.ctNotify.sass */
+.ctNotify li .sticky {
+  color: #4297d7;
+}

@@ -1,0 +1,39 @@
+.ctNotify
+  background-color: #000
+  color: #fff
+  padding: .5em
+  margin: 0
+  font-size: 12px
+  cursor: pointer
+  z-index: 1000
+  ul
+    margin: 0
+    padding: 0
+  li
+    list-style: none
+    padding: 0
+    margin: 0
+    text-align: left
+    color: #fff
+    padding: 10px 10px 10px 55px
+    font-size: 15px
+    border: 0
+    background: no-repeat 15px 5px
+  .ctNotify_handle
+    text-align: left
+    font-size: 11px
+    margin: 5px 0 0 0
+  li
+    &.message
+      background-image: url('/images/ctnotify/ok.png')
+    &.warning
+      background-image: url('/images/ctnotify/warning.png')
+    &.loading
+      background-image: url('/images/ajax-loader2.gif')
+    &.error
+      background-image: url('/images/ctnotify/error.png')
+      color: #ff0000
+      .sticky
+        color: #ff0000
+    .sticky
+      color: #4297d7
