@@ -8,5 +8,5 @@
       %span.playlist_published_radio
         = f.radio_button :published, false
         = f.label :published_no, "Unpublished"
-        = f.radio_button :published, true
+        = f.radio_button :published, true, :checked => true
         = f.label :published_yes, "Published"

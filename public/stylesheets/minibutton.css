@@ -5,6 +5,8 @@
     padding: 0 0 0 3px;
 }
 .minibutton, .minibutton.disabled:hover {
+    background: #ECECEC; /* for non-css3 browsers */
+    background: -webkit-gradient(linear, center top, center bottom, from(#F4F4F4), to(#ECECEC));
     background: -moz-linear-gradient(center top , #F4F4F4, #ECECEC) repeat scroll 0 0 transparent;
     border: 1px solid #D4D4D4;
     border-radius: 3px 3px 3px 3px;
@@ -17,22 +19,31 @@
     text-shadow: 1px 1px 0 #FFFFFF;
     white-space: nowrap;
 }
+
+
+
 button.minibutton {
     height: 23px;
 }
 .minibutton.lighter, .minibutton.disabled.lighter:hover {
+    background: #ECECEC;
+    background: -webkit-gradient(linear, center top, left bottom, from(#FAFAFA), to(#ECECEC));
     background: -moz-linear-gradient(center top , #FAFAFA, #DDDDDD) repeat scroll 0 0 transparent;
     border: medium none;
     color: #333333;
     text-shadow: 1px 1px 0 #FFFFFF;
 }
 .minibutton.green, .minibutton.disabled.green:hover {
+    background: #ECECEC;
+    background: -webkit-gradient(linear, center top, left bottom, from(#36B825), to(#28881B));
     background: -moz-linear-gradient(center top , #36B825, #28881B) repeat scroll 0 0 transparent;
     border-color: #4A993E;
     color: #FFFFFF;
     text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
 }
 .minibutton.blue, .minibutton.disabled.blue:hover {
+    background: #32687B;
+    background: -webkit-gradient(linear, center top, left bottom, from(#448DA6), to(#32687B));
     background: -moz-linear-gradient(center top , #448DA6, #32687B) repeat scroll 0 0 transparent;
     border-color: #275666;
     color: #FFFFFF;
@@ -48,6 +59,7 @@ button.minibutton::-moz-focus-inner {
     color: #990000;
 }
 .minibutton.disabled.danger:hover {
+    background: -webkit-gradient(linear, center top, center bottom, from(#F4F4F4), to(#ECECEC));
     background: -moz-linear-gradient(center top , #F4F4F4, #ECECEC) repeat scroll 0 0 transparent;
     border-color: #D4D4D4;
     color: #990000;
@@ -59,6 +71,7 @@ button.minibutton::-moz-focus-inner {
     padding: 1px 9px 0 6px;
 }
 .minibutton:hover {
+    background: -webkit-gradient(linear, center top, center bottom, from(#599BDC), to(#3072B3));
     background: -moz-linear-gradient(center top , #599BDC, #3072B3) repeat scroll 0 0 transparent;
     border-color: #518CC6 #518CC6 #2A65A0;
     color: #FFFFFF;
@@ -66,14 +79,17 @@ button.minibutton::-moz-focus-inner {
     text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
 }
 .minibutton.mousedown {
+    background: -webkit-gradient(linear, center top, center bottom, from(#3072B3), to(#599BDC));
     background: -moz-linear-gradient(center top , #3072B3, #599BDC) repeat scroll 0 0 transparent;
     border-color: #2A65A0 #2A65A0 #518CC6;
 }
 .minibutton.danger:hover {
+    background: -webkit-gradient(linear, center top, center bottom, from(#DC5F59), to(#B33630));
     background: -moz-linear-gradient(center top , #DC5F59, #B33630) repeat scroll 0 0 transparent;
     border-color: #C65651 #C65651 #A0302A;
 }
 .minibutton.danger.mousedown {
+    background: -webkit-gradient(linear, center top, center bottom, from(#B33630), to(#DC5F59));
     background: -moz-linear-gradient(center top , #B33630, #DC5F59) repeat scroll 0 0 transparent;
     border-color: #A0302A #A0302A #C65651;
 }
@@ -82,11 +98,12 @@ button.minibutton::-moz-focus-inner {
     opacity: 0.5;
 }
 .minibutton.selected, .context-menu-container.active .context-menu-button {
+    background: -webkit-gradient(linear, center top, center bottom, from(#767676), to(#9E9E9E));
     background: -moz-linear-gradient(center top , #767676, #9E9E9E) repeat scroll 0 0 transparent;
     border-color: #686868;
     color: #FFFFFF;
     text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5);
-}      
+}
 
 .btn-admin .icon, .btn-watch .icon, .btn-download .icon, .btn-pull-request .icon, .btn-fork .icon, .btn-leave .icon, .btn-compare .icon, .btn-reply .icon, .btn-back .icon, .btn-forward .icon {
     background: url("../images/modules/buttons/minibutton_icons.png") no-repeat scroll 0 0 transparent;

@@ -70,12 +70,13 @@ class VideosController < InheritedResources::Base
   end
 
   def hate
+    @ytid = params[:ytid]
     unless UserHate.exists?(:user_id => current_user.id, :ytid => params[:ytid])
       @uh = UserHate.find_or_create_by_user_id_and_ytid(current_user.id, params[:ytid])
     else
       @uh = false
     end
-    
+
     respond_to do |format|
       format.js
     end

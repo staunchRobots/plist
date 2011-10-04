@@ -544,8 +544,8 @@ h2 {
 }
 /* line 124, ../../../app/stylesheets/styles.sass */
 #content .header {
-  float: left;
-  padding: 10px 0;
+  float: none;
+  padding: 0px 0px 5px 0px;
 }
 /* line 127, ../../../app/stylesheets/styles.sass */
 #content .header h1 {
@@ -561,15 +561,16 @@ h2 {
 }
 /* line 135, ../../../app/stylesheets/styles.sass */
 #content .header .member-thumb, #content .header .info {
-  float: left;
+/*  float: left;*/
 }
 /* line 137, ../../../app/stylesheets/styles.sass */
 #content .header .info {
-  margin-left: 10px;
+/*  margin-left: 10px;*/
   font-size: 13px;
   color: #666666;
   position: relative;
-  width: 500px;
+/*  width: 940px;*/
+/*  height: 5px;*/
 }
 /* line 143, ../../../app/stylesheets/styles.sass */
 #content .header .edit-title-notice {
@@ -688,10 +689,10 @@ h2 {
   margin-left: 450px;
 }
 /* line 210, ../../../app/stylesheets/styles.sass */
-#playlist ul {
+#playlist ul#ytvideos-list {
 /*  float: left;*/
 /*  width: 100%;*/
-  margin-top: 35px;
+  margin-top: 38px;
   width: 460px;
 }
 
@@ -719,7 +720,7 @@ h2 {
 /*  float: left;*/
   overflow:visible;
   width: 459px;
-  margin: 3px 0;
+  margin: 5px 0;
   height: 57px;
   border: 1px solid #aaaaaa;
   -moz-border-radius-topleft: 4px;
@@ -1343,7 +1344,11 @@ h2 {
 }
 
 .playlist-title {
-  font-size: 24px;
+  font-size: 20px;
+}              
+
+.user-title {
+  font-size: 16px;
 }
 
 .right {

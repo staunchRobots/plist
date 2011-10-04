@@ -5,7 +5,7 @@
   = link_to "Create your own pList", '#', :class => 'create-playlist', :id => "login-to-create"
   
 .recent-playlists
-  %h2 Specials
+  %h2 Featured pLists
   - if @featured_playlists.size > 0
     %ul
       = render :partial => 'playlists/playlist', :collection => @featured_playlists
@@ -13,7 +13,7 @@
     No Special videos for a moment
     
 .recent-playlists                 
-  %h2 Recent Playlists
+  %h2 Recently Created pLists
   - if @recent_playlists.size > 0
     %ul
       = render :partial => 'playlists/playlist', :collection => @recent_playlists

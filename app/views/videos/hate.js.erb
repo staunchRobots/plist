@@ -1,5 +1,7 @@
 <% if @uh %>
   $.ctNotify("We will never show you this video again")
 <% else %>
-  $.ctNotify("You already hate it. Try to refresh a page")
+  $.ctNotify("You already hate it")
 <% end %>
+
+$("#ytvideos-list li[ytid='<%= @ytid %>']").hide('fast')

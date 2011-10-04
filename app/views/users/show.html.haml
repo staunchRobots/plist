@@ -1,4 +1,5 @@
-= link_to "Create pList", new_user_playlist_path(@user), :class => 'create-playlist'
+- if user_signed_in? && current_user.id == @user.id
+  = link_to "Create pList", new_user_playlist_path(@user), :class => 'create-playlist  create-playlist-btn'
 
 .recent-playlists
   %h2 

@@ -6,4 +6,4 @@
   .member
     .member-thumb
       %img{:src=>"#{avatar_url(playlist.user)}", :width=>"30", :height=>"30"}
-    = link_to playlist.user.name, playlist.user, :class => 'member-name'
+    = link_to playlist.user.username, playlist.user, :class => 'member-name'
