@@ -19,6 +19,7 @@ gem "compass", ">= 0.11.5"
 gem 'barista'
 gem "jquery-rails"
 gem 'jammit'
+gem 'therubyracer'
 gem 'uglifier'
 
 gem 'unicorn'

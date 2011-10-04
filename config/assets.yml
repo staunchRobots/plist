@@ -1,4 +1,4 @@
-package_assets: on
+package_assets: always
 embed_assets: on
 compress_assets: on
 gzip_assets: on
