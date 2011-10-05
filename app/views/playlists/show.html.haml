@@ -10,25 +10,8 @@
         %p{:style=>"display:none;"} You need Flash player 8+ and JavaScript enabled to view this video.
     #playlist{:style=>""}
       #video-list-tabs
-        .video-list-column
-          .header
-            .info
-              %div 
-                %span.user-title
-                  = link_to @playlist.user.username, @playlist.user
-              %div
-                %span.playlist-title#playlist-title
-                  = link_to @playlist.title, user_playlist_path(@playlist.user, @playlist.id)
-                - if user_signed_in? && myown_playlist
-                  %a.options-button.minibutton
-                    %span#options-btn Options
-          %ul#videos-list
-            = render :partial => 'videos/video', :collection => @playlist.videos
-        .video-list-column
-          %h2 Search Youtube
-          = render 'playlists/search_youtube_form'
-          %ul#ytvideos-list
-            = #render :partial => 'videos/video', :collection => Video.top_rated
+        = render 'playlist_queue'
+        = render 'search_youtube'
 
   #comments
     %h2 Comments

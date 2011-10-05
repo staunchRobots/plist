@@ -1,0 +1,11 @@
+.video-list-column
+  - if user_signed_in? && myown_playlist
+    %h2 Search Youtube
+    = render 'playlists/search_youtube_form'
+    %ul#ytvideos-list
+  - else 
+    %h2
+      - if user_signed_in?
+        = link_to "Create your own pList", '#', :class => ' create-playlist-btn'
+      - else
+        = link_to "Create your own pList", '#', :class => '', :id => "login-to-create"

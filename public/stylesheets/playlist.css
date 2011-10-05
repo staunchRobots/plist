@@ -1,0 +1,348 @@
+/* line 2, ../../app/stylesheets/playlist.sass */
+#playlist a.more-videos {
+  padding: 5px 10px;
+  background-color: #666666;
+  color: white;
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  float: left;
+  margin-left: 450px;
+}
+/* line 17, ../../app/stylesheets/playlist.sass */
+#playlist ul#ytvideos-list {
+  /*  float: left; */
+  /*  width: 100%; */
+  margin-top: 38px;
+  width: 460px;
+}
+/* line 22, ../../app/stylesheets/playlist.sass */
+#playlist ul .cmDiv ul {
+  margin: 0px;
+  width: 150px;
+}
+/* line 25, ../../app/stylesheets/playlist.sass */
+#playlist .cmDiv ul li a {
+  background-color: transparent;
+}
+/* line 27, ../../app/stylesheets/playlist.sass */
+#playlist .cmDiv ul li a:hover {
+  background-color: #aaaaaa;
+}
+/* line 30, ../../app/stylesheets/playlist.sass */
+#playlist .actions_menu {
+  float: none;
+}
+/* line 33, ../../app/stylesheets/playlist.sass */
+#playlist .yt_actions_menu {
+  height: 56px;
+  width: 95px;
+  float: right;
+  font-size: 20px;
+  border: 1px solid black;
+  background-color: #eeeeee;
+}
+/* line 41, ../../app/stylesheets/playlist.sass */
+#playlist .yt_actions_menu div {
+  float: right;
+  height: 56px;
+  width: 55px;
+}
+/* line 46, ../../app/stylesheets/playlist.sass */
+#playlist .yt_actions_menu .filter-action {
+  border: 0;
+  float: left;
+  width: 32px;
+  height: 34px;
+  margin: 10px 0px 0px 10px;
+  background: url(../images/gtk-close.png) no-repeat;
+  text-indent: 9999px;
+  overflow: hidden;
+}
+/* line 55, ../../app/stylesheets/playlist.sass */
+#playlist .yt_actions_menu .plus-action {
+  display: block;
+  border: 0;
+  float: right;
+  width: 32px;
+  height: 34px;
+  margin: 10px 10px 0px 0px;
+  background: url(../images/gtk-plus.png) no-repeat;
+  text-indent: 9999px;
+  overflow: hidden;
+}
+/* line 65, ../../app/stylesheets/playlist.sass */
+#playlist .yt_actions_menu .plus-more-action {
+  height: 13px;
+  width: 13px;
+  text-indent: 9999px;
+  overflow: hidden;
+  background: url(../images/plus-more.png) no-repeat;
+}
+/* line 71, ../../app/stylesheets/playlist.sass */
+#playlist .yt_actions_menu .plus-more-action:hover {
+  background: none;
+}
+/* line 75, ../../app/stylesheets/playlist.sass */
+#playlist li.video-item {
+  position: relative;
+  /*  float: left; */
+  overflow: visible;
+  width: 459px;
+  margin: 5px 0;
+  height: 57px;
+  border: 1px solid #aaaaaa;
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+}
+/* line 91, ../../app/stylesheets/playlist.sass */
+#playlist li.video-item.playing {
+  border-color: red;
+  background-color: #ffc7c7;
+}
+/* line 94, ../../app/stylesheets/playlist.sass */
+#playlist li.video-item.playing:hover {
+  border-color: red;
+  background-color: #ffc7c7;
+}
+/* line 97, ../../app/stylesheets/playlist.sass */
+#playlist li.video-item a {
+  background-color: white;
+  /*  float: left; */
+  width: 95%;
+  height: 57px;
+}
+/* line 102, ../../app/stylesheets/playlist.sass */
+#playlist li.video-item .cmDiv a {
+  float: none;
+}
+/* line 104, ../../app/stylesheets/playlist.sass */
+#playlist li.video-item a:hover {
+  background-color: #f1f2f2;
+}
+/* line 106, ../../app/stylesheets/playlist.sass */
+#playlist li.video-item .thumb {
+  float: left;
+}
+/* line 108, ../../app/stylesheets/playlist.sass */
+#playlist li.video-item .name {
+  float: left;
+  margin-top: 16px;
+  font-size: 12px;
+}
+/* line 112, ../../app/stylesheets/playlist.sass */
+#playlist li.video-item .close {
+  margin-top: 16px;
+  font-size: 12px;
+}
+/* line 115, ../../app/stylesheets/playlist.sass */
+#playlist li.video-item .close:hover {
+  text-decoration: underline;
+  color: red;
+}
+/* line 118, ../../app/stylesheets/playlist.sass */
+#playlist li.video-item .name {
+  white-space: pre-wrap;
+  width: 247px;
+  overflow: hidden;
+}
+/* line 122, ../../app/stylesheets/playlist.sass */
+#playlist li.video-item .close {
+  float: right;
+  margin-right: 10px;
+}
+/* line 125, ../../app/stylesheets/playlist.sass */
+#playlist li.video-item .thumb {
+  margin-right: 40px;
+  width: 60px;
+  height: 45px;
+}
+/* line 129, ../../app/stylesheets/playlist.sass */
+#playlist li.video-item .thumb img {
+  border: 0;
+}
+/* line 131, ../../app/stylesheets/playlist.sass */
+#playlist li.video-item a.add-to-playlist {
+  display: none;
+  padding: 0px 2px;
+  -moz-border-radius-topleft: 20px;
+  -webkit-border-top-left-radius: 20px;
+  -moz-border-radius-topright: 20px;
+  -webkit-border-top-right-radius: 20px;
+  -moz-border-radius-bottomleft: 20px;
+  -webkit-border-bottom-left-radius: 20px;
+  -moz-border-radius-bottomright: 20px;
+  -webkit-border-bottom-right-radius: 20px;
+  border: 1px solid black;
+  font-size: 14px;
+  background-color: white;
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  width: auto;
+}
+
+/* line 150, ../../app/stylesheets/playlist.sass */
+.playlist-item {
+  float: left;
+  width: 100%;
+  margin-bottom: 5px;
+  border: 1px solid #00665e;
+  padding: 2px;
+  background-color: white;
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+}
+/* line 165, ../../app/stylesheets/playlist.sass */
+.playlist-item .title, .playlist-item .thumb {
+  float: left;
+}
+/* line 167, ../../app/stylesheets/playlist.sass */
+.playlist-item .title {
+  margin-left: 5px;
+  color: #00665e;
+  font-size: 14px;
+}
+/* line 171, ../../app/stylesheets/playlist.sass */
+.playlist-item a.pl-info {
+  float: left;
+  width: 100%;
+}
+/* line 174, ../../app/stylesheets/playlist.sass */
+.playlist-item .delete {
+  float: right;
+  margin-top: 13px;
+  font-size: 11px;
+  margin-right: 5px;
+}
+/* line 179, ../../app/stylesheets/playlist.sass */
+.playlist-item .delete:hover {
+  color: red;
+  font-weight: 900;
+}
+/* line 182, ../../app/stylesheets/playlist.sass */
+.playlist-item.on, .playlist-item:hover {
+  background-color: #61d8a2;
+}
+/* line 185, ../../app/stylesheets/playlist.sass */
+.playlist-item.on a, .playlist-item.on span {
+  color: white;
+}
+/* line 188, ../../app/stylesheets/playlist.sass */
+.playlist-item:hover a, .playlist-item:hover span {
+  color: white;
+}
+/* line 190, ../../app/stylesheets/playlist.sass */
+.playlist-item.on {
+  background-color: #ffb800;
+  border-color: #ff6f00;
+}
+/* line 193, ../../app/stylesheets/playlist.sass */
+.playlist-item.new {
+  background-color: white;
+  position: relative;
+  border: 2px solid #0969a2;
+  margin-left: -1px;
+}
+/* line 198, ../../app/stylesheets/playlist.sass */
+.playlist-item.new input {
+  border: 1px solid #0969a2;
+  -moz-border-radius-topleft: 2px;
+  -webkit-border-top-left-radius: 2px;
+  -moz-border-radius-topright: 2px;
+  -webkit-border-top-right-radius: 2px;
+  -moz-border-radius-bottomleft: 2px;
+  -webkit-border-bottom-left-radius: 2px;
+  -moz-border-radius-bottomright: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  margin-left: 10px;
+  width: 145px;
+}
+/* line 210, ../../app/stylesheets/playlist.sass */
+.playlist-item.new .edit {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+}
+/* line 214, ../../app/stylesheets/playlist.sass */
+.playlist-item.new .ok, .playlist-item.new .cancel {
+  color: #0969a2;
+  text-decoration: underline;
+  font-size: 12px;
+  float: left;
+  padding: 0 5px;
+}
+
+/* line 221, ../../app/stylesheets/playlist.sass */
+#add-video, #search-yt-video {
+  background-color: black;
+  padding: 3px;
+  float: left;
+  margin: 0 0 2px;
+  width: 454px;
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+}
+
+/* line 236, ../../app/stylesheets/playlist.sass */
+#add-video input {
+  height: 16px;
+  width: 380px;
+  margin-right: 10px;
+  font-size: 14px;
+  float: left;
+}
+
+/* line 243, ../../app/stylesheets/playlist.sass */
+#search-yt-video input {
+  height: 16px;
+  width: 346px;
+  margin-right: 10px;
+  font-size: 14px;
+  float: left;
+}
+
+/* line 250, ../../app/stylesheets/playlist.sass */
+#add-video input.empty, #search-yt-video input.empty {
+  font-style: italic;
+  color: #cccccc;
+}
+
+/* line 254, ../../app/stylesheets/playlist.sass */
+#add-video .add-btn, #search-yt-video .add-btn {
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  color: white;
+  float: left;
+  margin-top: 2px;
+  margin-right: 10px;
+}

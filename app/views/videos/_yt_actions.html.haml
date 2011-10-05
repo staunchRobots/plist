@@ -1,0 +1,6 @@
+.yt_actions_menu
+  .filter-action= link_to "X", "#"
+  = link_to playlist_videos_path(@playlist.id, :video => {:yt_url => video.ytid, :is_ytid => '1'}, :current_playlist => @playlist.id), :remote => true, :method => :post do 
+    .plus-action
+  .plus-more-action
+    = copy_playlists_list(video.ytid, video.new_record?)

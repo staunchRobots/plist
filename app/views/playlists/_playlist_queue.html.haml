@@ -1,0 +1,14 @@
+.video-list-column
+  .header
+    .info
+      %div 
+        %span.user-title
+          = link_to @playlist.user.username, @playlist.user
+      %div
+        %span.playlist-title#playlist-title
+          = link_to @playlist.title, user_playlist_path(@playlist.user, @playlist.id)
+        - if user_signed_in? && myown_playlist
+          %a.options-button.minibutton
+            %span#options-btn Options
+  %ul#videos-list
+    = render :partial => 'videos/video', :collection => @playlist.videos
