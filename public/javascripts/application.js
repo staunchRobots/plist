@@ -32,4 +32,11 @@ $(function() {
     $(this).find('a').click()
     $('.actions_menu').trigger('closemenu')
   })
+
+  $('.plus-more-action .menu_action').live('click', function() {
+    $(this).find('a').click()
+    $('.actions_menu').trigger('closemenu')
+  })
+
+
 })

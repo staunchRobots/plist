@@ -37,23 +37,43 @@
 /* line 30, ../../app/stylesheets/playlist.sass */
 #playlist .actions_menu {
   float: none;
+  padding: 0px 0px 10px 0px;
 }
-/* line 33, ../../app/stylesheets/playlist.sass */
+/* line 34, ../../app/stylesheets/playlist.sass */
 #playlist .yt_actions_menu {
   height: 56px;
   width: 95px;
   float: right;
-  font-size: 20px;
   border: 1px solid black;
   background-color: #eeeeee;
 }
-/* line 41, ../../app/stylesheets/playlist.sass */
+/* line 40, ../../app/stylesheets/playlist.sass */
+#playlist .yt_actions_menu .cmDiv {
+  border: none;
+  padding: 0px;
+}
+/* line 44, ../../app/stylesheets/playlist.sass */
+#playlist .yt_actions_menu .cmDiv ul.clickMenu li.main {
+  height: 13px;
+  padding: 0px;
+  margin-top: -7px;
+}
+/* line 48, ../../app/stylesheets/playlist.sass */
+#playlist .yt_actions_menu .cmDiv ul.clickMenu li.main img {
+  padding: 0px;
+  margin-top: 0px;
+}
+/* line 51, ../../app/stylesheets/playlist.sass */
+#playlist .yt_actions_menu .cmDiv ul.clickMenu li.hover {
+  /* background-color: #eee */
+}
+/* line 53, ../../app/stylesheets/playlist.sass */
 #playlist .yt_actions_menu div {
   float: right;
-  height: 56px;
-  width: 55px;
+  height: 13px;
+  width: 13px;
 }
-/* line 46, ../../app/stylesheets/playlist.sass */
+/* line 58, ../../app/stylesheets/playlist.sass */
 #playlist .yt_actions_menu .filter-action {
   border: 0;
   float: left;
@@ -63,8 +83,9 @@
   background: url(../images/gtk-close.png) no-repeat;
   text-indent: 9999px;
   overflow: hidden;
+  cursor: pointer;
 }
-/* line 55, ../../app/stylesheets/playlist.sass */
+/* line 68, ../../app/stylesheets/playlist.sass */
 #playlist .yt_actions_menu .plus-action {
   display: block;
   border: 0;
@@ -76,19 +97,14 @@
   text-indent: 9999px;
   overflow: hidden;
 }
-/* line 65, ../../app/stylesheets/playlist.sass */
+/* line 78, ../../app/stylesheets/playlist.sass */
 #playlist .yt_actions_menu .plus-more-action {
-  height: 13px;
-  width: 13px;
-  text-indent: 9999px;
-  overflow: hidden;
-  background: url(../images/plus-more.png) no-repeat;
+  /* height: 13px */
+  /* width: 13px */
+  /* text-indent: 9999px */
+  /* overflow: hidden */
 }
-/* line 71, ../../app/stylesheets/playlist.sass */
-#playlist .yt_actions_menu .plus-more-action:hover {
-  background: none;
-}
-/* line 75, ../../app/stylesheets/playlist.sass */
+/* line 85, ../../app/stylesheets/playlist.sass */
 #playlist li.video-item {
   position: relative;
   /*  float: left; */
@@ -106,73 +122,73 @@
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
 }
-/* line 91, ../../app/stylesheets/playlist.sass */
+/* line 101, ../../app/stylesheets/playlist.sass */
 #playlist li.video-item.playing {
   border-color: red;
   background-color: #ffc7c7;
 }
-/* line 94, ../../app/stylesheets/playlist.sass */
+/* line 104, ../../app/stylesheets/playlist.sass */
 #playlist li.video-item.playing:hover {
   border-color: red;
   background-color: #ffc7c7;
 }
-/* line 97, ../../app/stylesheets/playlist.sass */
+/* line 107, ../../app/stylesheets/playlist.sass */
 #playlist li.video-item a {
   background-color: white;
   /*  float: left; */
   width: 95%;
   height: 57px;
 }
-/* line 102, ../../app/stylesheets/playlist.sass */
+/* line 112, ../../app/stylesheets/playlist.sass */
 #playlist li.video-item .cmDiv a {
   float: none;
 }
-/* line 104, ../../app/stylesheets/playlist.sass */
+/* line 114, ../../app/stylesheets/playlist.sass */
 #playlist li.video-item a:hover {
   background-color: #f1f2f2;
 }
-/* line 106, ../../app/stylesheets/playlist.sass */
+/* line 116, ../../app/stylesheets/playlist.sass */
 #playlist li.video-item .thumb {
   float: left;
 }
-/* line 108, ../../app/stylesheets/playlist.sass */
+/* line 118, ../../app/stylesheets/playlist.sass */
 #playlist li.video-item .name {
   float: left;
   margin-top: 16px;
   font-size: 12px;
 }
-/* line 112, ../../app/stylesheets/playlist.sass */
+/* line 122, ../../app/stylesheets/playlist.sass */
 #playlist li.video-item .close {
   margin-top: 16px;
   font-size: 12px;
 }
-/* line 115, ../../app/stylesheets/playlist.sass */
+/* line 125, ../../app/stylesheets/playlist.sass */
 #playlist li.video-item .close:hover {
   text-decoration: underline;
   color: red;
 }
-/* line 118, ../../app/stylesheets/playlist.sass */
+/* line 128, ../../app/stylesheets/playlist.sass */
 #playlist li.video-item .name {
   white-space: pre-wrap;
   width: 247px;
   overflow: hidden;
 }
-/* line 122, ../../app/stylesheets/playlist.sass */
+/* line 132, ../../app/stylesheets/playlist.sass */
 #playlist li.video-item .close {
   float: right;
   margin-right: 10px;
 }
-/* line 125, ../../app/stylesheets/playlist.sass */
+/* line 135, ../../app/stylesheets/playlist.sass */
 #playlist li.video-item .thumb {
   margin-right: 40px;
   width: 60px;
   height: 45px;
 }
-/* line 129, ../../app/stylesheets/playlist.sass */
+/* line 139, ../../app/stylesheets/playlist.sass */
 #playlist li.video-item .thumb img {
   border: 0;
 }
-/* line 131, ../../app/stylesheets/playlist.sass */
+/* line 141, ../../app/stylesheets/playlist.sass */
 #playlist li.video-item a.add-to-playlist {
   display: none;
   padding: 0px 2px;
@@ -193,7 +209,7 @@
   width: auto;
 }
 
-/* line 150, ../../app/stylesheets/playlist.sass */
+/* line 160, ../../app/stylesheets/playlist.sass */
 .playlist-item {
   float: left;
   width: 100%;
@@ -210,58 +226,58 @@
   -moz-border-radius-bottomright: 5px;
   -webkit-border-bottom-right-radius: 5px;
 }
-/* line 165, ../../app/stylesheets/playlist.sass */
+/* line 175, ../../app/stylesheets/playlist.sass */
 .playlist-item .title, .playlist-item .thumb {
   float: left;
 }
-/* line 167, ../../app/stylesheets/playlist.sass */
+/* line 177, ../../app/stylesheets/playlist.sass */
 .playlist-item .title {
   margin-left: 5px;
   color: #00665e;
   font-size: 14px;
 }
-/* line 171, ../../app/stylesheets/playlist.sass */
+/* line 181, ../../app/stylesheets/playlist.sass */
 .playlist-item a.pl-info {
   float: left;
   width: 100%;
 }
-/* line 174, ../../app/stylesheets/playlist.sass */
+/* line 184, ../../app/stylesheets/playlist.sass */
 .playlist-item .delete {
   float: right;
   margin-top: 13px;
   font-size: 11px;
   margin-right: 5px;
 }
-/* line 179, ../../app/stylesheets/playlist.sass */
+/* line 189, ../../app/stylesheets/playlist.sass */
 .playlist-item .delete:hover {
   color: red;
   font-weight: 900;
 }
-/* line 182, ../../app/stylesheets/playlist.sass */
+/* line 192, ../../app/stylesheets/playlist.sass */
 .playlist-item.on, .playlist-item:hover {
   background-color: #61d8a2;
 }
-/* line 185, ../../app/stylesheets/playlist.sass */
+/* line 195, ../../app/stylesheets/playlist.sass */
 .playlist-item.on a, .playlist-item.on span {
   color: white;
 }
-/* line 188, ../../app/stylesheets/playlist.sass */
+/* line 198, ../../app/stylesheets/playlist.sass */
 .playlist-item:hover a, .playlist-item:hover span {
   color: white;
 }
-/* line 190, ../../app/stylesheets/playlist.sass */
+/* line 200, ../../app/stylesheets/playlist.sass */
 .playlist-item.on {
   background-color: #ffb800;
   border-color: #ff6f00;
 }
-/* line 193, ../../app/stylesheets/playlist.sass */
+/* line 203, ../../app/stylesheets/playlist.sass */
 .playlist-item.new {
   background-color: white;
   position: relative;
   border: 2px solid #0969a2;
   margin-left: -1px;
 }
-/* line 198, ../../app/stylesheets/playlist.sass */
+/* line 208, ../../app/stylesheets/playlist.sass */
 .playlist-item.new input {
   border: 1px solid #0969a2;
   -moz-border-radius-topleft: 2px;
@@ -275,13 +291,13 @@
   margin-left: 10px;
   width: 145px;
 }
-/* line 210, ../../app/stylesheets/playlist.sass */
+/* line 220, ../../app/stylesheets/playlist.sass */
 .playlist-item.new .edit {
   position: absolute;
   bottom: 10px;
   right: 15px;
 }
-/* line 214, ../../app/stylesheets/playlist.sass */
+/* line 224, ../../app/stylesheets/playlist.sass */
 .playlist-item.new .ok, .playlist-item.new .cancel {
   color: #0969a2;
   text-decoration: underline;
@@ -290,7 +306,7 @@
   padding: 0 5px;
 }
 
-/* line 221, ../../app/stylesheets/playlist.sass */
+/* line 231, ../../app/stylesheets/playlist.sass */
 #add-video, #search-yt-video {
   background-color: black;
   padding: 3px;
@@ -307,7 +323,7 @@
   -webkit-border-bottom-right-radius: 4px;
 }
 
-/* line 236, ../../app/stylesheets/playlist.sass */
+/* line 246, ../../app/stylesheets/playlist.sass */
 #add-video input {
   height: 16px;
   width: 380px;
@@ -316,7 +332,7 @@
   float: left;
 }
 
-/* line 243, ../../app/stylesheets/playlist.sass */
+/* line 253, ../../app/stylesheets/playlist.sass */
 #search-yt-video input {
   height: 16px;
   width: 346px;
@@ -325,13 +341,13 @@
   float: left;
 }
 
-/* line 250, ../../app/stylesheets/playlist.sass */
+/* line 260, ../../app/stylesheets/playlist.sass */
 #add-video input.empty, #search-yt-video input.empty {
   font-style: italic;
   color: #cccccc;
 }
 
-/* line 254, ../../app/stylesheets/playlist.sass */
+/* line 264, ../../app/stylesheets/playlist.sass */
 #add-video .add-btn, #search-yt-video .add-btn {
   -moz-border-radius-topleft: 4px;
   -webkit-border-top-left-radius: 4px;
