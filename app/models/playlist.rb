@@ -25,7 +25,7 @@ class Playlist < ActiveRecord::Base
   def update_thumb
     if !thumb && videos.count > 0
       tmp = Video.first(:conditions => {:playlist_id => self.id})
-      update_attribute(:thumb, "http://img.youtube.com/vi/#{tmp.ytid}/2.jpg")
+      update_attribute(:thumb, Youtube.get_thumbnail_url(tmp.ytid))
     end
   end
   

@@ -1,2 +1,9 @@
-$.ctNotify("User settings updated", 'message')
+<% if @errors %>
+  <% @errors.each do |e| %>
+    $.ctNotify('<%= e %>', 'error')
+  <% end %>
+<% else %>
+  $.ctNotify("User settings updated", 'message')
+<% end %>
+
 $.fallr('hide');

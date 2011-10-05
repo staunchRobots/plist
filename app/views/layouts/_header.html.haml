@@ -29,6 +29,7 @@
           = link_to 'Sign out', logout_path, :class => 'logout'
         = render 'playlists/add_playlist'
         = render 'users/settings'
+        = render 'layouts/filter_youtube_form'
       - else
         = link_to "Create Account", '#', :class => 'sign-up-link'
         &nbsp;

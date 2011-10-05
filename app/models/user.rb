@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :username, :is_admin
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :username, :is_admin, :show_filtered_videos, :show_plisted
 
   after_create :create_first_playlist
   after_create :create_first_jukebox

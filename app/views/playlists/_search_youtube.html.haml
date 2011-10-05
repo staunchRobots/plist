@@ -3,6 +3,7 @@
     %h2 Search Youtube
     = render 'playlists/search_youtube_form'
     %ul#ytvideos-list
+      / = render :partial => 'videos/video', :collection => Youtube.top_rated
   - else 
     %h2
       - if user_signed_in?

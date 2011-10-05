@@ -6,7 +6,7 @@ Syntax error: Undefined mixin 'container'.
 20:   font-size: 30px
 21: h2
 22:   font-size: 20px
-23:  
+23: 
 24: .container
 25:   +container
 26: 
@@ -99,4 +99,4 @@ app/stylesheets/layout.sass:25
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined mixin 'container'.\A         on line 25 of app/stylesheets/layout.sass, in `container'\A         from line 25 of app/stylesheets/layout.sass\A \A 20:   font-size: 30px\A 21: h2\A 22:   font-size: 20px\A 23:  \A 24: .container\A 25:   +container\A 26: \A 27: .top-container\A 28:   #header\A 29:     height: 80px\A 30:     border: 1px dashed #aaaaaa"; }
+  content: "Syntax error: Undefined mixin 'container'.\A         on line 25 of app/stylesheets/layout.sass, in `container'\A         from line 25 of app/stylesheets/layout.sass\A \A 20:   font-size: 30px\A 21: h2\A 22:   font-size: 20px\A 23: \A 24: .container\A 25:   +container\A 26: \A 27: .top-container\A 28:   #header\A 29:     height: 80px\A 30:     border: 1px dashed #aaaaaa"; }

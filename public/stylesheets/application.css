@@ -140,87 +140,9 @@ h2 {
   padding: 10px;
 }
 
-/* line 58, ../../app/stylesheets/layout.sass */
-#coupons-counter {
-  -moz-border-radius-topleft: 6px;
-  -webkit-border-top-left-radius: 6px;
-  -moz-border-radius-topright: 6px;
-  -webkit-border-top-right-radius: 6px;
-  -moz-border-radius-bottomleft: 6px;
-  -webkit-border-bottom-left-radius: 6px;
-  -moz-border-radius-bottomright: 6px;
-  -webkit-border-bottom-right-radius: 6px;
-  border: 1px solid #aaaaaa;
-  padding: 15px 0;
-  margin-bottom: 10px;
-}
-/* line 70, ../../app/stylesheets/layout.sass */
-#coupons-counter .count {
-  font-size: 30px;
-}
-/* line 72, ../../app/stylesheets/layout.sass */
-#coupons-counter p {
-  text-align: center;
-}
-
-/* line 76, ../../app/stylesheets/layout.sass */
-#email-updates {
-  -moz-border-radius-topleft: 6px;
-  -webkit-border-top-left-radius: 6px;
-  -moz-border-radius-topright: 6px;
-  -webkit-border-top-right-radius: 6px;
-  -moz-border-radius-bottomleft: 6px;
-  -webkit-border-bottom-left-radius: 6px;
-  -moz-border-radius-bottomright: 6px;
-  -webkit-border-bottom-right-radius: 6px;
-  border: 1px solid #aaaaaa;
-  padding: 15px 0;
-  margin-bottom: 10px;
-}
-/* line 88, ../../app/stylesheets/layout.sass */
-#email-updates a, #email-updates p {
-  display: block;
-  text-align: center;
-}
-
-/* line 93, ../../app/stylesheets/layout.sass */
-#new_mail_update {
-  border: 1px solid #aaaaaa;
-  background-color: #eeeeee;
-}
-
-/* line 97, ../../app/stylesheets/layout.sass */
-#overall-trending {
-  -moz-border-radius-topleft: 6px;
-  -webkit-border-top-left-radius: 6px;
-  -moz-border-radius-topright: 6px;
-  -webkit-border-top-right-radius: 6px;
-  -moz-border-radius-bottomleft: 6px;
-  -webkit-border-bottom-left-radius: 6px;
-  -moz-border-radius-bottomright: 6px;
-  -webkit-border-bottom-right-radius: 6px;
-  border: 1px solid #aaaaaa;
-  padding: 15px 0;
-  margin-bottom: 10px;
-}
-/* line 109, ../../app/stylesheets/layout.sass */
-#overall-trending .label {
-  text-align: center;
-}
-/* line 111, ../../app/stylesheets/layout.sass */
-#overall-trending li a {
-  display: block;
-  font-size: 13px;
-  padding: 10px;
-  text-decoration: underline;
-}
-/* line 116, ../../app/stylesheets/layout.sass */
-#overall-trending .see-chart-btn {
-  float: right;
-  margin-top: -10px;
-  margin-right: 10px;
-  font-size: 13px;
-  color: blue;
+/* line 59, ../../app/stylesheets/layout.sass */
+.filter-youtube-form {
+  display: none;
 }
 
 /* line 1, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
