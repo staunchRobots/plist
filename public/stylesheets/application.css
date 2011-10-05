@@ -145,14 +145,14 @@ h2 {
   display: none;
 }
 
-/* line 1, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 1, ../../app/stylesheets/styles.sass */
 #player-e {
   /*  margin-left: 40px; */
   position: absolute;
   z-index: 0;
 }
 
-/* line 6, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 6, ../../app/stylesheets/styles.sass */
 .top {
   background-color: black;
   height: 40px;
@@ -161,19 +161,19 @@ h2 {
   z-index: 100;
 }
 
-/* line 13, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 13, ../../app/stylesheets/styles.sass */
 .wrapper-top {
   width: 998px;
   margin: 0 auto;
 }
 
-/* line 17, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 17, ../../app/stylesheets/styles.sass */
 .search {
   float: right;
   margin-right: 5px;
   margin-top: 10px;
 }
-/* line 21, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 21, ../../app/stylesheets/styles.sass */
 .search input {
   border: 0;
   height: 21px;
@@ -190,7 +190,7 @@ h2 {
   color: #aaaaaa;
   float: left;
 }
-/* line 36, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 36, ../../app/stylesheets/styles.sass */
 .search a {
   color: white;
   background-color: #aaaaaa;
@@ -210,7 +210,7 @@ h2 {
   margin-left: 5px;
 }
 
-/* line 54, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 54, ../../app/stylesheets/styles.sass */
 .account {
   padding: 5px;
   float: right;
@@ -227,26 +227,26 @@ h2 {
   position: relative;
   color: #aaaaaa;
 }
-/* line 69, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 69, ../../app/stylesheets/styles.sass */
 .account:hover, .account.on {
   /*  background-color: #666666; */
 }
-/* line 71, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 71, ../../app/stylesheets/styles.sass */
 .account .member, .account .sign-in, .account .sign-up-link {
   color: #aaaaaa;
   font-size: 13px;
   text-decoration: none;
   margin-top: 2px;
 }
-/* line 76, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 76, ../../app/stylesheets/styles.sass */
 .account .sign-in {
   margin-left: 10px;
 }
-/* line 78, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 78, ../../app/stylesheets/styles.sass */
 .account .member .label, .account .sign-in .label {
   float: left;
 }
-/* line 80, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 80, ../../app/stylesheets/styles.sass */
 .account .member .icon, .account .sign-in .icon {
   width: 9px;
   height: 4px;
@@ -255,19 +255,19 @@ h2 {
   margin-top: 7px;
   float: right;
 }
-/* line 87, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 87, ../../app/stylesheets/styles.sass */
 .account .member:hover, .account .sign-in:hover, .account .sign-up-link:hover {
   text-decoration: underline;
 }
-/* line 89, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 89, ../../app/stylesheets/styles.sass */
 .account .fb-login, .account .img, .account .member {
   float: right;
 }
-/* line 91, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 91, ../../app/stylesheets/styles.sass */
 .account .img {
   margin-right: 5px;
 }
-/* line 93, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 93, ../../app/stylesheets/styles.sass */
 .account .dropdown {
   background-color: black;
   /*  height: 80px; */
@@ -285,7 +285,7 @@ h2 {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
 }
-/* line 109, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 109, ../../app/stylesheets/styles.sass */
 .account .dropdown a {
   color: #aaaaaa;
   font-size: 13px;
@@ -295,60 +295,60 @@ h2 {
   text-decoration: none;
 }
 
-/* line 117, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 117, ../../app/stylesheets/styles.sass */
 #logo {
   float: left;
 }
-/* line 119, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 119, ../../app/stylesheets/styles.sass */
 #logo a {
   color: white;
   text-decoration: none;
 }
 
-/* line 123, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 123, ../../app/stylesheets/styles.sass */
 #left {
   width: 284px;
   margin-right: 10px;
   float: left;
 }
 
-/* line 128, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 128, ../../app/stylesheets/styles.sass */
 #content {
   width: 998px;
   margin: 0 auto;
   padding-top: 50px;
 }
-/* line 132, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 132, ../../app/stylesheets/styles.sass */
 #content .wrapper-content {
   float: left;
   margin-bottom: 50px;
 }
-/* line 135, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 135, ../../app/stylesheets/styles.sass */
 #content .wrapper-main {
   padding: 0 30px;
 }
-/* line 137, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 137, ../../app/stylesheets/styles.sass */
 #content .header {
   float: none;
   padding: 0px 0px 5px 0px;
 }
-/* line 140, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 140, ../../app/stylesheets/styles.sass */
 #content .header h1 {
   font-family: "league-gothic-1", "league-gothic-2", sans-serif;
   font-size: 25px;
   font-weight: 900;
   float: left;
 }
-/* line 145, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 145, ../../app/stylesheets/styles.sass */
 #content .header h1.edit {
   border: 1px solid #aaaaaa;
   padding: 5px 10px;
 }
-/* line 148, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 148, ../../app/stylesheets/styles.sass */
 #content .header .member-thumb {
   /*  float: left; */
 }
-/* line 150, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 150, ../../app/stylesheets/styles.sass */
 #content .header .info {
   /*  float: left; */
   /*  margin-left: 10px; */
@@ -358,46 +358,46 @@ h2 {
   /*  width: 940px; */
   /*  height: 5px; */
 }
-/* line 158, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 158, ../../app/stylesheets/styles.sass */
 #content .header .edit-title-notice {
   font-size: 11px;
   position: absolute;
   right: -105px;
   top: 10px;
 }
-/* line 163, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 163, ../../app/stylesheets/styles.sass */
 #content .header input.title-edit {
   font-size: 25px;
   float: left;
 }
-/* line 166, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 166, ../../app/stylesheets/styles.sass */
 #content .header .by {
   float: left;
   clear: left;
 }
-/* line 169, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 169, ../../app/stylesheets/styles.sass */
 #content .header .by a {
   color: #5151e8;
   font-weight: 900;
   text-decoration: none;
 }
-/* line 173, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 173, ../../app/stylesheets/styles.sass */
 #content .header .manage {
   float: left;
   position: relative;
 }
-/* line 176, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 176, ../../app/stylesheets/styles.sass */
 #content .header .manage a {
   border-right: 1px solid #aaaaaa;
   margin-left: 10px;
   padding-right: 10px;
   font-size: 12px;
 }
-/* line 181, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 181, ../../app/stylesheets/styles.sass */
 #content .header .manage a.add {
   border: 0;
 }
-/* line 183, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 183, ../../app/stylesheets/styles.sass */
 #content .header .manage a.show.on {
   border: 0;
   padding: 5px 10px;
@@ -413,7 +413,7 @@ h2 {
   -webkit-border-bottom-right-radius: 0;
   float: left;
 }
-/* line 197, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 197, ../../app/stylesheets/styles.sass */
 #content .header .add-playlist {
   display: none;
   position: absolute;
@@ -433,23 +433,23 @@ h2 {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
 }
-/* line 215, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 215, ../../app/stylesheets/styles.sass */
 #content .header .add-playlist .label {
   float: left;
   margin-bottom: 2px;
 }
-/* line 218, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 218, ../../app/stylesheets/styles.sass */
 #content .header .add-playlist a {
   border: 0;
 }
-/* line 220, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 220, ../../app/stylesheets/styles.sass */
 #content .header .created-at {
   float: left;
   margin-left: 5px;
   padding-left: 5px;
   border-left: 1px solid #666666;
 }
-/* line 225, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 225, ../../app/stylesheets/styles.sass */
 #content .header .member-thumb {
   width: 50px;
   height: 50px;
@@ -458,7 +458,7 @@ h2 {
   background: white;
 }
 
-/* line 233, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 233, ../../app/stylesheets/styles.sass */
 #playlists {
   position: absolute;
   z-index: 1;
@@ -477,17 +477,17 @@ h2 {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
 }
-/* line 250, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 250, ../../app/stylesheets/styles.sass */
 #playlists ul {
   width: 400px;
 }
-/* line 252, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 252, ../../app/stylesheets/styles.sass */
 #playlists #add-playlist-btn {
   float: right;
   margin-right: 10px;
   margin-top: 5px;
 }
-/* line 256, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 256, ../../app/stylesheets/styles.sass */
 #playlists #add-playlist-btn a {
   color: white;
   background-color: #0969a2;
@@ -502,12 +502,12 @@ h2 {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
 }
-/* line 269, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 269, ../../app/stylesheets/styles.sass */
 #playlists #add-playlist-btn.on a {
   background-color: #0969a2;
 }
 
-/* line 273, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 273, ../../app/stylesheets/styles.sass */
 #add-to-playlist-menu {
   z-index: 1000;
   width: 350px;
@@ -517,39 +517,39 @@ h2 {
   border: 1px solid #aaaaaa;
   right: 45px;
 }
-/* line 281, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 281, ../../app/stylesheets/styles.sass */
 #add-to-playlist-menu .playlists li.playlist-item {
   border: 0;
   border-bottom: 1px solid #aaaaaa;
 }
-/* line 284, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 284, ../../app/stylesheets/styles.sass */
 #add-to-playlist-menu .playlists li.playlist-item.on {
   background-color: white;
 }
-/* line 286, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 286, ../../app/stylesheets/styles.sass */
 #add-to-playlist-menu .playlists li.playlist-item:hover {
   border: 0;
   border-bottom: 1px solid #aaaaaa;
   background-color: #f1f2f2;
 }
-/* line 290, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 290, ../../app/stylesheets/styles.sass */
 #add-to-playlist-menu .playlists li.playlist-item a {
   border: none;
   background: none;
 }
-/* line 293, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 293, ../../app/stylesheets/styles.sass */
 #add-to-playlist-menu .playlists li.playlist-item a .title {
   font-size: 12px;
   color: black;
   margin-top: 15px;
 }
-/* line 297, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 297, ../../app/stylesheets/styles.sass */
 #add-to-playlist-menu .playlists li.playlist-item .thumb {
   width: 45px;
   height: 34px;
 }
 
-/* line 301, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 301, ../../app/stylesheets/styles.sass */
 #ajax-loader {
   position: fixed;
   display: none;
@@ -570,11 +570,11 @@ h2 {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
 }
-/* line 320, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 320, ../../app/stylesheets/styles.sass */
 #ajax-loader .label {
   font-size: 13px;
 }
-/* line 322, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 322, ../../app/stylesheets/styles.sass */
 #ajax-loader .loader {
   width: 16px;
   height: 16px;
@@ -584,7 +584,7 @@ h2 {
   background: url(/images/ajax-loader.gif) no-repeat 0 0;
 }
 
-/* line 330, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 330, ../../app/stylesheets/styles.sass */
 #message-loader {
   position: fixed;
   margin-left: -50px;
@@ -604,11 +604,11 @@ h2 {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
 }
-/* line 348, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 348, ../../app/stylesheets/styles.sass */
 #message-loader .label {
   font-size: 13px;
 }
-/* line 350, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 350, ../../app/stylesheets/styles.sass */
 #message-loader .loader {
   width: 16px;
   height: 16px;
@@ -618,41 +618,41 @@ h2 {
   background: url(/images/ajax-loader.gif) no-repeat 0 0;
 }
 
-/* line 358, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 358, ../../app/stylesheets/styles.sass */
 .share {
   float: right;
   margin-left: 20px;
   margin-top: 40px;
 }
-/* line 362, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 362, ../../app/stylesheets/styles.sass */
 .share .fb-like, .share .twitter {
   float: left;
 }
 
-/* line 365, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 365, ../../app/stylesheets/styles.sass */
 #comments {
   float: left;
   margin-top: 20px;
 }
-/* line 368, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 368, ../../app/stylesheets/styles.sass */
 #comments h2 {
   font-weight: 900;
   margin-bottom: 10px;
 }
 
-/* line 373, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 373, ../../app/stylesheets/styles.sass */
 #suggestions .wrapper-suggestions {
   margin-bottom: 10px;
   float: left;
   width: 100%;
 }
-/* line 377, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 377, ../../app/stylesheets/styles.sass */
 #suggestions h2 {
   font-weight: 900;
   float: left;
   margin-bottom: 10px;
 }
-/* line 381, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 381, ../../app/stylesheets/styles.sass */
 #suggestions ul {
   float: left;
   width: 100%;
@@ -666,7 +666,7 @@ h2 {
   -moz-border-radius-bottomright: 2px;
   -webkit-border-bottom-right-radius: 2px;
 }
-/* line 393, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 393, ../../app/stylesheets/styles.sass */
 #suggestions li {
   margin: 5px;
   border: 1px solid #aaaaaa;
@@ -681,24 +681,24 @@ h2 {
   -moz-border-radius-bottomright: 2px;
   -webkit-border-bottom-right-radius: 2px;
 }
-/* line 406, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 406, ../../app/stylesheets/styles.sass */
 #suggestions li a.info {
   float: left;
   padding: 5px 10px;
   display: block;
 }
-/* line 410, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 410, ../../app/stylesheets/styles.sass */
 #suggestions .name {
   font-size: 12px;
   float: left;
   width: 130px;
   margin-left: 10px;
 }
-/* line 415, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 415, ../../app/stylesheets/styles.sass */
 #suggestions .thumb {
   float: left;
 }
-/* line 417, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 417, ../../app/stylesheets/styles.sass */
 #suggestions .by {
   clear: left;
   font-size: 12px;
@@ -706,23 +706,23 @@ h2 {
   width: 100%;
   padding: 5px 10px;
 }
-/* line 423, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 423, ../../app/stylesheets/styles.sass */
 #suggestions .by .label {
   margin-bottom: 2px;
 }
-/* line 425, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 425, ../../app/stylesheets/styles.sass */
 #suggestions .by img, #suggestions .by a, #suggestions .by .label {
   float: left;
 }
-/* line 427, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 427, ../../app/stylesheets/styles.sass */
 #suggestions .by img {
   clear: left;
 }
-/* line 429, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 429, ../../app/stylesheets/styles.sass */
 #suggestions .by a {
   margin-left: 5px;
 }
-/* line 431, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 431, ../../app/stylesheets/styles.sass */
 #suggestions .add {
   font-size: 11px;
   clear: left;
@@ -732,7 +732,7 @@ h2 {
   padding: 5px;
 }
 
-/* line 440, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 440, ../../app/stylesheets/styles.sass */
 #change-members-list {
   position: absolute;
   display: none;
@@ -740,68 +740,68 @@ h2 {
   border: 1px solid black;
   overflow: hidden;
 }
-/* line 446, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 446, ../../app/stylesheets/styles.sass */
 #change-members-list .li {
   border-bottom: 1px solid black;
 }
 
-/* line 449, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 449, ../../app/stylesheets/styles.sass */
 #change-playlists-list {
   display: none;
   width: 300px;
   border: 1px solid black;
 }
-/* line 453, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 453, ../../app/stylesheets/styles.sass */
 #change-playlists-list .li {
   border-bottom: 1px solid black;
 }
 
-/* line 456, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 456, ../../app/stylesheets/styles.sass */
 .playlist-title {
   font-size: 20px;
 }
 
-/* line 459, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 459, ../../app/stylesheets/styles.sass */
 .user-title {
   font-size: 16px;
 }
 
-/* line 462, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 462, ../../app/stylesheets/styles.sass */
 .left {
   float: left;
 }
 
-/* line 465, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 465, ../../app/stylesheets/styles.sass */
 .right {
   float: right;
 }
 
-/* line 468, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 468, ../../app/stylesheets/styles.sass */
 .login-form, .sign-up-form {
   display: none;
 }
 
-/* line 471, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 471, ../../app/stylesheets/styles.sass */
 #video-list-tabs {
   width: 960px;
 }
-/* line 472, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 472, ../../app/stylesheets/styles.sass */
 #video-list-tabs ul.tab-header li {
   float: left;
   margin: 2px 5px;
   font-size: 18px;
 }
-/* line 477, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 477, ../../app/stylesheets/styles.sass */
 #video-list-tabs .video-list-column {
   float: left;
   width: 460px;
 }
-/* line 480, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 480, ../../app/stylesheets/styles.sass */
 #video-list-tabs .video-list-column:nth-child(2) {
   margin: 0px 0px 0px 20px;
 }
 
-/* line 484, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 484, ../../app/stylesheets/styles.sass */
 a.browse {
   background: url(/images//hori_large.png) no-repeat;
   display: inline;
@@ -812,45 +812,47 @@ a.browse {
   font-size: 1px;
   position: relative;
 }
-/* line 493, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 493, ../../app/stylesheets/styles.sass */
 a.right {
+  margin-top: 5px;
   background-position: 0 -15px;
   clear: right;
   margin-right: 0px;
 }
-/* line 497, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 498, ../../app/stylesheets/styles.sass */
 a.right:hover {
   background-position: -15px -15px;
 }
-/* line 499, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 500, ../../app/stylesheets/styles.sass */
 a.right:active {
   background-position: -30px -15px;
 }
-/* line 501, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 502, ../../app/stylesheets/styles.sass */
 a.left {
   margin-left: 0px;
+  margin-top: 5px;
 }
-/* line 503, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 505, ../../app/stylesheets/styles.sass */
 a.left:hover {
   background-position: -15px 0;
 }
-/* line 505, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 507, ../../app/stylesheets/styles.sass */
 a.left:active {
   background-position: -30px 0;
 }
 
-/* line 508, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 510, ../../app/stylesheets/styles.sass */
 .options-button {
   margin: 0px 0px 0px 10px;
   height: 26px;
 }
 
-/* line 512, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 514, ../../app/stylesheets/styles.sass */
 .options-form, .forgot-password-form {
   display: none;
 }
 
-/* line 515, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 517, ../../app/stylesheets/styles.sass */
 #login-user-playlists {
   margin-left: 100px;
   background-color: black;
@@ -868,26 +870,26 @@ a.left:active {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
 }
-/* line 531, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 533, ../../app/stylesheets/styles.sass */
 #login-user-playlists li {
   border-bottom: 1px solid #333333;
 }
 
-/* line 535, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 537, ../../app/stylesheets/styles.sass */
 .my-playlists #login-user-playlists {
   display: none;
 }
-/* line 537, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 539, ../../app/stylesheets/styles.sass */
 .my-playlists:hover #login-user-playlists {
   display: block;
 }
 
-/* line 540, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 542, ../../app/stylesheets/styles.sass */
 .add-playlist-form, .user-settings-form {
   display: none;
 }
 
-/* line 543, /Users/vladimirpenkin/Sites/plist/app/stylesheets/styles.sass */
+/* line 545, ../../app/stylesheets/styles.sass */
 .slogan {
   text-align: center;
 }
