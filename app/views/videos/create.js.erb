@@ -5,6 +5,10 @@
   new_video.show('fast')
   $("#playlist #videos-list > li:last .actions_menu").clickMenu();
   $("#ytvideos-list li[ytid='<%= @video.ytid %>']").hide('fast')
+
+  <% if @video.playlist.videos.size == 1 %>
+    load_player('<%= @video.ytid %>')
+  <% end %>
 <% end %>
 
 $("#add-video input[type='text']").attr('value', '').blur()
