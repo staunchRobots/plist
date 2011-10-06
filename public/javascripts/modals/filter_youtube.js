@@ -5,7 +5,7 @@ $(function() {
     $.fallr('hide');
   }
 
-  $(".filter-action").live('click', function(e) {
+  $("#filter-btn").live('click', function(e) {
     $.fallr('show', {
         icon        : 'save',
         width       : '420px',

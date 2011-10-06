@@ -4,6 +4,7 @@
   $("#playlist #videos-list").append(new_video)
   new_video.show('fast')
   $("#playlist #videos-list > li:last .actions_menu").clickMenu();
+  $("#ytvideos-list li[ytid='<%= @video.ytid %>']").hide('fast')
 <% end %>
 
 $("#add-video input[type='text']").attr('value', '').blur()
