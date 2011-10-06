@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111005111147) do
+ActiveRecord::Schema.define(:version => 20111006123246) do
 
   create_table "jukeboxes", :force => true do |t|
     t.string   "title"
@@ -34,10 +34,11 @@ ActiveRecord::Schema.define(:version => 20111005111147) do
     t.boolean  "hot"
     t.integer  "hottness"
     t.boolean  "featured"
-    t.boolean  "published",  :default => true
+    t.boolean  "published",                 :default => true
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "description", :limit => 80
   end
 
   create_table "user_hates", :force => true do |t|

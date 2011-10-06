@@ -145,6 +145,11 @@ h2 {
   display: none;
 }
 
+/* line 62, ../../app/stylesheets/layout.sass */
+.clear {
+  clear: both;
+}
+
 /* line 1, ../../app/stylesheets/styles.sass */
 #player-e {
   /*  margin-left: 40px; */
@@ -1257,6 +1262,15 @@ a.left:active {
   float: left;
   margin-top: 2px;
   margin-right: 10px;
+}
+
+/* line 278, ../../app/stylesheets/playlist.sass */
+.options-description {
+  margin: 10px 0px 0px 0px;
+}
+/* line 280, ../../app/stylesheets/playlist.sass */
+.options-description p {
+  width: 350px;
 }
 
 /* line 2, ../../app/stylesheets/home.sass */

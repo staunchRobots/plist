@@ -362,3 +362,12 @@
   margin-top: 2px;
   margin-right: 10px;
 }
+
+/* line 278, ../../app/stylesheets/playlist.sass */
+.options-description {
+  margin: 10px 0px 0px 0px;
+}
+/* line 280, ../../app/stylesheets/playlist.sass */
+.options-description p {
+  width: 350px;
+}
