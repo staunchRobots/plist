@@ -4,6 +4,7 @@ gem 'rails', '3.0.9'
 gem 'mysql2', '< 0.3'
 gem 'devise', '1.4.5'
 gem 'inherited_resources'
+gem 'backports'
 
 gem 'rest-client'
 gem 'json'
