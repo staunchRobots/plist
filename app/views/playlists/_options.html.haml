@@ -4,6 +4,10 @@
       %span Title of playlist
       = f.text_field :title, :class => 'playlist_title'
     %div
+      %span Description
+      = f.text_area :description, :class => 'playlist_title', :size => '20x2'
+    %br
+    %div
       %span Visibility
       %span.playlist_published_radio
         = f.radio_button :published, false
