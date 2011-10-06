@@ -2,9 +2,9 @@
   = form_for current_user, :url => user_path(current_user.id, :format => :js), :remote => true do |f|
     %div
       %span.playlist_published_radio
-        = f.check_box :show_filtered_videos, :checked => !current_user.show_filtered_videos ? "checked" : ""
+        = f.check_box :show_filtered_videos, :checked => !current_user.show_filtered_videos ? "checked" : "", :class => 'show_filtered_videos'
         = f.label :show_filtered_videos, "dont show videos I have X'ed'"
     %div
       %span.playlist_published_radio
-        = f.check_box :show_plisted, :checked => !current_user.show_plisted ? "checked" : ""
+        = f.check_box :show_plisted, :checked => !current_user.show_plisted ? "checked" : "", :class => 'show_plisted'
         = f.label :show_plisted, "dont show videos I already have in a pList"

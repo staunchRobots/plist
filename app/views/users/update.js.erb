@@ -6,4 +6,16 @@
   $.ctNotify("User settings updated", 'message')
 <% end %>
 
+<% if @user.show_plisted == true %>
+  $('.show_plisted').removeAttr('checked')
+<% else %>
+  $('.show_plisted').attr('checked', 'checked')
+<% end %>
+
+<% if @user.show_filtered_videos == true %>
+  $('.show_filtered_videos').removeAttr('checked')
+<% else %>
+  $('.show_filtered_videos').attr('checked', 'checked')
+<% end %>
+
 $.fallr('hide');
