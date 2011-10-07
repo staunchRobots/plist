@@ -27,6 +27,7 @@ Plist::Application.routes.draw do
   namespace :admin do
     get "featured" => "featured_videos#index"
     post "featured" => "featured_videos#update"
+    get "recent" => "recent_videos#index"
     # resources :featured, :only => [:index, :update], :controller => :featured_videos
   end
 

@@ -1,0 +1,7 @@
+.recent-playlists                 
+  %h2 Recently Created pLists
+  - if @recent_playlists.size > 0
+    %ul
+      = render :partial => 'playlists/playlist', :collection => @recent_playlists
+  - else
+    No Recent playlists for a moment
