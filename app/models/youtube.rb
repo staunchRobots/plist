@@ -31,6 +31,8 @@ class Youtube
       phrase.gsub!(' ', '+')
       opts["alt"]         = 'json'
       opts["max-results"] = 10
+      opts["format"] ||= 5
+
 
       req_url = "http://gdata.youtube.com/feeds/api/videos?q=#{phrase}"
       req_url += '&' + opts.collect{|k,v| "#{k}=#{v}"}.join('&')
