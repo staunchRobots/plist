@@ -1,21 +1,21 @@
 .video-list-column
   .header
     .info
-      .left
+      %div
         %span.user-title
-          = link_to @playlist.user.username, @playlist.user
-        %br
-        %span.playlist-title#playlist-title
-          = link_to @playlist.title, user_playlist_path(@playlist.user, @playlist.id)
-      .right
-        = render 'playlists/social_buttons'
-      .clear
-      - if user_signed_in? && myown_playlist
-        %div.options-description
-          %p.left Enter a brief yet touching description by clicking this beautiful options button
+          = link_to "#{@playlist.user.username}'s", @playlist.user
+          &raquo;
+          %span#playlist-title= link_to @playlist.title, user_playlist_path(@playlist.user, @playlist.id)
           .right
             %a.options-button.minibutton
               %span#options-btn Options
-        .clear
+      %br
+      %div
+        = render 'playlists/social_buttons'
+      .clear
+      - if user_signed_in? && myown_playlist
+        / %div.options-description
+        /   %p.left Enter a brief yet touching description by clicking this beautiful options button
+        / .clear
   %ul#videos-list
     = render :partial => 'videos/video', :collection => @playlist.videos
