@@ -1,3 +1,13 @@
+- content_for :title do
+  = "#{@playlist.user.username}'s #{@playlist.title}"
+- content_for :description do
+  = "#{@playlist.description}"
+- content_for :head do 
+  %meta{:property => "og:title",       :content => "#{@playlist.user.username}'s #{@playlist.title}"}
+  %meta{:property => "og:description", :content => "#{@playlist.description}"}
+  %meta{:property => "og:image",       :content => "#{@playlist.thumb}"}
+  %meta{:property => "og:url",       :content => "http://plist.tv#{request.request_uri}"}
+  
 - content_for :footer do
   - if user_signed_in? && myown_playlist
     = render 'playlists/options'

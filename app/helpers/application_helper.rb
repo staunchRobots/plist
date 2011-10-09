@@ -3,6 +3,10 @@ module ApplicationHelper
     content_for(:title) { page_title }
   end
 
+  def description(description)
+    content_for(:description) { description }
+  end
+
   # Formatted date
   def d(date)
     date.to_s(:short) if date
