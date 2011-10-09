@@ -1,5 +1,5 @@
 .login-form
-  = form_tag user_session_path do
+  = form_tag user_session_path, :remote => true, :id => "login-form" do
     = text_field_tag 'user[email]', nil, :placeholder => "email"
     = password_field_tag 'user[password]', nil, :placeholder => "password"
     / = check_box_tag 'user[remember_me]'

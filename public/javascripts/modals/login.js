@@ -7,7 +7,7 @@ $(function() {
           alert('Invalid!\nPlease fill all required forms');
       } else {
           $(this).children('form').submit()
-          $.fallr('hide');
+          // $.fallr('hide');
       }
   }
 
@@ -92,4 +92,5 @@ $(function() {
     return false
   })
 
+  $("#login-form").live('ajax:error', function(evt, data, status, xhr) {$.ctNotify(data.responseText, 'error')})
 })

@@ -47,8 +47,4 @@ class Playlist < ActiveRecord::Base
     ids.collect{|value| index += 1; {value.to_i => index};}.reduce(&:merge)
   end
 
-  def description
-    self.attributes['description'] || "Enter a brief yet touching description by clicking this beautiful options button"
-  end
-
 end
