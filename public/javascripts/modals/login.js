@@ -34,7 +34,9 @@ $(function() {
             button1 : {text: 'Sign in', onclick: login},
             button4 : {text: 'Cancel'}
         },
-    });
+    }, function() {
+      $('[placeholder]').blur()
+    }); 
   }
 
   function showLogin() {
@@ -56,8 +58,11 @@ $(function() {
             button1 : {text: 'Sign up', onclick: sign_up},
             button4 : {text: 'Cancel'}
         },
+    }, function() {
+      $('[placeholder]').blur()
     });
   }
+  
   function showSignUp() {
     if ($('#fallr-wrapper').length > 0) {
       $.fallr('hide', function() {
