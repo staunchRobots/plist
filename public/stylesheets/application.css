@@ -150,6 +150,16 @@ h2 {
   clear: both;
 }
 
+/* line 65, ../../app/stylesheets/layout.sass */
+.txtPassword {
+  display: none;
+}
+
+/* line 68, ../../app/stylesheets/layout.sass */
+.txtConfirmPassword {
+  display: none;
+}
+
 /* line 1, ../../app/stylesheets/styles.sass */
 #player-e {
   /*  margin-left: 40px; */

@@ -16,12 +16,14 @@ javascripts:
     - public/javascripts/vendor/haml.js
     - public/javascripts/vendor/swfobject.min.js
     - public/javascripts/jquery_ujs.js
+    - public/javascripts/vendor/modernizr.js
 
   plugins:
     - public/javascripts/plugins/jquery-fallr-1.2.min.js
     - public/javascripts/plugins/jquery.clickmenu.js
     - public/javascripts/plugins/jquery.ctNotify.js
     - public/javascripts/plugins/json.js
+    - public/javascripts/plugins/placeholder.js
 
   modals:
     - public/javascripts/modals/*.js

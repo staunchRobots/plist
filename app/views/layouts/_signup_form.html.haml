@@ -1,7 +1,9 @@
 .sign-up-form
   = form_tag registration_path('user'), :remote => true do
-    = text_field_tag 'user[email]', nil, :placeholder => "email"
-    = text_field_tag 'user[name]', nil, :placeholder => "full name"
-    = text_field_tag 'user[username]', nil, :placeholder => "username"
-    = password_field_tag 'user[password]', nil, :placeholder => "password"
-    = password_field_tag 'user[password_confirmation]', nil, :placeholder => "confirm password"
+    = text_field_tag 'user[email]', '', :placeholder => "email"
+    = text_field_tag 'user[name]', '', :placeholder => "full name"
+    = text_field_tag 'user[username]', '', :placeholder => "username"
+    = text_field_tag '', 'password', :class => "txtPassword"
+    = password_field_tag 'user[password]', '', :placeholder => "password", :class => 'password'
+    = text_field_tag '', 'confirm password', :class => "txtConfirmPassword"
+    = password_field_tag 'user[password_confirmation]', '', :placeholder => "confirm password", :class => 'confirmPassword'
