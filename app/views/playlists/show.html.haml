@@ -14,7 +14,7 @@
 / = render 'playlists/header'
 #player{:playlist => "#{@playlist.id}"}
   .wrapper-player
-    .ytplayer{:style=>"background-color:black;width:940px;height:510px;float:left;margin-bottom:10px;"}
+    #ytplayer{:style=>"background-color:black;width:940px;height:510px;float:left;margin-bottom:10px;"}
       #ytapiplayer
         %p{:style=>"display:none;"} You need Flash player 8+ and JavaScript enabled to view this video.
     #playlist{:style=>""}
@@ -28,3 +28,4 @@
 
 :javascript
   current_playlist = '#{@playlist.id}';
+  

@@ -1,3 +1,42 @@
+$.widget("ui.playlist", {
+  _init: function() {
+    var $el = this.element;
+    // $el.find(".more-videos").live("click", function(e) {
+    //   var count = $el.find(".video-item:visible").length;
+    //   $el.addClass("more");
+    //   $el.find(".video-item").slice(count, count + 5).show();
+    //   if ($el.find(".video-item:last").has(":visible").length == 1) {
+    //     $(this).hide();
+    //   }
+    //   e.preventDefault();
+    // });
+    $("li.video-item a.play-item").live("click", function(e) {
+      play($(this).parent());
+      e.preventDefault();
+    });
+    $("li.video-item").live("mouseenter", function(e) {
+      $(this).find(".add-to-playlist").show();
+    }).live("mouseleave", function(e) {
+      $(this).find(".add-to-playlist").hide();
+    });
+
+    $(".video-item .add-to-playlist").live("click", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var $item = $(this).parent();
+      if ($("#layouts #add-to-playlist-menu").length > 0) {
+        $layout = $("#layouts #add-to-playlist-menu");
+      } else {
+        $layout = $el.find("#add-to-playlist-menu");
+      }
+      $layout.css({
+        position: "absolute"
+      });
+      $item.append($layout.show());
+    });
+  }
+});
+
 $(function() {
 
   // Submit video by Enter
