@@ -1,5 +1,4 @@
 $(function() {
-
   var userSettings = function(){
     // var title = $(this).find('form input[type="text"]').val();
     //
@@ -7,7 +6,7 @@ $(function() {
     //     alert('Invalid!\nPlease fill all required forms');
     // } else {
       $(this).children('form').submit()
-      $.fallr('hide');
+      // $.fallr('hide');
     // }
   }
 

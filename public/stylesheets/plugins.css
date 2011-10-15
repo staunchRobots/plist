@@ -603,6 +603,22 @@ html > body .innerbox {
   width: 68%;
   margin-left: 22px;
 }
+/* line 16, ../../app/stylesheets/jquery-fallr-changes.sass */
+#fallr form input[type="file"] {
+  background: white;
+  border: solid 1px #999999;
+  color: #777777;
+  padding: 5px;
+  width: 90%;
+  box-shadow: inset #bbbbbb 0px 0px 5px;
+  -moz-box-shadow: inset #bbbbbb 0px 0px 5px;
+  -webkit-box-shadow: inset #bbbbbb 0px 0px 5px;
+}
+
+/* line 28, ../../app/stylesheets/jquery-fallr-changes.sass */
+#fallr-wrapper .avatar-field {
+  padding: 3px 0px 0px 0px;
+}
 
 /* line 1, ../../app/stylesheets/minibutton.sass */
 .minibutton {

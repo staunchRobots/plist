@@ -4,8 +4,8 @@ class UsersController < InheritedResources::Base
   respond_to :js, :html
 
   def update
-    if current_user.id == params[:id].to_i
-      @user = User.find(params[:id])
+    if current_user.username == params[:id]
+      @user = User.find_by_username(params[:id])
       @user.update_attributes(params[:user])
       @user.show_filtered_videos = !@user.show_filtered_videos
       @user.show_plisted = !@user.show_plisted
@@ -15,8 +15,13 @@ class UsersController < InheritedResources::Base
     else
       @errors = ["You can't edit other user"]
     end
+
     respond_to do |format|
-      format.js
+      if params[:user][:avatar]
+        format.html { redirect_to '/'}
+      else
+        format.js { render :content_type => 'text/javascript' }
+      end
     end
   end
 

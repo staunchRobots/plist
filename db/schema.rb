@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111006123246) do
+ActiveRecord::Schema.define(:version => 20111015115619) do
 
   create_table "jukeboxes", :force => true do |t|
     t.string   "title"
@@ -67,6 +67,10 @@ ActiveRecord::Schema.define(:version => 20111006123246) do
     t.boolean  "is_admin"
     t.boolean  "show_filtered_videos"
     t.boolean  "show_plisted"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

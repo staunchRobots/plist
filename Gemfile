@@ -8,6 +8,7 @@ gem 'backports'
 
 gem 'rest-client'
 gem 'json'
+gem "paperclip", "~> 2.4"
 
 
 # HAML and SASS for Templating

@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  has_attached_file :avatar, :styles => { :medium => "100x100>", :thumb => "20x20>" }
 
   has_many :playlists
   has_many :jukeboxes
@@ -13,7 +14,9 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :username, :is_admin, :show_filtered_videos, :show_plisted
+  attr_accessible :email, :password, :password_confirmation, :remember_me,
+    :name, :username, :is_admin, :show_filtered_videos, :show_plisted,
+    :avatar
 
   after_create :create_first_playlist
   after_create :create_first_jukebox
