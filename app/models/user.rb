@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_attached_file :avatar, :styles => { :medium => "100x100>", :thumb => "20x20>" }
 
-  has_many :playlists
+  has_many :playlists, :include => [:user, :videos]
   has_many :jukeboxes
   has_many :videos, :through => :playlists
   has_many :user_hates
