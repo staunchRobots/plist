@@ -15,11 +15,18 @@
   color: white;
 }
 /* line 12, ../../app/stylesheets/jquery-fallr-changes.sass */
+#fallr form .fallr-green {
+  background-image: none;
+  background-color: #00aa00;
+  text-shadow: none;
+  color: white;
+}
+/* line 17, ../../app/stylesheets/jquery-fallr-changes.sass */
 #fallr form textarea {
   width: 68%;
   margin-left: 22px;
 }
-/* line 16, ../../app/stylesheets/jquery-fallr-changes.sass */
+/* line 21, ../../app/stylesheets/jquery-fallr-changes.sass */
 #fallr form input[type="file"] {
   background: white;
   border: solid 1px #999999;
@@ -31,7 +38,7 @@
   -webkit-box-shadow: inset #bbbbbb 0px 0px 5px;
 }
 
-/* line 27, ../../app/stylesheets/jquery-fallr-changes.sass */
+/* line 32, ../../app/stylesheets/jquery-fallr-changes.sass */
 #fallr-wrapper .avatar-field {
   padding: 3px 0px 0px 0px;
 }

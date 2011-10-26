@@ -3,7 +3,7 @@ class Admin::FeaturedVideosController < ApplicationController
 
   def index
     @featured = Playlist.featured
-    @playlists = Playlist.all
+    @playlists = Playlist.order('ask_for_promotion DESC, created_at DESC')
   end
 
   def update

@@ -160,6 +160,22 @@ h2 {
   display: none;
 }
 
+/* line 71, ../../app/stylesheets/layout.sass */
+table.featured {
+  font-size: 12px;
+  border: 1px solid #e7e7e7;
+  width: 700px;
+}
+/* line 75, ../../app/stylesheets/layout.sass */
+table.featured td {
+  padding: 5px 5px;
+  border-bottom: 1px solid #e7e7e7;
+}
+/* line 78, ../../app/stylesheets/layout.sass */
+table.featured .promote {
+  background-color: rgba(0, 0, 255, 0.1);
+}
+
 /* line 1, ../../app/stylesheets/styles.sass */
 #player-e {
   /*  margin-left: 40px; */

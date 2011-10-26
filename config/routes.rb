@@ -9,6 +9,7 @@ Plist::Application.routes.draw do
   end
 
   resources :playlists do
+    post :ask_for_promotion, :on => :member
     post :published, :on => :member
     post :options, :on => :member
     resources :videos do

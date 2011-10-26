@@ -14,6 +14,11 @@
         = f.label :published_no, "Unpublished"
         = f.radio_button :published, true
         = f.label :published_yes, "Published"
-
+    %div
+    - if @playlist.ask_for_promotion == 0
+      = link_to "Request to be Featured", playlist_path(@playlist.id, "playlist[ask_for_promotion]" => 1), :class => 'fallr-button fallr-green', :remote => true, :method => :put, :confirm => "Want to be featured?"
+    - else
+      - if !@playlist.featured
+        Waiting for promotion
     %div
       = link_to "Delete Playlist", playlist_path(@playlist.id), :class => 'fallr-button fallr-red', :remote => true, :method => :delete, :confirm => "Are you sure?"

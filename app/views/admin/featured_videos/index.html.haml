@@ -2,12 +2,13 @@
   .wrapper-content
     .main
       .wrapper-main
+Highlighted - playlists which waiting to be featured
 - form_for :featured, :url => '/admin/featured' do |f|
   %span= hidden_field_tag 'featured[ids][]', ''
   #playlist{:style=>"width:500px;"}
-    %table(cellpadding="10" width="600")
+    %table.featured(cellpadding="10" width="600")
       - @playlists.each_with_index do |pl, i|
-        %tr.pl-item{:id=>"#{pl.id}", :pos => "#{i}"}
+        %tr.pl-item{:id=>"#{pl.id}", :pos => "#{i}", :class => "#{'promote' if pl.ask_for_promotion == 1}"}
           %td
             %span.left= check_box_tag 'featured[ids][]', pl.id.to_s, @featured.include?(pl)
           %td
@@ -15,13 +16,16 @@
               .thumb
                 %img{:src=>"#{pl.thumb || '/images/video-placeholder.jpg'}", :width=>60, :height=>45}
           %td(width="50%")
-            %p.name 
+            %p.name
               = pl.title
           %td(width="40%")
-            %p.name 
-              = pl.user.name 
+            %p.name
+              = pl.user.name
               - surround '(', ')' do
                 =pl.user.username
           %td
-            = pl.published ? "published" : 'not published'
+            - if pl.published
+              %strong published
+            - else
+              not published
   = f.submit "Update"
