@@ -31,7 +31,7 @@ function onYouTubePlayerAPIReady(idvideo) {
 
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
-  evt.target.playVideo();
+  event.target.playVideo();
 }
 
 // 5. The API calls this function when the player's state changes.
@@ -54,14 +54,21 @@ function create_player(ytid) {
   player = new YT.Player('ytapiplayer', {
     height: '510',
     width: '940',
+    fmt: 22,
+    hd: true,
     videoId: ytid,
     playerVars: {
       'autoplay': 0
     },
     events: {
       'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
+      'onStateChange': function(event) {
+	 // @note this will execute a bunch of times but it doesn't matter - will affect video only once
+	 //if(event.data == -1/*YT.PlayerState.ENDED*/){
+	  event.target.setPlaybackQuality('highres');
+	 //}
+      }//onPlayerStateChange
     }
   });
-
+  // player.setPlaybackQuality('highres');
 }
