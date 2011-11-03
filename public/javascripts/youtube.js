@@ -31,6 +31,11 @@ function onYouTubePlayerAPIReady(idvideo) {
 
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
+  var embedCode = event.target.getVideoEmbedCode();
+  var ifr_source = $(embedCode).attr('src');
+  var wmode = "?wmode=transparent";
+  $(embedCode).attr('src',ifr_source+wmode);
+
   event.target.playVideo();
 }
 
@@ -69,6 +74,6 @@ function create_player(ytid) {
 	 //}
       }//onPlayerStateChange
     }
-  });
+  });	
   // player.setPlaybackQuality('highres');
 }
