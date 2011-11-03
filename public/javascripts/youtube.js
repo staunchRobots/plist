@@ -63,16 +63,17 @@ function create_player(ytid) {
     hd: true,
     videoId: ytid,
     playerVars: {
-      'autoplay': 0
+      'autoplay': 0,
+      'wmode': 'transparent'
     },
     events: {
       'onReady': onPlayerReady,
       'onStateChange': function(event) {
-	 // @note this will execute a bunch of times but it doesn't matter - will affect video only once
-	 //if(event.data == -1/*YT.PlayerState.ENDED*/){
-	  event.target.setPlaybackQuality('highres');
-	 //}
-      }//onPlayerStateChange
+  	  // @note this will execute a bunch of times but it doesn't matter - will affect video only once
+  	  //if(event.data == -1/*YT.PlayerState.ENDED*/){
+    	  event.target.setPlaybackQuality('highres');
+  	  //}
+      }
     }
   });	
   // player.setPlaybackQuality('highres');
