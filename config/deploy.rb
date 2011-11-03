@@ -3,15 +3,15 @@ default_run_options[:pty] = true
 
 set :application, "pList.tv"
 set :repository,  "git@github.com:morrillt/plisttv.git"
-set :domain, "root@173.230.129.222"
+set :domain, "173.230.129.222"
 set :deploy_to, "/srv/www/plisttv"
 set :port, 22
+ssh_options[:username] = 'www'
 
 role :web, domain               # Your HTTP server, Apache/etc
 role :app, domain               # This may be the same as your `Web` server
 role :db, domain, :primary => true # This is where Rails migrations will run
 
-# set :deploy_via, :remote_cache  # If you have public like github.com then use :remote_cache
 set :scm, 'git'
 set :branch, 'master'
 set :scm_verbose, true
@@ -21,10 +21,10 @@ set :use_sudo, false
 
 task :staging do
   set :rails_env, "staging" # for now
-  # server "173.230.129.222", :app, :web, :db, :primary => true
-  #set :bundle, "bundle"
   ssh_options[:username] = 'root'
   set :deploy_to, "/srv/www/plisttv-dev"
+  # server "173.230.129.222", :app, :web, :db, :primary => true
+  # set :bundle, "bundle"
   # set :gem_bin, "/home/#{ssh_options[:username]}/.rvm/gems/ree-1.8.7-2011.03@charts/bin"
   # set :rvm_bin, "/home/#{ssh_options[:username]}/.rvm/bin"
 end
@@ -72,14 +72,6 @@ namespace :sass do
   before 'deploy:restart', 'sass:update'
 end
 
-# desc "remove web directory"
-# task :remove_web, :roles => :app do
-#   run "cd #{release_path} && cp -R web/* ."
-#   run "cd #{release_path} && rm -rf web"
-#   puts (run "cd #{release_path} && ls")
-# end
-# after "deploy:update_code", :remove_web
-
 desc "install the necessary prerequisites"
 task :bundle_install, :roles => :app do
   run "cd #{release_path} && bundle install"
@@ -87,5 +79,3 @@ end
 
 after "deploy:update_code", :bundle_install
 after "deploy:update_code", "deploy:assets_symlink"
-# after "deploy:update_code", "deploy:assets"
-#after "deploy:update_code", "deploy:symlink_shared"
