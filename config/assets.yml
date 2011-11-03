@@ -5,8 +5,6 @@ gzip_assets: on
 javascript_compressor: on
 javascript_compressor: uglifier
 
-template_extension: jst.haml
-template_function: Haml
 javascripts:
   vendor:
     - public/javascripts/vendor/jquery.min.js
@@ -34,10 +32,6 @@ javascripts:
     - public/javascripts/player.js
     - public/javascripts/youtube.js
     - public/javascripts/application.js
-
-
-  templates_js:
-    - app/views/**/*.jst.haml
 
 stylesheets:
   app:
