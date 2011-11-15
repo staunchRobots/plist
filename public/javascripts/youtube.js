@@ -54,7 +54,7 @@ function create_player(ytid) {
     height: '510',
     width: '940',
     fmt: 22,
-    hd: true,
+    // hd: true,
     videoId: ytid,
     playerVars: {
       'autoplay': 0,

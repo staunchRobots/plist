@@ -37,6 +37,5 @@ $(function() {
     $(this).find('a').click()
     $('.actions_menu').trigger('closemenu')
   })
-
-
+  
 })

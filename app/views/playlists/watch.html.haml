@@ -7,7 +7,7 @@
   %meta{:property => "og:description", :content => "#{@playlist.description}"}
   %meta{:property => "og:image",       :content => "#{@playlist.thumb}"}
   %meta{:property => "og:url",       :content => "http://plist.tv#{request.request_uri}"}
-  
+
 - content_for :footer do
   - if user_signed_in? && myown_playlist
     = render 'playlists/options'
@@ -29,5 +29,9 @@
 :javascript
   current_playlist = '#{@playlist.id}';
   current_user = '#{@playlist.user.username}';
-  watch = 0;
-  
+  watch = 1;
+
+  var faye = new Faye.Client('http://localhost:9292/faye');
+  faye.subscribe("/playlist/#{@playlist.id}", function(data) {
+    eval(data);
+  });

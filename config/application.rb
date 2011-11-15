@@ -1,4 +1,5 @@
 require File.expand_path('../boot', __FILE__)
+require "net/http"
 
 require 'rails/all'
 

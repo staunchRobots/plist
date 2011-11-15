@@ -84,6 +84,4 @@ class VideosController < InheritedResources::Base
       format.js
     end
   end
-
-
 end

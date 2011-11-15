@@ -6,6 +6,8 @@ Plist::Application.routes.draw do
   resources :users do
     resources :playlists do
       get :shared, on: :collection
+      get :watch, :on => :member
+      get :play, :on => :member
     end
     resources :jukeboxes
     # post '/videos/love' => 'videos#love', :on => :member
