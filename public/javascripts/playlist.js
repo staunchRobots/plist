@@ -12,7 +12,7 @@ $.widget("ui.playlist", {
     // });
     $("li.video-item a.play-item").live("click", function(e) {
       play($(this).parent());
-      e.preventDefault();
+      // e.preventDefault();
     });
     $("li.video-item").live("mouseenter", function(e) {
       $(this).find(".add-to-playlist").show();
@@ -21,7 +21,7 @@ $.widget("ui.playlist", {
     });
 
     $(".video-item .add-to-playlist").live("click", function(e) {
-      e.preventDefault();
+      // e.preventDefault();
       e.stopPropagation();
       var $item = $(this).parent();
       if ($("#layouts #add-to-playlist-menu").length > 0) {

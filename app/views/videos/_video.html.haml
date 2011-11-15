@@ -1,6 +1,6 @@
 -thumb= "http://img.youtube.com/vi/#{video.ytid}/2.jpg"
 %li.video-item{:id=>"video_#{video.id}", :ytid=>"#{video.ytid}"}
-  %a{:href=>"#", :class => 'play-item', :ytid=>"#{video.ytid}"}
+  %a{:href=>"##{video.ytid}", :class => 'play-item', :ytid=>"#{video.ytid}"}
     .thumb
       %img{:src=>"#{thumb}", :width=>90, :height=>57}
     %p.name= video.title

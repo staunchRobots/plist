@@ -61,7 +61,13 @@ $(function() {
   // $(".info").playlists_manager();
   var $first_video = $("#playlist .video-item:first");
   if ($first_video.length > 0) {
-    play($first_video);
+    if (window.location.hash == '') {
+      play($first_video);
+    } else {
+      var link_ytid = window.location.hash.substring(1);
+      var linked_video = $("#playlist .video-item[ytid='"+link_ytid+"']")
+      play(linked_video)
+    }
   }
 
   $("#videos-list").playlist()
