@@ -1,0 +1,7 @@
+<% if @errors.length == 0 %> 
+  $.ctNotify("Invited")
+<% else %> 
+  <% @errors.each do |e| %> 
+    $.ctNotify("<%= e %>")
+  <% end %> 
+<% end %> 

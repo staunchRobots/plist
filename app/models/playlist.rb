@@ -2,6 +2,8 @@ class Playlist < ActiveRecord::Base
   # has_many :playlist_videos
   # has_many :videos, :through => :playlist_videos
   has_many :videos, :order => 'sort ASC'
+  has_many :collaborators
+  has_many :members, :through => :collaborators, :source => :user
   belongs_to :user
 
   scope :featured, where(:featured => true)
@@ -45,6 +47,10 @@ class Playlist < ActiveRecord::Base
   def ids_to_sorting_hash(ids)
     index = 0
     ids.collect{|value| index += 1; {value.to_i => index};}.reduce(&:merge)
+  end
+
+  def has_member?(user)
+    members.include? user
   end
 
 end

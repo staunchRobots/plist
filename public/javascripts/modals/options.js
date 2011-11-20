@@ -15,4 +15,19 @@ $(function() {
     });
     e.stopPropagation();
   })
+  
+  $("#invite_btn").live('click', function(e) {
+    var username = $(".invite_field:visible").attr('value');
+    if (username.length > 0) {
+    	$.ajax({
+    		type: 'POST',
+    		url: '/invites',
+    		data: {playlist_id: current_playlist, username: username},
+    		success: function(res) {}
+    	});
+  	} else {
+  	  $.ctNotify("Enter username pls", 'error');
+  	}
+    e.stopPropagation();
+  })
 })

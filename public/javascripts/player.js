@@ -62,7 +62,6 @@ function play_next() {
 }
 
 $(function() {
-  // $(".info").playlists_manager();
   var $first_video = $("#playlist .video-item:first");
   if ($first_video.length > 0) {
     if (window.location.hash == '') {

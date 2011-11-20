@@ -21,7 +21,11 @@
             .ul#login-user-playlists
               - current_user.playlists.each do |pls|
                 %li= link_to pls.title, user_playlist_path(current_user, pls.id)
-
+          .my-playlists
+            = link_to user_playlists_path(current_user), :class => '' do
+              Shared Playlists
+            .ul#user-shared-playlists
+              = shared_playlits
           / = link_to 'My Jukeboxes', user_jukeboxes_path(current_user)
           = link_to 'Settings', '#', :class => 'settings-link'
           - if current_user.is_admin

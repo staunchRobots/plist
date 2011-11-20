@@ -14,6 +14,16 @@
         = f.label :published_no, "Unpublished"
         = f.radio_button :published, true
         = f.label :published_yes, "Published"
+    - if @playlist.members.length > 0
+      %div
+        %span Owner:
+        = @playlist.user.username
+      %div
+        %span Collaborators:
+        = @playlist.members.collect(&:username).join(', ')
+    %div
+      = text_field_tag :username, nil, :class => 'invite_field', :id => 'invite_username', :placeholder => "username of user you want to invite"
+      = link_to 'Invite', '#', :id => 'invite_btn'
     %div
     - if @playlist.ask_for_promotion == 0
       = link_to "Request to be Featured", playlist_path(@playlist.id, "playlist[ask_for_promotion]" => 1), :class => 'fallr-button fallr-green', :remote => true, :method => :put, :confirm => "Want to be featured?"

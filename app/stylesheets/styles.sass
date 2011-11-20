@@ -533,10 +533,35 @@ a
   li
     border-bottom: 1px solid #333
 
+#user-shared-playlists
+  margin-left: 100px
+  background-color: black
+  padding: 0 0 5px
+  position: absolute
+  right: -120px
+  top: 45px
+  width: 120px
+  -moz-border-radius-topleft: 0
+  -webkit-border-top-left-radius: 0
+  -moz-border-radius-topright: 0
+  -webkit-border-top-right-radius: 0
+  -moz-border-radius-bottomleft: 4px
+  -webkit-border-bottom-left-radius: 4px
+  -moz-border-radius-bottomright: 4px
+  -webkit-border-bottom-right-radius: 4px
+  li
+    border-bottom: 1px solid #333
+
 .my-playlists
   #login-user-playlists
     display: none
   &:hover #login-user-playlists
+    display: block
+
+.my-playlists
+  #user-shared-playlists
+    display: none
+  &:hover #user-shared-playlists
     display: block
 
 .add-playlist-form, .user-settings-form

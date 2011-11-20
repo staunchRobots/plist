@@ -157,6 +157,7 @@ PLATFORMS
 
 DEPENDENCIES
   barista
+  bcrypt-ruby
   capistrano
   compass (>= 0.11.5)
   devise (= 1.4.5)

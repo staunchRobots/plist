@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111019121635) do
+ActiveRecord::Schema.define(:version => 20111115204918) do
+
+  create_table "collaborators", :force => true do |t|
+    t.integer  "playlist_id"
+    t.integer  "user_id"
+    t.string   "perms"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "jukeboxes", :force => true do |t|
     t.string   "title"
@@ -40,6 +48,15 @@ ActiveRecord::Schema.define(:version => 20111019121635) do
     t.datetime "updated_at"
     t.string   "description",       :limit => 80
     t.integer  "ask_for_promotion",               :default => 0
+  end
+
+  create_table "plist_invites", :force => true do |t|
+    t.integer  "playlist_id"
+    t.integer  "user_id"
+    t.string   "notes"
+    t.string   "invite_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "user_hates", :force => true do |t|

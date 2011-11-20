@@ -1,6 +1,6 @@
 module PlaylistHelper
   def myown_playlist
-    @playlist && current_user && @playlist.user == current_user
+    @playlist && current_user && (@playlist.user == current_user || @playlist.members.include?(current_user))
   end
 
   def copy_playlists_list(ytid, is_dynamic_video = false)
@@ -30,4 +30,20 @@ module PlaylistHelper
       }
     end
   end
+
+  def shared_playlits
+    return unless current_user
+    collab_playlist_ids = Collaborator.where(:user_id => current_user.id).collect(&:id).uniq
+    pls = Playlist.where(:id => collab_playlist_ids)
+    content_tag :ul do
+      pls.collect{|p|
+        c = content_tag :li, :class => 'menu_action' do
+          link_to p.title, p
+        end
+        concat c
+      }
+    end
+  end
+
+
 end

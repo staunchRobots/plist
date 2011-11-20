@@ -728,21 +728,53 @@ a.left:active {
   border-bottom: 1px solid #333333;
 }
 
-/* line 537, ../../app/stylesheets/styles.sass */
+/* line 536, ../../app/stylesheets/styles.sass */
+#user-shared-playlists {
+  margin-left: 100px;
+  background-color: black;
+  padding: 0 0 5px;
+  position: absolute;
+  right: -120px;
+  top: 45px;
+  width: 120px;
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 0;
+  -webkit-border-top-right-radius: 0;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+}
+/* line 552, ../../app/stylesheets/styles.sass */
+#user-shared-playlists li {
+  border-bottom: 1px solid #333333;
+}
+
+/* line 556, ../../app/stylesheets/styles.sass */
 .my-playlists #login-user-playlists {
   display: none;
 }
-/* line 539, ../../app/stylesheets/styles.sass */
+/* line 558, ../../app/stylesheets/styles.sass */
 .my-playlists:hover #login-user-playlists {
   display: block;
 }
 
-/* line 542, ../../app/stylesheets/styles.sass */
+/* line 562, ../../app/stylesheets/styles.sass */
+.my-playlists #user-shared-playlists {
+  display: none;
+}
+/* line 564, ../../app/stylesheets/styles.sass */
+.my-playlists:hover #user-shared-playlists {
+  display: block;
+}
+
+/* line 567, ../../app/stylesheets/styles.sass */
 .add-playlist-form, .user-settings-form {
   display: none;
 }
 
-/* line 545, ../../app/stylesheets/styles.sass */
+/* line 570, ../../app/stylesheets/styles.sass */
 .slogan {
   text-align: center;
 }

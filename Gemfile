@@ -8,7 +8,7 @@ gem 'inherited_resources'
 gem 'rest-client'
 gem 'json'
 gem "paperclip", "~> 2.4"
-
+gem "bcrypt-ruby", :require => "bcrypt"
 
 # HAML and SASS for Templating
 gem 'sass'

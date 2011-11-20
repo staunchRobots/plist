@@ -20,6 +20,10 @@ Plist::Application.routes.draw do
     # post :add_video, :on => :member
   end
 
+  resources :invites, :only => [:create] do
+    get :accept, :on => :collection
+  end
+
   devise_scope :user do
     get "login", :to => "devise/sessions#new"
     get "logout", :to => "devise/sessions#destroy"
@@ -31,7 +35,6 @@ Plist::Application.routes.draw do
     get "recent" => "recent_videos#index"
     # resources :featured, :only => [:index, :update], :controller => :featured_videos
   end
-
 
   root :to => 'home#index'
 end

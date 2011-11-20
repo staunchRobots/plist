@@ -1,0 +1,176 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %title Plist
+    :css
+      #outlook a { padding: 0; }
+      body {
+      	width: 100% !important;
+      	-webkit-text-size-adjust: none;
+      	-ms-text-size-adjust: none;
+      }
+      body, h1, h2, h3, h4, h5, h6{
+      	margin: 0;
+      	padding: 0;
+      }
+      .ReadMsgBody { width: 100%; } .ExternalClass { width: 100%; }
+      img {
+      	height: auto;
+      	line-height: 100%;
+      	outline: none;
+      	text-decoration: none;
+      }
+      p{
+      	margin: 1em 0;
+      }
+      a{
+      	color:#7da347;
+      	text-decoration:none;
+      }
+      table td {
+      	border-collapse: collapse;
+      }
+      .yshortcuts, .yshortcuts a, .yshortcuts a:link,.yshortcuts a:visited, .yshortcuts a:hover, .yshortcuts a span {
+      	color: black;
+      	text-decoration: none !important;
+      	border-bottom: none !important;
+      	background: none !important;
+      }
+  %body{:bgcolor => "#f1f1f1", :marginheight => "0", :marginwidth => "0"}
+    %table{:align => "center", :border => "0", :cellpadding => "0", :cellspacing => "0", :width => "542"}
+      %tr
+        %td{:height => "11"}
+      %tr
+        %td
+          %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+            %tr
+              %td{:width => "32"}
+              %td
+                %a{:href => "#"}
+                  %img{:alt => "", :height => "35", :src => "", :width => "182"}/
+              %td{:width => "163"}
+              %td
+                %font{:color => "#555555", :face => "Arial, Helvetica, sans-serif", :size => "1"}
+                  %a{:href => "#", :style => "text-decoration:none; color:#555555; font-size:11px;"}
+                    %strong New Projects
+              %td{:width => "13"}
+              %td
+                %font{:color => "#979796", :face => "Arial, Helvetica, sans-serif", :size => "1"}
+                  %a{:href => "#", :style => "text-decoration:none; color:#979796; font-size:11px;"}
+                    %strong About Us
+      %tr
+        %td{:height => "9"}
+      %tr
+        %td{:bgcolor => "#FFFFFF"}
+          %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+            %tr
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+              %td{:bgcolor => "#98ba40", :colspan => "3", :height => "7"}
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+            %tr
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+              %td{:colspan => "3", :height => "16"}
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+            %tr
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+              %td{:width => "30"}
+              %td{:width => "480"}
+                %font{:color => "#8c8c8c", :face => "Arial, Helvetica, sans-serif", :size => "3"}
+                  %strong{:style => "font-size:18px;"} Projects You Might Like to Be a Part of
+              %td{:width => "30"}
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+            %tr
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+              %td{:colspan => "3", :height => "16"}
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+            %tr
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+              %td{:bgcolor => "#e7e7e7", :colspan => "3", :height => "1"}
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+            %tr
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+              %td{:colspan => "3", :height => "15"}
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+            %tr
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+              %td{:width => "30"}
+              %td{:width => "480"}
+                %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+                  %tr
+                    %td
+                      %font{:color => "#8b8b8b", :face => "Arial, Helvetica, sans-serif", :size => "2"}
+                        %span{:style => "font-size:13px;"}
+                          Hi 
+                          = @invite.user.username
+                          \, this is collaboration invintation from Plist.tv: to                           
+                          = @invite.playlist.title
+                          click to 
+                          = @invite.url
+                          %br>/
+              %td{:width => "30"}
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+            %tr
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+              %td{:colspan => "3", :height => "30"}
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+            %tr
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+              %td{:bgcolor => "#e7e7e7", :colspan => "3", :height => "1"}
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+            %tr
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+              %td{:colspan => "3", :height => "20"}
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+            %tr
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+              %td{:align => "center", :colspan => "3"}
+                %font{:color => "#53626c", :face => "Arial, Helvetica, sans-serif", :size => "3"}
+                  %strong{:style => "font-size:20px;"} Share this project with your friends!
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+            %tr
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+              %td{:colspan => "3", :height => "20"}
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+            %tr
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+              %td{:colspan => "3"}
+                %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+                  %tr
+                    %td{:width => "192"}
+                    %td{:width => "53"}
+                      %a{:href => "#"}
+                        %img{:alt => "", :height => "57", :src => "", :width => "53"}/
+                    %td{:width => "38"}
+                    %td{:width => "71"}
+                      %a{:href => "#"}
+                        %img{:alt => "", :height => "57", :src => "", :width => "71"}/
+                    %td{:width => "186"}
+              %td{:bgcolor => "#e7e7e7", :width => "1"}
+      %tr
+        %td
+          %img{:alt => "", :height => "30", :src => "", :width => "542"}/
+      %tr
+        %td{:align => "center"}
+          %font{:color => "#909090", :face => "Arial, Helvetica, sans-serif", :size => "1"}
+            %span{:style => "font-size:11px;"} You are receiving this message because you opted in on your profile
+          %font{:color => "#7da347", :face => "Arial, Helvetica, sans-serif", :size => "1"}
+            %a{:href => "#", :style => "text-decoration:none; color:#7da347; font-size:11px;"} [linked].
+      %tr
+        %td{:align => "center"}
+          %font{:color => "#909090", :face => "Arial, Helvetica, sans-serif", :size => "1"}
+            %span{:style => "font-size:11px;"} Change your subscription preferences here
+          %font{:color => "#7da347", :face => "Arial, Helvetica, sans-serif", :size => "1"}
+            %a{:href => "#", :style => "text-decoration:none; color:#7da347; font-size:11px;"} [link]
+          %font{:color => "#909090", :face => "Arial, Helvetica, sans-serif", :size => "1"}
+            %span{:style => "font-size:11px;"} , or unsubscribe
+          %font{:color => "#7da347", :face => "Arial, Helvetica, sans-serif", :size => "1"}
+            %a{:href => "#", :style => "text-decoration:none; color:#7da347; font-size:11px;"} [link]
+          %font{:color => "#909090", :face => "Arial, Helvetica, sans-serif", :size => "1"}
+            %span{:style => "font-size:11px;"} here.
+      %tr
+        %td{:align => "center"}
+          %font{:color => "#909090", :face => "Arial, Helvetica, sans-serif", :size => "1"}
+            %span{:style => "font-size:11px;"} Plist.tv &copy; 2011
+      %tr
+        %td{:height => "12"}

@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  playlist_id: 1
+  user_id: 1
+  perms: MyString
+
+two:
+  playlist_id: 1
+  user_id: 1
+  perms: MyString
