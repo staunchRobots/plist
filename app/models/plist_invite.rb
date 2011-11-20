@@ -8,7 +8,7 @@ class PlistInvite < ActiveRecord::Base
   end
   
   def url
-    link_to 'Accept invintation', Rails.application.routes.url_helpers.accept_invites_url(:token => invite_token, :host => 'plist.it')
+    link_to 'Accept invintation', Rails.application.routes.url_helpers.accept_invites_url(:token => invite_token, :host => 'dev.plist.it')
   end
   
   def accept(current_user)
