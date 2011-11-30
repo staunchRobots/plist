@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111115204918) do
+ActiveRecord::Schema.define(:version => 20111130063258) do
 
   create_table "collaborators", :force => true do |t|
     t.integer  "playlist_id"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(:version => 20111115204918) do
     t.string   "title"
     t.string   "current_song"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "playlist_invites", :force => true do |t|
+    t.integer  "playlist_id"
+    t.integer  "user_id"
+    t.string   "notes"
+    t.string   "invite_token"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -48,15 +57,6 @@ ActiveRecord::Schema.define(:version => 20111115204918) do
     t.datetime "updated_at"
     t.string   "description",       :limit => 80
     t.integer  "ask_for_promotion",               :default => 0
-  end
-
-  create_table "plist_invites", :force => true do |t|
-    t.integer  "playlist_id"
-    t.integer  "user_id"
-    t.string   "notes"
-    t.string   "invite_token"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "user_hates", :force => true do |t|

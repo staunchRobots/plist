@@ -10,8 +10,8 @@ class InvitesController < ApplicationController
       else
         @playlist = Playlist.find(playlist_id)
         @user = User.find_by_username(username)
-        unless @playlist.members.collect(&:id).include?(@user.id) || PlistInvite.exists?(:playlist_id => playlist_id, :user_id => @user.id)
-          @invite = PlistInvite.create(:playlist_id => playlist_id, 
+        unless @playlist.members.collect(&:id).include?(@user.id) || PlaylistInvite.exists?(:playlist_id => playlist_id, :user_id => @user.id)
+          @invite = PlaylistInvite.create(:playlist_id => playlist_id, 
             :user_id => @user.id, 
             :invite_token => BCrypt::Engine.generate_salt)
         else 
@@ -27,7 +27,7 @@ class InvitesController < ApplicationController
   
   def accept
     if params[:token]
-      @invite = PlistInvite.find_by_invite_token(params[:token])
+      @invite = PlaylistInvite.find_by_invite_token(params[:token])
       if @invite
         @invite.accept(current_user)
         if @invite.errors.length == 0
