@@ -53,4 +53,21 @@ class Playlist < ActiveRecord::Base
     members.include? user
   end
 
+  def invited_members
+    invited_ids = PlaylistInvite.where(:playlist_id => self.id).collect(&:user_id).uniq
+    User.where(:id => invited_ids)
+  end
+
+  class << self
+    def shared_with(user_id)
+      shared_ids = Collaborator.where(:user_id => user_id).collect(&:playlist_id).uniq
+      Playlist.where(:id => shared_ids)
+    end
+
+    def shared_by(user_id)
+      shared_ids = Collaborator.includes(:playlist).where(:playlists => {:user_id => user_id}).collect(&:playlist_id).uniq
+      Playlist.where(:id => shared_ids)
+    end
+  end
+
 end

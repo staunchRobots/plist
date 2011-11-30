@@ -5,8 +5,8 @@ class PlaylistsController < InheritedResources::Base
   def show
     show! do |format|
       format.html {
-        if !user_signed_in? || current_user != @playlist.user
-          unless @playlist.published
+        unless @playlist.published
+          if !user_signed_in? || !has_access_to(current_user, @playlist)
             flash[:error] = 'This is private playlist'
             redirect_to root_path
           end
