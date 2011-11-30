@@ -30,6 +30,10 @@ function play(el) {
 }
 
 function onPlayerStateChange(event) {
+  if (event.data == -1) {
+    event.target.setPlaybackQuality('highres');
+  }
+  
   if(event.data == YT.PlayerState.ENDED){
     if (playing_index != -1) {
       play_next();

@@ -68,12 +68,7 @@ function create_player(ytid) {
     },
     events: {
       'onReady': onPlayerReady,
-      'onStateChange': function(event) {
-  	  // @note this will execute a bunch of times but it doesn't matter - will affect video only once
-  	  //if(event.data == -1/*YT.PlayerState.ENDED*/){
-    	  event.target.setPlaybackQuality('highres');
-  	  //}
-      }
+      'onStateChange': onPlayerStateChange
     }
   });	
   // player.setPlaybackQuality('highres');
