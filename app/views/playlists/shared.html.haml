@@ -1,0 +1,26 @@
+- if user_signed_in? && current_user.id == @user.id
+  = link_to "Create new pList", '#', :class => 'create-playlist create-playlist-btn'
+
+- if @shared_with_me.size > 0
+  .recent-playlists
+    %h2 
+      Playlists shared with me:
+      = @shared_with_me.count
+      %ul
+        = render :partial => 'playlists/playlist', :collection => @shared_with_me
+
+- if @shared_by_me.size > 0
+  .recent-playlists
+    %h2 
+      Playlists shared by me:
+      = @shared_by_me.count
+      %ul
+        = render :partial => 'playlists/playlist', :collection => @shared_by_me
+        
+- if @invited_me.size > 0
+  .recent-playlists
+    %h2 
+      You'r got invited to:
+      = @invited_me.count
+      %ul
+        = render :partial => 'playlists/playlist_invited', :collection => @invited_me

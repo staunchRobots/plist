@@ -42,4 +42,11 @@ class PlaylistsController < InheritedResources::Base
 
   end
 
+  def shared
+    @user = User.find_by_username(params[:user_id])
+    @shared_with_me = Playlist.shared_with(@user.id)
+    @shared_by_me   = Playlist.shared_by(@user.id)
+    @invited_me = PlaylistInvite.for_user(@user.id)
+  end
+
 end

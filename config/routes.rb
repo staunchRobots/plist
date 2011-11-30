@@ -2,7 +2,9 @@ Plist::Application.routes.draw do
   devise_for :users, :controllers => { :registrations => "registrations", :sessions => "sessions" }
 
   resources :users do
-    resources :playlists
+    resources :playlists do 
+      get :shared, on: :collection
+    end
     resources :jukeboxes
     post '/videos/love' => 'videos#love', :on => :member
     post '/videos/hate' => 'videos#hate', :on => :member

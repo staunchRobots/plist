@@ -1,0 +1,11 @@
+- playlist = playlist_invited.playlist
+%li
+  .thumb          
+    = link_to user_playlist_path(playlist.user.username, playlist) do
+      %img{:src=>"#{playlist.thumb || '/images/video-placeholder.jpg'}", :width=>"60", :height=>"45"}
+  = link_to playlist.title, user_playlist_path(playlist.user.username, playlist), :class => 'title'
+  = link_to("accept", accept_invites_url(:token => playlist_invited.invite_token), class: 'pl blue minibutton')
+  .member
+    .member-thumb
+      %img{:src=>"#{avatar_url(playlist.user)}", :width=>"30", :height=>"30"}
+    = link_to playlist.user.username, playlist.user, :class => 'member-name'

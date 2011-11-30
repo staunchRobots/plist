@@ -10,7 +10,7 @@ $(function() {
         content     : $(".options-form").html(),
         buttons : {
             button1 : {text: 'Save', onclick: options},
-            button2 : {text: 'Cancel'},
+            button2 : {text: 'Done'},
         },
     });
     e.stopPropagation();

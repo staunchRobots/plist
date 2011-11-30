@@ -801,3 +801,11 @@ a.left:active {
 .slogan {
   text-align: center;
 }
+
+/* line 585, ../../app/stylesheets/styles.sass */
+.pl.blue {
+  height: 15px;
+  margin-left: 10px;
+  color: white;
+  padding: 2px 7px;
+}

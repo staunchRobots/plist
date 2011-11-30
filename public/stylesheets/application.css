@@ -980,6 +980,14 @@ a.left:active {
   text-align: center;
 }
 
+/* line 585, ../../app/stylesheets/styles.sass */
+.pl.blue {
+  height: 15px;
+  margin-left: 10px;
+  color: white;
+  padding: 2px 7px;
+}
+
 /* line 2, /Users/vladimirpenkin/Sites/plist/app/stylesheets/playlist.sass */
 #playlist a.more-videos {
   padding: 5px 10px;

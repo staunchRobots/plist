@@ -3,7 +3,7 @@ class PlaylistInvite < ActiveRecord::Base
   belongs_to :user
   include ActionView::Helpers
   
-  scope :for_user, -> user_id { where(user_id: user_id) } 
+  scope :for_user, -> user_id { includes(:playlist).where(user_id: user_id) } 
   
   def after_create
     UserMailer.collaboration_invite(self).deliver
