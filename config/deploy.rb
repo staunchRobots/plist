@@ -2,7 +2,7 @@ ssh_options[:forward_agent] = true
 default_run_options[:pty] = true
 
 set :application, "pList.tv"
-set :repository,  "git@github.com:morrillt/plisttv.git"
+set :repository,  "git@github.com:staunchRobots/plist.git"
 set :domain, "173.230.129.222"
 set :deploy_to, "/srv/www/plisttv"
 set :port, 22
