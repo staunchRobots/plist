@@ -43,13 +43,7 @@ function onPlayerReady(event) {
 //    The function indicates that when playing a video (state=1),
 //    the player should play for six seconds and then stop.
 var done = false;
-// function onPlayerStateChange(event) {
-//
-//     //When the player ends it load another video
-//   if(event.data == YT.PlayerState.ENDED){
-//       player.loadVideoById('dsz-EeNZBkI', 0); //JW5meKfy3fY
-//   }
-// }
+
 
 function stopVideo() {
   player.stopVideo();
@@ -71,5 +65,4 @@ function create_player(ytid) {
       'onStateChange': onPlayerStateChange
     }
   });	
-  // player.setPlaybackQuality('highres');
 }

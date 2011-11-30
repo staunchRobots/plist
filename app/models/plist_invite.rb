@@ -8,11 +8,11 @@ class PlistInvite < ActiveRecord::Base
   end
   
   def url
-    link_to 'Accept invintation', Rails.application.routes.url_helpers.accept_invites_url(:token => invite_token, :host => 'dev.plist.it')
+    link_to 'Accept invintation', Rails.application.routes.url_helpers.accept_invites_url(:token => invite_token, :host => 'dev.plist.tv')
   end
   
   def accept(current_user)
-    if !playlist.has_member? user
+    if playlist.has_member? user
       errors.add(:user, 'User is already a member of playlist')
       return
     end

@@ -13,7 +13,7 @@ role :app, domain               # This may be the same as your `Web` server
 role :db, domain, :primary => true # This is where Rails migrations will run
 
 set :scm, 'git'
-set :branch, 'master'
+set(:branch, 'master') unless exists?(:branch)
 set :scm_verbose, true
 set :scm_username, "git"
 set :deploy_via, "checkout"
@@ -21,7 +21,7 @@ set :use_sudo, false
 
 task :staging do
   set :rails_env, "staging" # for now
-  ssh_options[:username] = 'root'
+  ssh_options[:username] = 'www'
   set :deploy_to, "/srv/www/plisttv-dev"
   # server "173.230.129.222", :app, :web, :db, :primary => true
   # set :bundle, "bundle"

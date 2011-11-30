@@ -30,10 +30,10 @@ class InvitesController < ApplicationController
       @invite = PlistInvite.find_by_invite_token(params[:token])
       if @invite
         @invite.accept(current_user)
-        if @invite.valid?
+        if @invite.errors.length == 0
           redirect_to @invite.playlist, :notice => 'You can collaborate now on this project'
         else
-          redirect_to '/', :notice => 'Error occured while accepting invite'
+          redirect_to '/', :notice => 'Error occured while accepting invite' + @invite.errors.full_messages.join(', ')
         end
       else
         redirect_to '/', :notice => 'Error occured while accepting invite'
