@@ -20,6 +20,7 @@ set :deploy_via, "checkout"
 set :use_sudo, false
 
 task :staging do
+  set :branch, 'invites'
   set :rails_env, "staging" # for now
   ssh_options[:username] = 'www'
   set :deploy_to, "/srv/www/plisttv-dev"
