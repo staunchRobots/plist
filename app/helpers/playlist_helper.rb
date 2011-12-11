@@ -4,7 +4,7 @@ module PlaylistHelper
   end
   
   def user_invited?
-    PlaylistInvite.user_invited_to(current_user.id, @playlist.id).count > 0
+    current_user && PlaylistInvite.user_invited_to(current_user.id, @playlist.id).count > 0
   end
 
 
