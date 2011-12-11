@@ -43,7 +43,10 @@ class VideosController < InheritedResources::Base
 
   def reorder
     @playlist = Playlist.find(params[:playlist_id])
-    @playlist.update_videos_sort_order(params[:order])
+    if @playlist.accessible_by(current_user)
+      @playlist.update_videos_sort_order(params[:order])
+      @updated = true
+    end
 
     respond_to do |format|
       format.js

@@ -52,6 +52,10 @@ class Playlist < ActiveRecord::Base
   def has_member?(user)
     members.include? user
   end
+  
+  def accessible_by(user)
+    self.user == user || self.has_member?(user)
+  end
 
   def invited_members
     invited_ids = PlaylistInvite.where(:playlist_id => self.id).collect(&:user_id).uniq

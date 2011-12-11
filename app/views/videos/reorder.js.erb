@@ -1,1 +1,5 @@
-$.ctNotify('Playlist order changed', 'message')
+<% if @updated %> 
+  $.ctNotify('Playlist order changed', 'message')
+<% else %> 
+  $.ctNotify("You can't reorder items in this playlist", 'error')
+<% end %> 
