@@ -2,6 +2,10 @@ class PlaylistsController < InheritedResources::Base
   nested_belongs_to :user, :finder => :find_by_username
   respond_to :js, :html
 
+  rescue_from ActiveRecord::RecordNotFound do
+    redirect_to "/", notice: 'Playlist was not found'
+  end
+
   def show
     show! do |format|
       format.html {
