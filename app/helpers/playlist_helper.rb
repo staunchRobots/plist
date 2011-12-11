@@ -2,6 +2,10 @@ module PlaylistHelper
   def myown_playlist
     @playlist && current_user && (@playlist.user == current_user || @playlist.members.include?(current_user))
   end
+  
+  def user_invited?
+    PlaylistInvite.user_invited_to(current_user.id, @playlist.id).count > 0
+  end
 
 
   def copy_playlists_list(ytid, is_dynamic_video = false)

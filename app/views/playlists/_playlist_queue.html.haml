@@ -10,6 +10,9 @@
             .right
               %a.options-button.minibutton
                 %span#options-btn Options
+        - if user_invited?
+          %span
+            = link_to("accept", accept_invites_url(:token => @playlist.invite_for(current_user.id).invite_token), class: 'blue minibutton')
       %br
       %div
         = render 'playlists/social_buttons'

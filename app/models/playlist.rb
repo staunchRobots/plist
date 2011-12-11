@@ -57,6 +57,10 @@ class Playlist < ActiveRecord::Base
     invited_ids = PlaylistInvite.where(:playlist_id => self.id).collect(&:user_id).uniq
     User.where(:id => invited_ids)
   end
+  
+  def invite_for(user_id)
+    PlaylistInvite.user_invited_to(user_id, self.id).first
+  end
 
   class << self
     def shared_with(user_id)
