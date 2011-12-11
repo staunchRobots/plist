@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111130063258) do
+ActiveRecord::Schema.define(:version => 20111211092705) do
 
   create_table "collaborators", :force => true do |t|
     t.integer  "playlist_id"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20111130063258) do
     t.string   "invite_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "invite_type",  :default => "user"
   end
 
   create_table "playlist_videos", :force => true do |t|
@@ -57,7 +58,10 @@ ActiveRecord::Schema.define(:version => 20111130063258) do
     t.datetime "updated_at"
     t.string   "description",       :limit => 80
     t.integer  "ask_for_promotion",               :default => 0
+    t.string   "slug"
   end
+
+  add_index "playlists", ["slug"], :name => "index_playlists_on_slug", :unique => true
 
   create_table "user_hates", :force => true do |t|
     t.integer  "user_id"

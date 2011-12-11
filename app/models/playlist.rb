@@ -1,4 +1,7 @@
 class Playlist < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :title, :use => :slugged
+
   # has_many :playlist_videos
   # has_many :videos, :through => :playlist_videos
   has_many :videos, :order => 'sort ASC'
@@ -53,7 +56,7 @@ class Playlist < ActiveRecord::Base
   def has_member?(user)
     members.include? user
   end
-  
+
   def accessible_by(user)
     self.user == user || self.has_member?(user)
   end
@@ -62,7 +65,7 @@ class Playlist < ActiveRecord::Base
     invited_ids = PlaylistInvite.where(:playlist_id => self.id).collect(&:user_id).uniq
     User.where(:id => invited_ids)
   end
-  
+
   def invite_for(user_id)
     PlaylistInvite.user_invited_to(user_id, self.id).first
   end
