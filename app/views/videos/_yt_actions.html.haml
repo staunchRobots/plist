@@ -1,6 +1,6 @@
 .yt_actions_menu
-  = link_to videos_hate_user_path(current_user.id, :ytid => video.ytid), {:remote => true, :confirm => 'Are you sure you hate this? If you hate it you will never be shown this video again.', :method => 'POST'} do 
-    .filter-action
+  / = link_to videos_hate_user_path(current_user.id, :ytid => video.ytid), {:remote => true, :confirm => 'Are you sure you hate this? If you hate it you will never be shown this video again.', :method => 'POST'} do 
+  /   .filter-action
   = link_to playlist_videos_path(@playlist.id, :video => {:yt_url => video.ytid, :is_ytid => '1'}, :current_playlist => @playlist.id), :remote => true, :method => :post do
     .plus-action
   %ul.plus-more-action
