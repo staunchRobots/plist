@@ -7,13 +7,14 @@
       %span Description
       = f.text_area :description, :class => 'playlist_title', :size => '20x2'
     %br
-    %div
-      %span Visibility
-      %span.playlist_published_radio
-        = f.radio_button :published, false
-        = f.label :published_no, "Unpublished"
-        = f.radio_button :published, true
-        = f.label :published_yes, "Published"
+    - unless @playlist.has_member? current_user
+      %div
+        %span Visibility
+        %span.playlist_published_radio
+          = f.radio_button :published, false
+          = f.label :published_no, "Unpublished"
+          = f.radio_button :published, true
+          = f.label :published_yes, "Published"
     - if @playlist.members.length > 0
       %div
         %span Owner:
@@ -24,11 +25,12 @@
     %div
       = text_field_tag :username, nil, :class => 'invite_field', :id => 'invite_username', :placeholder => "username of user you want to invite"
       = link_to 'Invite', '#', :id => 'invite_btn'
-    %div
-    - if @playlist.ask_for_promotion == 0
-      = link_to "Request to be Featured", playlist_path(@playlist.id, "playlist[ask_for_promotion]" => 1), :class => 'fallr-button fallr-green', :remote => true, :method => :put, :confirm => "Want to be featured?"
-    - else
-      - if !@playlist.featured
-        Waiting for promotion
-    %div
-      = link_to "Delete Playlist", playlist_path(@playlist.id), :class => 'fallr-button fallr-red', :remote => true, :method => :delete, :confirm => "Are you sure?"
+    - unless @playlist.has_member? current_user
+      %div
+      - if @playlist.ask_for_promotion == 0
+        = link_to "Request to be Featured", playlist_path(@playlist.id, "playlist[ask_for_promotion]" => 1), :class => 'fallr-button fallr-green', :remote => true, :method => :put, :confirm => "Want to be featured?"
+      - else
+        - if !@playlist.featured
+          Waiting for promotion
+      %div
+        = link_to "Delete Playlist", playlist_path(@playlist.id), :class => 'fallr-button fallr-red', :remote => true, :method => :delete, :confirm => "Are you sure?"
