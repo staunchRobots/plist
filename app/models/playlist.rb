@@ -2,9 +2,10 @@ class Playlist < ActiveRecord::Base
   # has_many :playlist_videos
   # has_many :videos, :through => :playlist_videos
   has_many :videos, :order => 'sort ASC'
-  has_many :collaborators
+  has_many :collaborators, dependent: :destroy
   has_many :members, :through => :collaborators, :source => :user
   belongs_to :user
+  has_many :playlist_invites, dependent: :destroy
 
   scope :featured, where(:featured => true)
   scope :common, where(:featured => false)
