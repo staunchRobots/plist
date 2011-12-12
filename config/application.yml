@@ -1,0 +1,19 @@
+# Usage
+#
+# Settings.default_host
+#
+common:
+  http_basic_username: things
+  http_basic_password: welike
+  default_host: plist.tv
+
+development:
+  default_host: plist.dev
+
+test:
+  default_host: plist.dev
+
+staging:
+  default_host: dev.plist.tv
+
+production:

@@ -1,5 +1,5 @@
 Plist::Application.routes.draw do
-  default_url_options :host => "plist.dev"
+  default_url_options :host => Settings.default_host
 
   devise_for :users, :controllers => { :registrations => "registrations", :sessions => "sessions" }
 
@@ -8,8 +8,8 @@ Plist::Application.routes.draw do
       get :shared, on: :collection
     end
     resources :jukeboxes
-    post '/videos/love' => 'videos#love', :on => :member
-    post '/videos/hate' => 'videos#hate', :on => :member
+    # post '/videos/love' => 'videos#love', :on => :member
+    # post '/videos/hate' => 'videos#hate', :on => :member
   end
 
   resources :playlists do
