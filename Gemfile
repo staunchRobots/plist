@@ -11,7 +11,6 @@ gem "paperclip", "~> 2.4"
 gem "bcrypt-ruby", :require => "bcrypt"
 gem "friendly_id", "~> 4.0.0.beta14"
 
-
 # HAML and SASS for Templating
 gem 'sass'
 gem 'haml'

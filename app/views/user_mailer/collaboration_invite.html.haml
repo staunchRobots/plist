@@ -104,7 +104,7 @@
                           Hi 
                           = @invite.user.username
                           \, this is collaboration invintation from Plist.tv: to                           
-                          = @invite.playlist.title
+                          = link_to @invite.playlist.title, user_playlist_path(@invite.playlist.user.username, @invite.playlist)
                           click to 
                           = @invite.url
                           %br>/

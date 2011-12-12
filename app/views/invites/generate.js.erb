@@ -1,0 +1,6 @@
+<% if @created %>
+  $('.<%= @type %>').remove()
+  $('.link_invites').append($('<%= link_to "Invite #{@type}", @invite.url %> '))
+<% else %>
+  $.ctNotify("Already have that type of invite", 'error')
+<% end %>

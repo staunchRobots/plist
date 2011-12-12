@@ -60,6 +60,10 @@ class Playlist < ActiveRecord::Base
   def accessible_by(user)
     self.user == user || self.has_member?(user)
   end
+  
+  def accessible_via(access_token)
+    link_invite && (link_invite.invite_token == access_token || link_invite('plisters').invite_token == access_token)
+  end
 
   def invited_members
     invited_ids = PlaylistInvite.where(:playlist_id => self.id).collect(&:user_id).uniq
@@ -68,6 +72,10 @@ class Playlist < ActiveRecord::Base
 
   def invite_for(user_id)
     PlaylistInvite.user_invited_to(user_id, self.id).first
+  end
+
+  def link_invite(type = 'everyone')
+    PlaylistInvite.where(invite_type: "link_#{type}", playlist_id: self.id).first
   end
 
   class << self

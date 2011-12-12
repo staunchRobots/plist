@@ -1,8 +1,10 @@
 Plist::Application.routes.draw do
+  default_url_options :host => "plist.dev"
+
   devise_for :users, :controllers => { :registrations => "registrations", :sessions => "sessions" }
 
   resources :users do
-    resources :playlists do 
+    resources :playlists do
       get :shared, on: :collection
     end
     resources :jukeboxes
@@ -24,6 +26,8 @@ Plist::Application.routes.draw do
 
   resources :invites, :only => [:create] do
     get :accept, :on => :collection
+    get :generate_for_everyone, :on => :collection
+    get :generate_for_plisters, :on => :collection
   end
 
   devise_scope :user do

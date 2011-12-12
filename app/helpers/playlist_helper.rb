@@ -1,8 +1,12 @@
 module PlaylistHelper
   def myown_playlist
-    @playlist && current_user && (@playlist.user == current_user || @playlist.members.include?(current_user))
+    @playlist && current_user &&
+    (@playlist.user == current_user ||
+    @playlist.members.include?(current_user) ||
+    (params[:access_token] && @playlist.accessible_via(params[:access_token])))
+
   end
-  
+
   def user_invited?
     current_user && PlaylistInvite.user_invited_to(current_user.id, @playlist.id).count > 0
   end

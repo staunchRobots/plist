@@ -1,5 +1,5 @@
-class InvitesController < ApplicationController 
-  def create     
+class InvitesController < ApplicationController
+  def create
     @errors = []
     playlist_id, username = params[:playlist_id], params[:username]
     if playlist_id.nil? || username.nil?
@@ -11,10 +11,10 @@ class InvitesController < ApplicationController
         @playlist = Playlist.find(playlist_id)
         @user = User.find_by_username(username)
         unless @playlist.members.collect(&:id).include?(@user.id) || PlaylistInvite.exists?(:playlist_id => playlist_id, :user_id => @user.id)
-          @invite = PlaylistInvite.create(:playlist_id => playlist_id, 
-            :user_id => @user.id, 
+          @invite = PlaylistInvite.create(:playlist_id => playlist_id,
+            :user_id => @user.id,
             :invite_token => BCrypt::Engine.generate_salt)
-        else 
+        else
           @errors << "Already invited"
         end
       end
@@ -22,9 +22,9 @@ class InvitesController < ApplicationController
         format.js
       end
     end
-    
+
   end
-  
+
   def accept
     if params[:token]
       @invite = PlaylistInvite.find_by_invite_token(params[:token])
@@ -40,5 +40,29 @@ class InvitesController < ApplicationController
       end
     end
   end
-  
+
+  def generate_for_everyone
+    @type = 'link_everyone'
+    playlist_id = params[:playlist_id]
+    @invite = PlaylistInvite.where(playlist_id: playlist_id, invite_type: @type).first
+    unless @invite
+      @invite = PlaylistInvite.create(playlist_id: playlist_id, invite_type: @type, invite_token: BCrypt::Engine.generate_salt)
+      @created = true
+    end
+
+    render :generate
+  end
+
+  def generate_for_plisters
+    @type = 'link_plisters'
+    playlist_id = params[:playlist_id]
+    @invite = PlaylistInvite.where(playlist_id: playlist_id, invite_type: @type).first
+    unless @invite
+      @invite = PlaylistInvite.create(playlist_id: playlist_id, invite_type: @type, invite_token: BCrypt::Engine.generate_salt)
+      @created = true
+    end
+
+    render :generate
+  end
+
 end
