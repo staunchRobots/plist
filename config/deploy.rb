@@ -78,5 +78,11 @@ task :bundle_install, :roles => :app do
   run "cd #{release_path} && bundle install"
 end
 
+desc "Run all the migrations"
+task :run_migrations, :roles => :app do
+  run "cd #{release_path} && RAILS_ENV=#{rails_env} bundle exec rake db:migrate"
+end
+
 # after "deploy:update_code", :bundle_install
+after "deploy:update_code", :run_migrations
 after "deploy:update_code", "deploy:assets_symlink"
