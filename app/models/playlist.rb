@@ -29,11 +29,10 @@ class Playlist < ActiveRecord::Base
   end
 
   def update_thumb
-    if !thumb && videos.count > 0
-      tmp = Video.first(:conditions => {:playlist_id => self.id})
-      update_attribute(:thumb, Youtube.get_thumbnail_url(tmp.ytid))
-    end
+    self.thumb = Youtube.get_thumbnail_url(videos.first.ytid) if videos.count > 0
+    save
   end
+
 
   def extract_ytid(yt_url)
     tmpid = yt_url.gsub(/.*\?/, '').split('&').find{|r| r.match /v=.*/}
@@ -43,9 +42,13 @@ class Playlist < ActiveRecord::Base
   def update_videos_sort_order(params)
     order = ids_to_sorting_hash(params)
     videos.where(:id => order.keys).each do |video|
-      video.update_attribute(:sort, order[video.id])
-      video.save
+      if video.sort != order[video.id]
+        video.sort =  order[video.id]
+        video.save
+      end
     end
+
+    update_thumb
   end
 
   def ids_to_sorting_hash(ids)
@@ -60,7 +63,7 @@ class Playlist < ActiveRecord::Base
   def accessible_by(user)
     self.user == user || self.has_member?(user)
   end
-  
+
   def accessible_via(access_token)
     link_invite && (link_invite.invite_token == access_token || link_invite('plisters').invite_token == access_token)
   end
