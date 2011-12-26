@@ -1,7 +1,10 @@
 class UsersController < InheritedResources::Base
   before_filter :authenticate_user!
+  before_filter :create_playlist_modal
+
   defaults :finder => :find_by_username
   respond_to :js, :html
+
 
   def update
     if current_user.username == params[:id]
@@ -23,6 +26,12 @@ class UsersController < InheritedResources::Base
         format.js { render :content_type => 'text/javascript' }
       end
     end
+  end
+
+  private
+
+  def create_playlist_modal
+    @create = params[:create]
   end
 
 end

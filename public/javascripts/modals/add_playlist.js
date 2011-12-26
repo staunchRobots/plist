@@ -1,6 +1,6 @@
 $(function() {
 
-  var create_playlist = function(){
+  create_playlist = function(){
     var title = $(this).find('form input[type="text"]').val();
     
     if (title.length < 1) {

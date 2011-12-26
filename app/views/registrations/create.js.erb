@@ -3,5 +3,5 @@
     $.ctNotify('<%= msg %>', 'error')
   <% end %>
 <% else %> 
-  window.location = '<%= user_playlist_path(@user, @user.playlists.first) %> '
-<% end %> 
+  window.location = "<%= user_path(@user, :create => 'true') %>";
+<% end %>

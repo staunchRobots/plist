@@ -2,10 +2,16 @@
   = link_to "Create pList", new_user_playlist_path(@user), :class => 'create-playlist  create-playlist-btn'
 
 .recent-playlists
-  %h2 
+  %h2
     #{@user.username} pLists
   - if @user.playlists.size > 0
     %ul
       = render :partial => 'playlists/playlist', :collection => @user.playlists
   - else
     No playlists found
+
+- if @create
+  :javascript
+    $(function(){
+      $(".create-playlist-btn").trigger('click')
+    })
