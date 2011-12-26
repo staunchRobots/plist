@@ -1,6 +1,6 @@
 class Playlist < ActiveRecord::Base
-  extend FriendlyId
-  friendly_id :title, :use => :slugged
+  # extend FriendlyId
+  # friendly_id :title, :use => :slugged
 
   # has_many :playlist_videos
   # has_many :videos, :through => :playlist_videos

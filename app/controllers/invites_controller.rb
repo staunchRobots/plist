@@ -5,7 +5,7 @@ class InvitesController < ApplicationController
     if playlist_id.nil? || username.nil?
       @errors << "ID and Username must present"
     else
-      if !Playlist.exists?(playlist_id) || !User.exists?(:username => username)
+      if !Playlist.exists?(:id => playlist_id) || !User.exists?(:username => username)
         @errors << "User or Playlist not found"
       else
         @playlist = Playlist.find(playlist_id)
