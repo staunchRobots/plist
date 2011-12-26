@@ -6,9 +6,9 @@
 // URL invites  
 .link_invites
   - if @link_invite_everyone
-    = link_to "Invite everyone", @link_invite_everyone.url
+    = link_to "create invite link", @link_invite_everyone.url
   - else
-    = link_to 'Invite everyone', generate_for_everyone_invites_path(playlist_id: @playlist.id), remote: true, class: 'fallr-button fallr-green link_everyone'
+    = link_to "create invite link", generate_for_everyone_invites_path(playlist_id: @playlist.id), remote: true, class: 'fallr-button fallr-green link_everyone'
   / - if @link_invite_plisters
   /   = link_to "Invite plisters", @link_invite_plisters.url
   / - else
