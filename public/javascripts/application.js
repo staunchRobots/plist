@@ -37,5 +37,15 @@ $(function() {
     $(this).find('a').click()
     $('.actions_menu').trigger('closemenu')
   })
-  
+
+  search_autocomplete = $('.youtube_search').autocomplete({
+    minChars: 3
+  });
+
+  $('.youtube_search').keyup(function(){
+    jQTubeUtil.suggest($(this).val(), function(response){
+      search_autocomplete.setOptions({lookup: response.suggestions});
+    });
+  });
+
 })
