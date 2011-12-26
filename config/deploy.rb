@@ -85,4 +85,4 @@ end
 
 # after "deploy:update_code", :bundle_install
 # after "deploy:update_code", :run_migrations
-after "deploy:update_code", "deploy:assets_symlink"
+# after "deploy:update_code", "deploy:assets_symlink"
