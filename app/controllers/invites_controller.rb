@@ -2,6 +2,7 @@ class InvitesController < ApplicationController
   def create
     @errors = []
     playlist_id, username = params[:playlist_id], params[:username]
+    username.gsub!(/\(.*\)/, '')
     if playlist_id.nil? || username.nil?
       @errors << "ID and Username must present"
     else
@@ -63,6 +64,19 @@ class InvitesController < ApplicationController
     end
 
     render :generate
+  end
+
+  def autocomplete
+    query = params[:query]
+    query = "%#{query}%"
+    users = User.where(["LOWER(username) LIKE ? or LOWER(name) LIKE ?", query, query])
+    resp = {:query => params[:query], :suggestions => [], :data => []}
+    users.each do |user|
+      resp[:suggestions] << user.username + "(#{user.name})"
+      resp[:data] << user.id
+    end
+
+    render :text => resp.to_json
   end
 
 end

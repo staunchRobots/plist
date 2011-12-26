@@ -20,6 +20,7 @@ javascripts:
     - public/javascripts/plugins/jquery-fallr-1.2.min.js
     - public/javascripts/plugins/jquery.clickmenu.js
     - public/javascripts/plugins/jquery.ctNotify.js
+    - public/javascripts/plugins/jquery.autocomplete.js
     - public/javascripts/plugins/json.js
     - public/javascripts/plugins/placeholder.js
 

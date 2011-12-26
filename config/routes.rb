@@ -27,6 +27,7 @@ Plist::Application.routes.draw do
   end
 
   resources :invites, :only => [:create] do
+    get :autocomplete, :on => :collection
     get :accept, :on => :collection
     get :generate_for_everyone, :on => :collection
     get :generate_for_plisters, :on => :collection

@@ -1,0 +1,36 @@
+/* line 1, ../../../app/stylesheets/plugins/jquery.autocomplete.sass */
+.autocomplete-w1 {
+  background: url(/images/shadow.png) no-repeat bottom right;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin: 8px 0 0 6px;
+}
+
+/* line 8, ../../../app/stylesheets/plugins/jquery.autocomplete.sass */
+.autocomplete {
+  border: 1px solid #999999;
+  background: white;
+  cursor: default;
+  text-align: left;
+  max-height: 350px;
+  overflow: auto;
+  margin: -6px 6px 6px -6px;
+}
+
+/* line 17, ../../../app/stylesheets/plugins/jquery.autocomplete.sass */
+.autocomplete .selected {
+  background: #f0f0f0;
+}
+
+/* line 20, ../../../app/stylesheets/plugins/jquery.autocomplete.sass */
+.autocomplete div {
+  padding: 2px 5px;
+  white-space: nowrap;
+}
+
+/* line 24, ../../../app/stylesheets/plugins/jquery.autocomplete.sass */
+.autocomplete strong {
+  font-weight: normal;
+  color: #3399ff;
+}

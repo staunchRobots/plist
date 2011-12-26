@@ -12,6 +12,12 @@ $(function() {
             button1 : {text: 'Save', onclick: options},
             button2 : {text: 'Done'},
         },
+    }, function() {
+      $('.invite_field:last').autocomplete({
+        serviceUrl: '/invites/autocomplete',
+        minChars: 3,
+        zIndex: 9999,
+      })
     });
     e.stopPropagation();
   })

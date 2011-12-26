@@ -616,6 +616,43 @@ html > body .innerbox {
   color: #4297d7;
 }
 
+/* line 1, ../../app/stylesheets/plugins/jquery.autocomplete.sass */
+.autocomplete-w1 {
+  background: url(/images/shadow.png) no-repeat bottom right;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin: 8px 0 0 6px;
+}
+
+/* line 8, ../../app/stylesheets/plugins/jquery.autocomplete.sass */
+.autocomplete {
+  border: 1px solid #999999;
+  background: white;
+  cursor: default;
+  text-align: left;
+  max-height: 350px;
+  overflow: auto;
+  margin: -6px 6px 6px -6px;
+}
+
+/* line 17, ../../app/stylesheets/plugins/jquery.autocomplete.sass */
+.autocomplete .selected {
+  background: #f0f0f0;
+}
+
+/* line 20, ../../app/stylesheets/plugins/jquery.autocomplete.sass */
+.autocomplete div {
+  padding: 2px 5px;
+  white-space: nowrap;
+}
+
+/* line 24, ../../app/stylesheets/plugins/jquery.autocomplete.sass */
+.autocomplete strong {
+  font-weight: normal;
+  color: #3399ff;
+}
+
 /* line 1, ../../app/stylesheets/clickmenu-changes.sass */
 #ytvideos-list .clickMenu div.inner {
   left: -121px;
@@ -641,35 +678,35 @@ html > body .innerbox {
   display: inherit;
 }
 
-/* line 2, ../../app/stylesheets/jquery-fallr-changes.sass */
+/* line 2, /Users/vladimirpenkin/Sites/plist/app/stylesheets/jquery-fallr-changes.sass */
 #fallr form #playlist_title {
   width: 222px;
   margin-left: 3px;
 }
-/* line 5, ../../app/stylesheets/jquery-fallr-changes.sass */
+/* line 5, /Users/vladimirpenkin/Sites/plist/app/stylesheets/jquery-fallr-changes.sass */
 #fallr form .playlist_published_radio {
   margin-left: 39px;
 }
-/* line 7, ../../app/stylesheets/jquery-fallr-changes.sass */
+/* line 7, /Users/vladimirpenkin/Sites/plist/app/stylesheets/jquery-fallr-changes.sass */
 #fallr form .fallr-red {
   background-image: none;
   background-color: #cc0000;
   text-shadow: none;
   color: white;
 }
-/* line 12, ../../app/stylesheets/jquery-fallr-changes.sass */
+/* line 12, /Users/vladimirpenkin/Sites/plist/app/stylesheets/jquery-fallr-changes.sass */
 #fallr form .fallr-green {
   background-image: none;
   background-color: #00aa00;
   text-shadow: none;
   color: white;
 }
-/* line 17, ../../app/stylesheets/jquery-fallr-changes.sass */
+/* line 17, /Users/vladimirpenkin/Sites/plist/app/stylesheets/jquery-fallr-changes.sass */
 #fallr form textarea {
   width: 68%;
   margin-left: 22px;
 }
-/* line 21, ../../app/stylesheets/jquery-fallr-changes.sass */
+/* line 21, /Users/vladimirpenkin/Sites/plist/app/stylesheets/jquery-fallr-changes.sass */
 #fallr form input[type="file"] {
   background: white;
   border: solid 1px #999999;
@@ -680,12 +717,12 @@ html > body .innerbox {
   -moz-box-shadow: inset #bbbbbb 0px 0px 5px;
   -webkit-box-shadow: inset #bbbbbb 0px 0px 5px;
 }
-/* line 30, ../../app/stylesheets/jquery-fallr-changes.sass */
+/* line 30, /Users/vladimirpenkin/Sites/plist/app/stylesheets/jquery-fallr-changes.sass */
 #fallr form input.invite_field {
   width: 235px;
 }
 
-/* line 34, ../../app/stylesheets/jquery-fallr-changes.sass */
+/* line 34, /Users/vladimirpenkin/Sites/plist/app/stylesheets/jquery-fallr-changes.sass */
 #fallr-wrapper .avatar-field {
   padding: 3px 0px 0px 0px;
 }
