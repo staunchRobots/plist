@@ -1,1 +1,1 @@
-FAYE_TOKEN = "likesomethinggood"
+FAYE_TOKEN = Settings.faye_token
