@@ -20,7 +20,7 @@ set :deploy_via, "checkout"
 set :use_sudo, false
 
 task :staging do
-  set :branch, 'master'
+  set :branch, 'staging'
   set :rails_env, "staging" # for now
   ssh_options[:username] = 'www'
   set :deploy_to, "/srv/www/plisttv-dev"
@@ -84,5 +84,5 @@ task :run_migrations, :roles => :app do
 end
 
 # after "deploy:update_code", :bundle_install
-after "deploy:update_code", :run_migrations
+# after "deploy:update_code", :run_migrations
 after "deploy:update_code", "deploy:assets_symlink"
