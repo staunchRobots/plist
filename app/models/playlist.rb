@@ -60,7 +60,7 @@ class Playlist < ActiveRecord::Base
   def accessible_by(user)
     self.user == user || self.has_member?(user)
   end
-  
+
   def accessible_via(access_token)
     link_invite && (link_invite.invite_token == access_token || link_invite('plisters').invite_token == access_token)
   end

@@ -1,7 +1,7 @@
-<% if @user.errors.size > 0 %> 
+<% if @user.errors.size > 0 %>
   <% @user.errors.full_messages.each do |msg| %>
     $.ctNotify('<%= msg %>', 'error')
   <% end %>
-<% else %> 
+<% else %>
   window.location = '<%= user_playlist_path(@user, @user.playlists.first) %> '
-<% end %> 
+<% end %>

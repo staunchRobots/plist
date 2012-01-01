@@ -25,12 +25,12 @@
       %div
         %span Collaborators:
         = @playlist.members.collect(&:username).join(', ')
-        
+
     %br/
     = render 'invites_box'
     %br/
-    
-    // featured  
+
+    // featured
     - unless @playlist.has_member? current_user
       %div
       - if @playlist.ask_for_promotion == 0

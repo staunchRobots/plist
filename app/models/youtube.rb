@@ -46,14 +46,14 @@ class Youtube
         title = entry["title"]["$t"]
         Video.new(:ytid => ytid, :title => title)
       }
-    end                                     
-    
+    end
+
     def filter_user_videos(videos, user)
       videos = filter_plisted_videos(videos, user) if !user.show_plisted
       videos = filter_hated_videos(videos, user) if !user.show_filtered_videos
       videos
     end
-    
+
     def filter_plisted_videos(videos, user)
       if !user.show_plisted
         plisted = user.videos.collect(&:ytid)
@@ -69,18 +69,18 @@ class Youtube
       end
       videos
     end
-    
+
     def get_properties(ytid)
       yt_feed= RestClient.get("http://gdata.youtube.com/feeds/api/videos/#{ytid}?v=2&alt=json")
       yt_video= JSON.parse(yt_feed)
       yt_title= yt_video["entry"]["title"]["$t"]
       {:title => yt_title}
     end
-    
+
     def get_thumbnail_url(ytid)
       "http://img.youtube.com/vi/#{ytid}/2.jpg"
     end
   end
- 
-    
+
+
 end

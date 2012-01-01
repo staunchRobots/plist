@@ -3,7 +3,7 @@
   = text_field_tag :username, nil, :class => 'invite_field', :id => 'invite_username', :placeholder => "username of user you want to invite"
   = link_to 'Invite', '#', :id => 'invite_btn'
 
-// URL invites  
+// URL invites
 .link_invites
   - if @link_invite_everyone
     = link_to "Invite everyone", @link_invite_everyone.url

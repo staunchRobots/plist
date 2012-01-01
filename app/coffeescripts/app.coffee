@@ -7,7 +7,7 @@ window.App =
   init: ->
     new window.App.Routers.Welcome()
     Backbone.history.start()
-    
+
 $(->
   window.App.init()
 )

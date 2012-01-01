@@ -13,7 +13,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
 
       t.timestamps
-      
+
       t.string :name
       t.string :username
       t.string :avatar_url

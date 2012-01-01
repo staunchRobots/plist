@@ -4,7 +4,7 @@
     %meta{:charset => 'utf-8'}
     %meta{:name => "Description", :content => "#{yield(:description) || 'The Video Jukebox for Content Enthusiasts'}"}
     %title= yield(:title) || "pList.tv"
-    
+
     = include_javascripts :vendor, :plugins, :modals, :app
     = include_stylesheets :app
 

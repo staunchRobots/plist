@@ -5,7 +5,7 @@
       %img{:src=>"#{thumb}", :width=>90, :height=>57}
     %p.name= video.title
   - if user_signed_in?
-    - if video.new_record? 
+    - if video.new_record?
       = render :partial => 'videos/yt_actions', :locals => {:video => video}
     - else
       = render :partial => 'videos/actions', :locals => {:video => video}

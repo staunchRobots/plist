@@ -2,7 +2,7 @@
   = link_to "Create new pList", '#', :class => 'create-playlist create-playlist-btn'
 
 .recent-playlists
-  %h2 
+  %h2
     Your playlists
     = @user.playlists.count
   - if @user.playlists.size > 0

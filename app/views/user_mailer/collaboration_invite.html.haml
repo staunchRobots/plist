@@ -101,11 +101,11 @@
                     %td
                       %font{:color => "#8b8b8b", :face => "Arial, Helvetica, sans-serif", :size => "2"}
                         %span{:style => "font-size:13px;"}
-                          Hi 
+                          Hi
                           = @invite.user.username
-                          \, this is collaboration invintation from Plist.tv: to                           
+                          \, this is collaboration invintation from Plist.tv: to
                           = link_to @invite.playlist.title, user_playlist_path(@invite.playlist.user.username, @invite.playlist)
-                          click to 
+                          click to
                           = @invite.url
                           %br>/
               %td{:width => "30"}
