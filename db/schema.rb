@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111211092705) do
+ActiveRecord::Schema.define(:version => 20120101174422) do
 
   create_table "collaborators", :force => true do |t|
     t.integer  "playlist_id"
@@ -20,6 +20,9 @@ ActiveRecord::Schema.define(:version => 20111211092705) do
     t.datetime "updated_at"
   end
 
+  add_index "collaborators", ["playlist_id"], :name => "index_collaborators_on_playlist_id"
+  add_index "collaborators", ["user_id"], :name => "index_collaborators_on_user_id"
+
   create_table "jukeboxes", :force => true do |t|
     t.string   "title"
     t.string   "current_song"
@@ -27,6 +30,8 @@ ActiveRecord::Schema.define(:version => 20111211092705) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "jukeboxes", ["user_id"], :name => "index_jukeboxes_on_user_id"
 
   create_table "playlist_invites", :force => true do |t|
     t.integer  "playlist_id"
@@ -38,6 +43,9 @@ ActiveRecord::Schema.define(:version => 20111211092705) do
     t.string   "invite_type",  :default => "user"
   end
 
+  add_index "playlist_invites", ["playlist_id"], :name => "index_playlist_invites_on_playlist_id"
+  add_index "playlist_invites", ["user_id"], :name => "index_playlist_invites_on_user_id"
+
   create_table "playlist_videos", :force => true do |t|
     t.integer  "playlist_id"
     t.integer  "video_id"
@@ -45,6 +53,9 @@ ActiveRecord::Schema.define(:version => 20111211092705) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "playlist_videos", ["playlist_id"], :name => "index_playlist_videos_on_playlist_id"
+  add_index "playlist_videos", ["video_id"], :name => "index_playlist_videos_on_video_id"
 
   create_table "playlists", :force => true do |t|
     t.string   "title"
@@ -62,6 +73,7 @@ ActiveRecord::Schema.define(:version => 20111211092705) do
   end
 
   add_index "playlists", ["slug"], :name => "index_playlists_on_slug", :unique => true
+  add_index "playlists", ["user_id"], :name => "index_playlists_on_user_id"
 
   create_table "user_hates", :force => true do |t|
     t.integer  "user_id"
@@ -69,6 +81,8 @@ ActiveRecord::Schema.define(:version => 20111211092705) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "user_hates", ["user_id"], :name => "index_user_hates_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -109,5 +123,7 @@ ActiveRecord::Schema.define(:version => 20111211092705) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "videos", ["playlist_id"], :name => "index_videos_on_playlist_id"
 
 end
