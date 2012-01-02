@@ -1,5 +1,5 @@
 .options-form
-  = form_for @playlist, :url => playlist_path(@playlist.id, :format => :js), :remote => true do |f|
+  = form_for playlist, :url => playlist_path(playlist.id, :format => :js), :remote => true do |f|
     %div
       %span Title of playlist
       = f.text_field :title, :class => 'playlist_title'
@@ -9,7 +9,7 @@
     %br
 
     // published / unpublished
-    - unless @playlist.has_member? current_user
+    - unless playlist.has_member? current_user
       %div
         %span Visibility
         %span.playlist_published_radio
@@ -18,26 +18,26 @@
           = f.radio_button :published, true
           = f.label :published_yes, "Published"
     // Collaborators
-    - if @playlist.members.length > 0
+    - if playlist.members.length > 0
       %div
         %span Owner:
-        = @playlist.user.username
+        = playlist.username
       %div
         %span Collaborators:
-        = @playlist.members.collect(&:username).join(', ')
+        = playlist.members.collect(&:username).join(', ')
 
     %br/
-    = render 'invites_box'
+    = render 'invites_box', playlist: playlist, link_invite_everyone: link_invite_everyone
     %br/
 
     // featured
-    - unless @playlist.has_member? current_user
+    - unless playlist.has_member? current_user
       %div
-      - if @playlist.ask_for_promotion == 0
-        = link_to "Request to be Featured", playlist_path(@playlist.id, "playlist[ask_for_promotion]" => 1), :class => 'fallr-button fallr-green', :remote => true, :method => :put, :confirm => "Want to be featured?"
+      - if playlist.ask_for_promotion == 0
+        = link_to "Request to be Featured", playlist_path(playlist.id, "playlist[ask_for_promotion]" => 1), :class => 'fallr-button fallr-green', :remote => true, :method => :put, :confirm => "Want to be featured?"
       - else
-        - if !@playlist.featured
+        - if !playlist.featured
           Waiting for promotion
       // delete playlist
       %div
-        = link_to "Delete Playlist", playlist_path(@playlist.id), :class => 'fallr-button fallr-red', :remote => true, :method => :delete, :confirm => "Are you sure?"
+        = link_to "Delete Playlist", playlist_path(playlist.id), :class => 'fallr-button fallr-red', :remote => true, :method => :delete, :confirm => "Are you sure?"

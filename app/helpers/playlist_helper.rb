@@ -94,9 +94,6 @@ module PlaylistHelper
           concat c
         }
       end
-
     end
   end
-
-
 end

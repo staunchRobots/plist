@@ -1,7 +1,7 @@
 %h1 Editing jukebox
 
-= render 'form'
+= render 'form', user: @user, jukebox: @jukebox
 
-= link_to 'Show', @jukebox
+= link_to 'Show', user_jukebox_path(@user, @jukebox)
 |
-= link_to 'Back', jukeboxes_path
+= link_to 'Back', user_jukeboxes_path(@user)

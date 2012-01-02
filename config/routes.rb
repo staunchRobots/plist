@@ -8,26 +8,29 @@ Plist::Application.routes.draw do
       get :shared, on: :collection
     end
     resources :jukeboxes
-    # post '/videos/love' => 'videos#love', :on => :member
-    # post '/videos/hate' => 'videos#hate', :on => :member
   end
 
   resources :playlists do
-    post :ask_for_promotion, :on => :member
-    post :published, :on => :member
-    post :options, :on => :member
-    resources :videos do
-      post :reorder, :on => :collection
-      post :ytsearch, :on => :collection
-      post :move, :on => :member
+    member do
+      post :ask_for_promotion
+      post :published
+      post :options
     end
-    # post :add_video, :on => :member
+    resources :videos do
+      post :move, :on => :member
+      collection do
+        post :reorder
+        post :ytsearch
+      end
+    end
   end
 
   resources :invites, :only => [:create] do
-    get :accept, :on => :collection
-    get :generate_for_everyone, :on => :collection
-    get :generate_for_plisters, :on => :collection
+    collection do
+      get :accept
+      get :generate_for_everyone
+      get :generate_for_plisters
+    end
   end
 
   devise_scope :user do

@@ -1,17 +1,16 @@
 - content_for :title do
-  = "#{@playlist.user.username}'s #{@playlist.title}"
+  = "#{@playlist.username}'s #{@playlist.title}"
 - content_for :description do
   = "#{@playlist.description}"
 - content_for :head do
-  %meta{:property => "og:title",       :content => "#{@playlist.user.username}'s #{@playlist.title}"}
+  %meta{:property => "og:title",       :content => "#{@playlist.username}'s #{@playlist.title}"}
   %meta{:property => "og:description", :content => "#{@playlist.description}"}
   %meta{:property => "og:image",       :content => "#{@playlist.thumb}"}
   %meta{:property => "og:url",       :content => "http://plist.tv#{request.request_uri}"}
 
 - content_for :footer do
   - if user_signed_in? && myown_playlist
-    = render 'playlists/options'
-/ = render 'playlists/header'
+    = render 'playlists/options', playlist: @playlist, link_invite_everyone: @link_invite_everyone
 #player{:playlist => "#{@playlist.id}"}
   .wrapper-player
     #ytplayer{:style=>"background-color:black;width:940px;height:510px;float:left;margin-bottom:10px;"}
@@ -19,8 +18,8 @@
         %p{:style=>"display:none;"} You need Flash player 8+ and JavaScript enabled to view this video.
     #playlist{:style=>""}
       #video-list-tabs
-        = render 'playlist_queue'
-        = render 'search_youtube'
+        = render 'playlist_queue', playlist: @playlist
+        = render 'search_youtube', playlist: @playlist
 
   #comments
     %h2 Comments

@@ -1,5 +1,0 @@
--if myown_playlist
-  #add-video
-    = form_for :video, :url => playlist_videos_path(@playlist.id, :format => :js), :remote => true do |f|
-      %input{:name=>'video[yt_url]', :type=>"text", :width=>"400", :height=>"30px", :onblur => "if (this.value==''){this.value='Enter a URL of a youtube video to add it to your playlist'}", :onfocus => "if (this.value=='Enter a URL of a youtube video to add it to your playlist'){this.value=''}", :value => "Enter a URL of a youtube video to add it to your playlist"}
-      %a.add-btn{:href=>"#"} Add

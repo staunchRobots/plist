@@ -4,7 +4,7 @@
       %a.options-button.minibutton
         %span#filter-btn Search Options
     %h2 Search Youtube
-    = render 'playlists/search_youtube_form'
+    = render 'playlists/search_youtube_form', playlist: playlist
     %ul#ytvideos-list
       / = render :partial => 'videos/video', :collection => Youtube.top_rated
   - else

@@ -1,6 +1,7 @@
 class Playlist < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, :use => :slugged
+  delegate :username, :to => :user
 
   # has_many :playlist_videos
   # has_many :videos, :through => :playlist_videos
@@ -14,7 +15,6 @@ class Playlist < ActiveRecord::Base
   scope :common, where(:featured => false)
   scope :published, where(:published => true)
   scope :drafts, where(:published => false)
-  scope :hot, where(:hot => true)
   scope :recent, lambda {|n| order_by("created_at DESC").limit(n) }
 
   def add_video(yt_url, is_url = true)

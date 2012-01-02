@@ -3,23 +3,22 @@
     .info
       %div
         %span.user-title
-          = link_to "#{@playlist.user.username}'s", @playlist.user
+          = link_to "#{playlist.username}'s", playlist.user
           &raquo;
-          %span#playlist-title= link_to @playlist.title, user_playlist_path(@playlist.user, @playlist.id)
+          %span#playlist-title= link_to playlist.title, user_playlist_path(playlist.user, playlist.id)
           - if user_signed_in? && myown_playlist
             .right
               %a.options-button.minibutton
                 %span#options-btn Options
         - if user_invited?
           %span
-            = link_to("accept", accept_invites_url(:token => @playlist.invite_for(current_user.id).invite_token), class: 'blue minibutton')
+            = link_to("accept", accept_invites_url(:token => playlist.invite_for(current_user.id).invite_token), class: 'blue minibutton')
       %br
       %div
-        = render 'playlists/social_buttons'
+        = render 'playlists/social_buttons', playlist: @playlist
       .clear
-
         / %div.options-description
         /   %p.left Enter a brief yet touching description by clicking this beautiful options button
         / .clear
   %ul#videos-list
-    = render :partial => 'videos/video', :collection => @playlist.videos
+    = render :partial => 'videos/video', :collection => playlist.videos
