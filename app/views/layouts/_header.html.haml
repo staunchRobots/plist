@@ -6,6 +6,8 @@
     / .search
     /   %input{:type=>"text", :value=>"Search"}
     /   %a.search-btn{:href=>"#"} Go
+    .show_video
+      = link_to 'Show video', '#', id: 'show_video_btn' 
     .account
       - if user_signed_in?
         %a.member{:href=>"#"}
@@ -25,7 +27,7 @@
             = link_to shared_user_playlists_path(current_user), :class => '' do
               Shared Playlists
             #user-shared-playlists
-              = shared_playlits
+              / = shared_playlits
           / = link_to 'My Jukeboxes', user_jukeboxes_path(current_user)
           = link_to 'Settings', '#', :class => 'settings-link'
           - if current_user.is_admin

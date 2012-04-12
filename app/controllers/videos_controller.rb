@@ -6,7 +6,12 @@ class VideosController < InheritedResources::Base
     @playlist = Playlist.find(params[:playlist_id])
     @at_current_url = params[:current_playlist].to_i == @playlist.id
     @is_url = params[:video][:is_ytid] ? false : true
-    @video = @playlist.add_video(params[:video][:yt_url], @is_ytid)
+    if params[:suggest]
+      @video = @playlist.suggest_video(params[:video][:yt_url], @is_ytid)
+    else
+      @video = @playlist.add_video(params[:video][:yt_url], @is_ytid)
+    end
+    
     respond_to do |format|
       if @video
         format.js
@@ -65,25 +70,4 @@ class VideosController < InheritedResources::Base
       format.js
     end
   end
-
-  def love
-    respond_to do |format|
-      format.js
-    end
-  end
-
-  def hate
-    @ytid = params[:ytid]
-    unless UserHate.exists?(:user_id => current_user.id, :ytid => params[:ytid])
-      @uh = UserHate.find_or_create_by_user_id_and_ytid(current_user.id, params[:ytid])
-    else
-      @uh = false
-    end
-
-    respond_to do |format|
-      format.js
-    end
-  end
-
-
 end

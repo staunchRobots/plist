@@ -1,16 +1,5 @@
 class Youtube
   class << self
-
-    # def top_rated
-    #   yt_feed= RestClient.get("https://gdata.youtube.com/feeds/api/standardfeeds/most_viewed?alt=json")
-    #   yt_video= JSON.parse(yt_feed)
-    #   yt_video["feed"]["entry"].collect {|entry|
-    #     ytid = Playlist.new.extract_ytid(entry["link"].first["href"])
-    #     title = entry["title"]["$t"]
-    #     Video.new(:ytid => ytid, :title => title)
-    #   }
-    # end
-
     def ytsearch(phrase = '', user = nil, opts={})
       result = query_for_user_videos(phrase, user, opts)
       opts["start-index"] ||= 0
@@ -22,9 +11,10 @@ class Youtube
       result[0..9]
     end
 
-    def query_for_user_videos(phrase, user, opts={})
+    def query_for_user_videos(phrase, user=nil, opts={})
       videos = search_youtube_videos(phrase, opts)
-      filter_user_videos(videos, user)
+      videos = filter_user_videos(videos, user) if user
+      videos
     end
 
     def search_youtube_videos(phrase, opts)

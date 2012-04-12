@@ -371,3 +371,8 @@
 .options-description p {
   width: 350px;
 }
+
+/* line 284, ../../app/stylesheets/playlist.sass */
+.suggest_form {
+  display: none;
+}

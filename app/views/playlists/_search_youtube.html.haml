@@ -6,10 +6,7 @@
     %h2 Search Youtube
     = render 'playlists/search_youtube_form', playlist: playlist
     %ul#ytvideos-list
-      / = render :partial => 'videos/video', :collection => Youtube.top_rated
   - else
-    %h2
-      - if user_signed_in?
-        = link_to "Create your own pList", '#', :class => ' create-playlist-btn'
-      - else
-        = link_to "Create your own pList", '#', :class => '', :id => "login-to-create"
+    %h2 Suggest video
+    = render 'playlists/search_youtube_form', playlist: playlist
+    %ul#ytvideos-list

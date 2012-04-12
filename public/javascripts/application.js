@@ -36,6 +36,10 @@ $(function() {
   $('.plus-more-action .menu_action').live('click', function() {
     $(this).find('a').click()
     $('.actions_menu').trigger('closemenu')
+  })         
+  
+  $('#show_video_btn').click(function() {
+    $('#ytplayer').toggle('fast')
   })
 
 

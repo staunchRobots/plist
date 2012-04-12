@@ -51,8 +51,8 @@ function stopVideo() {
 
 function create_player(ytid) {
   player = new YT.Player('ytapiplayer', {
-    height: '510',
-    width: '940',
+    height: '270',
+    width: '950',
     fmt: 22,
     hd: true,
     videoId: ytid,

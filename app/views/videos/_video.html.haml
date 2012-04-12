@@ -1,11 +1,8 @@
 -thumb= "http://img.youtube.com/vi/#{video.ytid}/2.jpg"
+- playlist ||= nil
 %li.video-item{:id=>"video_#{video.id}", :ytid=>"#{video.ytid}"}
   %a{:href=>"##{video.ytid}", :class => 'play-item', :ytid=>"#{video.ytid}"}
     .thumb
       %img{:src=>"#{thumb}", :width=>90, :height=>57}
     %p.name= video.title
-  - if user_signed_in?
-    - if video.new_record?
-      = render 'videos/yt_actions', :video => video, playlist: playlist
-    - else
-      = render 'videos/actions', :video => video
+  = render 'videos/video_actions', :video => video, playlist: playlist
