@@ -47,6 +47,27 @@ class PlaylistsController < InheritedResources::Base
     end
 
   end
+  
+  def watch
+    show! do |format|
+      format.html {
+        if !user_signed_in? || current_user != @playlist.user
+          unless @playlist.published
+            flash[:error] = 'This is private playlist'
+            redirect_to root_path
+          end
+        end
+      }
+    end
+  end
+  
+  def play
+    @playlist = params[:id]
+    @video = params[:video]
+    respond_to do |format|
+      format.js
+    end
+  end
 
   def shared
     @user = User.find_by_username(params[:user_id])

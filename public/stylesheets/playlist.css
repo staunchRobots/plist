@@ -376,3 +376,9 @@
 .suggest_form {
   display: none;
 }
+/* line 283, ../../app/stylesheets/playlist.sass */
+.watch {
+  font-size: 11px;
+  color: #9a9a9a;
+  margin-left: 3px;
+}

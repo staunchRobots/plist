@@ -6,9 +6,11 @@ common:
   http_basic_username: things
   http_basic_password: welike
   default_host: plist.tv
+  faye_token: likesomethinggood
+  faye_url: http://localhost:9292/faye
 
 development:
-  default_host: plist.dev
+  default_host: localhost:3000
 
 test:
   default_host: plist.dev

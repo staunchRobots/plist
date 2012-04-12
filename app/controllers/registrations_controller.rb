@@ -7,7 +7,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def after_sign_up_path_for(resource)
-    user_playlist_path(resource, resource.playlists.first)
+    sign_in :user, resource # Sign in after sign up
   end
 
 end

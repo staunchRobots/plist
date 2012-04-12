@@ -27,6 +27,10 @@ function play(el) {
   } else {
     player.loadVideoById(ytid)
   }
+  
+  if (watch == 0) {
+    $.get('/users/'+current_user+'/playlists/'+current_playlist+'/play?video='+$(el).attr('id'));
+  }
 }
 
 function onPlayerStateChange(event) {

@@ -11,7 +11,7 @@ class VideosController < InheritedResources::Base
     else
       @video = @playlist.add_video(params[:video][:yt_url], @is_ytid)
     end
-    
+
     respond_to do |format|
       if @video
         format.js

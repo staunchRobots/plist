@@ -557,6 +557,102 @@ html > body .innerbox {
   color: #4297d7;
 }
 
+/* line 1, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/jquery.ctNotify.sass */
+.ctNotify {
+  background-color: black;
+  color: white;
+  padding: 0.5em;
+  margin: 0;
+  font-size: 12px;
+  cursor: pointer;
+  z-index: 1000;
+}
+/* line 9, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/jquery.ctNotify.sass */
+.ctNotify ul {
+  margin: 0;
+  padding: 0;
+}
+/* line 12, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/jquery.ctNotify.sass */
+.ctNotify li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  color: white;
+  padding: 10px 10px 10px 55px;
+  font-size: 15px;
+  border: 0;
+  background: no-repeat 15px 5px;
+}
+/* line 22, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/jquery.ctNotify.sass */
+.ctNotify .ctNotify_handle {
+  text-align: left;
+  font-size: 11px;
+  margin: 5px 0 0 0;
+}
+/* line 27, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/jquery.ctNotify.sass */
+.ctNotify li.message {
+  background-image: url("/images/ctnotify/ok.png");
+}
+/* line 29, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/jquery.ctNotify.sass */
+.ctNotify li.warning {
+  background-image: url("/images/ctnotify/warning.png");
+}
+/* line 31, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/jquery.ctNotify.sass */
+.ctNotify li.loading {
+  background-image: url("/images/ajax-loader2.gif");
+}
+/* line 33, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/jquery.ctNotify.sass */
+.ctNotify li.error {
+  background-image: url("/images/ctnotify/error.png");
+  color: red;
+}
+/* line 36, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/jquery.ctNotify.sass */
+.ctNotify li.error .sticky {
+  color: red;
+}
+/* line 38, /Users/vladimirpenkin/Sites/plist/app/stylesheets/plugins/jquery.ctNotify.sass */
+.ctNotify li .sticky {
+  color: #4297d7;
+}
+
+/* line 1, ../../app/stylesheets/plugins/jquery.autocomplete.sass */
+.autocomplete-w1 {
+  background: url(/images/shadow.png) no-repeat bottom right;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin: 8px 0 0 6px;
+}
+
+/* line 8, ../../app/stylesheets/plugins/jquery.autocomplete.sass */
+.autocomplete {
+  border: 1px solid #999999;
+  background: white;
+  cursor: default;
+  text-align: left;
+  max-height: 350px;
+  overflow: auto;
+  margin: -6px 6px 6px -6px;
+}
+
+/* line 17, ../../app/stylesheets/plugins/jquery.autocomplete.sass */
+.autocomplete .selected {
+  background: #f0f0f0;
+}
+
+/* line 20, ../../app/stylesheets/plugins/jquery.autocomplete.sass */
+.autocomplete div {
+  padding: 2px 5px;
+  white-space: nowrap;
+}
+
+/* line 24, ../../app/stylesheets/plugins/jquery.autocomplete.sass */
+.autocomplete strong {
+  font-weight: normal;
+  color: #3399ff;
+}
+
 /* line 1, ../../app/stylesheets/clickmenu-changes.sass */
 #ytvideos-list .clickMenu div.inner {
   left: -121px;
@@ -582,35 +678,35 @@ html > body .innerbox {
   display: inherit;
 }
 
-/* line 2, ../../app/stylesheets/jquery-fallr-changes.sass */
+/* line 2, /Users/vladimirpenkin/Sites/plist/app/stylesheets/jquery-fallr-changes.sass */
 #fallr form #playlist_title {
   width: 222px;
   margin-left: 3px;
 }
-/* line 5, ../../app/stylesheets/jquery-fallr-changes.sass */
+/* line 5, /Users/vladimirpenkin/Sites/plist/app/stylesheets/jquery-fallr-changes.sass */
 #fallr form .playlist_published_radio {
   margin-left: 39px;
 }
-/* line 7, ../../app/stylesheets/jquery-fallr-changes.sass */
+/* line 7, /Users/vladimirpenkin/Sites/plist/app/stylesheets/jquery-fallr-changes.sass */
 #fallr form .fallr-red {
   background-image: none;
   background-color: #cc0000;
   text-shadow: none;
   color: white;
 }
-/* line 12, ../../app/stylesheets/jquery-fallr-changes.sass */
+/* line 12, /Users/vladimirpenkin/Sites/plist/app/stylesheets/jquery-fallr-changes.sass */
 #fallr form .fallr-green {
   background-image: none;
   background-color: #00aa00;
   text-shadow: none;
   color: white;
 }
-/* line 17, ../../app/stylesheets/jquery-fallr-changes.sass */
+/* line 17, /Users/vladimirpenkin/Sites/plist/app/stylesheets/jquery-fallr-changes.sass */
 #fallr form textarea {
   width: 68%;
   margin-left: 22px;
 }
-/* line 21, ../../app/stylesheets/jquery-fallr-changes.sass */
+/* line 21, /Users/vladimirpenkin/Sites/plist/app/stylesheets/jquery-fallr-changes.sass */
 #fallr form input[type="file"] {
   background: white;
   border: solid 1px #999999;
@@ -621,14 +717,312 @@ html > body .innerbox {
   -moz-box-shadow: inset #bbbbbb 0px 0px 5px;
   -webkit-box-shadow: inset #bbbbbb 0px 0px 5px;
 }
-/* line 30, ../../app/stylesheets/jquery-fallr-changes.sass */
+/* line 30, /Users/vladimirpenkin/Sites/plist/app/stylesheets/jquery-fallr-changes.sass */
 #fallr form input.invite_field {
   width: 235px;
 }
 
-/* line 34, ../../app/stylesheets/jquery-fallr-changes.sass */
+/* line 34, /Users/vladimirpenkin/Sites/plist/app/stylesheets/jquery-fallr-changes.sass */
 #fallr-wrapper .avatar-field {
   padding: 3px 0px 0px 0px;
+}
+
+/* line 1, ../../app/stylesheets/minibutton.sass */
+.minibutton {
+  font-size: 11px;
+  font-weight: bold;
+  height: 21px;
+  padding: 0 0 0 3px;
+  background: #ececec;
+  /* for non-css3 browsers */
+  background: -webkit-gradient(linear, center top, center bottom, from(#f4f4f4), to(#ececec));
+  background: -moz-linear-gradient(center top, #f4f4f4, #ececec) repeat scroll 0 0 transparent;
+  border: 1px solid #d4d4d4;
+  border-radius: 3px 3px 3px 3px;
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  font-family: helvetica, arial, freesans, clean, sans-serif;
+  overflow: visible;
+  position: relative;
+  text-shadow: 1px 1px 0 white;
+  white-space: nowrap;
+}
+/* line 20, ../../app/stylesheets/minibutton.sass */
+.minibutton.disabled:hover {
+  background: #ececec;
+  /* for non-css3 browsers */
+  background: -webkit-gradient(linear, center top, center bottom, from(#f4f4f4), to(#ececec));
+  background: -moz-linear-gradient(center top, #f4f4f4, #ececec) repeat scroll 0 0 transparent;
+  border: 1px solid #d4d4d4;
+  border-radius: 3px 3px 3px 3px;
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  font-family: helvetica, arial, freesans, clean, sans-serif;
+  overflow: visible;
+  position: relative;
+  text-shadow: 1px 1px 0 white;
+  white-space: nowrap;
+}
+
+/* line 36, ../../app/stylesheets/minibutton.sass */
+button.minibutton {
+  height: 23px;
+}
+
+/* line 40, ../../app/stylesheets/minibutton.sass */
+.minibutton.lighter, .minibutton.disabled.lighter:hover {
+  background: #ececec;
+  background: -webkit-gradient(linear, center top, left bottom, from(#fafafa), to(#ececec));
+  background: -moz-linear-gradient(center top, #fafafa, #dddddd) repeat scroll 0 0 transparent;
+  border: medium none;
+  color: #333333;
+  text-shadow: 1px 1px 0 white;
+}
+/* line 47, ../../app/stylesheets/minibutton.sass */
+.minibutton.green, .minibutton.disabled.green:hover {
+  background: #ececec;
+  background: -webkit-gradient(linear, center top, left bottom, from(#36b825), to(#28881b));
+  background: -moz-linear-gradient(center top, #36b825, #28881b) repeat scroll 0 0 transparent;
+  border-color: #4a993e;
+  color: white;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+}
+/* line 54, ../../app/stylesheets/minibutton.sass */
+.minibutton.blue, .minibutton.disabled.blue:hover {
+  background: #32687b;
+  background: -webkit-gradient(linear, center top, left bottom, from(#448da6), to(#32687b));
+  background: -moz-linear-gradient(center top, #448da6, #32687b) repeat scroll 0 0 transparent;
+  border-color: #275666;
+  color: white;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* line 62, ../../app/stylesheets/minibutton.sass */
+input[type="text"] + .minibutton {
+  margin-left: 5px;
+}
+
+/* line 65, ../../app/stylesheets/minibutton.sass */
+button.minibutton::-moz-focus-inner {
+  margin: -1px -3px;
+}
+
+/* line 69, ../../app/stylesheets/minibutton.sass */
+.minibutton.danger {
+  color: #990000;
+}
+/* line 71, ../../app/stylesheets/minibutton.sass */
+.minibutton.disabled.danger:hover {
+  background: -webkit-gradient(linear, center top, center bottom, from(#f4f4f4), to(#ececec));
+  background: -moz-linear-gradient(center top, #f4f4f4, #ececec) repeat scroll 0 0 transparent;
+  border-color: #d4d4d4;
+  color: #990000;
+}
+/* line 76, ../../app/stylesheets/minibutton.sass */
+.minibutton > span {
+  display: block;
+  height: 21px;
+  line-height: 21px;
+  padding: 1px 9px 0 6px;
+}
+/* line 81, ../../app/stylesheets/minibutton.sass */
+.minibutton:hover {
+  background: -webkit-gradient(linear, center top, center bottom, from(#599bdc), to(#3072b3));
+  background: -moz-linear-gradient(center top, #599bdc, #3072b3) repeat scroll 0 0 transparent;
+  border-color: #518cc6 #518cc6 #2a65a0;
+  color: white;
+  text-decoration: none;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+}
+/* line 88, ../../app/stylesheets/minibutton.sass */
+.minibutton.mousedown {
+  background: -webkit-gradient(linear, center top, center bottom, from(#3072b3), to(#599bdc));
+  background: -moz-linear-gradient(center top, #3072b3, #599bdc) repeat scroll 0 0 transparent;
+  border-color: #2a65a0 #2a65a0 #518cc6;
+}
+/* line 93, ../../app/stylesheets/minibutton.sass */
+.minibutton.danger:hover {
+  background: -webkit-gradient(linear, center top, center bottom, from(#dc5f59), to(#b33630));
+  background: -moz-linear-gradient(center top, #dc5f59, #b33630) repeat scroll 0 0 transparent;
+  border-color: #c65651 #c65651 #a0302a;
+}
+/* line 97, ../../app/stylesheets/minibutton.sass */
+.minibutton.danger.mousedown {
+  background: -webkit-gradient(linear, center top, center bottom, from(#b33630), to(#dc5f59));
+  background: -moz-linear-gradient(center top, #b33630, #dc5f59) repeat scroll 0 0 transparent;
+  border-color: #a0302a #a0302a #c65651;
+}
+/* line 101, ../../app/stylesheets/minibutton.sass */
+.minibutton.disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+/* line 104, ../../app/stylesheets/minibutton.sass */
+.minibutton.disabled:hover {
+  cursor: default;
+  opacity: 0.5;
+}
+/* line 107, ../../app/stylesheets/minibutton.sass */
+.minibutton.selected {
+  background: -webkit-gradient(linear, center top, center bottom, from(#767676), to(#9e9e9e));
+  background: -moz-linear-gradient(center top, #767676, #9e9e9e) repeat scroll 0 0 transparent;
+  border-color: #686868;
+  color: white;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* line 114, ../../app/stylesheets/minibutton.sass */
+.context-menu-container.active .context-menu-button {
+  background: -webkit-gradient(linear, center top, center bottom, from(#767676), to(#9e9e9e));
+  background: -moz-linear-gradient(center top, #767676, #9e9e9e) repeat scroll 0 0 transparent;
+  border-color: #686868;
+  color: white;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* line 121, ../../app/stylesheets/minibutton.sass */
+.btn-admin .icon, .btn-watch .icon, .btn-download .icon, .btn-pull-request .icon, .btn-fork .icon, .btn-leave .icon, .btn-compare .icon, .btn-reply .icon, .btn-back .icon {
+  background: url("../images/modules/buttons/minibutton_icons.png") no-repeat scroll 0 0 transparent;
+  float: left;
+  height: 22px;
+  margin-left: -4px;
+  position: relative;
+  top: -1px;
+  width: 18px;
+}
+
+/* line 130, ../../app/stylesheets/minibutton.sass */
+.btn-forward .icon {
+  background: url("../images/modules/buttons/minibutton_icons.png") no-repeat scroll 0 0 transparent;
+  float: left;
+  height: 22px;
+  margin-left: -4px;
+  position: relative;
+  top: -1px;
+  width: 18px;
+  float: right;
+  margin-left: 0;
+  margin-right: -4px;
+}
+
+/* line 143, ../../app/stylesheets/minibutton.sass */
+.btn-admin .icon {
+  background-position: 0 0;
+  width: 16px;
+}
+/* line 146, ../../app/stylesheets/minibutton.sass */
+.btn-admin:hover .icon {
+  background-position: 0 -25px;
+}
+
+/* line 150, ../../app/stylesheets/minibutton.sass */
+.btn-watch .icon {
+  background-position: -20px 0;
+}
+/* line 152, ../../app/stylesheets/minibutton.sass */
+.btn-watch:hover .icon {
+  background-position: -20px -25px;
+}
+
+/* line 156, ../../app/stylesheets/minibutton.sass */
+.btn-download .icon {
+  background-position: -40px 0;
+}
+/* line 158, ../../app/stylesheets/minibutton.sass */
+.btn-download:hover .icon {
+  background-position: -40px -25px;
+}
+
+/* line 162, ../../app/stylesheets/minibutton.sass */
+.btn-pull-request .icon {
+  background-position: -60px 0;
+  width: 17px;
+}
+/* line 165, ../../app/stylesheets/minibutton.sass */
+.btn-pull-request:hover .icon {
+  background-position: -60px -25px;
+}
+
+/* line 169, ../../app/stylesheets/minibutton.sass */
+.btn-fork .icon {
+  background-position: -80px 0;
+  width: 17px;
+}
+/* line 172, ../../app/stylesheets/minibutton.sass */
+.btn-fork:hover .icon {
+  background-position: -80px -25px;
+}
+
+/* line 176, ../../app/stylesheets/minibutton.sass */
+.btn-leave .icon {
+  background-position: -120px 0;
+  width: 15px;
+}
+/* line 179, ../../app/stylesheets/minibutton.sass */
+.btn-leave:hover .icon {
+  background-position: -120px -25px;
+}
+
+/* line 183, ../../app/stylesheets/minibutton.sass */
+.btn-compare .icon {
+  background-position: -100px 0;
+  width: 17px;
+}
+/* line 186, ../../app/stylesheets/minibutton.sass */
+.btn-compare:hover .icon {
+  background-position: -100px -25px;
+}
+
+/* line 190, ../../app/stylesheets/minibutton.sass */
+.btn-reply .icon {
+  background-position: -140px 0;
+  width: 16px;
+}
+/* line 193, ../../app/stylesheets/minibutton.sass */
+.btn-reply:hover .icon {
+  background-position: -140px -25px;
+}
+
+/* line 197, ../../app/stylesheets/minibutton.sass */
+.btn-back .icon {
+  background-position: -160px 0;
+  width: 16px;
+}
+/* line 200, ../../app/stylesheets/minibutton.sass */
+.btn-back:hover .icon {
+  background-position: -160px -25px;
+}
+
+/* line 204, ../../app/stylesheets/minibutton.sass */
+.btn-forward .icon {
+  background-position: -180px 0;
+  width: 16px;
+}
+/* line 207, ../../app/stylesheets/minibutton.sass */
+.btn-forward:hover .icon {
+  background-position: -180px -25px;
+}
+
+/* line 211, ../../app/stylesheets/minibutton.sass */
+.minibutton.switcher > span {
+  background: url("../images/modules/buttons/switcher.png") no-repeat scroll 100% 0 transparent;
+  padding-right: 26px;
+}
+/* line 214, ../../app/stylesheets/minibutton.sass */
+.minibutton.switcher:hover > span, .minibutton.switcher.selected > span {
+  background-position: 100% -30px;
+}
+
+/* line 217, ../../app/stylesheets/minibutton.sass */
+.context-menu-container.active .minibutton.switcher > span {
+  background-position: 100% -30px;
+}
+
+/* line 220, ../../app/stylesheets/minibutton.sass */
+.options-button {
+  top: -4px;
 }
 
 /* line 1, ../../app/stylesheets/minibutton.sass */

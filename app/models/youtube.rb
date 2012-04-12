@@ -40,7 +40,7 @@ class Youtube
 
     def filter_user_videos(videos, user)
       videos = filter_plisted_videos(videos, user) if !user.show_plisted
-      videos = filter_hated_videos(videos, user) if !user.show_filtered_videos
+      # videos = filter_hated_videos(videos, user) if !user.show_filtered_videos
       videos
     end
 

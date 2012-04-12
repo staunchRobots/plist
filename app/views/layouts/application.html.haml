@@ -6,6 +6,7 @@
     %title= yield(:title) || "pList.tv"
 
     = include_javascripts :vendor, :plugins, :modals, :app
+    = javascript_include_tag 'http://localhost:9292/faye.js'
     = include_stylesheets :app
 
     = yield :head

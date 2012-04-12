@@ -9,3 +9,8 @@
       = render :partial => 'playlists/playlist', :collection => @user.playlists
   - else
     No playlists found
+- if @create
+  :javascript
+    $(function(){
+      $(".create-playlist-btn").trigger('click')
+    })

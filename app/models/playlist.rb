@@ -17,9 +17,7 @@ class Playlist < ActiveRecord::Base
   scope :recent, lambda {|n| order_by("created_at DESC").limit(n) }
 
   def update_thumb
-    if !thumb && videos.count > 0
-      tmp = Video.first(:conditions => {:playlist_id => self.id})
-      update_attribute(:thumb, Youtube.get_thumbnail_url(tmp.ytid))
-    end
+    self.thumb = Youtube.get_thumbnail_url(videos.first.ytid) if videos.count > 0
+    save
   end
 end

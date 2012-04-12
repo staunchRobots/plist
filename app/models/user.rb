@@ -18,25 +18,10 @@ class User < ActiveRecord::Base
     :name, :username, :is_admin, :show_filtered_videos, :show_plisted,
     :avatar
 
-  after_create :create_first_playlist
-  after_create :create_first_jukebox
-
   def to_param
     username
   end
 
-  def hate_ytids
-    user_hates.collect(&:ytid)
-  end
-
   private
-
-    def create_first_playlist
-      self.playlists.create(:title => "My first playlist")
-    end
-
-    def create_first_jukebox
-      self.jukeboxes.create(:title => "Room 1")
-    end
 
 end
