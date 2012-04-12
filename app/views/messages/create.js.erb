@@ -1,0 +1,7 @@
+<% broadcast "/playlist/#{@playlist.id}" do %>
+  $('.message_list').append('<li><b><%= @message.user.username %></b>: <%= @message.text %></li>');
+<% end %>
+
+$('.message_list').append('<li><b><%= @message.user.username %></b>: <%= @message.text %></li>');
+$('.new_message input').val('')
+

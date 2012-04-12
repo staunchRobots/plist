@@ -1,5 +1,11 @@
 <% if @updated %>
   $.ctNotify('Playlist order changed', 'message')
+  
+  <% broadcast "/playlist/#{@playlist.id}" do %>
+    console.log('order changed')
+    // reorder
+  <% end %>
+  
 <% else %>
   $.ctNotify("You can't reorder items in this playlist", 'error')
 <% end %>

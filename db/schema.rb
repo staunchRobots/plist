@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120101174422) do
+ActiveRecord::Schema.define(:version => 20120412233704) do
 
   create_table "collaborators", :force => true do |t|
     t.integer  "playlist_id"
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(:version => 20120101174422) do
   end
 
   add_index "jukeboxes", ["user_id"], :name => "index_jukeboxes_on_user_id"
+
+  create_table "messages", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "playlist_id"
+    t.string   "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "playlist_invites", :force => true do |t|
     t.integer  "playlist_id"

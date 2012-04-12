@@ -28,8 +28,8 @@ gem 'unicorn'
 gem 'capistrano'
 
 group :development do
-  gem 'rails_best_practices'
-  gem 'rails-footnotes', '>= 3.7.5.rc4'
+  # gem 'rails_best_practices'
+  # gem 'rails-footnotes', '>= 3.7.5.rc4'
 end
 
 # gem 'ruby-debug19', :require => 'ruby-debug'

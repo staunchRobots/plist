@@ -21,6 +21,7 @@
         = render 'playlist_queue', playlist: @playlist
         = render 'search_youtube', playlist: @playlist
 
+  = render 'messages/list'
   / #comments
   /   %h2 Comments
   /     %fb:comments{:href=>"#{request.url}", :num_posts=>"2", :width=>"800"}

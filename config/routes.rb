@@ -13,6 +13,7 @@ Plist::Application.routes.draw do
   end
 
   resources :playlists do
+    resources :messages, :only => [:create]
     member do
       post :ask_for_promotion
       post :published
