@@ -25,9 +25,28 @@ function play(el) {
   if (!player) {
     create_player(ytid)
   } else {
-    player.loadVideoById(ytid)
+    if (navigator.userAgent.indexOf("Firefox")!=-1) {
+      $("#ytapiplayer").replaceWith('<div id="ytapiplayer"></div>');
+      player = new YT.Player('ytapiplayer', {
+        height: '270',
+        width: '950',
+        fmt: 22,
+        // hd: true,
+        videoId: ytid,
+        playerVars: {
+          'autoplay': 0,
+          'wmode': 'transparent'
+        },
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    } else {
+      player.loadVideoById(ytid);
+    }
   }
-  
+
   if (watch == 0) {
     $.get('/users/'+current_user+'/playlists/'+current_playlist+'/play?video='+$(el).attr('id'));
   }

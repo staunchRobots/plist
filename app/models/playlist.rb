@@ -6,7 +6,7 @@ class Playlist < ActiveRecord::Base
   friendly_id :title, :use => :slugged
   delegate :username, :to => :user
 
-  has_many :messages
+  has_many :messages, :order => 'created_at DESC', :limit => 20
   has_many :videos, :order => 'sort ASC'
   has_many :members, :through => :collaborators, :source => :user
   belongs_to :user

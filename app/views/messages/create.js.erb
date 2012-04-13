@@ -1,7 +1,13 @@
 <% broadcast "/playlist/#{@playlist.id}" do %>
   $('.message_list').append('<li><b><%= @message.user.username %></b>: <%= @message.text %></li>');
+  if ($('.message_list li').length > 20) {
+    $('.message_list li:first').remove()
+  }
 <% end %>
 
 $('.message_list').append('<li><b><%= @message.user.username %></b>: <%= @message.text %></li>');
-$('.new_message input').val('')
+if ($('.message_list li').length > 20) {
+  $('.message_list li:first').remove()
+}
 
+$('.new_message input[type="text"]').val('')

@@ -1,9 +1,11 @@
-<ul class='message_list'>
-  <% @playlist.messages.each do |m| %>
-    <li><b><%= m.user.username %></b>:<%= m.text %></li>
-  <% end %>
-</ul>
+<div class='messages'>
+  <ul class='message_list'>
+    <% @playlist.messages.each do |m| %>
+      <li><b><%= m.user.username %></b>:<%= m.text %></li>
+    <% end %>
+  </ul>
 
-<% if current_user %>
-  <%= render "messages/form" %>
-<% end %>
+  <% if current_user %>
+    <%= render "messages/form" %>
+  <% end %>
+</div>

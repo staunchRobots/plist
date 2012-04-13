@@ -1,5 +1,5 @@
 <%= form_for [@playlist, Message.new], remote: true do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.text_field :text %>
-  <%= f.submit "Send" %>
+  <%= f.submit value: 'Post'%>
 <% end %>

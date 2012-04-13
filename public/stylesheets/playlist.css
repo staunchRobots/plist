@@ -372,13 +372,30 @@
   width: 350px;
 }
 
-/* line 284, ../../app/stylesheets/playlist.sass */
+/* line 283, ../../app/stylesheets/playlist.sass */
 .suggest_form {
   display: none;
 }
-/* line 283, ../../app/stylesheets/playlist.sass */
+
+/* line 286, ../../app/stylesheets/playlist.sass */
 .watch {
   font-size: 11px;
   color: #9a9a9a;
   margin-left: 3px;
+}
+
+/* line 291, ../../app/stylesheets/playlist.sass */
+.messages {
+  margin: 0;
+  padding: 30px 0 0 20px;
+  float: left;
+}
+
+/* line 296, ../../app/stylesheets/playlist.sass */
+.message_list li {
+  padding: 0px;
+}
+/* line 298, ../../app/stylesheets/playlist.sass */
+.message_list li b {
+  background-color: #eeeeee;
 }

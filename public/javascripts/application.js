@@ -24,7 +24,7 @@ $(function() {
 
 
   $(document).ajaxStart(function() {
-    $.ctNotify("Loading", {type: "loading", delay:1000})
+    // $.ctNotify("Loading", {type: "loading", delay:1000})
   })
 
   $(".actions_menu").clickMenu();

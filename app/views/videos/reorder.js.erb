@@ -1,9 +1,15 @@
 <% if @updated %>
   $.ctNotify('Playlist order changed', 'message')
-  
   <% broadcast "/playlist/#{@playlist.id}" do %>
-    console.log('order changed')
-    // reorder
+    var items = $('#videos-list').find('li');
+    var order = <%= @new_order.to_s.html_safe %>;
+    var orderedItems = $.map(order, function(value) {
+      return $.grep(items, function(n, i) {
+        return parseInt(value) == $(n).attr('data-id');
+      });
+    });          
+    $.ctNotify('<%= @user.username %> just reordered playlist', 'message')
+    $('#videos-list').empty().html(orderedItems);
   <% end %>
   
 <% else %>
