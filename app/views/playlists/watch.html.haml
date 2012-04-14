@@ -32,7 +32,7 @@
   window.watch = 1;
   window.access_token = '#{@access_token}';
   
-  var faye = new Faye.Client('http://localhost:9292/faye');
+  var faye = new Faye.Client('#{Settings.faye_url}');
   faye.subscribe("/playlist/#{@playlist.id}", function(data) {
   eval(data);
   });

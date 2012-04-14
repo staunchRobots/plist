@@ -27,7 +27,7 @@ module Playlister::Social
   end
 
   def accessible_via(access_token)
-    link_invite && (link_invite.invite_token == access_token || link_invite('plisters').invite_token == access_token)
+    link_invite && (link_invite.invite_token == access_token || (link_invite('plisters') && link_invite('plisters').invite_token == access_token))
   end
 
   def invited_members

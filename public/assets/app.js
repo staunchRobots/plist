@@ -58,7 +58,7 @@ $(function() {
       var order = _.map($(this).sortable("toArray"), function(v, n) {
         return v.replace('video_', '');
       });
-      $.post('/playlists/'+current_playlist+'/videos/reorder',{order: order});
+      $.post('/playlists/'+current_playlist+'/videos/reorder',{order: order, access_token: access_token});
     }
 
   });

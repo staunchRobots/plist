@@ -5,17 +5,21 @@
 common:
   http_basic_username: things
   http_basic_password: welike
-  default_host: plist.tv
+  default_host: plist.dev
   faye_token: likesomethinggood
   faye_url: http://localhost:9292/faye
+  faye_js: http://localhost:9292/faye.js
 
 development:
-  default_host: localhost:3000
+  default_host: plist.dev
 
 test:
   default_host: plist.dev
 
 staging:
   default_host: dev.plist.tv
+  faye_url: http://dev.plist.tv:9292/faye
+  faye_js: http://dev.plist.tv:9292/faye.js
 
 production:
+  default_host: plist.tv
