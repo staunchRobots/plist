@@ -1,7 +1,8 @@
 - if video.new_record? && (@shared || myown_playlist)
   = render 'videos/yt_actions', :video => video, playlist: @playlist
 - else
-  / = render 'videos/plist_actions', :video => video
+  - if current_user && myown_playlist
+    = render 'videos/plist_actions', :video => video
 
 / - if user_signed_in?
 /   - if video.new_record?
