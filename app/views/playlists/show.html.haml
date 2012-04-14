@@ -29,7 +29,7 @@
 :javascript
   current_playlist = '#{@playlist.id}';
   current_user = '#{@playlist.user.username}';
-  window.watch = 1;
+  window.watch = 0;
   window.access_token = '#{@access_token}';
   
   var faye = new Faye.Client('#{Settings.faye_url}');

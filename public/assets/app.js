@@ -168,7 +168,7 @@ function play(el) {
     }
   }
 
-  if (watch == 0) {
+  if (window.watch == 0) {
     $.get('/users/'+current_user+'/playlists/'+current_playlist+'/play?video='+$(el).attr('id'));
   }
 }
