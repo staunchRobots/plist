@@ -1,7 +1,7 @@
 <% broadcast "/playlist/#{@playlist.id}" do %>
   $('.message_list').prepend('<li><b><%= @message.user.username %></b>: <%= @message.text %></li>');
   if ($('.message_list li').length > 20) {
-    $('.message_list li:first').remove()
+    $('.message_list li:last').remove()
   }
 <% end %>
 
