@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
   has_many :videos, :through => :playlists
   has_many :user_hates
 
+  has_many :onlines
+  has_many :online_playlists, through: :onlines, class_name: 'playlist', foreign_key: 'playlist_id'
+
+
   validates_presence_of :username, :name
   validates_uniqueness_of :username
 

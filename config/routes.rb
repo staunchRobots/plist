@@ -49,5 +49,6 @@ Plist::Application.routes.draw do
     # resources :featured, :only => [:index, :update], :controller => :featured_videos
   end
 
+  match 'bye' => "playlists#bye"
   root :to => 'home#index'
 end

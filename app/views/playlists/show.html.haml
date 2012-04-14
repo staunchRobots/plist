@@ -7,6 +7,11 @@
   %meta{:property => "og:description", :content => "#{@playlist.description}"}
   %meta{:property => "og:image",       :content => "#{@playlist.thumb}"}
   %meta{:property => "og:url",       :content => "http://plist.tv#{request.request_uri}"}
+  :javascript
+    window.onbeforeunload = function() {
+      $.get('http://plist.dev');
+      alert('closing window');
+    };
 
 - content_for :footer do
   - if user_signed_in? && myown_playlist
@@ -22,6 +27,11 @@
         = render 'search_youtube', playlist: @playlist
 
   = render 'messages/list'
+  %br/
+  %h3 Online users:
+  %ul#users-list
+    = render 'messages/users'
+
   / #comments
   /   %h2 Comments
   /     %fb:comments{:href=>"#{request.url}", :num_posts=>"2", :width=>"800"}
@@ -29,11 +39,15 @@
 :javascript
   current_playlist = '#{@playlist.id}';
   current_user = '#{@playlist.user.username}';
+  window.current_id = '#{current_user.id}';
   window.watch = 0;
   window.access_token = '#{@access_token}';
-  
+
   var faye = new Faye.Client('#{Settings.faye_url}');
   faye.subscribe("/playlist/#{@playlist.id}", function(data) {
   eval(data);
   });
-  
+
+
+- broadcast "/playlist/#{@playlist.id}" do
+  $('#users-list').html("#{escape_javascript(render(:partial =>'messages/users'))}")

@@ -13,5 +13,5 @@
   <% end %>
 
   $("#add-video input[type='text']").attr('value', '').blur()
-  $.ctNotify("Video has been added to '<%= @playlist.title %>' playlist")
+  $.ctNotify("Video has been added to '<%= @playlist.title %>' playlist by <%= current_user ? current_user.username : '' %>")
 <% end %>

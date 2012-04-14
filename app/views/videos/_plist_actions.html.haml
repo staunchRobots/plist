@@ -2,17 +2,17 @@
   %li
     +
     %ul
-      %li
-        Copy to
-        = copy_playlists_list(video.ytid, video.new_record?)
+      / %li
+      /   Copy to
+      /   = copy_playlists_list(video.ytid, video.new_record?)
       - if myown_playlist && !video.new_record?
-        %li
-          = link_to 'Move to playlist', '#'
-          = move_playlists_list(video.id, video.ytid)
+        / %li
+        /   = link_to 'Move to playlist', '#'
+        /   = move_playlists_list(video.id, video.ytid)
         %li.menu_action
           = link_to 'Remove', playlist_video_path(@playlist, video.id), :method => :delete, :remote => true
       / %li
       /   = link_to 'Like', '#', :onclick => '$.ctNotify("Liked"); return false;'
-      - if video.new_record?
-        %li.menu_action
-          = link_to 'Hate', videos_hate_user_path(current_user.id, :ytid => video.ytid), {:remote => true, :confirm => 'Are you sure you hate this? If you hate it you will never be shown this video again.', :method => 'POST'}
+      / - if video.new_record?
+      /   %li.menu_action
+      /     = link_to 'Hate', videos_hate_user_path(current_user.id, :ytid => video.ytid), {:remote => true, :confirm => 'Are you sure you hate this? If you hate it you will never be shown this video again.', :method => 'POST'}

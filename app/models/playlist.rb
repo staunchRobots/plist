@@ -10,6 +10,8 @@ class Playlist < ActiveRecord::Base
   has_many :videos, :order => 'sort ASC'
   has_many :members, :through => :collaborators, :source => :user
   belongs_to :user
+  has_many :onlines
+  has_many :online_users, through: :onlines, :source => :user
 
   scope :featured, where(:featured => true)
   scope :common, where(:featured => false)

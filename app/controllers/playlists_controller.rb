@@ -8,6 +8,8 @@ class PlaylistsController < InheritedResources::Base
 
   def show
     show! do |format|
+      init_onlines
+      @onlines = @playlist.onlines.reload
       @link_invite_everyone = @playlist.link_invite
       @link_invite_plisters = @playlist.link_invite('plisters')
       @access_token = params[:access_token]
@@ -48,9 +50,11 @@ class PlaylistsController < InheritedResources::Base
     end
 
   end
-  
+
   def watch
     show! do |format|
+      init_onlines
+      @onlines = @playlist.onlines.reload
       @access_token = params[:access_token]
       format.html {
         if !user_signed_in? || current_user != @playlist.user
@@ -62,7 +66,7 @@ class PlaylistsController < InheritedResources::Base
       }
     end
   end
-  
+
   def play
     @playlist = params[:id]
     @video = params[:video]
@@ -76,6 +80,24 @@ class PlaylistsController < InheritedResources::Base
     @shared_with_me = Playlist.shared_with(@user.id)
     @shared_by_me   = Playlist.shared_by(@user.id)
     @invited_me = PlaylistInvite.for_user(@user.id)
+  end
+
+  def bye
+    @playlist = Playlist.find(params[:playlist_id])
+    @online = @playlist.onlines.where(:user_id => params[:user_id]).first
+    if @online
+      @online.destroy
+    end
+    @onlines = @playlist.onlines.reload
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  private
+
+  def init_onlines
+    @playlist.onlines.build(user_id: current_user.id).save if current_user
   end
 
 end

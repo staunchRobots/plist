@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120412233704) do
+ActiveRecord::Schema.define(:version => 20120414170915) do
 
   create_table "collaborators", :force => true do |t|
     t.integer  "playlist_id"
@@ -37,6 +37,13 @@ ActiveRecord::Schema.define(:version => 20120412233704) do
     t.integer  "user_id"
     t.integer  "playlist_id"
     t.string   "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "onlines", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "playlist_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

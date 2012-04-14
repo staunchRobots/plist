@@ -20,8 +20,12 @@
       #video-list-tabs
         = render 'playlist_queue', playlist: @playlist
         = render 'search_youtube', playlist: @playlist
-  
+
   = render 'messages/list'
+  %br/
+  %h3 Online users:
+  %ul#users-list
+    = render 'messages/users'
   / #comments
   /   %h2 Comments
   /     %fb:comments{:href=>"#{request.url}", :num_posts=>"2", :width=>"800"}
@@ -29,11 +33,15 @@
 %script(type="text/javascript")
   window.current_playlist = '#{@playlist.id}';
   window.current_user = '#{@playlist.user.username}';
+  window.current_id = '#{current_user.id}';
   window.watch = 1;
   window.access_token = '#{@access_token}';
-  
+
   var faye = new Faye.Client('#{Settings.faye_url}');
   faye.subscribe("/playlist/#{@playlist.id}", function(data) {
   eval(data);
   });
 
+
+- broadcast "/playlist/#{@playlist.id}" do
+  $('#users-list').html("#{escape_javascript(render(:partial =>'messages/users'))}")

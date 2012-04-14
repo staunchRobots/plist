@@ -1,0 +1,3 @@
+<% broadcast "/playlist/#{@playlist.id}" do %>
+  $('#users-list').html("<%= escape_javascript(render(:partial =>'messages/users')) %>")
+<% end %>
