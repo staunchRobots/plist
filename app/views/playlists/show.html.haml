@@ -29,4 +29,11 @@
 :javascript
   current_playlist = '#{@playlist.id}';
   current_user = '#{@playlist.user.username}';
-  window.watch = 0;
+  window.watch = 1;
+  window.access_token = '#{@access_token}';
+  
+  var faye = new Faye.Client('http://localhost:9292/faye');
+  faye.subscribe("/playlist/#{@playlist.id}", function(data) {
+  eval(data);
+  });
+  

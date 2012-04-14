@@ -50,7 +50,7 @@ class VideosController < InheritedResources::Base
     @playlist = Playlist.find(params[:playlist_id])
     @user = current_user
     @new_order = params[:order]
-    if @playlist.accessible_by(current_user)
+    if @playlist.accessible_by(current_user) || @playlist.accessible_via(params[:access_token])
       @playlist.update_videos_sort_order(params[:order])
       @updated = true
     end

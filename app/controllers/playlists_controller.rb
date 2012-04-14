@@ -51,6 +51,7 @@ class PlaylistsController < InheritedResources::Base
   
   def watch
     show! do |format|
+      @access_token = params[:access_token]
       format.html {
         if !user_signed_in? || current_user != @playlist.user
           unless @playlist.published

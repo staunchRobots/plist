@@ -1,15 +1,17 @@
-<% if @is_url || @at_current_url %>
-  var new_video = $("<%= escape_javascript(render(:partial => 'videos/video', :object => @video)) %>")
-  new_video.hide()
-  $("#playlist #videos-list").append(new_video)
-  new_video.show('fast')
-  $("#playlist #videos-list > li:last .actions_menu").clickMenu();
-  $("#ytvideos-list li[ytid='<%= @video.ytid %>']").hide('fast')
+<% broadcast "/playlist/#{@playlist.id}" do %>
+  <% if @is_url || @at_current_url %>
+    var new_video = $("<%= escape_javascript(render(:partial => 'videos/video', :object => @video)) %>")
+    new_video.hide()
+    $("#playlist #videos-list").append(new_video)
+    new_video.show('fast')
+    $("#playlist #videos-list > li:last .actions_menu").clickMenu();
+    $("#ytvideos-list li[ytid='<%= @video.ytid %>']").hide('fast')
 
-  <% if @video.playlist.videos.size == 1 %>
-    load_player('<%= @video.ytid %>')
+    <% if @video.playlist.videos.size == 1 %>
+      load_player('<%= @video.ytid %>')
+    <% end %>
   <% end %>
-<% end %>
 
-$("#add-video input[type='text']").attr('value', '').blur()
-$.ctNotify("Video has been added to '<%= @playlist.title %>' playlist")
+  $("#add-video input[type='text']").attr('value', '').blur()
+  $.ctNotify("Video has been added to '<%= @playlist.title %>' playlist")
+<% end %>
