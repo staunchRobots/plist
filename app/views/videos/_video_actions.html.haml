@@ -1,7 +1,12 @@
-- if user_signed_in?
-  - if video.new_record?
-    = render 'videos/yt_actions', :video => video, playlist: @playlist
-  - else
-    / = render 'videos/plist_actions', :video => video
+- if video.new_record? && @shared
+  = render 'videos/yt_actions', :video => video, playlist: @playlist
 - else
-  / = render 'videos/suggest_actions', :videos => video, playlist: @playlist
+  / = render 'videos/plist_actions', :video => video
+
+/ - if user_signed_in?
+/   - if video.new_record?
+/     = render 'videos/yt_actions', :video => video, playlist: @playlist
+/   - else
+/     / = render 'videos/plist_actions', :video => video
+/ - else
+/   / = render 'videos/suggest_actions', :videos => video, playlist: @playlist

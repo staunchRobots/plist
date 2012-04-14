@@ -63,6 +63,7 @@ class VideosController < InheritedResources::Base
 
   def ytsearch
     @playlist = Playlist.find(params[:current_playlist])
+    @shared = params[:access_token] == @playlist.link_invite.invite_token
     @is_pagination_search = params[:video][:page].nil?
     @videos = Youtube.ytsearch(params[:video][:search], current_user, {
       'start-index' => (params[:video][:page].to_i * 10)+1,

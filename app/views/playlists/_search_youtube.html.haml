@@ -1,12 +1,12 @@
 .video-list-column
-  - if user_signed_in? && myown_playlist
-    .right
-      %a.options-button.minibutton
-        %span#filter-btn Search Options
-    %h2 Search Youtube
-    = render 'playlists/search_youtube_form', playlist: playlist
-    %ul#ytvideos-list
-  - else
-    %h2 Suggest video
-    = render 'playlists/search_youtube_form', playlist: playlist
-    %ul#ytvideos-list
+  / - if user_signed_in? && myown_playlist
+  .right
+    %a.options-button.minibutton
+      %span#filter-btn Search Options
+  %h2 Search Youtube
+  = render 'playlists/search_youtube_form', playlist: playlist
+  %ul#ytvideos-list
+  / - else
+  /   %h2 Suggest video
+  /   = render 'playlists/search_youtube_form', playlist: playlist
+  /   %ul#ytvideos-list

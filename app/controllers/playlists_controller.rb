@@ -10,6 +10,7 @@ class PlaylistsController < InheritedResources::Base
     show! do |format|
       @link_invite_everyone = @playlist.link_invite
       @link_invite_plisters = @playlist.link_invite('plisters')
+      @access_token = params[:access_token]
       format.html {
         unless @playlist.published
           if !user_signed_in? || !has_access_to(current_user, @playlist)

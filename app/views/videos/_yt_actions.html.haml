@@ -1,7 +1,7 @@
 .yt_actions_menu
   = link_to playlist_videos_path(playlist.id, :video => {:yt_url => video.ytid, :is_ytid => '1'}, :current_playlist => playlist.id), :remote => true, :method => :post do
     .plus-action
-  %ul.plus-more-action
-    %li
-      = image_tag 'plus-more.png'
-      = copy_playlists_list(video.ytid, video.new_record?)
+  / %ul.plus-more-action
+  /   %li
+  /     = image_tag 'plus-more.png'
+  /     / = copy_playlists_list(video.ytid, video.new_record?)
