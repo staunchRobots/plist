@@ -329,7 +329,14 @@ $(function() {
   })         
   
   $('#show_video_btn').click(function() {
-    $('#ytplayer').toggle('fast')
+    el = $(this);
+    $('#ytplayer').toggle('fast', function() {
+      if ($('#ytplayer').is(":visible")) {
+        el.text('Hide video');
+      } else {
+        el.text('Show video');
+      }
+    })
   })
 
   search_autocomplete = $('.youtube_search').autocomplete({
