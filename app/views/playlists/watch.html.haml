@@ -33,7 +33,7 @@
 %script(type="text/javascript")
   window.current_playlist = '#{@playlist.id}';
   window.current_user = '#{@playlist.user.username}';
-  window.current_id = '#{current_user.id}';
+  window.current_id = '#{current_user.try(:id)}';
   window.watch = 1;
   window.access_token = '#{@access_token}';
 
